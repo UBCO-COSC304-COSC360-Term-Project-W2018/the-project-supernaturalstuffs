@@ -2,11 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/checkout.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -31,44 +32,111 @@
     </header>
     <!-- page content -->
 
-    <!--Checkout Form-->
-    <form method="get" action="http://www.randyconnolly.com/tests/process.php">
-      <fieldset>
-        <legend>Create Account</legend>
-        <div>
-          <label>First Name:</label>
-          <input type="text" name="fname" class="box"/>
-        </div>
-        <div>
-          <label>Last Name:</label>
-          <input type="text" name="lname" class="box"/>
-        </div>
-        <div>
-          <label>Email:</label>
-          <input type="text" name="email" class="box"/>
-        </div>
-        <div>
-          <label>Confirm Email:</label>
-          <input type="text" name="cEmail" class="box"/>
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="text" name="password" class="box"/>
-        </div>
-        <div>
-          <label>Confirm Password:</label>
-          <input type="text" name="cPassword" class="box"/>
-        </div>
-        <div class="centered">
-          <input type="button" value="Create Account" class="button"/>
-        </div>
-        <div class="centered">
-          <input type="button" value="Already Have an Acount" class="button"/>
-        </div>
+    <!--Checkout Forms-->
+    <div id="flex-container">
+      <div id="formBox">
+        <!--Shipment Form-->
+        <form method="get" action="http://www.randyconnolly.com/tests/process.php" id="shipForm">
+          <fieldset>
+            <legend>Shipment</legend>
+            <div id="name">
+              <div>
+                <label>First Name:</label>
+                <input type="text" name="fname"/>
+              </div>
+              <div>
+                <label>Last Name:</label>
+                <input type="text" name="lname"/>
+              </div>
+            </div>
+            <div id="address">
+              <div>
+                <label>Country:</label>
+                <input type="text" name="country"/>
+              </div>
+              <div>
+                <label>Province:</label>
+                <input type="text" name="province"/>
+              </div>
+              <div>
+                <label>Town:</label>
+                <input type="text" name="town"/>
+              </div>
+              <div>
+                <label>Street:</label>
+                <input type="text" name="street"/>
+              </div>
+              <div>
+                <label>Town:</label>
+                <input type="text" name="town"/>
+              </div>
+              <div>
+                <label>Postal Code:</label>
+                <input type="text" name="town"/>
+              </div>
+            </div>
+            <div id="shipmentMethod">
+              <label>Select Delivery Method</label><br/>
+              <input type="radio" name="delivery" value="standard">Standard<br/>
+              <input type="radio" name="delivery" value="drone">Drone<br/>
+              <input type="radio" name="delivery" value="Instantaneous">Instantaneous
+            </div>
+            <div class="centered">
+              <input type="button" value="Continue To Payment" class="button"/>
+            </div>
+          </fieldset>
+        </form>
+        <!--Payment Form-->
+        <form method="get" action="http://www.randyconnolly.com/tests/process.php" id="payForm">
+          <fieldset>
+            <legend>Payment</legend>
+            <div>
+              <label>Payment Method:</label>
+              <select>
+                <option>Visa</option>
+                <option>Mastercard</option>
+                <option>American Express</option>
+                <option>Debit</option>
+              </select>
+            </div>
+            <div>
+              <label>Name On Card:</label>
+              <input type="text" name="cardName"/>
+            </div>
+            <div>
+              <label>Card Number:</label>
+              <input type="text" name="cardNumber"/>
+            </div>
+            <div>
+              <label>Expiration Date:</label>
+              <input type="month" name="exDate"/>
+            </div>
+            <div>
+              <label>Security Code:</label>
+              <input type="text" name="secCode"/>
+            </div>
+            <div class="centered">
+              <input type="button" value="Confirm Checkout" class="button"/>
+            </div>
+          </fieldset>
+      </form>
+      </div>
 
-      </fieldset>
-    </form>
+      <div id="summary">
+        <h2>Summary</h2>
+        <p class="money">Subtotal: </p>
+        <p class="money">Delivery: </p>
+        <p class="money">Taxes: </p>
+        <p id="total">Total: </p>
+        <div class="centered">
+          <input type="button" value="Continue Shopping" class="button"/>
+        </div>
+      </div>
 
+      <div id="shopCart">
+        
+      </div>
+    </div>
     <footer>
     </footer>
   </body>
