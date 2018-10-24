@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Create Account</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -28,7 +29,46 @@
  			    </ul>
  		    </nav>
     </header>
-    <!-- page content --> 
+    <!-- page content -->
+
+    <!--createAccount Form-->
+    <form method="get" action="http://www.randyconnolly.com/tests/process.php">
+      <fieldset>
+        <legend>Create Account</legend>
+        <div>
+          <label>First Name:</label>
+          <input type="text" name="fname" class="box"/>
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" name="lname" class="box"/>
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="text" name="email" class="box"/>
+        </div>
+        <div>
+          <label>Confirm Email:</label>
+          <input type="text" name="cEmail" class="box"/>
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type="text" name="password" class="box"/>
+        </div>
+        <div>
+          <label>Confirm Password:</label>
+          <input type="text" name="cPassword" class="box"/>
+        </div>
+        <div class="centered">
+          <input type="button" value="Create Account" class="button"/>
+        </div>
+        <div class="centered">
+          <input type="button" value="Already Have an Acount" class="button"/>
+        </div>
+
+      </fieldset>
+    </form>
+
 
     <footer>
     </footer>

@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Login</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -34,28 +35,29 @@
     <form method="post" action="http://www.randyconnolly.com/tests/process.php">
       <fieldset>
         <legend>Login</legend>
-        <p>
+        <div>
           <label>Email:</label>
-          <input type="text" name="email"/>
-        </p>
-        <p>
-          <input type="button" value="Forgot Password?"/>
-        </p>
-        <p>
+          <input type="text" name="email" class="box" id="eInput"/>
+        </div>
+        <div class="centered">
+          <input type="button" value="Forgot Password?" class="button" id="forgotPass"/>
+        </div>
+        <div>
           <label>Password:</label>
-          <input type="text" name="password"/>
-        </p>
-        <p>
+          <input type="text" name="password" class="box" id="pInput"/>
+        </div>
+        <div class="centered">
           <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
-        </p>
-        <p>
-          <input type="button" value="Login"/>
-        </p>
-        <p>
-          <input type="button" value="Create Account"/>
-        </p>
+        </div>
+        <div class="centered">
+          <input type="button" value="Login" class="button"/>
+        </div>
+        <div class="centered">
+          <input type="button" value="Create Account" class="button"/>
+        </div>
       </fieldset>
     </form>
+    
     <footer>
     </footer>
   </body>
