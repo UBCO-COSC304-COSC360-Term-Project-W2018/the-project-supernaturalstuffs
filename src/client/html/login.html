@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/sform.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -36,22 +37,22 @@
         <legend>Login</legend>
         <p>
           <label>Email:</label>
-          <input type="text" name="email"/>
+          <input type="text" name="email" class="box" id="eInput"/>
         </p>
-        <p>
-          <input type="button" value="Forgot Password?"/>
+        <p class="centered">
+          <input type="button" value="Forgot Password?" id="forgotPass"/>
         </p>
         <p>
           <label>Password:</label>
-          <input type="text" name="password"/>
+          <input type="text" name="password" class="box" id="pInputS"/>
         </p>
         <p>
           <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
         </p>
-        <p>
+        <p class="centered">
           <input type="button" value="Login"/>
         </p>
-        <p>
+        <p class="centered">
           <input type="button" value="Create Account"/>
         </p>
       </fieldset>

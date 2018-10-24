@@ -1,0 +1,45 @@
+body{background-color: #e6e6e6;}
+
+form{
+  font-family: Arial, Helvetica, "Times New Roman";
+  color: #36454f;
+  margin: 3em auto 3em auto;
+  width: 60%;
+  border: 4px solid #36545f;
+  background-color: #e6e6e6;
+}
+
+legend {
+  background-color: #36454f;
+  width: 100%;
+  padding: 0.5em;
+  color:white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 125%;
+}
+fieldset {
+  padding:.5em;
+  padding-top: 0;
+  margin:0;
+  border: 0px;
+}
+form div{
+  margin-top: .75em;
+  font-weight: bold;
+}
+div label {
+  clear: both;
+}
+
+.centered{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  clear: both;
+}
+input.box{
+  float: right;
+  width: 55%;
+}
+#eInput, #pInput{ width: 75%;}
