@@ -5,11 +5,68 @@
     <title></title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+		<!--<script src="script.js"></script>-->
   </head>
 
   <body>
     <header>
+      <h1>Super(natural) Store</h1>
+ 		  <div id="search-cart">
+ 			    <img src="../images/search.png" alt="search" id="search">
+ 			    <img src="../images/cart.png" alt="shopping cart" id="cart">
+ 		   </div>
+ 		   <nav>
+ 			    <ul>
+ 				     <li>Home</li>
+ 				     <li>Contact</li>
+ 				     <li>Account</li>
+ 				     <div id="login-signup">
+ 					     <li>Login</li>
+ 					     <li>Signup</li>
+             </div>
+ 			    </ul>
+ 		    </nav>
     </header>
+    <!-- page content -->
+
+    <!--Checkout Form-->
+    <form method="get" action="http://www.randyconnolly.com/tests/process.php">
+      <fieldset>
+        <legend>Create Account</legend>
+        <p>
+          <label>First Name:</label>
+          <input type="text" name="fname"/>
+        </p>
+        <p>
+          <label>Last Name:</label>
+          <input type="text" name="lname"/>
+        </p>
+        <p>
+          <label>Email:</label>
+          <input type="text" name="email"/>
+        </p>
+        <p>
+          <label>Confirm Email:</label>
+          <input type="text" name="cEmail"/>
+        </p>
+        <p>
+          <label>Password:</label>
+          <input type="text" name="password"/>
+        </p>
+        <p>
+          <label>Email:</label>
+          <input type="text" name="cPassword"/>
+        </p>
+        <p>
+          <input type="button" value="Create Account"/>
+        </p>
+        <p>
+          <input type="button" value="Already Have an Acount"/>
+        </p>
+
+      </fieldset>
+    </form>
 
     <footer>
     </footer>
