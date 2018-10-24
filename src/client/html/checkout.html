@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../css/form.css">
     <link rel="stylesheet" type="text/css" href="../css/checkout.css">
-		<!--<script src="script.js"></script>-->
+		<script type="text/javascript" src="../script/checkout.js"></script>
   </head>
 
   <body>
@@ -42,37 +42,43 @@
             <div id="name">
               <div>
                 <label>First Name:</label>
-                <input type="text" name="fname"/>
+                <input type="text" name="fname" class="box2"/>
               </div>
               <div>
                 <label>Last Name:</label>
-                <input type="text" name="lname"/>
+                <input type="text" name="lname" class="box2"/>
               </div>
             </div>
             <div id="address">
               <div>
                 <label>Country:</label>
-                <input type="text" name="country"/>
+                <input type="text" name="country" class="box2"/>
               </div>
               <div>
                 <label>Province:</label>
-                <input type="text" name="province"/>
+                <input type="text" name="province" class="box2"/>
               </div>
               <div>
                 <label>Town:</label>
-                <input type="text" name="town"/>
+                <input type="text" name="town" class="box2"/>
               </div>
               <div>
                 <label>Street:</label>
-                <input type="text" name="street"/>
-              </div>
-              <div>
-                <label>Town:</label>
-                <input type="text" name="town"/>
+                <input type="text" name="street" class="box2"/>
               </div>
               <div>
                 <label>Postal Code:</label>
-                <input type="text" name="town"/>
+                <input type="text" name="postalCode" class="box2"/>
+              </div>
+            </div>
+            <div id="contactInfo">
+              <div>
+                <label>Phone Number:</label>
+                <input type="text" name="phoneNum" class="box2"/>
+              </div>
+              <div>
+                <label>Email:</label>
+                <input type="text" name="email" class="box2"/>
               </div>
             </div>
             <div id="shipmentMethod">
@@ -92,7 +98,7 @@
             <legend>Payment</legend>
             <div>
               <label>Payment Method:</label>
-              <select>
+              <select id="payMethod">
                 <option>Visa</option>
                 <option>Mastercard</option>
                 <option>American Express</option>
@@ -101,19 +107,19 @@
             </div>
             <div>
               <label>Name On Card:</label>
-              <input type="text" name="cardName"/>
+              <input type="text" name="cardName" class="box2"/>
             </div>
             <div>
               <label>Card Number:</label>
-              <input type="text" name="cardNumber"/>
+              <input type="text" name="cardNumber" class="box2"/>
             </div>
             <div>
               <label>Expiration Date:</label>
-              <input type="month" name="exDate"/>
+              <input type="month" name="exDate" class="box2"/>
             </div>
             <div>
               <label>Security Code:</label>
-              <input type="text" name="secCode"/>
+              <input type="text" name="secCode" class="box2"/>
             </div>
             <div class="centered">
               <input type="button" value="Confirm Checkout" class="button"/>

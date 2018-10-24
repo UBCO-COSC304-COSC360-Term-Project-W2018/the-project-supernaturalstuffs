@@ -15,13 +15,20 @@ function preventDefault(){
     }
     lName.addEventListener("change",function(){ lName.classList.remove("invalid") });
 
-    //email validation
+    //email validation(see if it has @)
     var email = document.forms["createAccount"]["email"];
-    if(email.value == ""){
-      email.className = "invalid";
+    var hasAT = false;
+    for(var i = 0; i < email.value.length; i++){
+      var x = email.value.charAt(i);
+      if(x == '@'){
+        hasAT = true;
+        break;
+      }
+    }
+    if(!hasAT){
+      alert("Invalid Email")
       return false;
     }
-    email.addEventListener("change",function(){ email.classList.remove("invalid") });
 
     //email confirmation
     var cEmail = document.forms["createAccount"]["cEmail"];
@@ -30,13 +37,13 @@ function preventDefault(){
       return false;
     }
 
-    //password validation
+    //password validation (6 characters and atleast is a number)
     var password = document.forms["createAccount"]["password"];
-    var contains = false;
+    var hasNum = false;
     for(var i = 0; i < password.value.length; i++){
       var x = password.value.charAt(i);
       if(!isNaN(x)){
-        contains = true;
+        hasNum = true;
         break;
       }
     }
