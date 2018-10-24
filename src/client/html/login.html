@@ -5,11 +5,56 @@
     <title></title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+		<!--<script src="script.js"></script>-->
   </head>
 
   <body>
     <header>
+      <h1>Super(natural) Store</h1>
+ 		  <div id="search-cart">
+ 			    <img src="../images/search.png" alt="search" id="search">
+ 			    <img src="../images/cart.png" alt="shopping cart" id="cart">
+ 		   </div>
+ 		   <nav>
+ 			    <ul>
+ 				     <li>Home</li>
+ 				     <li>Contact</li>
+ 				     <li>Account</li>
+ 				     <div id="login-signup">
+ 					     <li>Login</li>
+ 					     <li>Signup</li>
+             </div>
+ 			    </ul>
+ 		    </nav>
     </header>
+    <!-- page content --> 
+
+    <!--Login Form-->
+    <form method="post" action="http://www.randyconnolly.com/tests/process.php">
+      <fieldset>
+        <legend>Login</legend>
+        <p>
+          <label>Email:</label>
+          <input type="text" name="email"/>
+        </p>
+        <p>
+          <input type="button" value="Forgot Password?"/>
+        </p>
+        <p>
+          <label>Password:</label>
+          <input type="text" name="password"/>
+        </p>
+        <p>
+          <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
+        </p>
+        <p>
+          <input type="button" value="Login"/>
+        </p>
+        <p>
+          <input type="button" value="Create Account"/>
+        </p>
+      </fieldset>
 
     <footer>
     </footer>

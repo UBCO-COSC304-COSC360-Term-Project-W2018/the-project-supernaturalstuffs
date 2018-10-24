@@ -1,0 +1,51 @@
+header *{
+	background: #36454f;
+	font-family: Arial, Helvetica, "Times New Roman";
+	color: white;
+}
+header h1{
+	font-size: 275%;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 0.5em;
+}
+#search-cart{
+	float: right;
+	position: absolute;
+	top: 2em;
+	right: 1em;
+}
+#search{
+	height: 1.5em;
+	width: 1.5em;
+}
+#cart{
+	height: 2em;
+	width: 2em;
+}
+header nav{
+	border-top: white solid 1px;
+	border-bottom: white solid 1px;
+	padding: 0;
+	margin: 0;
+}
+header ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	height: 2.9em;
+}
+header li{
+	list-style-type: none;
+	float: left;
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-top: 0.7em;
+	padding-bottom: 0.7em;
+	border-right: solid white 1px;
+	font-size: 110%;
+}
+#login-signup{
+	float: right;
+	border-left: white solid 1px;
+}
