@@ -49,3 +49,14 @@ input.button{
   padding: .25em;
 }
 #eInput, #pInput{ width: 75%;}
+
+.invalid{
+  background-color: red;
+  float: right;
+  width: 55%;
+  border:1px solid #36545f;
+}
+#passCri{
+  font-size: 50%;
+  clear:both;
+}
