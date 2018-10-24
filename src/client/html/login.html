@@ -35,26 +35,26 @@
     <form method="post" action="http://www.randyconnolly.com/tests/process.php">
       <fieldset>
         <legend>Login</legend>
-        <p>
+        <div>
           <label>Email:</label>
-          <input type="text" name="email"/>
-        </p>
-        <p>
-          <input type="button" value="Forgot Password?"/>
-        </p>
-        <p>
+          <input type="text" name="email" class="box" id="eInput"/>
+        </div>
+        <div class="centered">
+          <input type="button" value="Forgot Password?" id="forgotPass"/>
+        </div>
+        <div>
           <label>Password:</label>
-          <input type="text" name="password"/>
-        </p>
-        <p>
+          <input type="text" name="password" class="box" id="pInput"/>
+        </div>
+        <div class="centered">
           <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
-        </p>
-        <p>
+        </div>
+        <div class="centered">
           <input type="button" value="Login"/>
-        </p>
-        <p>
+        </div>
+        <div class="centered">
           <input type="button" value="Create Account"/>
-        </p>
+        </div>
       </fieldset>
     </form>
     <footer>
