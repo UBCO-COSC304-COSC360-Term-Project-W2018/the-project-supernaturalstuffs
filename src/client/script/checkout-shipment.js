@@ -1,4 +1,4 @@
-function preventDefault(){
+function checkShipping(){
   //shipment form validation
     //first name validation
     var fName = document.forms["shipForm"]["fName"];
@@ -79,8 +79,4 @@ function preventDefault(){
       alert("Invalid Email")
       return false;
     }
-
-  //payment form validation
-    //
-
-}
+  }
