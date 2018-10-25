@@ -1,5 +1,5 @@
 header *{
-	background: #36454f;
+	background: #521C25;
 	font-family: Arial, Helvetica, "Times New Roman";
 	color: white;
 }
@@ -28,12 +28,14 @@ header nav{
 	border-bottom: white solid 1px;
 	padding: 0;
 	margin: 0;
+	background: #710627;
 }
 header ul{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	height: 2.9em;
+	background: #710627;
 }
 header li{
 	list-style-type: none;
@@ -44,6 +46,10 @@ header li{
 	padding-bottom: 0.7em;
 	border-right: solid white 1px;
 	font-size: 110%;
+	background: #710627;
+}
+header li a{
+	background: #710627;
 }
 #login-signup{
 	float: right;
