@@ -3,68 +3,67 @@ function checkShipping(){
     //first name validation
     var fName = document.forms["shipForm"]["fName"];
     if(fName.value == ""){
-      fName.className = 'invalid';
+      fName.className = 'invalid2';
       return false;
     }
-    fName.addEventListener("change",function(){ fName.classList.remove('invalid') });
+    fName.addEventListener("change",function(){ fName.classList.remove('invalid2') });
 
     //last name validation
     var lName = document.forms["shipForm"]["lName"];
     if(lName.value == ""){
-      lName.className = "invalid";
+      lName.className = "invalid2";
       return false;
     }
-    lName.addEventListener("change",function(){ lName.classList.remove("invalid") });
+    lName.addEventListener("change",function(){ lName.classList.remove("invalid2") });
 
     //country validation
     var country = document.forms["shipForm"]["country"];
     if(country.value == ""){
-      country.className = "invalid";
+      country.className = "invalid2";
       return false;
     }
-    country.addEventListener("change",function(){ country.classList.remove("invalid") });
+    country.addEventListener("change",function(){ country.classList.remove("invalid2") });
 
     //province confirmation
     var province = document.forms["shipForm"]["province"];
     if(province.value == ""){
-      province.className = "invalid";
+      province.className = "invalid2";
       return false;
     }
-    province.addEventListener("change",function(){ province.classList.remove("invalid") });
+    province.addEventListener("change",function(){ province.classList.remove("invalid2") });
 
     //town validation
     var town = document.forms["shipForm"]["town"];
     if(town.value == ""){
-      town.className = "invalid";
+      town.className = "invalid2";
       return false;
     }
-    town.addEventListener("change",function(){ town.classList.remove("invalid") });
+    town.addEventListener("change",function(){ town.classList.remove("invalid2") });
 
     //street validation
     var street = document.forms["shipForm"]["street"];
     if(street.value == ""){
-      street.className = "invalid";
+      street.className = "invalid2";
       return false;
     }
-    street.addEventListener("change",function(){ street.classList.remove("invalid") });
+    street.addEventListener("change",function(){ street.classList.remove("invalid2") });
 
     //postal code validation
     var postalCode = document.forms["shipForm"]["postalCode"];
     if(postalCode.value == ""){
-      postalCode.className = "invalid";
+      postalCode.className = "invalid2";
       return false;
     }
-    postalCode.addEventListener("change",function(){ postalCode.classList.remove("invalid") });
+    postalCode.addEventListener("change",function(){ postalCode.classList.remove("invalid2") });
 
     //phone number validation
     var phoneNum = document.forms["shipForm"]["phoneNum"];
     if(phoneNum.value == ""){
-      phoneNum.className = "invalid";
+      phoneNum.className = "invalid2";
       return false;
     }
-    phoneNum.addEventListener("change",function(){ phoneNum.classList.remove("invalid") });
+    phoneNum.addEventListener("change",function(){ phoneNum.classList.remove("invalid2") });
 
-    //email validation
     //email validation(see if it has @)
     var email = document.forms["shipForm"]["email"];
     var hasAT = false;
@@ -79,4 +78,10 @@ function checkShipping(){
       alert("Invalid Email")
       return false;
     }
+
+    //Write javascript to make payment come up andshipment disappear
+    //add hide class to payment
+      //document.getElementById("shipment").classList.add("hide");
+      //document.getElementById("payment").classList.remove("hide");
+
   }

@@ -61,7 +61,13 @@ input.button{
   width: 55%;
   border:1px solid #36545f;
 }
-#passCri{
+.invalid2{
+  background-color: red;
+  float: right;
+  width: 60%;
+  border:1px solid #36545f;
+}
+.notes{
   font-size: 50%;
   clear:both;
 }

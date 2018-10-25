@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../css/form.css">
     <link rel="stylesheet" type="text/css" href="../css/checkout.css">
-		<script type="text/javascript" src="../script/checkout.js"></script>
+		<script type="text/javascript" src="../script/checkout-shipment.js"></script>
+    <script type="text/javascript" src="../script/checkout-payment.js"></script>
   </head>
 
   <body>
@@ -36,59 +37,63 @@
     <div id="flex-container">
       <div id="formBox">
         <!--Shipment Form-->
-        <form name="shipForm" method="get" action="http://www.randyconnolly.com/tests/process.php" id="shipForm">
+        <form name="shipForm" method="get" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkShipping()" id="shipForm">
           <fieldset>
             <legend>Shipment</legend>
-            <div id="name">
-              <div>
-                <label>First Name:</label>
-                <input type="text" name="fname" class="box2"/>
+            <div id="shipment">
+              <div id="name">
+                <div>
+                  <label>First Name:</label>
+                  <input type="text" name="fName" class="box"/>
+                </div>
+                <div>
+                  <label>Last Name:</label>
+                  <input type="text" name="lName" class="box"/>
+                </div>
               </div>
-              <div>
-                <label>Last Name:</label>
-                <input type="text" name="lname" class="box2"/>
+              <div id="address">
+                <div>
+                  <label>Country:</label>
+                  <input type="text" name="country" class="box"/>
+                </div>
+                <div>
+                  <label>Province:</label>
+                  <input type="text" name="province" class="box"/>
+                </div>
+                <div>
+                  <label>Town:</label>
+                  <input type="text" name="town" class="box"/>
+                </div>
+                <div>
+                  <label>Street:</label>
+                  <input type="text" name="street" class="box"/>
+                </div>
+                <div>
+                  <label>Postal Code:</label>
+                  <input type="text" name="postalCode" class="box"/>
+                </div>
+                <p class="notes">Format: A#A #A#</p>
               </div>
-            </div>
-            <div id="address">
-              <div>
-                <label>Country:</label>
-                <input type="text" name="country" class="box2"/>
+              <div id="contactInfo">
+                <div>
+                  <label>Phone Number:</label>
+                  <input type="text" name="phoneNum" class="box"/>
+                </div>
+                <p class="notes">Format: X-XXX-XXX-XXXX</p>
+                <div>
+                  <label>Email:</label>
+                  <input type="text" name="email" class="box"/>
+                </div>
               </div>
-              <div>
-                <label>Province:</label>
-                <input type="text" name="province" class="box2"/>
+              <div id="shipmentMethod">
+                <label>Select Delivery Method</label><br/>
+                <input type="radio" name="delivery" value="standard" checked="checked">Standard<br/>
+                <input type="radio" name="delivery" value="drone">Drone<br/>
+                <input type="radio" name="delivery" value="Instantaneous">Instantaneous
               </div>
-              <div>
-                <label>Town:</label>
-                <input type="text" name="town" class="box2"/>
+              <div class="centered">
+                <input type="submit" value="Continue To Payment" class="button" />
               </div>
-              <div>
-                <label>Street:</label>
-                <input type="text" name="street" class="box2"/>
-              </div>
-              <div>
-                <label>Postal Code:</label>
-                <input type="text" name="postalCode" class="box2"/>
-              </div>
-            </div>
-            <div id="contactInfo">
-              <div>
-                <label>Phone Number:</label>
-                <input type="text" name="phoneNum" class="box2"/>
-              </div>
-              <div>
-                <label>Email:</label>
-                <input type="text" name="email" class="box2"/>
-              </div>
-            </div>
-            <div id="shipmentMethod">
-              <label>Select Delivery Method</label><br/>
-              <input type="radio" name="delivery" value="standard">Standard<br/>
-              <input type="radio" name="delivery" value="drone">Drone<br/>
-              <input type="radio" name="delivery" value="Instantaneous">Instantaneous
-            </div>
-            <div class="centered">
-              <input type="button" value="Continue To Payment" class="button"/>
             </div>
           </fieldset>
         </form>
@@ -96,33 +101,36 @@
         <form name="payForm" method="get" action="http://www.randyconnolly.com/tests/process.php" id="payForm">
           <fieldset>
             <legend>Payment</legend>
-            <div>
-              <label>Payment Method:</label>
-              <select id="payMethod">
-                <option>Visa</option>
-                <option>Mastercard</option>
-                <option>American Express</option>
-                <option>Debit</option>
-              </select>
-            </div>
-            <div>
-              <label>Name On Card:</label>
-              <input type="text" name="cardName" class="box2"/>
-            </div>
-            <div>
-              <label>Card Number:</label>
-              <input type="text" name="cardNumber" class="box2"/>
-            </div>
-            <div>
-              <label>Expiration Date:</label>
-              <input type="month" name="exDate" class="box2"/>
-            </div>
-            <div>
-              <label>Security Code:</label>
-              <input type="text" name="secCode" class="box2"/>
-            </div>
-            <div class="centered">
-              <input type="button" value="Confirm Checkout" class="button"/>
+            <div id="payment">
+              <div>
+                <label>Payment Method:</label>
+                <select id="payMethod">
+                  <option>Visa</option>
+                  <option>Mastercard</option>
+                  <option>American Express</option>
+                  <option>Debit</option>
+                </select>
+              </div>
+              <div>
+                <label>Name On Card:</label>
+                <input type="text" name="cardName" class="box"/>
+              </div>
+              <div>
+                <label>Card Number:</label>
+                <input type="text" name="cardNumber" class="box"/>
+              </div>
+              <div>
+                <label>Expiration Date:</label>
+                <input type="month" name="exDate" class="box"/>
+              </div>
+              <div>
+                <label>Security Code:</label>
+                <input type="text" name="secCode" class="box"/>
+              </div>
+              <p class="notes">Format: XXX</p>
+              <div class="centered">
+                <input type="button" value="Confirm Checkout" class="button"/>
+              </div>
             </div>
           </fieldset>
       </form>

@@ -37,6 +37,10 @@ h2{
 }
 #payMethod{
   float: right;
-  width: 60%;
+  width: 55%;
   border:1px solid #36545f;
+}
+/*make payment appear after shipping complete & make shipping disapear after shipping complete*/
+.hide{
+  display:none;
 }
