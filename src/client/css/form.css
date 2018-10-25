@@ -1,16 +1,18 @@
-body{background-color: #e6e6e6;}
-
+body{
+  background-color: #36454f;
+}
 form{
   font-family: Arial, Helvetica, "Times New Roman";
   color: #36454f;
   margin: 3em auto 3em auto;
   width: 60%;
-  border: 4px solid #36545f;
-  background-color: #e6e6e6;
+  border: 4px solid white;
+  background-color: #710627;
 }
 
 legend {
-  background-color: #36454f;
+  background-color: #521C25;
+  border-bottom: 4px solid white;
   width: 100%;
   padding: 0.5em;
   color:white;
@@ -41,17 +43,15 @@ div label {
 input.box{
   float: right;
   width: 55%;
-  border:1px solid #36545f;
-}
-input.box2{
-  float: right;
-  width: 60%;
-  border:1px solid #36545f;
+  border:2px solid #36454f;
+  background-color: white;
+  color: #36454f;
 }
 input.button{
-  background-color: #36545f;
+  background-color: #521C25;
   color:white;
   padding: .25em;
+  border: 1px solid white;
 }
 #eInput, #pInput{ width: 75%;}
 
@@ -59,13 +59,13 @@ input.button{
   background-color: red;
   float: right;
   width: 55%;
-  border:1px solid #36545f;
+  border:1px solid #521C25;
 }
 .invalid2{
   background-color: red;
   float: right;
-  width: 60%;
-  border:1px solid #36545f;
+  width: 55%;
+  border:1px solid #521C25;
 }
 .notes{
   font-size: 50%;
