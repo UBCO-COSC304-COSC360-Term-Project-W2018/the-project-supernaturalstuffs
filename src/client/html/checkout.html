@@ -31,134 +31,136 @@
   			</ul>
   		</nav>
   	</header>
-    <!-- page content -->
 
-    <!--Checkout Forms-->
-    <div id="flex-container">
-      <div id="formBox">
-        <!--Shipment Form-->
-        <form name="shipForm" method="get" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkShipping()" id="shipForm">
-          <fieldset>
-            <legend>Shipment</legend>
-            <div id="shipment">
-              <div id="name">
-                <div>
-                  <label>First Name:</label>
-                  <input type="text" name="fName" class="box"/>
+    <main>
+      <!-- page content -->
+      <!--Checkout Forms-->
+      <div id="flex-container">
+        <div id="formBox">
+          <!--Shipment Form-->
+          <form name="shipForm" method="get" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkShipping()" id="shipForm">
+            <fieldset>
+              <legend>Shipment</legend>
+              <div id="shipment">
+                <div id="name">
+                  <div>
+                    <label>First Name:</label>
+                    <input type="text" name="fName" class="box"/>
+                  </div>
+                  <div>
+                    <label>Last Name:</label>
+                    <input type="text" name="lName" class="box"/>
+                  </div>
                 </div>
-                <div>
-                  <label>Last Name:</label>
-                  <input type="text" name="lName" class="box"/>
+                <div id="address">
+                  <div>
+                    <label>Country:</label>
+                    <input type="text" name="country" class="box"/>
+                  </div>
+                  <div>
+                    <label>Province:</label>
+                    <input type="text" name="province" class="box"/>
+                  </div>
+                  <div>
+                    <label>Town:</label>
+                    <input type="text" name="town" class="box"/>
+                  </div>
+                  <div>
+                    <label>Street:</label>
+                    <input type="text" name="street" class="box"/>
+                  </div>
+                  <div>
+                    <label>Postal Code:</label>
+                    <input type="text" name="postalCode" class="box"/>
+                  </div>
+                  <p class="notes">Format: A#A #A#</p>
+                </div>
+                <div id="contactInfo">
+                  <div>
+                    <label>Phone Number:</label>
+                    <input type="text" name="phoneNum" class="box"/>
+                  </div>
+                  <p class="notes">Format: X-XXX-XXX-XXXX</p>
+                  <div>
+                    <label>Email:</label>
+                    <input type="text" name="email" class="box"/>
+                  </div>
+                </div>
+                <div id="shipmentMethod">
+                  <label>Select Delivery Method</label><br/>
+                  <input type="radio" name="delivery" value="standard ($0.00)" checked="checked">Standard<br/>
+                  <input type="radio" name="delivery" value="drone ($100.00)">Drone<br/>
+                  <input type="radio" name="delivery" value="Instantaneous ($250.00)">Instantaneous
+                </div>
+                <div class="centered">
+                  <input type="submit" value="Continue To Payment" class="button" />
                 </div>
               </div>
-              <div id="address">
+            </fieldset>
+          </form>
+          <!--Payment Form-->
+          <form name="payForm" method="get" action="http://www.randyconnolly.com/tests/process.php" id="payForm" onsubmit="return checkPayment()">
+            <fieldset>
+              <legend>Payment</legend>
+              <div id="payment">
                 <div>
-                  <label>Country:</label>
-                  <input type="text" name="country" class="box"/>
+                  <label>Payment Method:</label>
+                  <select id="payMethod">
+                    <option>Visa</option>
+                    <option>Mastercard</option>
+                    <option>American Express</option>
+                  </select>
                 </div>
                 <div>
-                  <label>Province:</label>
-                  <input type="text" name="province" class="box"/>
+                  <label>Name On Card:</label>
+                  <input type="text" name="cardName" class="box"/>
                 </div>
                 <div>
-                  <label>Town:</label>
-                  <input type="text" name="town" class="box"/>
+                  <label>Card Number:</label>
+                  <input type="text" name="cardNumber" class="box"/>
                 </div>
                 <div>
-                  <label>Street:</label>
-                  <input type="text" name="street" class="box"/>
+                  <label>Expiration Date:</label>
+                  <input type="month" name="exDate" class="box"/>
                 </div>
                 <div>
-                  <label>Postal Code:</label>
-                  <input type="text" name="postalCode" class="box"/>
+                  <label>Security Code:</label>
+                  <input type="text" name="secCode" class="box"/>
                 </div>
-                <p class="notes">Format: A#A #A#</p>
+                <p class="notes">Format: XXX</p>
+                <div class="centered">
+                  <input type="submit" value="Confirm Checkout" class="button"/>
+                </div>
               </div>
-              <div id="contactInfo">
-                <div>
-                  <label>Phone Number:</label>
-                  <input type="text" name="phoneNum" class="box"/>
-                </div>
-                <p class="notes">Format: X-XXX-XXX-XXXX</p>
-                <div>
-                  <label>Email:</label>
-                  <input type="text" name="email" class="box"/>
-                </div>
-              </div>
-              <div id="shipmentMethod">
-                <label>Select Delivery Method</label><br/>
-                <input type="radio" name="delivery" value="standard ($0.00)" checked="checked">Standard<br/>
-                <input type="radio" name="delivery" value="drone ($100.00)">Drone<br/>
-                <input type="radio" name="delivery" value="Instantaneous ($250.00)">Instantaneous
-              </div>
-              <div class="centered">
-                <input type="submit" value="Continue To Payment" class="button" />
-              </div>
-            </div>
-          </fieldset>
+            </fieldset>
         </form>
-        <!--Payment Form-->
-        <form name="payForm" method="get" action="http://www.randyconnolly.com/tests/process.php" id="payForm" onsubmit="return checkPayment()">
-          <fieldset>
-            <legend>Payment</legend>
-            <div id="payment">
-              <div>
-                <label>Payment Method:</label>
-                <select id="payMethod">
-                  <option>Visa</option>
-                  <option>Mastercard</option>
-                  <option>American Express</option>
-                </select>
-              </div>
-              <div>
-                <label>Name On Card:</label>
-                <input type="text" name="cardName" class="box"/>
-              </div>
-              <div>
-                <label>Card Number:</label>
-                <input type="text" name="cardNumber" class="box"/>
-              </div>
-              <div>
-                <label>Expiration Date:</label>
-                <input type="month" name="exDate" class="box"/>
-              </div>
-              <div>
-                <label>Security Code:</label>
-                <input type="text" name="secCode" class="box"/>
-              </div>
-              <p class="notes">Format: XXX</p>
-              <div class="centered">
-                <input type="submit" value="Confirm Checkout" class="button"/>
-              </div>
-            </div>
-          </fieldset>
-      </form>
-      </div>
-
-      <div id="summary">
-        <h2>Summary</h2>
-        <div class="summary1">
-          <p class="money">Subtotal:</p>
-          <p class="money">Delivery:</p>
-          <p class="money">Taxes:</p>
-          <p class="total">Total:</p>
-        </div>
-        <div class="summary2">
-          <p class="money">$2000.00 </p>
-          <p class="money">$100.00 </p>
-          <p class="money">$252.00</p>
-          <p class="total">$2352.00</p>
         </div>
 
-        <div class="centered">
-          <input type="button" onclick="location.href='products.html'" value="Continue Shopping" class="button"/>
+        <div id="summary">
+          <h2>Summary</h2>
+          <div class="summary1">
+            <p class="money">Subtotal:</p>
+            <p class="money">Delivery:</p>
+            <p class="money">Taxes:</p>
+            <p class="total">Total:</p>
+          </div>
+          <div class="summary2">
+            <p class="money">$2000.00 </p>
+            <p class="money">$100.00 </p>
+            <p class="money">$252.00</p>
+            <p class="total">$2352.00</p>
+          </div>
+
+          <div class="centered">
+            <input type="button" onclick="location.href='products.html'" value="Continue Shopping" class="button"/>
+          </div>
+        </div>
+
+        <div id="shopCart">
+
         </div>
       </div>
-
-      <div id="shopCart">
-
-      </div>
-    </div>
+    </main>
     <footer>
       <div id="topF">
   			<div id="detailFooter">
