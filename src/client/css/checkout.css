@@ -5,9 +5,11 @@
 }
 #formBox{
   width:50%;
+  margin-top: 4em;
+  margin-bottom: 4em;
 }
 #payForm, #shipForm{
-  margin: 1.5em auto 1.5em 5%;
+  margin: 1.5em auto 1.5em 6%;
   width:100%;
 }
 #summary{
@@ -15,11 +17,12 @@
   padding-bottom: :0.5em;
   border: 4px solid white;
   width:100%;
-  height: 14em;
+  height: 15em;
   font-weight: bold;
   background-color: #710627;
 }
 h2{
+  font-size: 125%;
   background-color: #521C25;
   border-bottom: 4px solid white;
   color:white;
@@ -67,7 +70,7 @@ h2{
   padding-bottom: :0.5em;
   border: 4px solid white;
   width:100%;
-  height:32.5em;
+  height:31.5em;
   font-weight: bold;
   background-color: #710627;
 }
@@ -90,17 +93,11 @@ h2{
   padding:0 0.5em 0 0.5em;
 }
 #shoppingcart input.button{
+  clear: left;
   margin-top: 1em;
-  margin-left: 8em;
+  margin-left: auto;
 }
 
-#shoppingcart h2 {
-  background-color: #521C25;
-  border-bottom: 4px solid white;
-  color:white;
-  padding:0.5em;
-  text-align: center;
-}
 #shoppingcart p {
   width: 65%;
   padding: .25em;
@@ -108,6 +105,5 @@ h2{
 
 #right-side{
   width: 40%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 4em auto 4em auto;
 }

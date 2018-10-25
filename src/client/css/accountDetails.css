@@ -10,7 +10,7 @@
   float: left;
   background-color: #710627;
   width: 54%;
-  height:39em;
+  height:56em;
   border: 4px solid white;
   margin-left: 1em;
 }
@@ -24,7 +24,7 @@
   padding-bottom: :0.5em;
   border: 4px solid white;
   width:40%;
-  height:39em;
+  height:56em;
   font-weight: bold;
   background-color: #710627;
 }
@@ -48,12 +48,13 @@
 }
 #shoppingcart input.button{
   margin-top: 1em;
-  margin-left: 8em;
+  margin-left: auto;
 }
 
 h2 {
   background-color: #521C25;
   border-bottom: 4px solid white;
+  font-size: 125%;
   color:white;
   padding:0.5em;
   text-align: center;
