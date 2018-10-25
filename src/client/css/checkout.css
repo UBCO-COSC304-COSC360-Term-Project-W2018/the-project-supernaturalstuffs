@@ -5,6 +5,7 @@
 }
 #formBox{
   width:50%;
+  margin: 4em auto 4em 0;
 }
 #payForm, #shipForm{
   margin: 1.5em auto 1.5em 5%;
@@ -108,6 +109,5 @@ h2{
 
 #right-side{
   width: 40%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 4em auto 4em 1.5em;
 }
