@@ -6,6 +6,7 @@
 
 #container {
   width: 60%;
+  margin-bottom: 4em;
 }
 #shoppingcart {
   padding: .5em;
@@ -19,6 +20,7 @@
   margin-top: 1em;
   padding: 1em;
   height: 200px;
+  border: solid 1px white;
 }
 
 .image {
@@ -45,17 +47,16 @@
   margin-top: 1em;
   background-color: #710627;
   height: 200px;
+  border: solid 1px white;
 }
 
 .button {
   padding: 1em;
   background-color: #1E262C;
-  border-left: solid 2px black;
-  border-bottom: solid 2px black;
   font-size: 90%;
   color: white;
   border: none;
-  align-items: bottom;
+  bottom: 0px;
 }
 
 h1 {
