@@ -13,8 +13,10 @@ header h1{
 li:hover, a:hover{
 	background: #014bc1;
 }
-a {
+li a {
 	text-decoration: none;
+	width: 100%;
+	height: 100%;
 }
 main{
 	flex: 1;

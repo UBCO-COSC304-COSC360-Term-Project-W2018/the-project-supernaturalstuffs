@@ -3,9 +3,6 @@
 	background: #1E262C;
 	color: white;
 }
-li:hover, a:hover{
-	background: #014bc1;
-}
 a {
 	text-decoration: none;
 }
