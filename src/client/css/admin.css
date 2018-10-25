@@ -1,4 +1,7 @@
 /*Admin CSS*/
+body{
+	background-color: #1E262C;
+}
 #box{
 	display: flex;
 	flex-direction: row;
