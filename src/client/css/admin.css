@@ -54,6 +54,7 @@ body{
 }
 #Orders *{
 	background: #710627;
+	
 }
 #Orders h2{
 	background: #521C25;
@@ -64,6 +65,9 @@ body{
 	background: white;
 	color: black;
 	display: block;
+}
+#box p{
+	padding: 0.1em;
 }
 .catagories{
 	padding: 1em;
