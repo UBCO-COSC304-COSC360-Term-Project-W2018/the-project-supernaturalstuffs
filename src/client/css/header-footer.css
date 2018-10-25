@@ -10,6 +10,12 @@ header h1{
 	padding-left: 0.5em;
 	border-bottom: white 1px solid;
 }
+li:hover, a:hover{
+	background: #014bc1;
+}
+a {
+	text-decoration: none;
+}
 #search-cart{
 	float: right;
 	position: absolute;
@@ -89,6 +95,7 @@ footer{
 .socials{
 	padding: 0.1em;
 	padding-top: 1em;
+	padding-bottom: 0.5em;
 }
 .socials img{
 	padding: 0;
@@ -101,6 +108,7 @@ footer{
 	padding: 1em;
 	background: #521C25;
 	border-top: white 1px solid;
+	font-size: 75%;
 }
 #bottom *{
 	background: #521C25;

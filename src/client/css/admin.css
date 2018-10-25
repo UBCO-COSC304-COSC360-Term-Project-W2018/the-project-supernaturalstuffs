@@ -1,16 +1,44 @@
 /*Admin CSS*/
+*{
+	background: #1E262C;
+	color: white;
+}
 #box{
-	display: felx;
+	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	background: blue;
+	background: #1E262C;
+	justify-content: center;
+	align-items: stretch;
+	margin: 7em;
 }
 #Users{
 	flex: 0 1 auto;
+	border: white 1px solid;
+	width: 30%;
+}
+#Users h2{
+	background: #710627;
+	border-bottom: white solid 1px;
+	padding: 1em;
 }
 #Products{
 	flex: 0 1 auto;
+	border: white 1px solid;
+	width: 30%;
+}
+#Products h2{
+	background: #710627;
+	border-bottom: white solid 1px;
+	padding: 1em;
 }
 #Orders{
 	flex: 0 1 auto;
+	border: white 1px solid;
+	width: 30%;
+}
+#Orders h2{
+	background: #710627;
+	border-bottom: white solid 1px;
+	padding: 1em;
 }
