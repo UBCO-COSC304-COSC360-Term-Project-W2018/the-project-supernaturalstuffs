@@ -1,0 +1,16 @@
+/*Admin CSS*/
+#box{
+	display: felx;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background: blue;
+}
+#Users{
+	flex: 0 1 auto;
+}
+#Products{
+	flex: 0 1 auto;
+}
+#Orders{
+	flex: 0 1 auto;
+}
