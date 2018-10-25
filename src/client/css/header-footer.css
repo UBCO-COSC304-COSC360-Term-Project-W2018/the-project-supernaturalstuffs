@@ -8,6 +8,7 @@ header h1{
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	padding-left: 0.5em;
+	border-bottom: white 1px solid;
 }
 #search-cart{
 	float: right;
@@ -71,6 +72,7 @@ footer{
 	flex-shrink: 0;
 	align-self: flex-end;
 	width: 100%;
+	font-size: 75%;
 }
 #topF{
 	border-top: white 1px solid;
@@ -84,11 +86,13 @@ footer{
 #topF *{
 	background: #710627;
 }
-#socials{
+.socials{
 	padding: 0.1em;
+	padding-top: 1em;
 }
-#socials img{
-	padding: 0.5em;
+.socials img{
+	padding: 0;
+	height: 1.5em;
 }
 #bottom{
 	clear: both;
