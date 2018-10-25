@@ -14,59 +14,35 @@ body{
 	background: #1E262C;
 	justify-content: center;
 	align-items: stretch;
-	margin-top: 7em;
-	margin-bottom: 1em;
-	flex-wrap: none;
+	margin: 7em;
 }
 #Users{
 	flex: 0 1 auto;
 	border: white 1px solid;
-	background: #710627;
-	width: fit-content;
-}
-#Users *{
-	background: #710627;
+	width: 30%;
 }
 #Users h2{
-	background: #521C25;
+	background: #710627;
 	border-bottom: white solid 1px;
 	padding: 1em;
 }
 #Products{
 	flex: 0 1 auto;
 	border: white 1px solid;
-	background: #710627;
-	width: fit-content;
-}
-#Products *{
-	background: #710627;
+	width: 30%;
 }
 #Products h2{
-	background: #521C25;
+	background: #710627;
 	border-bottom: white solid 1px;
 	padding: 1em;
 }
 #Orders{
 	flex: 0 1 auto;
 	border: white 1px solid;
-	background: #710627;
-	width: fit-content;
+	width: 30%;
 }
-#Orders *{
-	background: #710627;
-}
-	
 #Orders h2{
-	background: #521C25;
+	background: #710627;
 	border-bottom: white solid 1px;
 	padding: 1em;
 }
-#box input.search{
-	background: white;
-	color: black;
-	display: block;
-}
-.catagories{
-	padding: 1em;
-}
-
