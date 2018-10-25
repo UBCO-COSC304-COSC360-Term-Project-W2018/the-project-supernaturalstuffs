@@ -43,9 +43,31 @@ input.box{
   width: 55%;
   border:1px solid #36545f;
 }
+input.box2{
+  float: right;
+  width: 60%;
+  border:1px solid #36545f;
+}
 input.button{
   background-color: #36545f;
   color:white;
   padding: .25em;
 }
 #eInput, #pInput{ width: 75%;}
+
+.invalid{
+  background-color: red;
+  float: right;
+  width: 55%;
+  border:1px solid #36545f;
+}
+.invalid2{
+  background-color: red;
+  float: right;
+  width: 60%;
+  border:1px solid #36545f;
+}
+.notes{
+  font-size: 50%;
+  clear:both;
+}

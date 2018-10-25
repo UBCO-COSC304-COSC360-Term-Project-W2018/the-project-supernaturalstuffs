@@ -35,3 +35,12 @@ h2{
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
+#payMethod{
+  float: right;
+  width: 55%;
+  border:1px solid #36545f;
+}
+/*make payment appear after shipping complete & make shipping disapear after shipping complete*/
+.hide{
+  display:none;
+}
