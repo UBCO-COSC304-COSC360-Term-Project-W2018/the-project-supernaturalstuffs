@@ -11,9 +11,9 @@ header h1{
 	border-bottom: white 1px solid;
 }
 li:hover, a:hover{
-	background: #014bc1;
+	background: #521C25;
 }
-a {
+li a {
 	text-decoration: none;
 }
 main{
