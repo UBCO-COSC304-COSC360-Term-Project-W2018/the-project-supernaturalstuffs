@@ -29,6 +29,14 @@ main{
 	height: 1.5em;
 	width: 1.5em;
 }
+input.search{
+	background: white;
+	color: black;
+	display: block;
+	position: absolute;
+	top: 0.7em;
+	right: 4.5em;
+}
 #cart{
 	height: 2em;
 	width: 2em;
