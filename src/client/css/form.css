@@ -1,9 +1,9 @@
 body{
-  background-color: #36454f;
+  background-color: #1E262C;
 }
 form{
   font-family: Arial, Helvetica, "Times New Roman";
-  color: #36454f;
+  color: #1E262C;
   margin: 3em auto 3em auto;
   width: 60%;
   border: 4px solid white;
@@ -43,9 +43,9 @@ div label {
 input.box{
   float: right;
   width: 55%;
-  border:2px solid #36454f;
+  border:2px solid #1E262C;
   background-color: white;
-  color: #36454f;
+  color: #1E262C;
 }
 input.button{
   background-color: #521C25;
