@@ -1,6 +1,6 @@
 /*Admin CSS*/
 #box{
-	display: felx;
+	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	background: blue;

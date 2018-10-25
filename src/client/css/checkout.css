@@ -29,7 +29,7 @@ h2{
 #summary .money{
   padding: 0.5em;
 }
-#total{
+.total{
   border-top: 2px dotted white;
   padding-top: 1em;
   padding-bottom: 0.5em;
@@ -47,4 +47,14 @@ h2{
 /*make payment appear after shipping complete & make shipping disapear after shipping complete*/
 .hide{
   display:none;
+}
+.summary1{
+  width:65%;
+  float: left;
+}
+.summary2{
+  float: left;
+  width:25%;
+  margin-left: 5%;
+  text-align: right;
 }
