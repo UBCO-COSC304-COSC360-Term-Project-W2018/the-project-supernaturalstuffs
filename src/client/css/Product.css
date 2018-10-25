@@ -80,3 +80,9 @@ main{
 	 width: 10em;
 	 border: white solid 1px;
 }
+.addCart{
+	background: white;
+	color: black;
+	padding: 0.5em;
+	margin-top: 0.5em;
+}
