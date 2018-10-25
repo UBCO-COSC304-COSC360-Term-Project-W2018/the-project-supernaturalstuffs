@@ -1,0 +1,12 @@
+/*Product CSS*/
+#sortButton{
+	float: right;
+}
+#box{
+	float: right;
+	display: flex;
+	flex-direction: row;
+}
+#productBox{
+
+}

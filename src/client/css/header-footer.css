@@ -8,6 +8,7 @@ header h1{
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	padding-left: 0.5em;
+	border-bottom: white 1px solid;
 }
 #search-cart{
 	float: right;
@@ -54,4 +55,58 @@ header li a{
 #login-signup{
 	float: right;
 	border-left: white solid 1px;
+}
+/*footer styling*/
+body{
+	position: relative;
+	margin: 0;
+	width: 100%;
+	display: flex; /*needed for footer*/
+	flex-direction: column;
+	min-height: 100vh;
+}
+main {
+	flex: 1 0 auto;
+}
+footer{
+	flex-shrink: 0;
+	align-self: flex-end;
+	width: 100%;
+	font-size: 75%;
+}
+#topF{
+	border-top: white 1px solid;
+	border-left: white 1px solid;
+	border-right: white 1px solid;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	background: #710627;
+}
+#topF *{
+	background: #710627;
+}
+.socials{
+	padding: 0.1em;
+	padding-top: 1em;
+}
+.socials img{
+	padding: 0;
+	height: 1.5em;
+}
+#bottom{
+	clear: both;
+	display: flex;
+	flex-direction: row;
+	padding: 1em;
+	background: #521C25;
+	border-top: white 1px solid;
+}
+#bottom *{
+	background: #521C25;
+}
+	
+#bottom p{
+	padding-right: 2em;
+	padding-right: 2em;
 }
