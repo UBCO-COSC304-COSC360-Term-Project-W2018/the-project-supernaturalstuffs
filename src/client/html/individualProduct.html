@@ -5,6 +5,7 @@
     <title></title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
+    <link rel="stylesheet" href="../css/individualProduct.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 		<!--<script src="script.js"></script>-->
   </head>
@@ -29,9 +30,19 @@
  		    </nav>
     </header>
 
-    //item name, desciption, quantity, price, add to cart
-    <input class ="button" type="button" name="add" value="Add to Cart" onclick="location.href='products.html'"/>
-
+    <div id ="flex">
+      <div id="productbox">
+      <img class="image" src="../images/ghostbusters-logo.jpg" alt="product image"/>
+        <div id="productinfo">
+          <h1>Product Name</h1>
+          <p>Description</p>
+          <p>Quantity: </p>
+          <p>Price: </p>
+          <input class ="button" type="button" name="wish" value="Add to Wishlist" onclick="location.href="/>
+          <input class ="button" type="button" name="add" value="Add to Cart" onclick="location.href="/>
+        </div>
+      </div>
+    </div>
 
     <footer>
     </footer>

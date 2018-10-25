@@ -1,0 +1,45 @@
+body {
+  background-color: #1E262C;
+}
+
+#flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#productbox {
+    background-color: #710627;
+    color: white;
+    width: 60%;
+    margin: 2em;
+    padding: 1em;
+    height: 400px;
+}
+
+.image {
+  height: 200px;
+  width: 200px;
+  float: left;
+  margin-right: 1em;
+}
+
+#productinfo {
+  overflow: auto
+  padding: 1em;
+  height: inherit;
+}
+
+h1, p {
+  padding: .5em;
+}
+
+.button {
+  padding: 1em;
+  background-color: #1E262C;
+  border-left: solid 2px black;
+  border-bottom: solid 2px black;
+  font-size: 90%;
+  color: white;
+  border: none;
+}

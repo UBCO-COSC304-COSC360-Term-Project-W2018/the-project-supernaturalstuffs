@@ -55,7 +55,7 @@
   font-size: 90%;
   color: white;
   border: none;
-  align-items: bottom;
+  bottom: 0px;
 }
 
 h1 {
