@@ -71,10 +71,12 @@ main{
 	background: #710627;
 	padding: 1em;
 	margin: 1em;
+	border: white solid 1px;
 }
 .productBox p{
 	padding-top: 0.5em;
 }
 .productBox img{
 	 width: 10em;
+	 border: white solid 1px;
 }
