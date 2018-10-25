@@ -10,6 +10,15 @@ header h1{
 	padding-left: 0.5em;
 	border-bottom: white 1px solid;
 }
+li:hover, a:hover{
+	background: #521C25;
+}
+li a {
+	text-decoration: none;
+}
+main{
+	flex: 1;
+}
 #search-cart{
 	float: right;
 	position: absolute;
@@ -30,6 +39,8 @@ header nav{
 	padding: 0;
 	margin: 0;
 	background: #710627;
+	display: flex;
+	flex-direction: row;
 }
 header ul{
 	list-style-type: none;
@@ -53,8 +64,8 @@ header li a{
 	background: #710627;
 }
 #login-signup{
-	float: right;
-	border-left: white solid 1px;
+	margin-left: auto;
+	border-left: white 1px solid;
 }
 /*footer styling*/
 body{
@@ -85,10 +96,12 @@ footer{
 }
 #topF *{
 	background: #710627;
+	flex: 1;
 }
 .socials{
 	padding: 0.1em;
 	padding-top: 1em;
+	padding-bottom: 0.5em;
 }
 .socials img{
 	padding: 0;
@@ -101,11 +114,12 @@ footer{
 	padding: 1em;
 	background: #521C25;
 	border-top: white 1px solid;
+	font-size: 75%;
 }
 #bottom *{
 	background: #521C25;
 }
-	
+
 #bottom p{
 	padding-right: 2em;
 	padding-right: 2em;
