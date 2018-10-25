@@ -16,6 +16,9 @@ li:hover, a:hover{
 a {
 	text-decoration: none;
 }
+main{
+	flex: 1;
+}
 #search-cart{
 	float: right;
 	position: absolute;
@@ -91,6 +94,7 @@ footer{
 }
 #topF *{
 	background: #710627;
+	flex: 1;
 }
 .socials{
 	padding: 0.1em;
