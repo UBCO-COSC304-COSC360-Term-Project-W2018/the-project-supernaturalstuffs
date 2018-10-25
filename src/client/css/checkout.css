@@ -14,7 +14,7 @@
   margin: 1.5em auto 1.5em auto;
   padding-bottom: :0.5em;
   border: 4px solid white;
-  width:40%;
+  width:100%;
   height: 14em;
   font-weight: bold;
   background-color: #710627;
@@ -57,4 +57,57 @@ h2{
   width:25%;
   margin-left: 5%;
   text-align: right;
+}
+
+/*shopping cart*/
+
+#shoppingcart {
+  overflow: auto;
+  margin: 1.5em auto 1.5em auto;
+  padding-bottom: :0.5em;
+  border: 4px solid white;
+  width:100%;
+  height:32.5em;
+  font-weight: bold;
+  background-color: #710627;
+}
+#shoppingcart #productinfo{
+  margin-left: 11em;
+  margin-bottom: 1em;
+}
+#shoppingcart .items {
+  border-bottom: 2px dotted white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  overflow: auto;
+  height: 10em;
+}
+
+#shoppingcart .image {
+  height: 8em;
+  width: 8em;
+  float: left;
+  padding:0 0.5em 0 0.5em;
+}
+#shoppingcart input.button{
+  margin-top: 1em;
+  margin-left: 8em;
+}
+
+#shoppingcart h2 {
+  background-color: #521C25;
+  border-bottom: 4px solid white;
+  color:white;
+  padding:0.5em;
+  text-align: center;
+}
+#shoppingcart p {
+  width: 65%;
+  padding: .25em;
+}
+
+#right-side{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }
