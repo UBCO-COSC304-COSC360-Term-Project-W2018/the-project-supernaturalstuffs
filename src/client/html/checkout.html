@@ -38,7 +38,7 @@
       <div id="flex-container">
         <div id="formBox">
           <!--Shipment Form-->
-          <form name="shipForm" method="get" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkShipping()" id="shipForm">
+          <form name="shipForm" method="post" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkShipping()" id="shipForm">
             <fieldset>
               <legend>Shipment</legend>
               <div id="shipment">
@@ -99,7 +99,7 @@
             </fieldset>
           </form>
           <!--Payment Form-->
-          <form name="payForm" method="get" action="http://www.randyconnolly.com/tests/process.php" id="payForm" onsubmit="return checkPayment()">
+          <form name="payForm" method="post" action="http://www.randyconnolly.com/tests/process.php" id="payForm" onsubmit="return checkPayment()">
             <fieldset>
               <legend>Payment</legend>
               <div id="payment">
