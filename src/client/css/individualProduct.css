@@ -10,6 +10,7 @@ body {
 
 #productbox {
     background-color: #710627;
+    border: solid 1px white;
     color: white;
     width: 60%;
     margin: 2em;
@@ -37,8 +38,6 @@ h1, p {
 .button {
   padding: 1em;
   background-color: #1E262C;
-  border-left: solid 2px black;
-  border-bottom: solid 2px black;
   font-size: 90%;
   color: white;
   border: none;
