@@ -1,6 +1,6 @@
 /*home body css*/
 *{
-	background: #36454f;
+	background: #1E262C;
 	color: white;
 }
 li:hover, a:hover{
@@ -16,7 +16,10 @@ a {
 }
 #about h2{
 	font-size: 150%;
-	padding-bottom: 0.5em;
+	margin-bottom: 0.5em;
+	color: white;
+	text-shadow: -1px 0 #710627, 0 1px #710627, 1px 0 #710627, 0 -1px #710627;
+	border-bottom: 2px solid #710627;
 }
 #about img{
 	width: 100%;
@@ -24,18 +27,36 @@ a {
 /*product side bar*/
 #product-sidebar{
 	float: right;
-	padding: 1em;
 	border: white 1px solid;
 	margin: 1em;
 	height: 100%;
-	width: 10%;
+	width: 15%;
+	background: #710627;
 }
+#productSidebarOptions{
+	padding-bottom: 1em;
+}
+#product-sidebar *{
+	background: #710627;
+}	
 #product-sidebar h3{
 	font-size: 125%;
 	padding-bottom: 1em;
-	
+	text-shadow: -1px 0 #710627, 0 1px #710627, 1px 0 #710627, 0 -1px #710627;
+	background: #521C25;
+	padding: 1em;
+	border-bottom: white 1px solid;
+	border-top: white 1px solid;
 }
 #product-sidebar h4{
 	font-size: 115%;
 	padding-top: 0.5em;
+	background: #710627;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+#product-sidebar p{
+	background: #710627;
+	padding-left: 1em;
+	padding-right: 1em;
 }
