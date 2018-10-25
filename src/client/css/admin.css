@@ -1,7 +1,11 @@
 /*Admin CSS*/
+
 *{
 	background: #1E262C;
 	color: white;
+}
+body{
+	background-color: #1E262C;
 }
 #box{
 	display: flex;
@@ -42,3 +46,4 @@
 	border-bottom: white solid 1px;
 	padding: 1em;
 }
+

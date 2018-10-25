@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../css/form.css">
-		<!--<script src="script.js"></script>-->
+		<script type="text/javascript" src="../script/login.js"></script>
   </head>
 
   <body>
@@ -32,7 +32,7 @@
     <!-- page content -->
 
     <!--Login Form-->
-    <form method="post" action="http://www.randyconnolly.com/tests/process.php">
+    <form name="login" method="get" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkLogin()">
       <fieldset>
         <legend>Login</legend>
         <div>
@@ -40,28 +40,46 @@
           <input type="text" name="email" class="box" id="eInput"/>
         </div>
         <div class="centered">
-          <input type="button" value="Forgot Password?" class="button" id="forgotPass"/>
+          <input type="button" onclick="location.href='#'" value="Forgot Password?" class="button" id="forgotPass"/>
         </div>
         <div>
           <label>Password:</label>
-          <input type="text" name="password" class="box" id="pInput"/>
+          <input type="password" name="password" class="box" id="pInput"/>
         </div>
         <div class="centered">
           <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
         </div>
         <div class="centered">
-          <input type="button" value="Login" class="button"/>
+          <input type="submit" value="Login" class="button"/>
         </div>
         <div class="centered">
-          <input type="button" value="Create Account" class="button"/>
+          <input type="button" onclick="location.href='createAccount.html'" value="Create Account" class="button"/>
         </div>
       </fieldset>
     </form>
-    
+
     <footer>
     </footer>
   </body>
 
   <foot>
+    <div id="topF">
+			<div id="detailFooter">
+				<p>Find a store</p>
+				<p>Sign up for emails</p>
+				<p>Contact</p>
+			</div>
+			<div class="socials">
+				<img src="../images/Facebook.png">
+				<img src="../images/YouTube.png">
+				<img src="../images/Instagram.png">
+				<img src="../images/Twitter.png">
+			</div>
+		</div>
+		<div id="bottom">
+			<p> &copy 2017-2018, Super(natural) Store, inc. All Rights Reserved</p>
+			<p>Terms of Use</p>
+			<p>Privacy Policy</p>
+		</div>
   </foot>
 </html>

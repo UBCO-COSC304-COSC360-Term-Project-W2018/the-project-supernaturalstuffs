@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../css/form.css">
-		<!--<script src="script.js"></script>-->
+		<script type="text/javascript" src="../script/createAccount.js"></script>
   </head>
 
   <body>
@@ -32,16 +32,16 @@
     <!-- page content -->
 
     <!--createAccount Form-->
-    <form method="get" action="http://www.randyconnolly.com/tests/process.php">
+    <form name="createAccount" method="get" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return preventDefault()">
       <fieldset>
         <legend>Create Account</legend>
         <div>
           <label>First Name:</label>
-          <input type="text" name="fname" class="box"/>
+          <input type="text" name="fName" class="box"/>
         </div>
         <div>
           <label>Last Name:</label>
-          <input type="text" name="lname" class="box"/>
+          <input type="text" name="lName" class="box"/>
         </div>
         <div>
           <label>Email:</label>
@@ -53,17 +53,18 @@
         </div>
         <div>
           <label>Password:</label>
-          <input type="text" name="password" class="box"/>
+          <input type="password" name="password" class="box"/>
         </div>
+        <p class="notes">Password must be 6 characters long and contain a number</p>
         <div>
           <label>Confirm Password:</label>
-          <input type="text" name="cPassword" class="box"/>
+          <input type="password" name="cPassword" class="box"/>
         </div>
         <div class="centered">
-          <input type="button" value="Create Account" class="button"/>
+          <input type="submit" value="Create Account" class="button"/>
         </div>
         <div class="centered">
-          <input type="button" value="Already Have an Acount" class="button"/>
+          <input type="button" onclick="location.href='login.html'" value="Already Have an Acount" class="button"/>
         </div>
 
       </fieldset>
@@ -71,6 +72,24 @@
 
 
     <footer>
+      <div id="topF">
+  			<div id="detailFooter">
+  				<p>Find a store</p>
+  				<p>Sign up for emails</p>
+  				<p>Contact</p>
+  			</div>
+  			<div class="socials">
+  				<img src="../images/Facebook.png">
+  				<img src="../images/YouTube.png">
+  				<img src="../images/Instagram.png">
+  				<img src="../images/Twitter.png">
+  			</div>
+  		</div>
+  		<div id="bottom">
+  			<p> &copy 2017-2018, Super(natural) Store, inc. All Rights Reserved</p>
+  			<p>Terms of Use</p>
+  			<p>Privacy Policy</p>
+  		</div>
     </footer>
   </body>
 
