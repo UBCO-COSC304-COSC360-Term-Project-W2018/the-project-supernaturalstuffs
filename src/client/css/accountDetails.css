@@ -13,6 +13,7 @@
   height:56em;
   border: 4px solid white;
   margin-left: 1em;
+  overflow:auto;
 }
 
 /*shopping cart*/
