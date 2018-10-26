@@ -110,6 +110,9 @@ footer{
 	background: #710627;
 	flex: 1;
 }
+#topF a:hover{
+	text-decoration: underline;
+}
 .socials{
 	padding: 0.1em;
 	padding-top: 1em;
