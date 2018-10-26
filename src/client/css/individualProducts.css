@@ -2,12 +2,6 @@ body {
   background-color: #1E262C;
 }
 
-#flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 #productbox {
     background-color: #710627;
     border: solid 1px white;
@@ -16,6 +10,8 @@ body {
     margin: 2em;
     padding: 1em;
     height: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .image {
