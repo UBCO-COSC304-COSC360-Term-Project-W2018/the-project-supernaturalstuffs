@@ -41,10 +41,11 @@
 }
 
 #shoppingcart .image {
-  height: 8em;
   width: 8em;
+  height: 8em;
   float: left;
-  padding:0 0.5em 0 0.5em;
+  margin:0 1.5em 0 0.5em;
+  border:2px solid white;
 }
 #shoppingcart input.button{
   margin-top: 1em;
@@ -62,4 +63,12 @@ h2 {
 #shoppingcart p {
   width: 65%;
   padding: .25em;
+  margin-left: 10em;
+  }
+
+  h3{
+    font-size: 115%;
+  }
+  #accountDetails div{
+    padding: 0.5em 0.5em auto 0.5em;
   }

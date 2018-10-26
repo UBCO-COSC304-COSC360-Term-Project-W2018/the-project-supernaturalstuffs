@@ -73,7 +73,7 @@ h2{
   background-color: #710627;
 }
 #shoppingcart #productinfo{
-  margin-left: 11em;
+  margin-left: 9em;
   margin-bottom: 1em;
 }
 #shoppingcart .items {
@@ -88,11 +88,12 @@ h2{
   height: 8em;
   width: 8em;
   float: left;
-  padding:0 0.5em 0 0.5em;
+  margin:0 1.5em 0 0.5em;
+  border:2px solid white;
 }
 #shoppingcart input.button{
   margin-top: 1em;
-  margin-left: 8em;
+
 }
 
 #shoppingcart h2 {
@@ -105,6 +106,7 @@ h2{
 #shoppingcart p {
   width: 65%;
   padding: .25em;
+  margin-left: 10em;
 }
 
 #right-side{
