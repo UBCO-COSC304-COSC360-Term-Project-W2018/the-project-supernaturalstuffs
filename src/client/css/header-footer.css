@@ -9,6 +9,10 @@ header h1{
 	padding-bottom: 0.5em;
 	padding-left: 0.5em;
 	border-bottom: white 1px solid;
+	text-decoration: none;
+}
+header a{
+	text-decoration: none;
 }
 li:hover, a:hover{
 	background: #521C25;
@@ -29,7 +33,7 @@ main{
 	height: 1.5em;
 	width: 1.5em;
 }
-input.search{
+input.searchHome{
 	background: white;
 	color: black;
 	display: block;
@@ -105,6 +109,9 @@ footer{
 #topF *{
 	background: #710627;
 	flex: 1;
+}
+#topF a:hover{
+	text-decoration: underline;
 }
 .socials{
 	padding: 0.1em;
