@@ -1,10 +1,9 @@
-/*
+
 #flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: row;
 }
-*/
 /*accountDetails*/
 #accountDetails{
   float: left;
@@ -37,7 +36,6 @@
   border-bottom: 2px dotted white;
   padding-top: 1em;
   padding-bottom: 1em;
-  overflow: auto;
   height: 10em;
 }
 

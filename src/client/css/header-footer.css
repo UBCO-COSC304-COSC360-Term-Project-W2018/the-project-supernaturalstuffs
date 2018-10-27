@@ -43,7 +43,7 @@ input.searchHome{
 	display: block;
 	position: absolute;
 	top: 0.7em;
-	right: 4.5em;
+	right: 5.5em;
 }
 #cart{
 	height: 2em;
@@ -114,6 +114,7 @@ footer{
 	background: #710627;
 	flex: 1;
 	text-decoration: none;
+	color: white;
 }
 #topF a:hover{
 	text-decoration: underline;
