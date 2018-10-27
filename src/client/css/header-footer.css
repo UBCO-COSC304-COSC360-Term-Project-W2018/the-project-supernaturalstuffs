@@ -113,6 +113,7 @@ footer{
 #topF *{
 	background: #710627;
 	flex: 1;
+	text-decoration: none;
 }
 #topF a:hover{
 	text-decoration: underline;

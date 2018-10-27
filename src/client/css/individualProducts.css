@@ -16,8 +16,6 @@ body {
 }
 
 #productbox {
-    background-color: #710627;
-    border: solid 1px white;
     color: white;
     padding: .5em;
     margin: 2em;
@@ -37,8 +35,11 @@ body {
 }
 
 .image {
-  height: 300px;
-  width: 300px;
+  height: 10em;
+  padding: 1em;
+  background: #710627;
+  border: white solid 1px;
+  margin: 0.5em;
 }
 #star {
   height: 20px;
@@ -51,7 +52,7 @@ body {
   background-color: #710627;
   border: solid 1px white;
   margin: 2em;
-  height:320px;
+  height:fit-content;
   overflow: auto;
 
 }
@@ -59,20 +60,26 @@ body {
   background-color: #710627;
   border: solid 1px white;
   padding: 1em;
+  width: fit-content;
 
 }
 
-
-
-h1, p {
+ #container h1, #container p, #box h1, #box p {
   padding: .5em;
 }
 
 .button {
   padding: 1em;
   margin: 1em;
-  background-color: #1E262C;
+  background-color: white;
   font-size: 90%;
-  color: white;
+  color: black;
   border: none;
+  border: black 1px solid;
+}
+
+.button:hover{
+	background: #521C25;
+	color: white;
+	border: white solid 1px;
 }
