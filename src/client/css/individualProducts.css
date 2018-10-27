@@ -43,7 +43,7 @@ body {
 #star {
   height: 20px;
   width: 20px;
-  padding-left: em;
+  padding-left: .5em;
   padding-bottom: 1em;
 }
 
