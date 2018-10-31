@@ -13,6 +13,7 @@ header h1{
 }
 header a{
 	text-decoration: none;
+	font-family: 'Almendra Display';
 }
 header img{
 	width: 1em;
@@ -23,6 +24,12 @@ li:hover, a:hover{
 }
 li a {
 	text-decoration: none;
+}
+li{ 
+	border-left: white solid 1px;
+}
+ul{
+ border-bottom: white 1px solid;
 }
 main{
 	flex: 1;
