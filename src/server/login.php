@@ -33,7 +33,7 @@
       foreach ($rows as $row) {
         echo $row['email'];
       }
-      echo("test2");
+
       //check to see if email exists
       if ($custE == null){
         $message = "Please enter an email";
@@ -51,11 +51,11 @@
       $statement = $pdo->prepare($sql2);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
-      echo $statement['password'];
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {
         echo $row2['password'];
       }
+      echo("test1");
       //check to see if password if password is correcrt
       echo("row two pass using row2 ".$row2['password']);
       if ($custPW == null){
