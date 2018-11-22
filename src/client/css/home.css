@@ -28,8 +28,8 @@ a {
 	margin: 1em;
 	height: 100%;
 	width: 15%;
-	background: #710627;
 	min-width: fit-content;
+	background: #710627;
 }
 #productSidebarOptions{
 	padding-bottom: 1em;
@@ -38,13 +38,14 @@ a {
 	background: #710627;
 }	
 #product-sidebar h3{
-	font-size: 125%;
-	padding-bottom: 1em;
+	font-size: 150%;
+	padding-bottom: 0.5em;
 	text-shadow: -1px 0 #710627, 0 1px #710627, 1px 0 #710627, 0 -1px #710627;
 	background: #521C25;
 	padding: 1em;
 	border-bottom: white 1px solid;
 	border-top: white 1px solid;
+	font-family: 'Almendra Display';
 }
 #productSidebarOptions h4:hover, #productSidebarOptions p:hover{
 	text-decoration: underline;
