@@ -30,9 +30,7 @@
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows as $row) {
-        echo $row['email'];
-      }
+      foreach ($rows as $row) {}
 
       //check to see if email exists
       if ($custE == null){
@@ -46,18 +44,15 @@
         window.location.href='/src/client/html/login.html'</script>";
         die();
       }
-      echo("test1");
+
       $sql2 = "SELECT password FROM User WHERE email = :email" ;
       $statement = $pdo->prepare($sql2);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows2 as $row2) {
-        echo $row2['password'];
-      }
-      echo("test1");
+      foreach ($rows2 as $row2) {}
+
       //check to see if password if password is correcrt
-      echo("row two pass using row2 ".$row2['password']);
       if ($custPW == null){
         $message = "Please enter a password";
         echo "<script type='text/javascript'>alert('$message');
