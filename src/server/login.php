@@ -28,8 +28,11 @@
       $sql = "SELECT email FROM User WHERE email = :email";
       $statement = $pdo->prepare($sql);
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
-      $row = statement->execute();
-      echo $row['email'];
+      $statement->execute();
+      $rows = statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows as $row) {
+        echo $row['email'];
+      }
       echo "<script type='text/javascript'>alert('test3')</script>";
       //check to see if email exists
       if ($custE == null){
@@ -48,7 +51,12 @@
       $statement = $pdo->prepare($sql2);
       $statement->bindParam(':pass',$custPW, PDO::PARAM_STR);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
-      $row2 = statement->execute();
+      $statement->execute();
+      $row2 = statement->fetchAll(PDO::FETCH_ASSOC);
+      $rows = statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows2 as $row2) {
+        echo $row2['email'];
+      }
       //check to see if password if password is correcr
       if ($custPW == null){
         $message = "Please enter a password";
