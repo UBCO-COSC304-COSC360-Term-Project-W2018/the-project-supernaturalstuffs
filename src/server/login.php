@@ -32,12 +32,12 @@
       if ($custE == null){
         $message = "Please enter an email";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='../src/client/html/login.html'</script>";
+        window.location.href='/src/client/html/login.html'</script>";
         die();
       }else if ($row == null){
         $message = "Error: Incorrect Email";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='../src/client/html/login.html'</script>";
+        window.location.href='/src/client/html/login.html'</script>";
         die();
       }
 
@@ -48,12 +48,12 @@
       if ($custPW == null){
         $message = "Please enter a password";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='../src/client/html/login.html'</script>";
+        window.location.href='/src/client/html/login.html'</script>";
         die();
       }else if($row2 == null) {
         $message = "Error: Incorrect Password";
         echo "<script type='text/javascript'>alert('$message');
-      	window.location.href='../src/client/html/login.html'</script>";
+      	window.location.href='/src/client/html/login.html'</script>";
       	die();
       }
 
