@@ -25,9 +25,12 @@
           throw new \PDOException($e->getMessage(), (int)$e->getCode());
       }
 
-      $sql = "SELECT email" . "FROM User" . "WHERE email = " . $email;
-      $results = sqlsrv_query($pdo, $sql, array());
-      $row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC);
+      $sql = "SELECT email FROM User WHERE email = :email";
+      $statement = $pdo->prepare($sql);
+      $statement->bindParm(':email',$custE, PDO::PARAM_STR);
+      $row = statement->execute();
+      echo $row['email'];
+      echo $row['password'];
       //check to see if email exists
       if ($custE == null){
         $message = "Please enter an email";
@@ -41,9 +44,11 @@
         die();
       }
 
-      $sql2 = "SELECT password FROM User WHERE password = ? AND email = ?" ;
-      $results2 = sqlsrv_query($con, $sql2, array($custPW,$custE));
-      $row2 = sqlsrv_fetch_array($results2, SQLSRV_FETCH_ASSOC);
+      $sql2 = "SELECT password FROM User WHERE password = :pass AND email = :email" ;
+      $statement = $pdo->prepare($sql2);
+      $statement->bindParm(':pass',$custPW, PDO::PARAM_STR);
+      $statement->bindParm(':email',$custE, PDO::PARAM_STR);
+      $row2 = statement->execute();
       //check to see if password if password is correcr
       if ($custPW == null){
         $message = "Please enter a password";
