@@ -11,30 +11,30 @@
       <!--<script src="script.js"></script>-->
    </head>
    <body>
-     <header>
- 			<h1><a href="../../../index.html"><img src="../images/logo.png">Super(natural) Store</a></h1>
- 			<div id="search-cart">
- 				<input type="text" class="searchHome" placeholder="Search...">
- 				<img src="../images/search.png" alt="search" id="search">
- 				<a href="cart.html"><img src="../images/cart.png" alt="shopping cart" id="cart"></a>
- 			</div>
- 			<nav>
- 				<ul>
- 					<li><a href="../../../index.html">Home</a></li>
- 					<li><a href="contact-FAQ.html">Contact</a></li>
- 					<li><a href="accountDetails.html">Account</a></li>
- 				</ul>
- 				<ul id="login-signup">
- 					<li><a href="login.html" class="login-signup">Login</a></li>
- 					<li><a href="createAccount.html" class="login-signup">Signup</a></li>
- 				</ul>
- 			</nav>
- 		</header>
+     <<header>
+			<h1 id="title" ><a href="index.html"><img src="./src/client/images/logo.png">Super(natural) Store</a></h1>
+			<div id="search-cart">
+				<input type="text" class="searchHome" placeholder="Search...">
+				<img src="./src/client/images/search.png" alt="search" id="search">
+				<a href="./src/client/html/cart.html"><img src="./src/client/images/cart.png" alt="shopping cart" id="cart"></a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="./src/client/html/contact-FAQ.php">Contact</a></li>
+					<li><a href="./src/client/html/accountDetails.php">Account</a></li>
+				</ul>
+				<ul id="login-signup">
+					<li><a href="./src/client/html/login.html" class="login-signup">Login</a></li>
+					<li><a href="./src/client/html/createAccount.html" class="login-signup">Signup</a></li>
+				</ul>
+			</nav>
+		</header>
       <main>
          <div id="product-sidebar">
             <h3>Products</h3>
             <div id="productSidebarOptions">
-               <h4><a href="products.html">All</a></h4>
+               <h4><a href="products.php">All</a></h4>
                <h4>Creatures</h4>
                <p>Vampires</p>
                <p>Shifters</p>
@@ -49,7 +49,7 @@
             <p id="sortButton">Sort by</p>
             <div id="box">
                <div class="productBox">
-                  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
+                  <a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
                   <p>Product Name</p>
                   <p>Product Description</p>
                   <p>Price</p>

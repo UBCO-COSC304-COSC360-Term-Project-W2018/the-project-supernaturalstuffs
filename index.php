@@ -22,8 +22,8 @@
 			<nav>
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="./src/client/html/contact-FAQ.html">Contact</a></li>
-					<li><a href="./src/client/html/accountDetails.html">Account</a></li>
+					<li><a href="./src/client/html/contact-FAQ.php">Contact</a></li>
+					<li><a href="./src/client/html/accountDetails.php">Account</a></li>
 				</ul>
 				<ul id="login-signup">
 					<li><a href="./src/client/html/login.html" class="login-signup">Login</a></li>
@@ -42,7 +42,7 @@
 			<div id="product-sidebar">
 				<h3>Products</h3>
 				<div id="productSidebarOptions">
-					<h4><a href="./src/client/html/products.html">All</a></h4>
+					<h4><a href="./src/client/html/products.php">All</a></h4>
 					<h4>Creatures</h4>
 					<p>Vampires</p>
 					<p>Shifters</p>
@@ -57,9 +57,9 @@
 		<footer>
 			<div id="topF">
 				<div id="detailFooter">
-					<a href="./src/client/html/contact-FAQ.html"><p>Find a store</p></a>
+					<a href="./src/client/html/contact-FAQ.php"><p>Find a store</p></a>
 					<a href="#"><p>Sign up for emails</p></a>
-					<a href="./src/client/html/contact-FAQ.html"><p>Contact</p></a>
+					<a href="./src/client/html/contact-FAQ.php"><p>Contact</p></a>
 				</div>
 				<div class="socials">
 					<a href="https://www.facebook.com"><img src="./src/client/images/Facebook.png" alt="Facebook link"></a>
