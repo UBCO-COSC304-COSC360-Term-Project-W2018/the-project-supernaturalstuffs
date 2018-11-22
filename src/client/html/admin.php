@@ -12,25 +12,8 @@
   </head>
 
   <body>
-	<header>
-		<h1 id="title" ><a href="index.html"><img src="./src/client/images/logo.png">Super(natural) Store</a></h1>
-		<div id="search-cart">
-			<input type="text" class="searchHome" placeholder="Search...">
-			<img src="./src/client/images/search.png" alt="search" id="search">
-			<a href="./src/client/html/cart.html"><img src="./src/client/images/cart.png" alt="shopping cart" id="cart"></a>
-		</div>
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="./src/client/html/contact-FAQ.php">Contact</a></li>
-				<li><a href="./src/client/html/accountDetails.php">Account</a></li>
-			</ul>
-			<ul id="login-signup">
-				<li><a href="./src/client/html/login.html" class="login-signup">Login</a></li>
-				<li><a href="./src/client/html/createAccount.html" class="login-signup">Signup</a></li>
-			</ul>
-		</nav>
-	</header>
+	<!--Include Header-->
+	<?php include 'include/header.php'; ?>
 	<main>
 		<div id="box">
 			<div id="Users">
@@ -72,26 +55,9 @@
 			</div>
 		</div>
 	</main>
-  <footer>
-    <div id="topF">
-      <div id="detailFooter">
-        <a href="contact-FAQ.html"><p>Find a store</p></a>
-        <a href="#"><p>Sign up for emails</p></a>
-        <a href="contact-FAQ.html"><p>Contact</p></a>
-      </div>
-      <div class="socials">
-        <a href="https://www.facebook.com"><img src="../images/Facebook.png" alt="Facebook link"></a>
-        <a href="https://www.youtube.com"><img src="../images/YouTube.png" alt="Youtube link"></a>
-        <a href="https://www.instagram.com"><img src="../images/Instagram.png" alt="Instagram link"></a>
-        <a href="https://www.twitter.com"><img src="../images/Twitter.png" alt="Twitter link"></a>
-      </div>
-    </div>
-    <div id="bottom">
-      <p> &copy; 2017-2018, Super(natural) Store, inc. All Rights Reserved</p>
-      <p>Terms of Use</p>
-      <p>Privacy Policy</p>
-    </div>
-  </footer>
-  </body>
+	<!--Footer include-->
+	<?php include 'include/footer.php' ?>
+
+ </body>
 
 </html>
