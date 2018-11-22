@@ -33,7 +33,7 @@
       foreach ($rows as $row) {
         echo $row['email'];
       }
-
+      echo("test2");
       //check to see if email exists
       if ($custE == null){
         $message = "Please enter an email";
@@ -46,7 +46,7 @@
         window.location.href='/src/client/html/login.html'</script>";
         die();
       }
-
+      echo("test1");
       $sql2 = "SELECT password FROM User WHERE email = :email" ;
       $statement = $pdo->prepare($sql2);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
@@ -57,7 +57,7 @@
         echo $row2['password'];
       }
       //check to see if password if password is correcrt
-      echo "row two pass using row2 ".$row2['password'];
+      echo("row two pass using row2 ".$row2['password']);
       if ($custPW == null){
         $message = "Please enter a password";
         echo "<script type='text/javascript'>alert('$message');
