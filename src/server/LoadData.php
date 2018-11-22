@@ -10,10 +10,6 @@
 	if( $con === false ) {
 		die( print_r( sqlsrv_errors(), true));
 	}
-	$fileName = "./data/supernatural_sql.ddl";
-	$file = file_get_contents($fileName, true);
-	$file = mb_convert_encoding($file, 'UTF-8', mb_detect_encoding($file, 'UTF-8, ISO-8859-1', true));
-	$lines = explode(";", $file);
 	echo("<ol>");
 	foreach ($lines as $line){
 		$line = trim($line);
