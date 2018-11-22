@@ -10,14 +10,6 @@
 	if( $con === false ) {
 		die( print_r( sqlsrv_errors(), true));
 	}
-	echo("<ol>");
-	foreach ($lines as $line){
-		$line = trim($line);
-		if($line != ""){
-			echo("<li>".$line . ";</li><br/>");
-			sqlsrv_query($con, $line, array());
-		}
-	}
 	sqlsrv_close($con);
 	echo("</p><h2>Database loading complete!</h2>");
 ?>
