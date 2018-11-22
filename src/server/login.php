@@ -51,19 +51,19 @@
       $statement = $pdo->prepare($sql2);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
-      echo $statement
+      echo $statement['password'];
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {
         echo $row2['password'];
       }
       //check to see if password if password is correcrt
-      echo $row2
+      echo "row two pass using row2 ".$row2['password'];
       if ($custPW == null){
         $message = "Please enter a password";
         echo "<script type='text/javascript'>alert('$message');
         window.location.href='/src/client/html/login.html'</script>";
         die();
-      }else if($row2 != $custPW) {
+      }else if($row2['password'] != $custPW) {
         $message = "Error: Incorrect Password";
         echo "<script type='text/javascript'>alert('$message');
       	window.location.href='/src/client/html/login.html'</script>";
@@ -71,7 +71,7 @@
       }
 
       //change header-pass the user is logged in vie session
-      echo("Email " . $custE . "Exists With Password" . $custPW);
+      echo "Email " . $custE . " Exists With Password " . $custPW;
     ?>
   </body>
 </html>
