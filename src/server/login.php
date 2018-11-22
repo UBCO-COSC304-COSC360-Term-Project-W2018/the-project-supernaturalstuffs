@@ -18,19 +18,19 @@
       if (isset($_GET['password'])) {
           $custPW = $_GET['password'];
       }
-
+      echo "<script type='text/javascript'>alert('test1')</script>";
       try {
           $pdo = new PDO($dsn, $user, $pass, $options);
       } catch (\PDOException $e) {
           throw new \PDOException($e->getMessage(), (int)$e->getCode());
       }
-
+      echo "<script type='text/javascript'>alert('test2')</script>";
       $sql = "SELECT email FROM User WHERE email = :email";
       $statement = $pdo->prepare($sql);
-      $statement->bindParm(':email',$custE, PDO::PARAM_STR);
+      $statement->bindParm(':email', $custE, PDO::PARAM_STR);
       $row = statement->execute();
       echo $row['email'];
-      echo $row['password'];
+      echo "<script type='text/javascript'>alert('test3')</script>";
       //check to see if email exists
       if ($custE == null){
         $message = "Please enter an email";
@@ -43,7 +43,7 @@
         window.location.href='/src/client/html/login.html'</script>";
         die();
       }
-
+      echo "<script type='text/javascript'>alert('test4')</script>";
       $sql2 = "SELECT password FROM User WHERE password = :pass AND email = :email" ;
       $statement = $pdo->prepare($sql2);
       $statement->bindParm(':pass',$custPW, PDO::PARAM_STR);
@@ -61,7 +61,7 @@
       	window.location.href='/src/client/html/login.html'</script>";
       	die();
       }
-
+      echo "<script type='text/javascript'>alert('test5')</script>";
       //change header-pass the user is logged in vie session
       echo("Email " . $custE . "Exists With Password" . $custPW);
     ?>
