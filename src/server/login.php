@@ -67,7 +67,7 @@
 
       //change header-pass the user is logged in vie session
       echo "<script type='text/javascript'>alert('Email ' . $custE . ' Exists With Password ' . $custPW');
-      window.location.href='/src/client/html/home.html'</script>";
+      window.location.href='/index.php'</script>";
     ?>
   </body>
 </html>

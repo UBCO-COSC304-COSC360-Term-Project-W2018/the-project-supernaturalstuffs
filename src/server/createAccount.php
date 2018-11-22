@@ -71,7 +71,7 @@
 
       //change header-pass the user is logged in vie session
       echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
-      window.location.href='/src/client/html/login.html'</script>";
+      window.location.href='/index.php'</script>";
     ?>
   </body>
 </html>
