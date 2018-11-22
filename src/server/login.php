@@ -29,7 +29,7 @@
       $statement = $pdo->prepare($sql);
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
       $statement->execute();
-      $rows = statement->fetchAll(PDO::FETCH_ASSOC);
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows as $row) {
         echo $row['email'];
       }
@@ -47,15 +47,13 @@
         die();
       }
       echo "<script type='text/javascript'>alert('test4')</script>";
-      $sql2 = "SELECT password FROM User WHERE password = :pass AND email = :email" ;
+      $sql2 = "SELECT password FROM User WHERE email = :email" ;
       $statement = $pdo->prepare($sql2);
-      $statement->bindParam(':pass',$custPW, PDO::PARAM_STR);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
-      $row2 = statement->fetchAll(PDO::FETCH_ASSOC);
-      $rows = statement->fetchAll(PDO::FETCH_ASSOC);
+      $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {
-        echo $row2['email'];
+        echo $row2['password'];
       }
       //check to see if password if password is correcr
       if ($custPW == null){
