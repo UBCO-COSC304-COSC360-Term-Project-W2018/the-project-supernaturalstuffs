@@ -10,13 +10,13 @@
 
       /** Get email **/
       $custE = null;
-      if (isset($_GET['email'])) {
-          $custE = $_GET['email'];
+      if (isset($_POST['email'])) {
+          $custE = $_POST['email'];
       }
       /** Get password **/
       $custPW = null;
-      if (isset($_GET['password'])) {
-          $custPW = $_GET['password'];
+      if (isset($_POST['password'])) {
+          $custPW = $_POST['password'];
       }
       echo "<script type='text/javascript'>alert('test1')</script>";
       try {
