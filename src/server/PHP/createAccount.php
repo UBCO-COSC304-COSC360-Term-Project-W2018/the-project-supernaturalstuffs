@@ -6,7 +6,7 @@
   </head>
   <body>
     <?php
-      include 'include/db_credentials.php';
+      include '../include/db_credentials.php';
 
       /** Get first name **/
       $custFN = null;
@@ -88,7 +88,7 @@
       $insert = $statement->execute();
 
       //test features user
-      $sql3 = "SELECT email,password FROM User" ;
+      $sql3 = "SELECT userID,email,password FROM User" ;
       $statement = $pdo->prepare($sql3);
       $statement->execute();
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
