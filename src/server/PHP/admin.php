@@ -56,7 +56,7 @@
 		</div>
 	</main>
 	<!--Footer include-->
-	<?php include '../include/footer.php' ?>
+	<?php include '/src/server/include/footer.php' ?>
 
  </body>
 

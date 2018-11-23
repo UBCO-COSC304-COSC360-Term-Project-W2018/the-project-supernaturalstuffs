@@ -98,8 +98,8 @@
 				</div>
 			</div>
 		</main>
-		<!--Include Footer-->
-		<?php include '../include/footer.php' ?>
+		<!--Footer include-->
+		<?php include '/src/server/include/footer.php' ?>
    </body>
    <foot>
    </foot>

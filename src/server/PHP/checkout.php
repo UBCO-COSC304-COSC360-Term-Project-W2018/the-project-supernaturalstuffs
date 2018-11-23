@@ -179,7 +179,8 @@
 
       </div>
     </main>
-	<?php include '../include/footer.php' ?>
+	<!--Footer include-->
+	<?php include '/src/server/include/footer.php' ?>
   </body>
 
   <foot>
