@@ -83,21 +83,22 @@
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
       $insert = $statement->execute();
 
-      //make them a Customer
+      //get new users userID
       $userID = null;
       $sql2 = "SELECT userID FROM User WHERE email = :email"
       $statement = $pdo->prepare($sql2);
-      $statement->bindValue(':email', $userE, PDO::PARAM_STR);
+      $statement->bindParam(':email', $userE, PDO::PARAM_STR);
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {
          $userID = $row2['userID'];
       }
-
+      //make them a Customer
       $sql3 = "INSERT INTO Customer VALUES (:userID)";
       $statement = $pdo->prepare($sql3);
       $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
       $insert = $statement->execute();
 echo("test7");
+
       //test features user
       $sql3 = "SELECT userID,email,password FROM User" ;
       $statement = $pdo->prepare($sql3);
