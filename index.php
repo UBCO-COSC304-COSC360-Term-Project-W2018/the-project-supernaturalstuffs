@@ -13,7 +13,7 @@
 	</head>
 	<body>
 	<!--Header include-->
-		<?php include '.src/client/include/header.php'; ?>
+		<?php include './src/client/include/header.php'; ?>
 		
 		<main>
 			<div id="about">
@@ -39,6 +39,6 @@
 			</div>
 		</main>
 		<!--Footer include-->
-		<?php include '.src/client/include/footer.php'; ?>
+		<?php include './src/client/include/footer.php'; ?>
 	</body>
 </html>

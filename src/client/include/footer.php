@@ -11,10 +11,10 @@
 			<a href="https://www.instagram.com"><img src="./src/client/images/Instagram.png" alt="Instagram link"></a>
 			<a href="https://www.twitter.com"><img src="./src/client/images/Twitter.png" alt="Twitter link"></a>
 		</div>
-		</div>
-		<div id="bottom">
-			<p> &copy; 2017-2018, Super(natural) Store, inc. All Rights Reserved</p>
-			<p>Terms of Use</p>
-			<p>Privacy Policy</p>
-		</div>
+	</div>
+	<div id="bottom">
+		<p> &copy; 2017-2018, Super(natural) Store, inc. All Rights Reserved</p>
+		<p>Terms of Use</p>
+		<p>Privacy Policy</p>
+	</div>
 </footer>
