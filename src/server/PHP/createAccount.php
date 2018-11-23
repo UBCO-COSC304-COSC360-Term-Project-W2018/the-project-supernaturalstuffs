@@ -93,10 +93,10 @@
          $userID = $row2['userID'];
       }
       //make them a Customer
-    /*  $sql3 = "INSERT INTO Customer VALUES (:userID)";
+      $sql3 = "INSERT INTO Customer VALUES (:userID)";
       $statement = $pdo->prepare($sql3);
       $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
-      $insert = $statement->execute();*/
+      $insert = $statement->execute();
 
       //test features user
       $sql4 = "SELECT userID,email,password FROM User" ;
