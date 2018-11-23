@@ -63,7 +63,7 @@
       $custUN = "TEST";
       $statement = $pdo->prepare($sql);
       $statement->bindValue(':username', $custUN, PDO::PARAM_STR);
-      $statement->bindValue(':password', $custPW, PDO::PARAM_STR);
+      $statement->bindValue(':password', MD5($custPW), PDO::PARAM_STR);
       $statement->bindValue(':firstname', $custFN, PDO::PARAM_STR);
       $statement->bindValue(':lastname', $custLN, PDO::PARAM_STR);
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
@@ -72,13 +72,14 @@
       echo("Test2");
       echo("Customer " . $custFN . " " . $custLN . " was added");
 
-      $sql2 = "SELECT email FROM User" ;
+      $sql2 = "SELECT email,password FROM User" ;
       $statement = $pdo->prepare($sql2);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {
-        echo $row2['email'];
+        echo $row2['email'] . " ";
+        echo $row2['password'] . " ";
       }
       //change header-pass the user is logged in vie session
       //echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
