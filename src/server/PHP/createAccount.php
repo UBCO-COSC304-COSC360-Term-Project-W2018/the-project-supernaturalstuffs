@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Create Account</title>
   </head>
-  
+
   <body>
     <?php
       include '../include/db_credentials.php';
