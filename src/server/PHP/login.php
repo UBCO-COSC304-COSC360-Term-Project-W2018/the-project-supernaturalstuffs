@@ -6,7 +6,7 @@
   </head>
   <body>
     <?php
-      include 'include/db_credentials.php';
+      include '../include/db_credentials.php';
 
       /** Get email **/
       $custE = null;
@@ -18,7 +18,7 @@
       if (isset($_POST['password'])) {
           $custPW = $_POST['password'];
       }
-
+      echo("test1");
       try {
           $pdo = new PDO($dsn, $user, $pass, $options);
       } catch (\PDOException $e) {
@@ -64,10 +64,11 @@
       	window.location.href='/src/client/html/login.html'</script>";
       	die();
       }
-      echo "$custE . ' ' . $custPW";
+      echo("test5");
+      echo ("$custE . ' ' . $custPW");
       //change header-pass the user is logged in via session
-      echo "<script type='text/javascript'>alert('Email ' . $custE . ' Exists With Password ' . $custPW');
-      window.location.href='/index.php'</script>";
+      //echo "<script type='text/javascript'>alert('Email ' . $custE . ' Exists With Password ' . $custPW');
+      //window.location.href='/index.php'</script>";
     ?>
   </body>
 </html>
