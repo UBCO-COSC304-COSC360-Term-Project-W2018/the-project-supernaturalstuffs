@@ -84,7 +84,6 @@
       $insert = $statement->execute();
 
       //get new users userID
-      $userID = null;
       $sql3 = "SELECT userID FROM User WHERE email = :email";
       $statement = $pdo->prepare($sql3);
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
