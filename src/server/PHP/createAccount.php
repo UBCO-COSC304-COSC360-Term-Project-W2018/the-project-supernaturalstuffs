@@ -87,17 +87,14 @@
       $insert = $statement->execute();
 
       //get new users userID
-      $userID = null;
       $sql3 = "SELECT userID FROM User WHERE email = :email";
       $statement = $pdo->prepare($sql3);
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {
         $userID = $row2['userID'];
-        echo("User ID '.$userID.' come on");
       }
-      $userID = $row2['userID'];
-      echo("User ID '.$userID.' come on");
+      echo("User ID ".$userID." come on");
       //make them a Customer
       /*$sql4 = "INSERT INTO Customer VALUES (:userID)";
       $statement = $pdo->prepare($sql4);
@@ -108,11 +105,11 @@
       $sql5 = "SELECT userID,email,password FROM User" ;
       $statement = $pdo->prepare($sql5);
       $statement->execute();
-      $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows2 as $row2) {
-        echo $row2['userID'] . " ";
-        echo $row2['email'] . " ";
-        echo $row2['password'] . " ";
+      $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows3 as $row3) {
+        echo $row3['userID'] . " ";
+        echo $row3['email'] . " ";
+        echo $row3['password'] . " ";
       }
 
       //test features customer
