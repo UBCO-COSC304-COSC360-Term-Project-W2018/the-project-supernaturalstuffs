@@ -81,20 +81,35 @@
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
       $insert = $statement->execute();
 
-      //test features
-      /*$sql3 = "SELECT email,password FROM User" ;
+      //make them a Customer
+      $sql2 = "INSERT INTO Customer VALUES (SELECT userID FROM User WHERE email = :email )";
+      $statement = $pdo->prepare($sql2);
+      $statement->bindValue(':email', $custE, PDO::PARAM_STR);
+      $insert = $statement->execute();
+
+      //test features user
+      $sql3 = "SELECT email,password FROM User" ;
       $statement = $pdo->prepare($sql3);
-      $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {
+        echo $row2['userID'] . " ";
         echo $row2['email'] . " ";
         echo $row2['password'] . " ";
-      }*/
-      
+      }
+
+      //test features customer
+      $sql4 = "SELECT userID FROM Customer" ;
+      $statement = $pdo->prepare($sql4);
+      $statement->execute();
+      $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows2 as $row2) {
+        echo $row2['userID'] . " ";
+      }
+
       //do me want them to login in now or automatically be logged in
-      echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
-      window.location.href='/src/html.login.html'</script>";
+    //  echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
+    //  window.location.href='/src/html.login.html'</script>";
     ?>
   </body>
 </html>
