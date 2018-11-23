@@ -93,10 +93,10 @@
          $userID = $row2['userID'];
       }
       //make them a Customer
-      $sql3 = "INSERT INTO Customer VALUES (:userID)";
+    /*  $sql3 = "INSERT INTO Customer VALUES (:userID)";
       $statement = $pdo->prepare($sql3);
       $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
-      $insert = $statement->execute();
+      $insert = $statement->execute();*/
 echo("test7");
 
       //test features user
@@ -111,13 +111,13 @@ echo("test7");
       }
 echo("test8");
       //test features customer
-      $sql4 = "SELECT userID FROM Customer" ;
+    /*  $sql4 = "SELECT userID FROM Customer" ;
       $statement = $pdo->prepare($sql4);
       $statement->execute();
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {
         echo $row2['userID'] . " ";
-      }
+      }*/
 
       //do me want them to login in now or automatically be logged in
     //  echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
