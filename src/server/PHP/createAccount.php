@@ -85,7 +85,7 @@
 
       //get new users userID
       $userID = null;
-      $sql2 = "SELECT userID FROM User WHERE email = :email"
+      $sql2 = "SELECT userID FROM User WHERE email = :email";
       $statement = $pdo->prepare($sql2);
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
