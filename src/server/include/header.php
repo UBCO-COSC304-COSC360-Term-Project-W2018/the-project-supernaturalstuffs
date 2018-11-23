@@ -12,8 +12,8 @@
 					<li><a href="/src/server/PHP/accountDetails.php">Account</a></li>
 				</ul>
 				<ul id="login-signup">
-					<li><a href="/src/server/PHP/login.html" class="login-signup">Login</a></li>
-					<li><a href="/src/server/PHP/createAccount.html" class="login-signup">Signup</a></li>
+					<li><a href="/src/server/PHP/login.php" class="login-signup">Login</a></li>
+					<li><a href="/src/server/PHP/createAccount.php" class="login-signup">Signup</a></li>
 				</ul>
 			</nav>
 		</header>
