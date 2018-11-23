@@ -59,7 +59,7 @@
       }
 
       //check if email already exists
-      $sql = "SELECT email FROM User" ;
+      /*$sql = "SELECT email FROM User" ;
       $statement = $pdo->prepare($sql);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
@@ -70,7 +70,7 @@
         echo "<script type='text/javascript'>alert('$message');
         window.location.href='/src/client/html/createAccount.html'</script>";
         die();
-      }
+      }*/
       //insert user into user
       $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email)";
       $custUN = "TEST";
@@ -83,8 +83,6 @@
       $insert = $statement->execute();
 
       //test features
-      echo("Customer " . $custFN . " " . $custLN . " was added");
-
       $sql3 = "SELECT email,password FROM User" ;
       $statement = $pdo->prepare($sql3);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
