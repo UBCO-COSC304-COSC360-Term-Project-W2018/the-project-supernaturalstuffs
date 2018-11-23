@@ -123,7 +123,7 @@
 
       //do me want them to login in now or automatically be logged in
      echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
-     window.location.href='/src/html/login.html'</script>";
+     window.location.href='/src/client/html/login.html'</script>";
     ?>
   </body>
 </html>
