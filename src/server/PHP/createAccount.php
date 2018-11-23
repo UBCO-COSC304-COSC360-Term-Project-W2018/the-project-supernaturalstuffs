@@ -102,7 +102,7 @@
       $insert = $statement->execute();
 
       //test features user
-      $sql5 = "SELECT userID,email,password FROM User" ;
+      /*$sql5 = "SELECT userID,email,password FROM User" ;
       $statement = $pdo->prepare($sql5);
       $statement->execute();
       $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -119,11 +119,11 @@
       $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows3 as $row3) {
         echo $row3['userID'] . " ";
-      }
+      }*/
 
       //do me want them to login in now or automatically be logged in
-    //  echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
-    //  window.location.href='/src/html.login.html'</script>";
+     echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
+     window.location.href='/src/html.login.html'</script>";
     ?>
   </body>
 </html>
