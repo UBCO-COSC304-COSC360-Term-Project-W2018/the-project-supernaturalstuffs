@@ -82,7 +82,7 @@
       $insert = $statement->execute();
 
       //test features
-      $sql3 = "SELECT email,password FROM User" ;
+      /*$sql3 = "SELECT email,password FROM User" ;
       $statement = $pdo->prepare($sql3);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
@@ -90,10 +90,11 @@
       foreach ($rows2 as $row2) {
         echo $row2['email'] . " ";
         echo $row2['password'] . " ";
-      }
-      //change header-pass the user is logged in vie session
-      //echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
-      //window.location.href='/src/html.login.html'</script>";
+      }*/
+      
+      //do me want them to login in now or automatically be logged in
+      echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
+      window.location.href='/src/html.login.html'</script>";
     ?>
   </body>
 </html>
