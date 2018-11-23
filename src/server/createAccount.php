@@ -59,18 +59,17 @@
       }
 
       //check if email already exists
-      /*$sql = "SELECT email FROM User" ;
+      $sql = "SELECT email FROM User" ;
       $statement = $pdo->prepare($sql);
-      $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows as $row) {}
-      }else if ($row != null){
-        $message = "Error: Email Address Already in Use";
-        echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
-        die();
-      }*/
+        if ($row['email'] == $custE){
+          $message = "Error: Email Address Already in Use";
+          echo "<script type='text/javascript'>alert('$message');
+          window.location.href='/src/client/html/createAccount.html'</script>";
+          die();
+        }
       //insert user into user
       $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email)";
       $custUN = "TEST";
