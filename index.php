@@ -25,7 +25,7 @@
 			<div id="product-sidebar">
 				<h3>Products</h3>
 				<div id="productSidebarOptions">
-					<h4><a href="./src/client/html/products.php">All</a></h4>
+					<h4><a href="./src/server/PHP/products.php">All</a></h4>
 					<h4>Creatures</h4>
 					<p>Vampires</p>
 					<p>Shifters</p>
