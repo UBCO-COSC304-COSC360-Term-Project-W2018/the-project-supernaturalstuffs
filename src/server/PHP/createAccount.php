@@ -91,13 +91,12 @@
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {}
       $userID = $row2['userID'];
-      echo("User ID ".$userID." come on");
 
       //make them a Customer
-      /*$sql4 = "INSERT INTO Customer VALUES (:userID)";
+      $sql4 = "INSERT INTO Customer VALUES (:userID)";
       $statement = $pdo->prepare($sql4);
       $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
-      $insert = $statement->execute();*/
+      $insert = $statement->execute();
 
       //test features user
       $sql5 = "SELECT userID,email,password FROM User" ;
