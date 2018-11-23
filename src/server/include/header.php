@@ -8,12 +8,12 @@
 			<nav>
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="/src/client/html/contact-FAQ.php">Contact</a></li>
-					<li><a href="/src/client/html/accountDetails.php">Account</a></li>
+					<li><a href="/src/server/PHP/contact-FAQ.php">Contact</a></li>
+					<li><a href="/src/server/PHP/accountDetails.php">Account</a></li>
 				</ul>
 				<ul id="login-signup">
-					<li><a href="/src/client/html/login.html" class="login-signup">Login</a></li>
-					<li><a href="/src/client/html/createAccount.html" class="login-signup">Signup</a></li>
+					<li><a href="/src/server/PHP/login.html" class="login-signup">Login</a></li>
+					<li><a href="/src/server/PHP/createAccount.html" class="login-signup">Signup</a></li>
 				</ul>
 			</nav>
 		</header>

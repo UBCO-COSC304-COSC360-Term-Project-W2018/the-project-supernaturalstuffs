@@ -1,9 +1,9 @@
 <footer>
 	<div id="topF">	
 		<div id="detailFooter">
-			<a href="/src/client/html/contact-FAQ.php"><p>Find a store</p></a>
+			<a href="/src/server/PHP/contact-FAQ.php"><p>Find a store</p></a>
 			<a href="#"><p>Sign up for emails</p></a>
-			<a href="/src/client/html/contact-FAQ.php"><p>Contact</p></a>
+			<a href="/src/server/PHP/contact-FAQ.php"><p>Contact</p></a>
 		</div>
 		<div class="socials">
 			<a href="https://www.facebook.com"><img src="/src/client/images/Facebook.png" alt="Facebook link"></a>
