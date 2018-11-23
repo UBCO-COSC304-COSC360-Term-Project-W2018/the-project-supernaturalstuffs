@@ -12,7 +12,7 @@
 
 	<body>
 		<!--Include header-->
-		<?php include '../include/header.php'; ?>
+		<?php include '/src/server/include/header.php'; ?>
 	<main>
 		<!-- page content -->
 		<div id = "flex">

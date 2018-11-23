@@ -15,25 +15,8 @@
   </head>
 
   <body>
-    <header>
-			<h1><a href="../../../index.html"><img src="../images/logo.png">Super(natural) Store</a></h1>
-			<div id="search-cart">
-				<input type="text" class="searchHome" placeholder="Search...">
-				<img src="../images/search.png" alt="search" id="search">
-				<a href="cart.html"><img src="../images/cart.png" alt="shopping cart" id="cart"></a>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="../../../index.html">Home</a></li>
-					<li><a href="contact-FAQ.html">Contact</a></li>
-					<li><a href="accountDetails.html">Account</a></li>
-				</ul>
-				<ul id="login-signup">
-					<li><a href="login.html" class="login-signup">Login</a></li>
-					<li><a href="createAccount.html" class="login-signup">Signup</a></li>
-				</ul>
-			</nav>
-		</header>
+    <!--Include header-->
+	<?php include '/src/server/include/header.php'; ?>
     <!--Main content of page-->
     <main>
       <div id="flex-conatiner">

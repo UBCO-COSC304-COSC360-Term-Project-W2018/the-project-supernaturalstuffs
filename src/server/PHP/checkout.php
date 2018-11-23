@@ -14,8 +14,8 @@
   </head>
 
   <body>
-    <!--Include header-->
-	<?php include '../include/header.php'; ?>
+   <!--Include header-->
+	<?php include '/src/server/include/header.php'; ?>
     <main>
       <!-- page content -->
       <!--Checkout Forms-->

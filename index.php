@@ -12,8 +12,8 @@
 		<!--<script src="script.js"></script>-->
 	</head>
 	<body>
-	<!--Header include-->
-		<?php include './src/client/include/header.php'; ?>
+	<!--Include header-->
+	<?php include '/src/server/include/header.php'; ?>
 		<main>
 			<div id="about">
 				<h2>Our Mission</h2>

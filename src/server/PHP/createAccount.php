@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <title>Login</title>
   </head>
+  
   <body>
+	<!--Include header-->
+	<?php include '/src/server/include/header.php'; ?>
     <?php
       include '../include/db_credentials.php';
 

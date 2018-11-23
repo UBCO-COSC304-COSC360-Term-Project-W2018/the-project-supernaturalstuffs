@@ -13,7 +13,7 @@
 
   <body>
 	<!--Include header-->
-	<?php include '../include/header.php'; ?>
+	<?php include '/src/server/include/header.php'; ?>
     <!-- page content delete button -->
     <main>
       <div id="flex">

@@ -12,8 +12,8 @@
   </head>
 
   <body>
-	<!--Include Header-->
-	<?php include '../include/header.php'; ?>
+	<!--Include header-->
+	<?php include '/src/server/include/header.php'; ?>
 	<main>
 		<div id="box">
 			<div id="Users">
