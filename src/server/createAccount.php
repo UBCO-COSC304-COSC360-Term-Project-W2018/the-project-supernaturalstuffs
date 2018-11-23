@@ -51,7 +51,6 @@
         window.location.href='/src/client/html/createAccount.html'</script>";
         die();
       }
-      echo("Test1");
       //connect to database
       try {
           $pdo = new PDO($dsn, $user, $pass, $options);
@@ -59,9 +58,23 @@
           throw new \PDOException($e->getMessage(), (int)$e->getCode());
       }
 
-      $sql = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email)";
-      $custUN = "TEST";
+      //check if email already exists
+      $sql = "SELECT email FROM User" ;
       $statement = $pdo->prepare($sql);
+      $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+      $statement->execute();
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows as $row) {}
+      }else if ($row != null){
+        $message = "Error: Email Address Already in Use";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='/src/client/html/createAccount.html'</script>";
+        die();
+      }
+      //insert user into user
+      $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email)";
+      $custUN = "TEST";
+      $statement = $pdo->prepare($sql2);
       $statement->bindValue(':username', $custUN, PDO::PARAM_STR);
       $statement->bindValue(':password', MD5($custPW), PDO::PARAM_STR);
       $statement->bindValue(':firstname', $custFN, PDO::PARAM_STR);
@@ -69,11 +82,11 @@
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
       $insert = $statement->execute();
 
-      echo("Test2");
+      //test features
       echo("Customer " . $custFN . " " . $custLN . " was added");
 
-      $sql2 = "SELECT email,password FROM User" ;
-      $statement = $pdo->prepare($sql2);
+      $sql3 = "SELECT email,password FROM User" ;
+      $statement = $pdo->prepare($sql3);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -83,7 +96,7 @@
       }
       //change header-pass the user is logged in vie session
       //echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
-      //window.location.href='/index.php'</script>";
+      //window.location.href='/src/html.login.html'</script>";
     ?>
   </body>
 </html>
