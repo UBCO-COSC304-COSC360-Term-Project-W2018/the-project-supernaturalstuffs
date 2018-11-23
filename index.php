@@ -13,7 +13,7 @@
 	</head>
 	<body>
 	<!--Include header-->
-	<?php include '/src/server/include/header.php'; ?>
+	<?php include 'src/server/include/header.php'; ?>
 		<main>
 			<div id="about">
 				<h2>Our Mission</h2>
