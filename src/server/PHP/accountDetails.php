@@ -52,7 +52,7 @@
             /*session_start();
             $userID = null;
             if (isset($_SESSION['userID'])) {
-                $custE = $_POST['email'];
+                $userID = $_SESSION['userID'];
             }*/
 
 
