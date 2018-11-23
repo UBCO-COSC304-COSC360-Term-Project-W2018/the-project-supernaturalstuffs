@@ -51,7 +51,7 @@
         window.location.href='/src/client/html/createAccount.html'</script>";
         die();
       }
-
+      echo("Test1");
       //connect to database
       try {
           $pdo = new PDO($dsn, $user, $pass, $options);
@@ -63,15 +63,17 @@
       $custUN = "TEST";
       $statement = $pdo->prepare($sql);
       $statement->bindValue(':username', $custUN, PDO::PARAM_STR);
-      $statement->bindValue(':password', $custP, PDO::PARAM_STR);
+      $statement->bindValue(':password', $custPW, PDO::PARAM_STR);
       $statement->bindValue(':firstname', $custFN, PDO::PARAM_STR);
       $statement->bindValue(':lastname', $custLN, PDO::PARAM_STR);
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
       $insert = $statement->execute();
 
+      echo("Test2");
+      echo("Customer " . $custFN . " " . $custLN . " was added")
       //change header-pass the user is logged in vie session
-      echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
-      window.location.href='/index.php'</script>";
+      //echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
+      //window.location.href='/index.php'</script>";
     ?>
   </body>
 </html>
