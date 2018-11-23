@@ -70,7 +70,16 @@
       $insert = $statement->execute();
 
       echo("Test2");
-      echo("Customer " . $custFN . " " . $custLN . " was added")
+      echo("Customer " . $custFN . " " . $custLN . " was added");
+
+      $sql2 = "SELECT email FROM User" ;
+      $statement = $pdo->prepare($sql2);
+      $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+      $statement->execute();
+      $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows2 as $row2) {
+        echo $row2['email'];
+      }
       //change header-pass the user is logged in vie session
       //echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
       //window.location.href='/index.php'</script>";
