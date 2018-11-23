@@ -55,6 +55,7 @@ function preventDefault(){
       return false;
     }
 
+
     //password confirmation
     var cPassword = document.forms["createAccount"]["cPassword"];
     if(password.value != cPassword.value){
