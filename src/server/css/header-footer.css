@@ -1,0 +1,154 @@
+header *{
+	background: #521C25;
+	font-family: Arial, Helvetica, "Times New Roman";
+	color: white;
+}
+header h1{
+	font-size: 275%;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: .3em;
+	border-bottom: white 1px solid;
+	text-decoration: none;
+}
+header a{
+	text-decoration: none;
+	font-family: 'Almendra Display';
+}
+header img{
+	width: 1em;
+	margin-right: 0.2em;
+}
+li:hover, a:hover{
+	background: #521C25;
+}
+li a {
+	text-decoration: none;
+}
+li{ 
+	border-left: white solid 1px;
+}
+ul{
+ border-bottom: white 1px solid;
+}
+main{
+	flex: 1;
+}
+#search-cart{
+	float: right;
+	position: absolute;
+	top: 2em;
+	right: 1em;
+}
+#search{
+	height: 1.5em;
+	width: 1.5em;
+}
+input.searchHome{
+	background: white;
+	color: black;
+	display: block;
+	position: absolute;
+	top: 0.7em;
+	right: 5.5em;
+}
+#cart{
+	height: 2em;
+	width: 2em;
+}
+header nav{
+	border-top: white solid 1px;
+	border-bottom: white solid 1px;
+	padding: 0;
+	margin: 0;
+	background: #710627;
+	display: flex;
+	flex-direction: row;
+}
+header ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	height: 2.9em;
+	background: #710627;
+}
+header li{
+	list-style-type: none;
+	float: left;
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-top: 0.7em;
+	padding-bottom: 0.7em;
+	border-right: solid white 1px;
+	font-size: 110%;
+	background: #710627;
+}
+header li a{
+	background: #710627;
+}
+#login-signup{
+	margin-left: auto;
+	border-left: white 1px solid;
+}
+/*footer styling*/
+body{
+	position: relative;
+	margin: 0;
+	width: 100%;
+	display: flex; /*needed for footer*/
+	flex-direction: column;
+	min-height: 100vh;
+}
+main {
+	flex: 1 0 auto;
+}
+footer{
+	flex-shrink: 0;
+	align-self: flex-end;
+	width: 100%;
+	font-size: 75%;
+}
+#topF{
+	border-top: white 1px solid;
+	border-left: white 1px solid;
+	border-right: white 1px solid;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	background: #710627;
+}
+#topF *{
+	background: #710627;
+	flex: 1;
+	text-decoration: none;
+	color: white;
+}
+#topF a:hover{
+	text-decoration: underline;
+}
+.socials{
+	padding: 0.1em;
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+}
+.socials img{
+	padding: 0;
+	height: 1.5em;
+}
+#bottom{
+	clear: both;
+	display: flex;
+	flex-direction: row;
+	padding: 1em;
+	background: #521C25;
+	border-top: white 1px solid;
+	font-size: 75%;
+}
+#bottom *{
+	background: #521C25;
+}
+
+#bottom p{
+	padding-right: 2em;
+	padding-right: 2em;
+}

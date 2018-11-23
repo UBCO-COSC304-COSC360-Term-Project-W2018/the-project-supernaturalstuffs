@@ -1,0 +1,85 @@
+body {
+  background-color: #1E262C;
+}
+
+#flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#container {
+  width: 50%;
+  margin-bottom: 4em;
+  float: left;
+  width: 550px;
+}
+
+#productbox {
+    color: white;
+    padding: .5em;
+    margin: 2em;
+    text-align: center;
+}
+
+#comments {
+  background-color: #710627;
+  border: solid 1px white;
+  margin: 2em;
+}
+
+#reviews {
+  background-color: #710627;
+  border: solid 1px white;
+  margin: 2em;
+}
+
+.image {
+  height: 10em;
+  padding: 1em;
+  background: #710627;
+  border: white solid 1px;
+  margin: 0.5em;
+}
+#star {
+  height: 20px;
+  width: 20px;
+  padding-left: .5em;
+  padding-bottom: 1em;
+}
+
+#box {
+  background-color: #710627;
+  border: solid 1px white;
+  margin: 2em;
+  height:fit-content;
+  overflow: auto;
+
+}
+#productinfo {
+  background-color: #710627;
+  border: solid 1px white;
+  padding: 1em;
+  width: fit-content;
+
+}
+
+ #container h1, #container p, #box h1, #box p {
+  padding: .5em;
+}
+
+.button {
+  padding: 1em;
+  margin: 1em;
+  background-color: white;
+  font-size: 90%;
+  color: black;
+  border: none;
+  border: black 1px solid;
+}
+
+.button:hover{
+	background: #521C25;
+	color: white;
+	border: white solid 1px;
+}

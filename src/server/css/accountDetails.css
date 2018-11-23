@@ -1,0 +1,131 @@
+
+#flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+/*accountDetails*/
+#accountDetails{
+  float: left;
+  background-color: #710627;
+  width: 54%;
+  height:56em;
+  border: 4px solid white;
+  margin-left: 1em;
+  overflow:auto;
+}
+
+/*shopping cart*/
+#shoppingcart {
+  margin-left: 48%;
+  margin-right: 1em;
+  overflow: auto;
+  margin: 1.5em auto 1.5em auto;
+  padding-bottom: :0.5em;
+  border: 4px solid white;
+  width:40%;
+  height:56em;
+  font-weight: bold;
+  background-color: #710627;
+}
+#shoppingcart #productinfo{
+  margin-left: 11em;
+  margin-bottom: 1em;
+}
+#shoppingcart .items {
+  border-bottom: 2px dotted white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  height: 10em;
+}
+
+#shoppingcart .image {
+  width: 8em;
+  height: 8em;
+  float: left;
+  margin:0 1.5em 0 0.5em;
+  border:2px solid white;
+}
+#shoppingcart input.button{
+  margin-top: 1em;
+  margin-left: auto;
+}
+
+h2 {
+  background-color: #521C25;
+  border-bottom: 4px solid white;
+  font-size: 125%;
+  color:white;
+  padding:0.5em;
+  text-align: center;
+}
+#shoppingcart p {
+  width: 65%;
+  padding: .25em;
+  margin-left: 10em;
+  }
+
+  h3{
+    font-size: 115%;
+    text-decoration: underline;
+  }
+
+  /*Password*/
+  #accountDetails div{
+    margin: 1em auto 1em .25em;
+  }
+  #changePass p{
+    margin-left: 1em;
+  }
+  #changePass{
+    width:60%;
+    margin: 1em auto 1em auto;
+    padding: .25em;
+  }
+  input.button{margin-top: .5em;}
+
+  /*Payment*/
+  #savePayment{
+    width:60%;
+    margin: 1em auto 1em auto;
+    padding: 0;
+  }
+  #savePayment div{
+    margin: 1em auto 1em .25em;
+  }
+  #savePayment p{
+    margin-left: 1em;
+  }
+  #payMethod{
+    width:55%;
+    float: right;
+    margin-right: .25em;
+  }
+
+  /*past orders*/
+
+  #pastOrder p{
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%;
+    width:50%;
+    height:1em;
+    border:4px solid white;
+    padding:5%;
+    text-align: center;
+  }
+
+  #signout{
+    margin-top: 1.5em;
+    font-size: 115%;
+    background: #521C25;
+    width: 4em;
+    padding:.25em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid white;
+  }
+  #signout a{
+    text-decoration: none;
+  }
