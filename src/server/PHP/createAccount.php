@@ -92,7 +92,7 @@
       foreach ($rows2 as $row2) {
          $userID = $row2['userID'];
       }
-
+      echo("User ID '.$userID.' come on");
       //make them a Customer
       /*$sql4 = "INSERT INTO Customer VALUES (:userID)";
       $statement = $pdo->prepare($sql4);
@@ -111,12 +111,12 @@
       }
 
       //test features customer
-    /*  $sql4 = "SELECT userID FROM Customer" ;
-      $statement = $pdo->prepare($sql4);
+    /*  $sql6 = "SELECT userID FROM Customer" ;
+      $statement = $pdo->prepare($sql6);
       $statement->execute();
-      $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows2 as $row2) {
-        echo $row2['userID'] . " ";
+      $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows3 as $row3) {
+        echo $row3['userID'] . " ";
       }*/
 
       //do me want them to login in now or automatically be logged in
