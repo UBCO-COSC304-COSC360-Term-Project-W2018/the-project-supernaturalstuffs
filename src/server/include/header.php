@@ -7,7 +7,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="/src/server/PHP/contact-FAQ.php">Contact</a></li>
 					<li><a href="/src/server/PHP/accountDetails.php">Account</a></li>
 				</ul>
