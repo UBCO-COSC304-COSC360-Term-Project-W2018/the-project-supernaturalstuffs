@@ -52,7 +52,7 @@
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {}
 
-      //check to see if password if password is correcrt
+      //check to see if password is correcrt
       if ($custPW == null){
         $message = "Please enter a password";
         echo "<script type='text/javascript'>alert('$message');
@@ -64,7 +64,7 @@
       	window.location.href='/src/client/html/login.html'</script>";
       	die();
       }
-      echo ($custE . " " . $custPW);
+      echo "$custE . ' ' . $custPW";
       //change header-pass the user is logged in via session
       echo "<script type='text/javascript'>alert('Email ' . $custE . ' Exists With Password ' . $custPW');
       window.location.href='/index.php'</script>";
