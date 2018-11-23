@@ -7,7 +7,7 @@
   <body>
     <?php
       include '../include/db_credentials.php';
-echo("test");
+
       /** Get first name **/
       $custFN = null;
       if (isset($_POST['fName'])) {
@@ -28,7 +28,7 @@ echo("test");
       if (isset($_POST['password'])) {
           $custPW = $_POST['password'];
       }
-echo("test2");
+
       //check to see if all not null values are entered
       if ($custFN == null){
         $message = "Please enter a first name";
@@ -51,14 +51,14 @@ echo("test2");
         window.location.href='/src/client/html/createAccount.html'</script>";
         die();
       }
-echo("test3");
+
       //connect to database
       try {
           $pdo = new PDO($dsn, $user, $pass, $options);
       } catch (\PDOException $e) {
           throw new \PDOException($e->getMessage(), (int)$e->getCode());
       }
-echo("test4");
+
       //check if email already exists
       $sql = "SELECT email FROM User" ;
       $statement = $pdo->prepare($sql);
@@ -71,7 +71,7 @@ echo("test4");
           window.location.href='/src/client/html/createAccount.html'</script>";
           die();
         }
-echo("test5");
+
       //insert user into user
       $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email)";
       $custUN = "TEST";
@@ -82,11 +82,20 @@ echo("test5");
       $statement->bindValue(':lastname', $custLN, PDO::PARAM_STR);
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
       $insert = $statement->execute();
-echo("test6");
+
       //make them a Customer
-      $sql2 = "INSERT INTO Customer VALUES (SELECT userID FROM User WHERE email = :email )";
+      $userID = null;
+      $sql2 = "SELECT userID FROM User WHERE email = :email"
       $statement = $pdo->prepare($sql2);
-      $statement->bindValue(':email', $custE, PDO::PARAM_STR);
+      $statement->bindValue(':email', $userE, PDO::PARAM_STR);
+      $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows2 as $row2) {
+         $userID = $row2['userID'];
+      }
+
+      $sql3 = "INSERT INTO Customer VALUES (:userID)";
+      $statement = $pdo->prepare($sql3);
+      $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
       $insert = $statement->execute();
 echo("test7");
       //test features user
