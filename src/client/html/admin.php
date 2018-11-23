@@ -13,7 +13,7 @@
 
   <body>
 	<!--Include Header-->
-	<?php include 'include/header.php'; ?>
+	<?php include '../include/header.php'; ?>
 	<main>
 		<div id="box">
 			<div id="Users">
@@ -56,7 +56,7 @@
 		</div>
 	</main>
 	<!--Footer include-->
-	<?php include 'include/footer.php' ?>
+	<?php include '../include/footer.php' ?>
 
  </body>
 
