@@ -90,8 +90,10 @@
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
       $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows2 as $row2) {
-         $userID = $row2['userID'];
+        $userID = $row2['userID'];
+        echo("User ID '.$userID.' come on");
       }
+      $userID = $row2['userID'];
       echo("User ID '.$userID.' come on");
       //make them a Customer
       /*$sql4 = "INSERT INTO Customer VALUES (:userID)";
