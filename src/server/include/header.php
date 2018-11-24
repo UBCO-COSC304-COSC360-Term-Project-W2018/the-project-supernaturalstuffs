@@ -1,7 +1,7 @@
 <header>
   <h1 id="title" ><a href="/index.php"><img src="/src/client/images/logo.png">Super(natural) Store</a></h1>
     <div id="search-cart">
-      <form action="product.php" method="get">
+      <form action="products.php" method="get">
 	<input type="text" name="filter" class="searchHome" placeholder="Search...">
 	  <a href="/src/server/PHP/products.php?filter="><img src="/src/client/images/search.png" alt="search" id="search"></a>
 	  </form>
