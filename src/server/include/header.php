@@ -4,8 +4,8 @@
         <form action="/src/server/PHP/products.php" method="get">
             <input type="text" name="filter" class="searchHome" placeholder="Search...">
             <img src="/src/client/images/search.png" alt="search" id="search">
-        </form>
-        <a href="/src/server/PHP/cart.php"><img src="/src/client/images/cart.png" alt="shopping cart" id="cart"></a>
+			<a href="/src/server/PHP/cart.php"><img src="/src/client/images/cart.png" alt="shopping cart" id="cart"></a>
+	   </form>
     </div>
     <nav>
         <ul>
