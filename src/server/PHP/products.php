@@ -37,7 +37,7 @@
 						foreach ($rows as $row) {
 							echo '<div class="productBox">';
 							echo	'<a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>';
-							echo	'<p>' . $row["pname"] . '</p>';
+							echo	'<p>' . $row["pName"] . '</p>';
 							echo	'<p>' . $row["description"] . '</p>';
 							echo	'<p>' . $row["price"] . '</p>';
 							echo	'<p class="addCart">Add to Cart</p>';
