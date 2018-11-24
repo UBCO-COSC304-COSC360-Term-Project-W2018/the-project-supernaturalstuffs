@@ -31,7 +31,7 @@
 						}
 						
 						//check if All or another selection
-						if($_GET["sort"]==All){
+						if($_GET["sort"]=='All'){
 							$sql = 'SELECT * FROM Product';
 							$statement = $pdo->prepare($sql);
 							$statement->execute();
