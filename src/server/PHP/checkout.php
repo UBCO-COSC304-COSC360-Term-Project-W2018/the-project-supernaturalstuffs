@@ -89,6 +89,7 @@
               <!--New Form-->
               <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
                   <?php
+                    echo "<script type='text/javascript'>alert('" . $_SESSION['pay'] . "')</script>";
                     if (isset($_SESSION['pay'])){
                       echo("<div class='centered'>");
                       echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use old payment information' class='button'/>");
