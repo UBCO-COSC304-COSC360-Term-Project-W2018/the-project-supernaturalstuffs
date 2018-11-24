@@ -8,15 +8,26 @@
     <?php
       include '../include/db_credentials.php';
 
-      /** Get email **/
-      $custE = null;
-      if (isset($_POST['email'])) {
-          $custE = $_POST['email'];
+      session_start();
+      $username = null;
+      if (isset($_SESSION['email'])){
+  	     header('Location: home.php');
+       }
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        /** Get email **/
+        $custE = null;
+        if (isset($_POST['email'])) {
+            $custE = $_POST['email'];
+        }
+        /** Get password **/
+        $custPW = null;
+        if (isset($_POST['password'])) {
+            $custPW = $_POST['password'];
+        }
       }
-      /** Get password **/
-      $custPW = null;
-      if (isset($_POST['password'])) {
-          $custPW = $_POST['password'];
+      if($_SERVER["REQUEST_METHOD"] == "GET"){
+        header('Location: /src/client/html/login.html');
       }
 
       try {
@@ -65,10 +76,10 @@
       	die();
       }
 
-      echo("works")
+      $_SESSION('email') = $custE;
       //change header-pass the user is logged in via session
-      //echo "<script type='text/javascript'>alert('Email ' . $custE . ' Exists With Password ' . $custPW');
-      //window.location.href='/index.php'</script>";
+      echo "<script type='text/javascript'>alert('Email ' . $custE . ' Exists With Password ' . $custPW . ');
+      window.location.href='/index.php'</script>";
     ?>
   </body>
 </html>
