@@ -7,7 +7,7 @@
   <body>
     <?php
     session_start();
-    
+
     include '../include/db_credentials.php';
 
     $userE = null;
@@ -46,7 +46,7 @@
       die();
     }
 
-    $sql2 = "UPDATE User SET password = :newPass WHERE email = :userE";
+    $sql2 = "UPDATE User SET password = :newPass WHERE email = :email";
     $statement = $pdo->prepare($sql2);
     $statement->bindValue(':newPass', $newPass, PDO::PARAM_INT);
     $statement->bindValue(':email', $userE, PDO::PARAM_INT);
