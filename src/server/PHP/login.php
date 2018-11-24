@@ -30,7 +30,7 @@
       <!-- page content -->
 
       <!--Login Form-->
-      <form name="login" id="log" method="post" action="loginPHP.php" onsubmit="return checkLogin()">
+      <form class="Robby" name="login" id="log" method="post" action="loginPHP.php" onsubmit="return checkLogin()">
         <fieldset>
           <legend>Login</legend>
           <div>
