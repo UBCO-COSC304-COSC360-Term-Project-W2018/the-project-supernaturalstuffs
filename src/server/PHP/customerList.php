@@ -25,20 +25,17 @@
 			} catch (\PDOException $e) {
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
-			echo '<p id="sortButton">Sort by</p>';
-			echo '<div id="box">';
-		
 			
-				//Return all Customers
-				$sql = 'SELECT * FROM Customer NATURAL JOIN User';
-				$statement = $pdo->prepare($sql);
-				$statement->execute();
-				$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-				echo '<table>';
-						echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>';
-				foreach ($rows as $row) {
-					echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
-				}
+			//Return all Customers
+			$sql = 'SELECT * FROM Customer NATURAL JOIN User';
+			$statement = $pdo->prepare($sql);
+			$statement->execute();
+			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+			echo '<table>';
+					echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>';
+			foreach ($rows as $row) {
+				echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
+			}
 			echo '</table>';
 		?>
 	</main>
