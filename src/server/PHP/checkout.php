@@ -22,7 +22,7 @@
       <div id="flex-container">
         <div id="formBox">
           <!--Shipment Form-->
-          <form name="shipForm" method="post" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkShipping()" id="shipForm">
+          <form class="Main" name="shipForm" method="post" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkShipping()" id="shipForm">
             <fieldset>
               <legend>Shipment</legend>
               <div id="shipment">
@@ -83,39 +83,18 @@
             </fieldset>
           </form>
           <!--Payment Form-->
-          <form name="payForm" method="post" action="checkoutNewPayment.php" id="payForm" onsubmit="return checkPayment()">
+          <form class="Main" name="payForm" method="post" action="checkoutNewPayment.php" id="payForm" onsubmit="return checkPayment()">
             <fieldset>
               <legend>Payment</legend>
-              <!--New Form-->
-              <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
-                  <?php
-                    echo "<script type='text/javascript'>alert('" . $_SESSION['pay'] . "')</script>";
-                    if (isset($_SESSION['pay'])){
-                      echo("<div class='centered'>");
-                      echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use old payment information' class='button'/>");
-                      echo("</div>");
-                    }else{
-                      echo("<div class='centered'>");
-                      echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use new payment information' class='button'/>");
-                      echo("</div>");
-                    }
-                    ?>
-              </form>
+              <!--</form>-->
               <div id="payment">
-                <?php
-                  if (isset($_SESSION['pay'])){
-                    echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide');</script>";
-                  }else{
-                    echo "<script type='text/javascript'>document.getElementById('payment').classList.add('hide');</script>";
-                  }
-                 ?>
                 <div>
                   <label>Payment Method:</label>
-                  <select id="payMethod">
-                    <option>Visa</option>
-                    <option>Mastercard</option>
-                    <option>American Express</option>
-                  </select>
+      						<select name="payMethod" id="payMethod">
+      						  <option value="Visa">Visa</option>
+      						  <option value="Mastercard">Mastercard</option>
+      						  <option value="American Express">American Express</option>
+      						</select>
                 </div>
                 <div>
                   <label>Name On Card:</label>
@@ -201,7 +180,7 @@
 
       </div>
     </main>
-
+    <?php include '../../../src/server/include/footer.php'; ?>
   </body>
 
   <foot>
