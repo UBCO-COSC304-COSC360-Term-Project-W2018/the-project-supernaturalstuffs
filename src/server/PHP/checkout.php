@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Checkout</title>
-<link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
@@ -23,9 +23,13 @@
       $custE = null;
       if (isset($_SESSION['email'])){
          $custE = $_SESSION['email'];
-       }else{
+      }else{
          header('Location: login.php');
-       }
+      }
+
+      if(isset($_SESSION['payInfo']['cNum'])){
+        echo "<script type='text/javascript'>alert('" . $_SESSION['payInfo']['cNum'] . " working!')</script>";
+      }
    ?>
     <main>
       <!-- page content -->
@@ -33,7 +37,7 @@
       <div id="flex-container">
         <div id="formBox">
           <!--Shipment Form-->
-          <form class="Main" name="shipForm" method="post" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkShipping()" id="shipForm">
+          <form class="Main" name="shipForm" method="post" action="checkoutShipping.php" onsubmit="return checkShipping()" id="shipForm">
             <fieldset>
               <legend>Shipment</legend>
               <div id="shipment">
