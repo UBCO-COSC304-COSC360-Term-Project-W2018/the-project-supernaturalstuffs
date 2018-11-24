@@ -89,7 +89,15 @@
               <!--New Form-->
               <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
                   <div class="centered">
-                    <input type="submit" name="oldInfo" value="Use saved payment information" class="button"/>
+                    <?php
+                    if (isset($_SESSION['pay'])){
+                      <input type="button" onclick="location.href='checkoutOldPayment.php'" value="Use new payment information" class="button"/>
+                      echo "<script type='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";
+                    }else{
+                      <input type="button" onclick="location.href='checkoutOldPayment.php'" value="Use saved payment information" class="button"/>
+                      echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";   
+                    }
+                     ?>
                   </div>
               </form>
               <div id="payment">
