@@ -66,8 +66,8 @@
               <p class="money">Taxes: </p>
               <h3 id="total">Total: </h3>
               <div>
-                <input class ="button" type="button" name="continue" value="Continue Shopping" onclick="location.href='products.html'"/>
-                <input class ="button" type="button" name="checkout" value="Checkout" onclick="location.href='checkout.html'"/>
+                <input class ="button" type="button" name="continue" value="Continue Shopping" onclick="location.href='products.php'"/>
+                <input class ="button" type="button" name="checkout" value="Checkout" onclick="location.href='checkout.php'"/>
               </div>
             </div>
         </div>
