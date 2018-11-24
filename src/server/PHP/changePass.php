@@ -61,7 +61,7 @@
     foreach ($rows2 as $row2) {}
 
     //check to see if password is correcrt
-    $y = MD5($curPass);
+    /*$y = MD5($curPass);
     $x = $row2['password'];
     echo "<script type='text/javascript'>alert('$y')</script>";
     echo "<script type='text/javascript'>alert('$x')</script>";
@@ -70,7 +70,7 @@
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='accountDetails.php'</script>";
       die();
-    }
+    }*/
 
     $sql = "UPDATE User SET password = :pass WHERE email = :email";
     $statement = $pdo->prepare($sql);

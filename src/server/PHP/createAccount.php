@@ -23,7 +23,7 @@
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='/index.php'</script>";
       die();
-     }
+    }
   ?>
 
     <main>
