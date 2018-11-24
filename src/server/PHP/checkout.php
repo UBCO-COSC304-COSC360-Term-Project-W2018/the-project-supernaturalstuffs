@@ -88,12 +88,15 @@
               <legend>Payment</legend>
               <!--New Form-->
               <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
-                  <div class="centered">
                     <?php
                       if (isset($_SESSION['pay'])){
+                        echo("<div class='centered'>");
                         echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use old payment information' class='button'/>");
+                        echo("</div>");
                       }else{
+                        echo("<div class='centered'>");
                         echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use new payment information' class='button'/>");
+                        echo("</div>");
                       }
                      ?>
                   </div>
