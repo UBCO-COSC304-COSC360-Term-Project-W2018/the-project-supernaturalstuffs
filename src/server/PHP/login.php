@@ -10,7 +10,6 @@
 
       include '../include/db_credentials.php';
 
-      $username = null;
       if (isset($_SESSION['email'])){
   	     header('Location: /index.php');
        }

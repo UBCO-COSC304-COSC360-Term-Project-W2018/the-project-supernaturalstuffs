@@ -29,9 +29,10 @@
 				<div id="pastOrder">
 
           <?php
-            include 'include/db_credentials.php';
-
             session_start();
+
+            include '../include/db_credentials.php';
+
             $custE = null;
             if (!isset($_SESSION['email'])){
         	     header('Location: login.php');
