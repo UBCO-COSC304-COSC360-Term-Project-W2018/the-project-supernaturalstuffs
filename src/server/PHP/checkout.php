@@ -83,12 +83,10 @@
             </fieldset>
           </form>
           <!--New Form-->
-          <form name="login" id="log" method="post" action="checkoutOldPayment.php">
-            <fieldset>
-                <div class="centered">
-                  <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
-                </div>
-            </fieldset>
+          <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
+              <div class="centered">
+                <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
+              </div>
           </form>
           <!--Payment Form-->
           <form name="payForm" method="post" action="checkoutNewPayment.php" id="payForm" onsubmit="return checkPayment()">
