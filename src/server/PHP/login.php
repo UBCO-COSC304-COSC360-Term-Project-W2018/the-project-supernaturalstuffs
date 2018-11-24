@@ -78,7 +78,7 @@
 
       //$_SESSION('email') = $custE;
       //change header-pass the user is logged in via session
-      echo "<script type='text/javascript'>alert('Email " . $custE . " Exists With Password " . $custPW . ");
+      echo "<script type='text/javascript'>alert('Email " . $custE . " Exists With Password " . $custPW . "');
       window.location.href='/index.php'</script>";
     echo("Email " . $custE . " Exists With Password " . $custPW);
     ?>
