@@ -91,10 +91,10 @@
                   <div class="centered">
                     <?php
                     if (isset($_SESSION['pay'])){
-                      <input type="button" onclick="location.href='checkoutOldPayment.php'" value="Use new payment information" class="button"/>
+                      echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use new payment information' class='button'/>");
                       echo "<script type='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";
                     }else{
-                      <input type="button" onclick="location.href='checkoutOldPayment.php'" value="Use saved payment information" class="button"/>
+                      echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use old payment information' class='button'/>");
                       echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";   
                     }
                      ?>
