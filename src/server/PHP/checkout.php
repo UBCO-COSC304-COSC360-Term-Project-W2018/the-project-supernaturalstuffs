@@ -130,6 +130,8 @@
               </div>
             </fieldset>
         </form>
+        <!--set user info session payInfo to null-->
+
         </div>
 
         <div id="right-side">
