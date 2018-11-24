@@ -7,9 +7,10 @@
 
   <body>
     <?php
+      session_start();
+      
       include '../include/db_credentials.php';
 
-      session_start();
       $username = null;
       if (isset($_SESSION['email'])){
   	     header('Location: home.php');
@@ -131,7 +132,7 @@
       }*/
 
       //do me want them to login in now or automatically be logged in
-     echo "<script type='text/javascript'>alert('Customer ' . $custFN . ' ' . $custLN . ' was added');
+     echo "<script type='text/javascript'>alert('Customer '" . $custFN . "' '" . $custLN . "' was added');
      window.location.href='/src/client/html/login.html'</script>";
     ?>
   </body>
