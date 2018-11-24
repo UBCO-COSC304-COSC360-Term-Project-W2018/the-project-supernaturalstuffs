@@ -19,7 +19,7 @@
 			<div id="Users">
 				<h2>Users</h2>
 				<div class="catagories">
-					<p>Customer List</p>
+					<a href="customerList.php"><p>Customer List</p></a>
 					<input type="text" class="search" placeholder="Search...">
 					<p>User Details</p>
 					<p>Enable</p>
