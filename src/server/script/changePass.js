@@ -14,7 +14,7 @@ function checkPass(){
   if(password.value.length < 6){
     alert("Password length must be atleast 6 characters!");
     return false;
-  }else if(!contains){
+  }else if(!hasNum){
     alert("Password must contain a number");
     return false;
   }
