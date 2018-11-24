@@ -85,7 +85,6 @@
           <!--New Form-->
           <form name="login" id="log" method="post" action="checkoutOldPayment.php">
             <fieldset>
-              <legend>Login</legend>
                 <div class="centered">
                   <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
                 </div>
