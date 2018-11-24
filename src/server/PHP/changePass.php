@@ -52,8 +52,8 @@
 
     $sql = "UPDATE User SET password = :newPass WHERE email = :email";
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(':newPass', MD5($newPass), PDO::PARAM_STR);
-    $statement->bindValue(':email', $userE, PDO::PARAM_STR);
+    $statement->bindParam(':newPass', MD5($newPass), PDO::PARAM_STR);
+    $statement->bindParam(':email', $userE, PDO::PARAM_STR);
     $statement->execute();
 
     $message = "Your password has been updated. Do not forget it!";
