@@ -16,7 +16,7 @@
 
   <body>
     <!--Include header-->
-	<?php include '/src/server/include/header.php'; ?>
+	<?php include '../../../src/server/include/header.php'; ?>
     <!--Main content of page-->
     <main>
       <div id="flex-conatiner">
@@ -183,7 +183,7 @@
       </div>
     </main>
 
-    <?php include '/src/server/include/footer.php' ?>
+    <?php include '../../../src/server/include/footer.php' ?>
   </body>
 
   <foot>

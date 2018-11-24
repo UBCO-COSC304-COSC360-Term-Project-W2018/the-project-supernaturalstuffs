@@ -12,7 +12,7 @@
    </head>
    <body>
 		<!--Include header-->
-		<?php include '/src/server/include/header.php'; ?>
+		<?php include '../../../src/server/include/header.php'; ?>
 		<main>
 			<div id="product-sidebar">
 				<h3>Products</h3>
@@ -99,7 +99,7 @@
 			</div>
 		</main>
 		<!--Footer include-->
-		<?php include 'src/server/include/footer.php'; ?>
+		<?php include '../../../src/server/include/footer.php'; ?>
    </body>
    <foot>
    </foot>
