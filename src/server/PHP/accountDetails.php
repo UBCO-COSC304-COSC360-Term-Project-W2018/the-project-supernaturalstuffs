@@ -62,7 +62,12 @@
             $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
             $statement->execute();
             $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-            if($rows->rowCount() > 0){
+            //find number of rows
+            $numRows = 0;
+            foreach ($rows as $row) {
+              $numRows = $numRows + 1;
+            }
+            if($numRows > 0){
               echo("<table>");
               echo("<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th></tr>");
               foreach ($rows as $row) {
