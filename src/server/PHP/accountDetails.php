@@ -89,9 +89,9 @@
     					  <div>
       						<label>Payment Method:</label>
       						<select id="payMethod">
-      						  <option>Visa</option>
-      						  <option>Mastercard</option>
-      						  <option>American Express</option>
+      						  <option value="Visa">Visa</option>
+      						  <option value="Mastercard">Mastercard</option>
+      						  <option value="American Express">American Express</option>
       						</select>
     					  </div>
     					  <div>
@@ -112,7 +112,7 @@
     					  </div>
       					  <p class="notes">Format: XXX</p>
     					  <div class="centered">
-      						<input type="submit" value="Confirm Checkout" class="button"/>
+      						<input type="submit" name="submit" value="Save Card" class="button"/>
     					  </div>
     					</div>
   				  </fieldset>

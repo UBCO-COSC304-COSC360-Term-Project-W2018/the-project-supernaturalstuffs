@@ -20,7 +20,7 @@
       if($_SERVER["REQUEST_METHOD"] == "POST"){
         /** Get method **/
         $method = null;
-        if (isset($_POST['payMethod'])) {
+        if (isset($_POST['submit'])) {
             $method = $_POST['payMethod'];
         }
         echo "<script type='text/javascript'>alert('$method')</script>";
