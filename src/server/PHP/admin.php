@@ -20,7 +20,7 @@
 				<form action="userInformation.php" method="get">
 					<h2>Users</h2>
 					<div class="catagories">
-						<a href="UserDetails.php"><p>Customer List</p></a>
+						<a href="customerList.php"><p>Customer List</p></a>
 						<input type="text" class="search" placeholder="Search...">
 						<p>User Details</p>
 						<p>Enable</p>
