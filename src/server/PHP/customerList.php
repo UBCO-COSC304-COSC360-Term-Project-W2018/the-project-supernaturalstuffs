@@ -37,7 +37,6 @@
 				echo '<table>';
 						echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>';
 				foreach ($rows as $row) {
-					echo var_dump($row);
 					echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
 				}
 			echo '</table>';
