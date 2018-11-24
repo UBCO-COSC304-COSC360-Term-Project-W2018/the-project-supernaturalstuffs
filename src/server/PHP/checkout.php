@@ -92,6 +92,12 @@
           <form name="payForm" method="post" action="checkoutNewPayment.php" id="payForm" onsubmit="return checkPayment()">
             <fieldset>
               <legend>Payment</legend>
+              <!--New Form-->
+              <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
+                  <div class="centered">
+                    <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
+                  </div>
+              </form>
               <div id="payment">
                 <div>
                   <label>Payment Method:</label>
