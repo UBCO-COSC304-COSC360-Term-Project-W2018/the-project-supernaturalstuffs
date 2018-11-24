@@ -48,6 +48,7 @@
 
     //check to make sure proper password
     echo "<script type='text/javascript'>alert('$newPass')</script>";
+    echo "<script type='text/javascript'>alert('$userE')</script>";
 
     $sql = "UPDATE User SET password = :newPass WHERE email = :email";
     $statement = $pdo->prepare($sql);
