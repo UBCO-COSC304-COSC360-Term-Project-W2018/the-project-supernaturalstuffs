@@ -33,7 +33,7 @@
 						}
 						
 						//check if email already exists
-						$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["sort"] . '%";';
+						$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["sort"] . '%" OR category LIKE "%' . $_GET["sort"] . '";';
 						$statement = $pdo->prepare($sql);
 						$statement->execute();
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
