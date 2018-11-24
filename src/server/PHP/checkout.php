@@ -87,8 +87,8 @@
             <fieldset>
               <legend>Payment</legend>
               <!--New Form-->
-              <!--<form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
-                  <?php
+              <!--<form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">-->
+                  <?php/*
                     echo "<script type='text/javascript'>alert('" . $_SESSION['pay'] . "')</script>";
                     if (isset($_SESSION['pay'])){
                       echo("<div class='centered'>");
@@ -98,17 +98,17 @@
                       echo("<div class='centered'>");
                       echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use new payment information' class='button'/>");
                       echo("</div>");
-                    }
+                    }*/
                     ?>
-              </form>-->
+              <!--</form>-->
               <div id="payment">
-                <?php
+                <?php/*
                   if (isset($_SESSION['pay'])){
                     echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide');</script>";
                   }else{
                     echo "<script type='text/javascript'>document.getElementById('payment').classList.add('hide');</script>";
                   }
-                 ?>
+                 */?>
                 <div>
                   <label>Payment Method:</label>
                   <select id="payMethod">
