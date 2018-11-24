@@ -12,7 +12,7 @@
 
 	<body>
 		<!--Include header-->
-		<?php include '/src/server/include/header.php'; ?>
+		<?php include 'src/server/include/header.php'; ?>
 	<main>
 		<!-- page content -->
 		<div id = "flex">
@@ -48,7 +48,7 @@
 		</div>
 	</main>
 	<!--Footer include-->
-	<?php include '/src/server/include/footer.php'; ?>
+	<?php include 'src/server/include/footer.php'; ?>
   </body>
 
   <foot>
