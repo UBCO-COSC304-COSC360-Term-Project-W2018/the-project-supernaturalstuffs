@@ -61,7 +61,7 @@
             <input type="submit" value="Create Account" class="button"/>
           </div>
           <div class="centered">
-            <input type="button" onclick="location.href='login.html'" value="Already Have an Acount" class="button"/>
+            <input type="button" onclick="location.href='login.php'" value="Already Have an Acount" class="button"/>
           </div>
 
         </fieldset>
