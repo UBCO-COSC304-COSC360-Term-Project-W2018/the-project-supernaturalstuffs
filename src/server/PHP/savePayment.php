@@ -7,7 +7,7 @@
   <body>
     <?php
       session_start();
-      
+
       include '../include/db_credentials.php';
 
       $userE = null;
@@ -98,8 +98,13 @@
       $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      //find number of rows
+      $numRows = 0;
+      foreach ($rows as $row) {
+        $numRows = $numRows + 1;
+      }
 
-      if($rows->rowCount() > 0){
+      if($numRows > 0){
         //if payment method exists update information
         $sql2 = "UPDATE PaymentMethod SET method=:method, nameOnCard=:name, cardNumber=:cNumb, expirationDate=:expDate, csv=:csv WHERE userID = :userID";
         $statement = $pdo->prepare($sql2);
