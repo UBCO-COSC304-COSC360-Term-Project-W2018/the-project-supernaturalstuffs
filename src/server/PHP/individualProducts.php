@@ -52,7 +52,7 @@
 
     </main>
 	<!--Footer include-->
-	<?php include '/src/server/include/footer.php' ?>
+	<?php include '/src/client/include/footer.php'; ?>
   </body>
 
   <foot>
