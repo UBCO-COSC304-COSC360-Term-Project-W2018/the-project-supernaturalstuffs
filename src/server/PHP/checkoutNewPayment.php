@@ -20,7 +20,7 @@
       if($_SERVER["REQUEST_METHOD"] == "POST"){
         /** Get method **/
         $method = null;
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['payMethod'])) {
             $method = $_POST['payMethod'];
         }
         /** Get name **/
