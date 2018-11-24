@@ -82,12 +82,6 @@
               </div>
             </fieldset>
           </form>
-          <!--New Form-->
-          <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
-              <div class="centered">
-                <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
-              </div>
-          </form>
           <!--Payment Form-->
           <form name="payForm" method="post" action="checkoutNewPayment.php" id="payForm" onsubmit="return checkPayment()">
             <fieldset>
@@ -95,7 +89,7 @@
               <!--New Form-->
               <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
                   <div class="centered">
-                    <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
+                    <input type="checkbox" name="staySignedIn" value="yes">Use saved payment information
                   </div>
               </form>
               <div id="payment">
