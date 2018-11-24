@@ -31,28 +31,53 @@
           <?php
             include 'include/db_credentials.php';
 
-            /** Get customer id most likely in session**/
-            /*session_start();
-            $userID = null;
-            if (isset($_SESSION['userID'])) {
-                $userID = $_SESSION['userID'];
-            }*/
-
+            session_start();
+            $custE = null;
+            if (!isset($_SESSION['email'])){
+        	     header('Location: login.php');
+             }else{
+               $custE = $_SESSION['email'];
+             }
 
             try {
                 $pdo = new PDO($dsn, $user, $pass, $options);
             } catch (\PDOException $e) {
                 throw new \PDOException($e->getMessage(), (int)$e->getCode());
             }
-          ?>
 
-				  <p>You have never placed an order before!</p>
+            //get userID from session
+            $sql = "SELECT userID FROM User WHERE email = :email";
+            $statement = $pdo->prepare($sql);
+            $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+            $statement->execute();
+            $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $row) {}
+
+            $userID = $row['userID'];
+
+            //get all orders from $userID
+            $sql = "SELECT orderID, totalPrice, trackingNumber FROM Orders WHERE userID = :userID ORDER BY orderID DESC";
+            $statement = $pdo->prepare($sql);
+            $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
+            $statement->execute();
+            $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+            if($rows){
+              echo("<table>");
+              echo("<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th></tr>");
+              foreach ($rows as $row) {
+                echo("<tr><td>".$row['orderID']."</td><td>".$row['totalPrice']."</td><td>".$row['trackingNumber']."</td></tr>");
+              }
+              echo("</table>");
+            }else{
+              echo("<p>You have never placed an order before!</p>");
+            }
+          ?>
 				</div>
 			  </div>
 
 			  <div id="paymentInfo">
 				<h3>Payment Info</h3>
-  				<form name="savePayment" method="post" action="http://www.randyconnolly.com/tests/process.php" id="savePayment" onsubmit="return checkPayment()">
+  				<form name="savePayment" method="post" action="savePayment.php" id="savePayment" onsubmit="return checkPayment()">
   				  <fieldset>
     					<div id="payment">
     					  <div>
@@ -88,7 +113,7 @@
   				</form>
 			  </div>
 
-			  <div id="orderHistory">
+			  <div id="changePassBlock">
 				<h3>Change Password</h3>
 				<form name="changePassword" id="changePass" method="post" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkPass()">
 				  <fieldset>

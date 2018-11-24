@@ -9,25 +9,36 @@
     <?php
       include '../include/db_credentials.php';
 
-      /** Get first name **/
-      $custFN = null;
-      if (isset($_POST['fName'])) {
-          $custFN = $_POST['fName'];
+      session_start();
+      $username = null;
+      if (isset($_SESSION['email'])){
+  	     header('Location: home.php');
+       }
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        /** Get first name **/
+        $custFN = null;
+        if (isset($_POST['fName'])) {
+            $custFN = $_POST['fName'];
+        }
+        /** Get last name **/
+        $custLN = null;
+        if (isset($_POST['lName'])) {
+            $custLN = $_POST['lName'];
+        }
+        /** Get email **/
+        $custE = null;
+        if (isset($_POST['email'])) {
+            $custE = $_POST['email'];
+        }
+        /** Get password **/
+        $custPW = null;
+        if (isset($_POST['password'])) {
+            $custPW = $_POST['password'];
+        }
       }
-      /** Get last name **/
-      $custLN = null;
-      if (isset($_POST['lName'])) {
-          $custLN = $_POST['lName'];
-      }
-      /** Get email **/
-      $custE = null;
-      if (isset($_POST['email'])) {
-          $custE = $_POST['email'];
-      }
-      /** Get password **/
-      $custPW = null;
-      if (isset($_POST['password'])) {
-          $custPW = $_POST['password'];
+      if($_SERVER["REQUEST_METHOD"] == "GET"){
+        header('Location: /src/client/html/createAccount.html');
       }
 
       //check to see if all not null values are entered
