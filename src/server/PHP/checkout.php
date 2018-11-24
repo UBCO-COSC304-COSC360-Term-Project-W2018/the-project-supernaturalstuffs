@@ -82,8 +82,17 @@
               </div>
             </fieldset>
           </form>
+          <!--New Form-->
+          <form name="login" id="log" method="post" action="checkoutOldPayment.php">
+            <fieldset>
+              <legend>Login</legend>
+                <div class="centered">
+                  <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
+                </div>
+            </fieldset>
+          </form>
           <!--Payment Form-->
-          <form name="payForm" method="post" action="http://www.randyconnolly.com/tests/process.php" id="payForm" onsubmit="return checkPayment()">
+          <form name="payForm" method="post" action="checkoutNewPayment.php" id="payForm" onsubmit="return checkPayment()">
             <fieldset>
               <legend>Payment</legend>
               <div id="payment">
