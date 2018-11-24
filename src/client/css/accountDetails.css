@@ -97,6 +97,7 @@ h2 {
     margin-left: 1em;
   }
   #payMethod{
+    color: black;
     width:55%;
     float: right;
     margin-right: .25em;
