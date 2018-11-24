@@ -133,7 +133,7 @@
 
       //do me want them to login in now or automatically be logged in
       $_SESSION['email'] = $custE;
-      echo "<script type='text/javascript'>alert('Customer '" . $custFN . "' '" . $custLN . "' was added and is now logged in');
+      echo "<script type='text/javascript'>alert('Customer " . $custFN . " " . $custLN . " was added and is now logged in');
       window.location.href='/index.php'</script>";
     ?>
   </body>
