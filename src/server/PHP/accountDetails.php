@@ -34,10 +34,10 @@
             include '../include/db_credentials.php';
 
             $custE = null;
-            if (!isset($_SESSION['email'])){
-        	     header('Location: login.php');
-             }else{
+            if (isset($_SESSION['email'])){
                $custE = $_SESSION['email'];
+             }else{
+               header('Location: login.php');
              }
 
             try {
