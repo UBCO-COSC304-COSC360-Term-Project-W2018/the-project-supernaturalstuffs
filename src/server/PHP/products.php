@@ -22,6 +22,9 @@
 					<?php 
 						include '../include/db_credentials.php'; 
 						
+						echo var_dump($_GET);
+
+						
 						//connect to database
 						try {
 							$pdo = new PDO($dsn, $user, $pass, $options);
@@ -30,7 +33,7 @@
 						}
 						
 						//check if email already exists
-						$sql = "SELECT * FROM Product" ;
+						$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["sort"] . '%";';
 						$statement = $pdo->prepare($sql);
 						$statement->execute();
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
