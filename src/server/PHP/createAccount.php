@@ -16,8 +16,7 @@
   <?php
     session_start();
 
-    include '/src/server/include/header.php';
-
+    include '../../../src/server/include/header.php';
 
     if (isset($_SESSION['email'])){
       $message = "Already Logged In";
@@ -69,7 +68,7 @@
       </form>
     </main>
 
-    <?php include '/src/server/include/footer.php' ?>
+    <?php include '../../../src/server/include/footer.php' ?>
 
   </body>
 
