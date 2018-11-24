@@ -40,12 +40,12 @@
                header('Location: login.php');
              }
 
-            try {
-                $pdo = new PDO($dsn, $user, $pass, $options);
-            } catch (\PDOException $e) {
-                throw new \PDOException($e->getMessage(), (int)$e->getCode());
-            }
-
+             try {
+                 $pdo = new PDO($dsn, $user, $pass, $options);
+             } catch (\PDOException $e) {
+                 throw new \PDOException($e->getMessage(), (int)$e->getCode());
+             }
+             echo($custE);
             //get userID from session
             $sql = "SELECT userID FROM User WHERE email = :email";
             $statement = $pdo->prepare($sql);
