@@ -51,7 +51,7 @@
 								echo	'<p class="addCart">Add to Cart</p>';
 								echo '</div>';
 							}
-						</div>
+						echo '</div>';
 					?>
 			</div>
 		</main>
