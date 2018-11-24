@@ -15,7 +15,7 @@
 
   <body>
    <!--Include header-->
-	<?php include '/src/server/include/header.php'; ?>
+	<?php include '../../../src/server/include/header.php'; ?>
     <main>
       <!-- page content -->
       <!--Checkout Forms-->
@@ -179,8 +179,7 @@
 
       </div>
     </main>
-	<!--Footer include-->
-	<?php include '/src/server/include/footer.php' ?>
+
   </body>
 
   <foot>

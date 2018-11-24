@@ -3,11 +3,11 @@
 			<div id="search-cart">
 				<input type="text" class="searchHome" placeholder="Search...">
 				<img src="/src/client/images/search.png" alt="search" id="search">
-				<a href="/src/client/html/cart.html"><img src="/src/client/images/cart.png" alt="shopping cart" id="cart"></a>
+				<a href="/src/server/PHP/cart.php"><img src="/src/client/images/cart.png" alt="shopping cart" id="cart"></a>
 			</div>
 			<nav>
 				<ul>
-					<li><a href="index.php">Home</a></li>
+					<li><a href="/index.php">Home</a></li>
 					<li><a href="/src/server/PHP/contact-FAQ.php">Contact</a></li>
 					<li><a href="/src/server/PHP/accountDetails.php">Account</a></li>
 				</ul>

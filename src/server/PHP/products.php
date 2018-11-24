@@ -12,94 +12,61 @@
    </head>
    <body>
 		<!--Include header-->
-		<?php include '/src/server/include/header.php'; ?>
+		<?php include '../../../src/server/include/header.php'; ?>
 		<main>
-			<div id="product-sidebar">
-				<h3>Products</h3>
-				<div id="productSidebarOptions">
-				   <h4><a href="products.php">All</a></h4>
-				   <h4>Creatures</h4>
-				   <p>Vampires</p>
-				   <p>Shifters</p>
-				   <p>Ghosts</p>
-				   <p>Werewolves</p>
-				   <h4>Gear</h4>
-				   <p>Silver Bullets</p>
-				   <p>Holy Water</p>
-				</div>
-			 </div>
+			<!--Include ProductSidebar-->
+			<?php include '../../../src/server/include/productSidebar.php'; ?>
 			 <div id="contentRight">
 				<p id="sortButton">Sort by</p>
 				<div id="box">
-				   <div class="productBox">
-					  <a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-
+					<?php 
+						include '../include/db_credentials.php'; 
+						
+			
+						//connect to database
+						try {
+							$pdo = new PDO($dsn, $user, $pass, $options);
+						} catch (\PDOException $e) {
+							throw new \PDOException($e->getMessage(), (int)$e->getCode());
+						}
+						
+						//check if All or another selection
+						if(!(isset($_GET["sort"]))){
+							$sql = 'SELECT * FROM Product';
+							$statement = $pdo->prepare($sql);
+							$statement->execute();
+							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+							foreach ($rows as $row) {
+								echo '<div class="productBox">';
+								echo	'<a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>';
+								echo	'<p>' . $row["pName"] . '</p>';
+								echo	'<p>' . $row["description"] . '</p>';
+								echo	'<p>' . $row["price"] . '</p>';
+								echo	'<p class="addCart">Add to Cart</p>';
+								echo '</div>';
+							}
+						}else{
+							$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["sort"] . '%" OR category LIKE "%' . $_GET["sort"] . '";';
+							$statement = $pdo->prepare($sql);
+							$statement->execute();
+							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+							foreach ($rows as $row) {
+								echo '<div class="productBox">';
+								echo	'<a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>';
+								echo	'<p>' . $row["pName"] . '</p>';
+								echo	'<p>' . $row["description"] . '</p>';
+								echo	'<p>' . $row["price"] . '</p>';
+								echo	'<p class="addCart">Add to Cart</p>';
+								echo '</div>';
+							}
+						}
+						
+					?>
 				</div>
 			</div>
 		</main>
 		<!--Footer include-->
-		<?php include '/src/server/include/footer.php' ?>
+		<?php include '../../../src/server/include/footer.php'; ?>
    </body>
    <foot>
    </foot>

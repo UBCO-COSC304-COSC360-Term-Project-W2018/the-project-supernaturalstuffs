@@ -18,6 +18,7 @@
 
     include '/src/server/include/header.php';
 
+
     if (isset($_SESSION['email'])){
       $message = "Already Logged In";
       echo "<script type='text/javascript'>alert('$message');

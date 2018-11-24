@@ -13,7 +13,7 @@
 
   <body>
 	<!--Include header-->
-	<?php include '/src/server/include/header.php'; ?>
+	<?php include '../../../src/server/include/header.php'; ?>
     <main>
           <div id ="container">
             <div id ="productbox">
@@ -52,7 +52,7 @@
 
     </main>
 	<!--Footer include-->
-	<?php include '/src/server/include/footer.php' ?>
+	<?php include '../../../src/server/include/footer.php'; ?>
   </body>
 
   <foot>
