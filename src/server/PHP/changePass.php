@@ -46,16 +46,20 @@
       die();
     }
 
-    //check to make sure proper password
-    echo "<script type='text/javascript'>alert('$newPass')</script>";
-    echo "<script type='text/javascript'>alert('$userE')</script>";
+    try {
+        $pdo = new PDO($dsn, $user, $pass, $options);
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
 
-    $info = ['pass'=>MD5($newPass), 'email'=>$userE,];
+    //check to make sure proper password
+    
+
     $sql = "UPDATE User SET password = :pass WHERE email = :email";
     $statement = $pdo->prepare($sql);
-    //$statement->bindValue(':pass', MD5($newPass), PDO::PARAM_STR);
-    //$statement->bindValue(':email', $userE, PDO::PARAM_STR);
-    $statement->execute($info);
+    $statement->bindValue(':pass', MD5($newPass), PDO::PARAM_STR);
+    $statement->bindValue(':email', $userE, PDO::PARAM_STR);
+    $statement->execute();
 
     $message = "Your password has been updated. Do not forget it!";
     echo "<script type='text/javascript'>alert('$message');
