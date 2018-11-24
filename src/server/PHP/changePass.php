@@ -61,7 +61,8 @@
     foreach ($rows2 as $row2) {}
 
     //check to see if password is correcrt
-    if($row2['password'] != $curPass) {
+
+    if($row2['curPassword'] != $curPass) {
       $message = "Error: Incorrect Password";
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='accountDetails.php'</script>";
