@@ -23,6 +23,7 @@
         if (isset($_POST['payMethod'])) {
             $method = $_POST['payMethod'];
         }
+        echo "<script type='text/javascript'>alert('$method')</script>";
         /** Get name **/
         $name = null;
         if (isset($_POST['cardName'])) {
@@ -52,27 +53,27 @@
       if ($method == null){
         $message = "Please select a method";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='createAccount.php'</script>";
+        window.location.href='accountDetails.php'</script>";
         die();
       }else if ($name == null){
         $message = "Please enter a card holder name";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='createAccount.php'</script>";
+        window.location.href='accountDetails.php'</script>";
         die();
       }else if ($cNum == null){
         $message = "Please enter a card number";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='createAccount.php'</script>";
+        window.location.href='accountDetails.php'</script>";
         die();
       }else if ($expDate == null){
         $message = "Please enter a expiration date";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='createAccount.php'</script>";
+        window.location.href='accountDetails.php'</script>";
         die();
       }else if ($csv == null){
         $message = "Please enter a csv";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='createAccount.php'</script>";
+        window.location.href='accountDetails.php'</script>";
         die();
       }
 
