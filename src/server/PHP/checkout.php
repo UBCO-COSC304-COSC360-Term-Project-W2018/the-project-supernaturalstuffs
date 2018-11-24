@@ -90,11 +90,11 @@
               <div id="payment">
                 <div>
                   <label>Payment Method:</label>
-                  <select id="payMethod">
-                    <option>Visa</option>
-                    <option>Mastercard</option>
-                    <option>American Express</option>
-                  </select>
+      						<select name="payMethod" id="payMethod">
+      						  <option value="Visa">Visa</option>
+      						  <option value="Mastercard">Mastercard</option>
+      						  <option value="American Express">American Express</option>
+      						</select>
                 </div>
                 <div>
                   <label>Name On Card:</label>
