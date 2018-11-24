@@ -13,6 +13,16 @@
 
 	<body>
 		<!--Include header-->
+    <?php
+      session_start();
+
+      if (isset($_SESSION['email'])){
+        $message = "Already Logged In";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='/index.php'</script>";
+        die();
+       }
+    ?>
     <header>
   			<h1 id="title" ><a href="/index.php"><img src="/src/client/images/logo.png">Super(natural) Store</a></h1>
   			<div id="search-cart">
