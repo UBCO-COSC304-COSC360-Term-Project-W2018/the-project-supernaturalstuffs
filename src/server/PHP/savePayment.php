@@ -128,7 +128,7 @@
         $statement->execute();
       }
 
-      //payment test
+      /*//payment test
       $sql6 = "SELECT cardNumber FROM PaymentMethod" ;
       $statement = $pdo->prepare($sql6);
       $statement->execute();
@@ -136,7 +136,7 @@
       foreach ($rows3 as $row3) {
         $x = $row3['cardNumber'];
         echo "<script type='text/javascript'>alert('$x')</script>";
-      }
+      }*/
 
       $message = "Payment Information Updated";
       echo "<script type='text/javascript'>alert('$message');
