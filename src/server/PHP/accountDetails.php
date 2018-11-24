@@ -121,24 +121,24 @@
 
 			  <div id="changePassBlock">
 				<h3>Change Password</h3>
-				<form name="changePassword" id="changePass" method="post" action="changePass.php" onsubmit="return checkPass()">
+				<form name="changePassword" class="Main" id="changePass" method="post" action="changePass.php" onsubmit="return checkPass()">
 				  <fieldset>
-					<div>
-					  <label>Current Password:</label>
-					  <input type="password" name="curPassword" class="box"/>
-					</div>
-					<div>
-					  <label>New Password:</label>
-					  <input type="password" name="newPassword" class="box"/>
-					</div>
-					<p class="notes">Password must be 6 characters long and contain a number</p>
-					<div>
-					  <label>Confirm Password:</label>
-					  <input type="password" name="cPassword" class="box"/>
-					</div>
-					<div class="centered">
-					  <input type="submit" value="Change Password" class="button"/>
-					</div>
+  					<div>
+  					  <label>Current Password:</label>
+  					  <input type="password" name="curPassword" class="box"/>
+  					</div>
+  					<div>
+  					  <label>New Password:</label>
+  					  <input type="password" name="newPassword" class="box"/>
+  					</div>
+  					<p class="notes">Password must be 6 characters long and contain a number</p>
+  					<div>
+  					  <label>Confirm Password:</label>
+  					  <input type="password" name="cPassword" class="box"/>
+  					</div>
+  					<div class="centered">
+  					  <input type="submit" value="Change Password" class="button"/>
+  					</div>
 				  </fieldset>
 				</form>
 			  </div>
