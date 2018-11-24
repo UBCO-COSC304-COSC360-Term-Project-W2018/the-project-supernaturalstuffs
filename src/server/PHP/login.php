@@ -11,7 +11,10 @@
       include '../include/db_credentials.php';
 
       if (isset($_SESSION['email'])){
-  	     header('Location: /index.php');
+        $message = "Already Logged In";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='/index.php'</script>";
+        die();
        }
 
       if($_SERVER["REQUEST_METHOD"] == "POST"){
