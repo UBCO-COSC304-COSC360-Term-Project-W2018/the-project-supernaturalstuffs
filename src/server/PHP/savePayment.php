@@ -100,7 +100,7 @@
 
       if($rows /*Make sure it has a row*/){
         //if payment method exists update information
-        $sql2 = "UPDATE PaymentMethod SET method=:method, nameOnCard=:name, cardNumber=:cNumb, expirationDate=:expDate, csv=:csv WHERE :userID";
+        $sql2 = "UPDATE PaymentMethod SET method=:method, nameOnCard=:name, cardNumber=:cNumb, expirationDate=:expDate, csv=:csv WHERE userID = :userID";
         $statement = $pdo->prepare($sql2);
         $statement->bindValue(':userID', $custID, PDO::PARAM_INT);
         $statement->bindValue(':method', $method, PDO::PARAM_STR);
