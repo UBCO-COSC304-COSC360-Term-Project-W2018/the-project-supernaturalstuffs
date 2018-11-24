@@ -20,12 +20,9 @@
       if($_SERVER["REQUEST_METHOD"] == "POST"){
         /** Get method **/
         $method = null;
-        $x = $_POST['payMethod'];
         if (isset($_POST['payMethod'])) {
             $method = $_POST['payMethod'];
         }
-        echo "<script type='text/javascript'>alert('$method')</script>";
-        echo "<script type='text/javascript'>alert('$x')</script>";
         /** Get name **/
         $name = null;
         if (isset($_POST['cardName'])) {
