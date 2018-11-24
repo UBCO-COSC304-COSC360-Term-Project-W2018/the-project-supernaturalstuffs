@@ -143,7 +143,7 @@
 				</form>
 			  </div>
 
-			  <p id="signout"><a href="login.html">Sign Out</a></p>
+			  <p id="signout"><a href="logout.html">Sign Out</a></p>
 
 			</div>
 		<div>
