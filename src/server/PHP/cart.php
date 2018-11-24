@@ -74,7 +74,8 @@
 
       </div>
     </main>
-    <?php include '../include/footer.php' ?>
+    <!--Footer include-->
+	<?php include '/src/client/include/footer.php'; ?>
   </body>
 
   <foot>
