@@ -6,9 +6,10 @@
   </head>
   <body>
     <?php
+    session_start();
+    
     include '../include/db_credentials.php';
 
-    session_start();
     $userE = null;
     if (!isset($_SESSION['email'])){
       header('Location: login.php');
