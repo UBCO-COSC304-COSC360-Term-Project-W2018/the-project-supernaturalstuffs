@@ -29,7 +29,7 @@
     <main>
       <!-- page content -->
       <!--createAccount Form-->
-      <form class="Robby" name="createAccount" id="create" method="post" action="createAccountPHP.php" onsubmit="return preventDefault()">
+      <form class="Main" name="createAccount" id="create" method="post" action="createAccountPHP.php" onsubmit="return preventDefault()">
         <fieldset>
           <legend>Create Account</legend>
           <div>

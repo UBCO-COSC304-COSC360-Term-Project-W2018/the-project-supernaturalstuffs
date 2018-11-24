@@ -83,7 +83,7 @@
 
 			  <div id="paymentInfo">
 				<h3>Payment Info</h3>
-  				<form class="Robby" name="savePayment" method="post" action="savePayment.php" id="savePayment" onsubmit="return checkPayment()">
+  				<form class="Main" name="savePayment" method="post" action="savePayment.php" id="savePayment" onsubmit="return checkPayment()">
   				  <fieldset>
     					<div id="payment">
     					  <div>
