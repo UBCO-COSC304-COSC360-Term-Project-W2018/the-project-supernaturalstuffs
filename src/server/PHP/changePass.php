@@ -11,10 +11,10 @@
     include '../include/db_credentials.php';
 
     $userE = null;
-    if (!isset($_SESSION['email'])){
-      header('Location: login.php');
-    }else{
+    if (isset($_SESSION['email'])){
       $userE = $_SESSION['email'];
+    }else{
+      header('Location: login.php');
     }
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -46,9 +46,12 @@
       die();
     }
 
-    $sql2 = "UPDATE User SET password = :newPass WHERE email = :email";
+    //check to make sure proper password
+
+
+    $sql2 = "UPDATE `User` SET `password` = :newPass WHERE `email` = :email";
     $statement = $pdo->prepare($sql2);
-    $statement->bindValue(':newPass', $newPass, PDO::PARAM_STR);
+    $statement->bindValue(':newPass', MD5($newPass), PDO::PARAM_STR);
     $statement->bindValue(':email', $userE, PDO::PARAM_STR);
     $statement->execute();
 
