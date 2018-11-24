@@ -91,9 +91,9 @@
                   <div class="centered">
                     <?php
                       if (isset($_SESSION['pay'])){
-                        echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use new payment information' class='button'/>");
-                      }else{
                         echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use old payment information' class='button'/>");
+                      }else{
+                        echo("<input type='button' onclick='location.href='checkoutOldPayment.php' value='Use new payment information' class='button'/>");
                       }
                      ?>
                   </div>
