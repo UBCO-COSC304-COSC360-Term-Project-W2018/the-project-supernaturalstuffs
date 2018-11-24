@@ -36,6 +36,7 @@
 			foreach ($rows as $row) {
 				echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td></tr>';
 			}
+			echo '<tr colspan="3"><td>Total Price: BLANK</td></tr>';
 			echo '</table>';
 		?>
 	</main>
