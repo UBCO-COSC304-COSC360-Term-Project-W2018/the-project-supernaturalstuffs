@@ -91,7 +91,6 @@
       foreach ($rows as $row) {}
 
       $userID = $row['userID'];
-      echo "<script type='text/javascript'>alert('$userID')</script>";
 
       //check if payment method exists for $userID
       $sql = "SELECT cardNumber FROM PaymentMethod WHERE userID = :userID";
@@ -119,7 +118,7 @@
         $statement->execute();
       }else{
         //if payment method does not exist insert payment method into PaymentMethod
-        $sql2 = "INSERT INTO PaymentMethod VALUES (:userID ,:method ,:name ,:cNum ,:expDate ,:csv)";
+        $sql2 = "INSERT INTO PaymentMethod VALUES (:method ,:name ,:cNum ,:expDate ,:csv, :userID)";
         $statement = $pdo->prepare($sql2);
         $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
         $statement->bindValue(':method', $method, PDO::PARAM_STR);
