@@ -6,9 +6,10 @@
   </head>
   <body>
     <?php
+      session_start();
+
       include '../include/db_credentials.php';
 
-      session_start();
       $username = null;
       if (isset($_SESSION['email'])){
   	     header('Location: home.php');
@@ -76,9 +77,9 @@
       	die();
       }
 
-      //$_SESSION('email') = $custE;
+      $_SESSION('email') = $custE;
       //change header-pass the user is logged in via session
-      echo "<script type='text/javascript'>alert('Email " . $custE . " Exists With Password " . $custPW . "');
+      echo "<script type='text/javascript'>alert('" . $custE . " is now logged in!');
       window.location.href='/index.php'</script>";
     echo("Email " . $custE . " Exists With Password " . $custPW);
     ?>
