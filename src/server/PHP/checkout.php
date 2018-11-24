@@ -89,7 +89,7 @@
               <!--New Form-->
               <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
                   <div class="centered">
-                    <input type="checkbox" name="staySignedIn" value="yes">Use saved payment information
+                    <input type="submit" name="oldInfo" value="Use saved payment information" class="button"/>
                   </div>
               </form>
               <div id="payment">
