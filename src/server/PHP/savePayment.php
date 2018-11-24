@@ -108,7 +108,7 @@
         //if payment method exists update information
         $sql2 = "UPDATE PaymentMethod SET method=:method, nameOnCard=:name, cardNumber=:cNumb, expirationDate=:expDate, csv=:csv WHERE userID = :userID";
         $statement = $pdo->prepare($sql2);
-        $statement->bindValue(':userID', $custID, PDO::PARAM_INT);
+        $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
         $statement->bindValue(':method', $method, PDO::PARAM_STR);
         $statement->bindValue(':name', $name, PDO::PARAM_STR);
         $statement->bindValue(':cNum', $cNum, PDO::PARAM_STR);
@@ -119,7 +119,7 @@
         //if payment method does not exist insert payment method into PaymentMethod
         $sql2 = "INSERT INTO PaymentMethod VALUES (:userID ,:method ,:name ,:cNum ,:expDate ,:csv)";
         $statement = $pdo->prepare($sql2);
-        $statement->bindValue(':userID', $custID, PDO::PARAM_INT);
+        $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
         $statement->bindValue(':method', $method, PDO::PARAM_STR);
         $statement->bindValue(':name', $name, PDO::PARAM_STR);
         $statement->bindValue(':cNum', $cNum, PDO::PARAM_STR);
