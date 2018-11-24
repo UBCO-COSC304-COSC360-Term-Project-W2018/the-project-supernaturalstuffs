@@ -8,12 +8,15 @@
 		<link rel="stylesheet" type="text/css" href="./src/client/css/stylesheet.css">
 		<link rel="stylesheet" href="./src/client/css/header-footer.css" />
 		<link rel="stylesheet" href="./src/client/css/home.css" />
-		
+
 		<!--<script src="script.js"></script>-->
 	</head>
 	<body>
 	<!--Include header-->
-	<?php include 'src/server/include/header.php'; ?>
+	<?php
+		session_start();
+		include 'src/server/include/header.php';
+	?>
 		<main>
 			<div id="about">
 				<h2>Our Mission</h2>
