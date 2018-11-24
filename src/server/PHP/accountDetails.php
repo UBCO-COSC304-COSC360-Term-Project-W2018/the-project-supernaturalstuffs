@@ -183,26 +183,7 @@
       </div>
     </main>
 
-    <footer>
-      <div id="topF">
-        <div id="detailFooter">
-          <a href="contact-FAQ.html"><p>Find a store</p></a>
-          <a href="#"><p>Sign up for emails</p></a>
-          <a href="contact-FAQ.html"><p>Contact</p></a>
-        </div>
-        <div class="socials">
-          <a href="https://www.facebook.com"><img src="../images/Facebook.png" alt="Facebook link"></a>
-          <a href="https://www.youtube.com"><img src="../images/YouTube.png" alt="Youtube link"></a>
-          <a href="https://www.instagram.com"><img src="../images/Instagram.png" alt="Instagram link"></a>
-          <a href="https://www.twitter.com"><img src="../images/Twitter.png" alt="Twitter link"></a>
-        </div>
-      </div>
-      <div id="bottom">
-        <p> &copy; 2017-2018, Super(natural) Store, inc. All Rights Reserved</p>
-        <p>Terms of Use</p>
-        <p>Privacy Policy</p>
-      </div>
-    </footer>
+    <?php include '/src/server/include/footer.php' ?>
   </body>
 
   <foot>
