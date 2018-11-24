@@ -30,7 +30,7 @@
         }
       }
       if($_SERVER["REQUEST_METHOD"] == "GET"){
-        header('Location: /src/client/html/login.html');
+        header('Location: login.php');
       }
 
       try {
@@ -50,12 +50,12 @@
       if ($custE == null){
         $message = "Please enter an email";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/login.html'</script>";
+        window.location.href='login.php'</script>";
         die();
       }else if ($row == null){
         $message = "Error: Incorrect Email";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/login.html'</script>";
+        window.location.href='login.php'</script>";
         die();
       }
 
@@ -70,12 +70,12 @@
       if ($custPW == null){
         $message = "Please enter a password";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/login.html'</script>";
+        window.location.href='login.php'</script>";
         die();
       }else if($row2['password'] != MD5($custPW)) {
         $message = "Error: Incorrect Password";
         echo "<script type='text/javascript'>alert('$message');
-      	window.location.href='/src/client/html/login.html'</script>";
+      	window.location.href='login.php'</script>";
       	die();
       }
 
