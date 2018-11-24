@@ -17,9 +17,7 @@
 			<!--Include ProductSidebar-->
 			<?php include '../../../src/server/include/productSidebar.php'; ?>
 			 <div id="contentRight">
-				<p id="sortButton">Sort by</p>
-				<div id="box">
-					<?php 
+				<?php 
 						include '../include/db_credentials.php'; 
 						
 			
@@ -29,13 +27,21 @@
 						} catch (\PDOException $e) {
 							throw new \PDOException($e->getMessage(), (int)$e->getCode());
 						}
+						<p id="sortButton">Sort by</p>
+						<div id="box">
+					
 						
-						//check if All or another selection
-						if(!(isset($_GET["sort"]))){
-							$sql = 'SELECT * FROM Product';
+							//check if All or another selection
+							if(!(isset($_GET["filter"]))){
+								$sql = 'SELECT * FROM Product';
+							}else{
+								$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["filter"] . '%" OR category LIKE "%' . $_GET["filter"] . '";';
+							}
+							
 							$statement = $pdo->prepare($sql);
 							$statement->execute();
 							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+							
 							foreach ($rows as $row) {
 								echo '<div class="productBox">';
 								echo	'<a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>';
@@ -45,24 +51,8 @@
 								echo	'<p class="addCart">Add to Cart</p>';
 								echo '</div>';
 							}
-						}else{
-							$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["sort"] . '%" OR category LIKE "%' . $_GET["sort"] . '";';
-							$statement = $pdo->prepare($sql);
-							$statement->execute();
-							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-							foreach ($rows as $row) {
-								echo '<div class="productBox">';
-								echo	'<a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>';
-								echo	'<p>' . $row["pName"] . '</p>';
-								echo	'<p>' . $row["description"] . '</p>';
-								echo	'<p>' . $row["price"] . '</p>';
-								echo	'<p class="addCart">Add to Cart</p>';
-								echo '</div>';
-							}
-						}
-						
+						</div>
 					?>
-				</div>
 			</div>
 		</main>
 		<!--Footer include-->
