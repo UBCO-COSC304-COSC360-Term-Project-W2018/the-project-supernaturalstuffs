@@ -64,7 +64,7 @@
     $x = $row2['password'];
     echo "<script type='text/javascript'>alert('$curPass')</script>";
     echo "<script type='text/javascript'>alert('$x')</script>";
-    if($row2['password'] != $curPass) {
+    if($row2['password'] != MD5($curPass)) {
       $message = "Error: Incorrect Password";
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='accountDetails.php'</script>";
