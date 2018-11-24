@@ -180,7 +180,7 @@
 
       </div>
     </main>
-
+    <?php include '../../../src/server/include/footer.php'; ?>
   </body>
 
   <foot>
