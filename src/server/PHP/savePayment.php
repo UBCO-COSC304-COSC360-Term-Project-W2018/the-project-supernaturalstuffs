@@ -91,6 +91,7 @@
       foreach ($rows as $row) {}
 
       $userID = $row['userID'];
+      echo "<script type='text/javascript'>alert('$userID')</script>";
 
       //check if payment method exists for $userID
       $sql = "SELECT cardNumber FROM PaymentMethod WHERE userID = :userID";
@@ -103,10 +104,11 @@
       foreach ($rows as $row) {
         $numRows = $numRows + 1;
       }
+      echo "<script type='text/javascript'>alert('$numRows')</script>";
 
       if($numRows > 0){
         //if payment method exists update information
-        $sql2 = "UPDATE PaymentMethod SET method=:method, nameOnCard=:name, cardNumber=:cNumb, expirationDate=:expDate, csv=:csv WHERE userID = :userID";
+        $sql2 = "UPDATE PaymentMethod SET method=:method, nameOnCard=:name, cardNumber=:cNum, expirationDate=:expDate, csv=:csv WHERE userID = :userID";
         $statement = $pdo->prepare($sql2);
         $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
         $statement->bindValue(':method', $method, PDO::PARAM_STR);
