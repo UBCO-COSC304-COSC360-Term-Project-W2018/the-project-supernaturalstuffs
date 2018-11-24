@@ -10,9 +10,11 @@
 
     if (isset($_SESSION['pay'])){
       unset($_SESSION['pay']);
+      echo "<script type='text/javascript'>alert('pay is not set!')</script>";
       header('Location: checkout.php');
     }else{
       $_SESSION['pay'] = "yes";
+      echo "<script type='text/javascript'>alert('" . $_SESSION['pay'] . " is now set!')</script>";
       header('Location: checkout.php');
     }
 
