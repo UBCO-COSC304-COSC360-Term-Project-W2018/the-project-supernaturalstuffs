@@ -14,20 +14,8 @@
 		<!--Include header-->
 		<?php include '../../../src/server/include/header.php'; ?>
 		<main>
-			<div id="product-sidebar">
-				<h3>Products</h3>
-				<div id="productSidebarOptions">
-				   <h4><a href="products.php">All</a></h4>
-				   <h4>Creatures</h4>
-				   <p>Vampires</p>
-				   <p>Shifters</p>
-				   <p>Ghosts</p>
-				   <p>Werewolves</p>
-				   <h4>Gear</h4>
-				   <p>Silver Bullets</p>
-				   <p>Holy Water</p>
-				</div>
-			 </div>
+			<!--Include ProductSidebar-->
+			<?php include '../../../src/server/include/productSidebar.php'; ?>
 			 <div id="contentRight">
 				<p id="sortButton">Sort by</p>
 				<div id="box">
