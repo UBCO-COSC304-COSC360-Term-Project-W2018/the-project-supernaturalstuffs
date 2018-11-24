@@ -15,7 +15,18 @@
 
   <body>
    <!--Include header-->
-	<?php include '../../../src/server/include/header.php'; ?>
+	<?php
+      session_start();
+
+      include '../../../src/server/include/header.php';
+
+      $custE = null;
+      if (isset($_SESSION['email'])){
+         $custE = $_SESSION['email'];
+       }else{
+         header('Location: login.php');
+       }
+   ?>
     <main>
       <!-- page content -->
       <!--Checkout Forms-->
@@ -119,6 +130,8 @@
               </div>
             </fieldset>
         </form>
+        <!--set user info session payInfo to null-->
+
         </div>
 
         <div id="right-side">
