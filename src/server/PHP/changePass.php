@@ -30,19 +30,19 @@
       }
     }
     if($_SERVER["REQUEST_METHOD"] == "GET"){
-      header('Location: /src/server/PHP/accountDetails.php');
+      header('Location: accountDetails.php');
     }
 
     //check to see if all not null values are entered
     if ($curPass == null){
       $message = "Please enter your current password";
       echo "<script type='text/javascript'>alert('$message');
-      window.location.href='/src/client/html/accountDetails.html'</script>";
+      window.location.href='accountDetails.php'</script>";
       die();
     }else if ($newPass == null){
       $message = "Please enter a new password";
       echo "<script type='text/javascript'>alert('$message');
-      window.location.href='/src/client/html/accountDetails.html'</script>";
+      window.location.href='accountDetails.php'</script>";
       die();
     }
 
@@ -53,7 +53,20 @@
     }
 
     //check to make sure proper password
-    
+    $sql2 = "SELECT password FROM User WHERE email = :email" ;
+    $statement = $pdo->prepare($sql2);
+    $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+    $statement->execute();
+    $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows2 as $row2) {}
+
+    //check to see if password is correcrt
+    if($row2['password'] != MD5($curPass)) {
+      $message = "Error: Incorrect Password";
+      echo "<script type='text/javascript'>alert('$message');
+      window.location.href='accountDetails.php'</script>";
+      die();
+    }
 
     $sql = "UPDATE User SET password = :pass WHERE email = :email";
     $statement = $pdo->prepare($sql);
@@ -63,7 +76,7 @@
 
     $message = "Your password has been updated. Do not forget it!";
     echo "<script type='text/javascript'>alert('$message');
-    window.location.href='/src/server/PHP/accountDetails.php'</script>";
+    window.location.href='accountDetails.php'</script>";
     die();
     ?>
   </body>

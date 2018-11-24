@@ -38,29 +38,29 @@
         }
       }
       if($_SERVER["REQUEST_METHOD"] == "GET"){
-        header('Location: /src/client/html/createAccount.html');
+        header('Location: createAccount.php');
       }
 
       //check to see if all not null values are entered
       if ($custFN == null){
         $message = "Please enter a first name";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
+        window.location.href='createAccount.php'</script>";
         die();
       }else if ($custLN == null){
         $message = "Please enter a last name";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
+        window.location.href='createAccount.php'</script>";
         die();
       }else if ($custE == null){
         $message = "Please enter an email";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
+        window.location.href='createAccount.php'</script>";
         die();
       }else if ($custPW == null){
         $message = "Please enter a password";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
+        window.location.href='createAccount.php'</script>";
         die();
       }
 
@@ -80,7 +80,7 @@
         if ($row['email'] == $custE){
           $message = "Error: Email Address Already in Use";
           echo "<script type='text/javascript'>alert('$message');
-          window.location.href='/src/client/html/createAccount.html'</script>";
+          window.location.href='createAccount.php'</script>";
           die();
         }
 

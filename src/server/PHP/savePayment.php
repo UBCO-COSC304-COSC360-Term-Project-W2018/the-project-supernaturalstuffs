@@ -45,34 +45,34 @@
         }
       }
       if($_SERVER["REQUEST_METHOD"] == "GET"){
-        header('Location: /src/server/PHP/accountDetails.php');
+        header('Location: accountDetails.php');
       }
 
       //check to see if all not null values are entered
       if ($method == null){
         $message = "Please select a method";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
+        window.location.href='createAccount.php'</script>";
         die();
       }else if ($name == null){
         $message = "Please enter a card holder name";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
+        window.location.href='createAccount.php'</script>";
         die();
       }else if ($cNum == null){
         $message = "Please enter a card number";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
+        window.location.href='createAccount.php'</script>";
         die();
       }else if ($expDate == null){
         $message = "Please enter a expiration date";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
+        window.location.href='createAccount.php'</script>";
         die();
       }else if ($csv == null){
         $message = "Please enter a csv";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/src/client/html/createAccount.html'</script>";
+        window.location.href='createAccount.php'</script>";
         die();
       }
 
@@ -130,7 +130,7 @@
 
       $message = "Payment Information Updated";
       echo "<script type='text/javascript'>alert('$message');
-      window.location.href='/src/server/PHP/accountDetails.php'</script>";
+      window.location.href='accountDetails.php'</script>";
       die();
 
      ?>
