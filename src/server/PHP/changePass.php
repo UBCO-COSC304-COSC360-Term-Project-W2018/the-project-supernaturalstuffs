@@ -55,7 +55,7 @@
     //check to make sure proper password
     $sql2 = "SELECT password FROM User WHERE email = :email" ;
     $statement = $pdo->prepare($sql2);
-    $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+    $statement->bindParam(':email',$userE, PDO::PARAM_STR);
     $statement->execute();
     $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
     foreach ($rows2 as $row2) {}
