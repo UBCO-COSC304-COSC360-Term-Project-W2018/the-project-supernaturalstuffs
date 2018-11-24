@@ -12,7 +12,7 @@
 
       $username = null;
       if (isset($_SESSION['email'])){
-  	     header('Location: home.php');
+  	     header('Location: index.php');
        }
 
       if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -81,7 +81,6 @@
       //change header-pass the user is logged in via session
       echo "<script type='text/javascript'>alert('" . $custE . " is now logged in!');
       window.location.href='/index.php'</script>";
-    echo("Email " . $custE . " Exists With Password " . $custPW);
     ?>
   </body>
 </html>
