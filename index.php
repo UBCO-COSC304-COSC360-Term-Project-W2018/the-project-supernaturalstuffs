@@ -15,6 +15,8 @@
 	<!--Include header-->
 	<?php
 		session_start();
+		echo "<script type='text/javascript'>alert('" . $_SESSION['email'] . " is now logged out!')</script>";
+		$_SESSION['email'];
 		include 'src/server/include/header.php';
 	?>
 		<main>

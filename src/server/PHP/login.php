@@ -12,7 +12,7 @@
 
       $username = null;
       if (isset($_SESSION['email'])){
-  	     header('Location: index.php');
+  	     header('Location: /index.php');
        }
 
       if($_SERVER["REQUEST_METHOD"] == "POST"){
