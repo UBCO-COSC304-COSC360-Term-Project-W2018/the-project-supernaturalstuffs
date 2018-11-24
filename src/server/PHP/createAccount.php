@@ -8,12 +8,12 @@
   <body>
     <?php
       session_start();
-      
+
       include '../include/db_credentials.php';
 
       $username = null;
       if (isset($_SESSION['email'])){
-  	     header('Location: home.php');
+  	     header('Location: /index.php');
        }
 
       if($_SERVER["REQUEST_METHOD"] == "POST"){
