@@ -87,7 +87,7 @@
             <fieldset>
               <legend>Payment</legend>
               <!--New Form-->
-              <form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
+              <!--<form name="oldPay" id="oldPay" method="post" action="checkoutOldPayment.php">
                   <?php
                     echo "<script type='text/javascript'>alert('" . $_SESSION['pay'] . "')</script>";
                     if (isset($_SESSION['pay'])){
@@ -100,7 +100,7 @@
                       echo("</div>");
                     }
                     ?>
-              </form>
+              </form>-->
               <div id="payment">
                 <?php
                   if (isset($_SESSION['pay'])){
