@@ -98,7 +98,7 @@
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-      if($rows /*Make sure it has a row*/){
+      if($rows->rowCount() > 0){
         //if payment method exists update information
         $sql2 = "UPDATE PaymentMethod SET method=:method, nameOnCard=:name, cardNumber=:cNumb, expirationDate=:expDate, csv=:csv WHERE userID = :userID";
         $statement = $pdo->prepare($sql2);
