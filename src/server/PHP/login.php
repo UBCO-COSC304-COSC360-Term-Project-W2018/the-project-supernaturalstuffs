@@ -69,7 +69,7 @@
         echo "<script type='text/javascript'>alert('$message');
         window.location.href='/src/client/html/login.html'</script>";
         die();
-      }else if($row2['password'] != $custPW) {
+      }else if($row2['password'] != MD5($custPW)) {
         $message = "Error: Incorrect Password";
         echo "<script type='text/javascript'>alert('$message');
       	window.location.href='/src/client/html/login.html'</script>";

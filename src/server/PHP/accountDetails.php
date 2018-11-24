@@ -121,7 +121,7 @@
 
 			  <div id="changePassBlock">
 				<h3>Change Password</h3>
-				<form name="changePassword" id="changePass" method="post" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return checkPass()">
+				<form name="changePassword" id="changePass" method="post" action="changePass.php" onsubmit="return checkPass()">
 				  <fieldset>
 					<div>
 					  <label>Current Password:</label>
