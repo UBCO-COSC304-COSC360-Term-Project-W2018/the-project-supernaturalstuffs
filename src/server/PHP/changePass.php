@@ -62,7 +62,9 @@
 
     //check to see if password is correcrt
 
-    if($row2['curPassword'] != $curPass) {
+    echo "<script type='text/javascript'>alert('$curPass')</script>";
+    echo "<script type='text/javascript'>alert('$row2['password']')</script>";
+    if($row2['password'] != $curPass) {
       $message = "Error: Incorrect Password";
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='accountDetails.php'</script>";
