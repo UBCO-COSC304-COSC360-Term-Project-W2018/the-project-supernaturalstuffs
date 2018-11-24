@@ -85,7 +85,7 @@
       //get userID from session
       $sql = "SELECT userID FROM User WHERE email = :email";
       $statement = $pdo->prepare($sql);
-      $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+      $statement->bindParam(':email', $userE, PDO::PARAM_STR);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows as $row) {}
