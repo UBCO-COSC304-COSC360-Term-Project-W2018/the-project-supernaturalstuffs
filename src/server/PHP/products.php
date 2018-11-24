@@ -19,70 +19,32 @@
 			 <div id="contentRight">
 				<p id="sortButton">Sort by</p>
 				<div id="box">
-				   <div class="productBox">
-					  <a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-				   <div class="productBox">
-					  <a href="individualProducts.html"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>
-					  <p>Product Name</p>
-					  <p>Product Description</p>
-					  <p>Price</p>
-					  <p class="addCart">Add to Cart</p>
-				   </div>
-
+					<?php 
+						include '../include/db_credentials.php'; 
+						
+						//connect to database
+						try {
+							$pdo = new PDO($dsn, $user, $pass, $options);
+						} catch (\PDOException $e) {
+							throw new \PDOException($e->getMessage(), (int)$e->getCode());
+						}
+						
+						//check if email already exists
+						$sql = "SELECT * FROM Product" ;
+						$statement = $pdo->prepare($sql);
+						$statement->execute();
+						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+						foreach ($rows as $row) {}
+							echo '<div class="productBox">';
+							echo	'<a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>';
+							echo	'<p>$row['pname'];</p>';
+							echo	'<p>$row['description'];</p>';
+							echo	'<p>$row['price'];</p>';
+							echo	'<p class="addCart">Add to Cart</p>';
+							echo '</div>';
+						}
+						
+					?>
 				</div>
 			</div>
 		</main>

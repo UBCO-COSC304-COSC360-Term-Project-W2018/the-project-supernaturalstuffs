@@ -76,13 +76,14 @@
       $statement = $pdo->prepare($sql);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows as $row) {}
+      foreach ($rows as $row) {
         if ($row['email'] == $custE){
           $message = "Error: Email Address Already in Use";
           echo "<script type='text/javascript'>alert('$message');
           window.location.href='/src/client/html/createAccount.html'</script>";
           die();
         }
+	  }
 
       //insert user into user
       $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email)";
