@@ -30,7 +30,7 @@
 		
 			
 				//Return all Customers
-				$sql = 'SELECT * FROM User';
+				$sql = 'SELECT * FROM Customer NATURAL JOIN User';
 				$statement = $pdo->prepare($sql);
 				$statement->execute();
 				$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
