@@ -20,13 +20,13 @@
       if($_SERVER["REQUEST_METHOD"] == "POST"){
         /** Get method **/
         $method = null;
-        if (isset($_POST['method'])) {
-            $method = $_POST['method'];
+        if (isset($_POST['payMethod'])) {
+            $method = $_POST['payMethod'];
         }
         /** Get name **/
         $name = null;
-        if (isset($_POST['name'])) {
-            $name = $_POST['name'];
+        if (isset($_POST['cardName'])) {
+            $name = $_POST['cardName'];
         }
         /** Get card num **/
         $cNum = null;
@@ -35,13 +35,13 @@
         }
         /** Get expirationDate**/
         $expDate = null;
-        if (isset($_POST['expirationDate'])) {
-            $expDate = $_POST['expirationDate'];
+        if (isset($_POST['exDate'])) {
+            $expDate = $_POST['exDate'];
         }
         /** Get csv**/
         $csv = null;
-        if (isset($_POST['csv'])) {
-            $csv = $_POST['csv'];
+        if (isset($_POST['secCode'])) {
+            $csv = $_POST['secCode'];
         }
       }
       if($_SERVER["REQUEST_METHOD"] == "GET"){
