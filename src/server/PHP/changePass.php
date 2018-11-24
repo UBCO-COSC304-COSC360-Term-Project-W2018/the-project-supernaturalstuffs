@@ -47,11 +47,11 @@
     }
 
     //check to make sure proper password
-
+    $newPass = MD5($newPass);
 
     $sql2 = "UPDATE `User` SET `password` = :newPass WHERE `email` = :email";
     $statement = $pdo->prepare($sql2);
-    $statement->bindValue(':newPass', MD5($newPass), PDO::PARAM_STR);
+    $statement->bindValue(':newPass', $newPass, PDO::PARAM_STR);
     $statement->bindValue(':email', $userE, PDO::PARAM_STR);
     $statement->execute();
 
