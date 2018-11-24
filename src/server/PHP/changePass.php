@@ -61,7 +61,7 @@
     foreach ($rows2 as $row2) {}
 
     //check to see if password is correcrt
-    $y = MD5($curPass);
+    $y = $curPass;
     $x = $row2['password'];
     echo "<script type='text/javascript'>alert('$y')</script>";
     echo "<script type='text/javascript'>alert('$x')</script>";
