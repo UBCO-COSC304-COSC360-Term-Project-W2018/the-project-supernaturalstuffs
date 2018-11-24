@@ -47,7 +47,7 @@
 				<h2>Orders</h2>
 				<div class="catagories">
 					<input type="text" class="search" placeholder="Search...">
-					<p>Order History</p>
+					<a href="orderList.php"><p>Order History</p></a>
 					<p>Order Information</p>
 					<p>Delete</p>
 					<p>Save Changes</p>

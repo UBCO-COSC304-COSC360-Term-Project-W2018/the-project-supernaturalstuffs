@@ -26,7 +26,7 @@
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
 			
-			//Return all Customers
+			//List all customers
 			$sql = 'SELECT * FROM Customer NATURAL JOIN User';
 			$statement = $pdo->prepare($sql);
 			$statement->execute();
