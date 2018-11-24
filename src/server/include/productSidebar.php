@@ -2,7 +2,6 @@
 	<h3>Products</h3>
 	<div id="productSidebarOptions">
 		<h4><a href="/src/server/PHP/products.php">All</a></h4>
-		<h4><a href="/src/server/PHP/products.php?sort=Creatures">Creatures</h4>
 		<p><a href="/src/server/PHP/products.php?sort=Vampire">Vampires</a></p>
 		<p><a href="/src/server/PHP/products.php?sort=Shifter">Shifters</p>
 		<p><a href="/src/server/PHP/products.php?sort=Ghost">Ghosts</p>
