@@ -29,9 +29,9 @@
 			
 			//List all customers
 			//CHECK: Figure out prepared statements
-			$sql = 'SELECT * FROM Product pID ='" . $_GET["filter"] . "';
+			$sql = 'SELECT * FROM Product pID ="?"';
 			$statement = $pdo->prepare($sql);
-			$statement->execute();
+			$statement->execute(array($_GET["filter"]));
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 			
 			echo('<div id="box">
