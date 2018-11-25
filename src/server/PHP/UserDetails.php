@@ -38,7 +38,7 @@
 						echo '<p>User Details</p>';
 						//List users details
 						echo '<table>';
-								echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>';
+								echo '<tr><th>UserId</th><td>Username</th><th>First Name</th><th>Last Name</th><th>Email</th></th>';
 						foreach ($rows as $row) {
 							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
 						}
@@ -52,7 +52,7 @@
 						echo "<p>User's Order History</p>";
 						
 						echo '<table>';
-							echo '<tr><td>OrderID</td><td>Total Price</td><td>Tracking number</td><td>UserID</td><td>StoreID</td></tr>';
+							echo '<tr><th>OrderID</th><th>Total Price</th><th>Tracking number</th><th>UserID</th><th>StoreID</th></tr>';
 						foreach ($rows as $row) {
 							echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td></tr>';
 						}
