@@ -29,7 +29,7 @@
 			
 			//List all customers
 			//CHECK: Figure out prepared statements
-			$sql = 'SELECT * FROM Product pID ='"$_GET['filter']"';
+			$sql = 'SELECT * FROM Product pID ='" . $_GET["filter"] . "';
 			$statement = $pdo->prepare($sql);
 			$statement->execute();
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
