@@ -66,7 +66,7 @@
 						echo "<p>User's Reviews</p>";
 						
 						echo '<table>';
-							echo '<tr><td>UserID</td><td>ProductID/td><td>Comment/Review</td></tr>';
+							echo '<tr><td>UserID</td><td>ProductID</td><td>Comment/Review</td></tr>';
 						foreach ($rows as $row) {
 							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td></tr>';
 						}
