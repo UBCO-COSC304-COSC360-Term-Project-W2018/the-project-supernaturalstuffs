@@ -29,8 +29,8 @@
 			
 			//List all customers
 			//CHECK: Figure out prepared statements
-			$sql = 'SELECT * FROM Product pID ="?"';
-			//$statement = $pdo->prepare($sql);
+			$sql = 'SELECT * FROM Product WHERE pID = ?';
+			$statement = $pdo->prepare($sql);
 			$statement->execute(array($_GET["filter"]));
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 			
