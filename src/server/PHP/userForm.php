@@ -28,11 +28,6 @@
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
 			
-			$sql = 'SELECT * FROM Orders WHERE orderID= ?';
-			$statement = $pdo->prepare($sql);
-			$statement->execute(array($_GET["filter"]));
-			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-			
 			echo('<div id="box">
 					<div id="Users">
 						<form action="addUser.php" method="get">
