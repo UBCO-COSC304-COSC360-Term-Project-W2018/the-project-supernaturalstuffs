@@ -98,8 +98,26 @@
           <form class="Main" name="payForm" method="post" action="checkoutNewPayment.php" id="payForm" onsubmit="return checkPayment()">
             <fieldset>
               <legend>Payment</legend>
-              <!--</form>-->
+              <?php
+                echo "<script type='text/javascript'>alert('" . $_SESSION['pay'] . " is pay value!')</script>";
+                if (isset($_SESSION['pay'])){
+                  echo "<div class='centered'>";
+                  echo "<input type='button' onclick='Location.href='checkoutOldPayment.php'' value='Use saved payment information' class='button'/>";
+                  echo "</div>";
+                }else{
+                  echo "<div class='centered'>";
+                  echo "<input type='button' onclick='Location.href='checkoutOldPayment.php'' value='Use new payment information' class='button'/>";
+                  echo "</div>";
+                }
+               ?>
               <div id="payment">
+                <?php
+                  if(isset($_SESSION['pay'])){
+                    echo "<script typ='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
+                  }else{
+                    echo "<script typ='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";
+                  }
+                 ?>
                 <div>
                   <label>Payment Method:</label>
       						<select name="payMethod" id="payMethod">
@@ -156,7 +174,7 @@
                ?>
             </div>
             <div class="centered">
-              <input type="button" onclick="location.href='products.html'" value="Continue Shopping" class="button"/>
+              <input type="button" onclick="location.href='products.php'" value="Continue Shopping" class="button"/>
             </div>
           </div>
 
