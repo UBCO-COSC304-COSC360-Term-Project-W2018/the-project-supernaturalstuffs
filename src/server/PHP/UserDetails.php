@@ -71,6 +71,8 @@
 							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td></tr>';
 						}
 						echo '</table>';
+						
+						//Edit user information and enable or disable user
 								
 			echo(		'</div>
 					</div>
