@@ -32,10 +32,9 @@
 			$statement->execute();
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 			echo '<table>';
-					echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>';
+					echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td><td>Select</td></tr>';
 			foreach ($rows as $row) {
-				echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
-				echo '<tr><td rowspan="4"><a href="UserDetails.php?filter=' . $row['userID'] . '">Select User</a></td></tr>';
+				echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td><td><a href="UserDetails.php?filter=' . $row['userID'] . '">Select User</a></td></tr>';
 			}
 			echo '</table>';
 		?>
