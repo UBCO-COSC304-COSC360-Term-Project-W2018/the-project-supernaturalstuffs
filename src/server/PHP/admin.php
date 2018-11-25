@@ -21,7 +21,7 @@
 					<h2>Users</h2>
 					<div class="catagories">
 						<input name="filter" type="text" class="search" placeholder="Search...">
-						<a href="userForm.php><p>Add Users</p></a>
+						<a href="userForm.php" method="get"><p>Add Users</p></a>
 						<a href="customerList.php"><p>Customer List</p></a>
 					</div>
 				</form>
