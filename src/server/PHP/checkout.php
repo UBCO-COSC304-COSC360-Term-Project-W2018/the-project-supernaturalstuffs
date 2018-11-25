@@ -106,7 +106,7 @@
                 }else{
                   echo "<div class='centered'><input type='button' onclick='Location.href='checkoutOldPayment.php'' value='Use new payment information' class='button'/></div>";
                 }
-                echo("<div id='payment'>)";
+                echo("<div id='payment'>");
                   if(isset($_SESSION['pay'])){
                     echo "<script typ='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
                   }else{
