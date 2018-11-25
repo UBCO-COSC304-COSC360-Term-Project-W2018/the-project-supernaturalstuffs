@@ -26,7 +26,7 @@
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
 			
-			//List all customers
+			//List all orders
 			$sql = 'SELECT * FROM Orders';
 			$statement = $pdo->prepare($sql);
 			$statement->execute();
