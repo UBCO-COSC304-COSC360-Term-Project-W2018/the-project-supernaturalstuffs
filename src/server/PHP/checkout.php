@@ -146,7 +146,7 @@
             </div>
             <div class="summary2">
               <?php
-                $x='2000';
+                $x='2000.00';
                 $tax=($x+$_SESSION['shipInfo']['delivery'])*'0.12';
                 $total=($x + $_SESSION['shipInfo']['delivery'] + $tax);
                 echo("<p class='money'>$". $x ."</p>");
