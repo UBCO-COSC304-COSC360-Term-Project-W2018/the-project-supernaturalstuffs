@@ -17,7 +17,7 @@
 	<main>
 		<div id="box">
 			<div id="Users">
-				<form action="usersinformation.php" method="get">
+				<form action="usersInformation.php" method="get">
 					<h2>Users</h2>
 					<div class="catagories">
 						<a href="customerList.php"><p>Customer List</p></a>
