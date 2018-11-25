@@ -33,11 +33,13 @@
 				$sql = 'SELECT * FROM Product';
 			}else{
 				$sql = 'SELECT * FROM Product WHERE pName LIKE pName = ? OR category LIKE category = ?';
+				$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["filter"] . '%" OR category LIKE "%' . $_GET["filter"] . '%";';
+			
 			}
 			
 			
 			$statement = $pdo->prepare($sql);
-			$statement->execute(array(%$_GET["filter"]%,%$_GET["filter"]%));
+			$statement->execute();
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 		
 			echo '<table>';
