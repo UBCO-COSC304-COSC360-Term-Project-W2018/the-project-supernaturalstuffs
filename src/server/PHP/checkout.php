@@ -159,7 +159,6 @@
                 if(isset($_SESSION['shipInfo']['delivery'])){
                   $delivery = $_SESSION['shipInfo']['delivery'];
                 }
-                if(is)
                 $x='2000.00';
                 $tax=($x+$delivery)*'0.12';
                 $total=($x + $delivery + $tax);
