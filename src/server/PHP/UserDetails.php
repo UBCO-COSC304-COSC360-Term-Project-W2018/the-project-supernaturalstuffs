@@ -27,7 +27,7 @@
 			//List all customers
 			$sql = 'SELECT * FROM Customer NATURAL JOIN User WHERE userID=?';
 			$statement = $pdo->prepare($sql);
-			$statement->execute(array($_GET['filter']);
+			$statement->execute(array($_GET['filter']));
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 			
 			echo('<div id="box">
