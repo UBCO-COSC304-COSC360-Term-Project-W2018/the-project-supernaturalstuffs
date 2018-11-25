@@ -21,16 +21,16 @@
 					<h2>Users</h2>
 					<div class="catagories">
 						<input name="filter" type="text" class="search" placeholder="Search...">
-						<p>Add User</p>
+						<p>Add Users</p>
 						<a href="customerList.php"><p>Customer List</p></a>
 					</div>
 				</form>
 			</div>
 			<div id="Products">
-				<form>
+				<form action="productsInformation.php" method="get">
 					<h2>Products</h2>
 					<div class="catagories">
-						<input type="text" class="search" placeholder="Search...">
+						<input name="filter" type="text" class="search" placeholder="Search...">
 						<p>Add Products</p>
 					</div>
 				</form>
