@@ -34,7 +34,7 @@
 							<h2>Add User</h2>
 							<div class="catagories">
 							<p>User\'s username:</p>
-							<input type="text" name="username" placeholder="User id">
+							<input type="text" name="username" placeholder="Username">
 							<p>User\'s password:</p>
 							<input type="text" name="password" placeholder="password">
 							<p>User\'s first name:</p>
@@ -42,7 +42,7 @@
 							<p>User\'s last name:</p>
 							<input type="text" name="lastname" placeholder="Last name">
 							<p>User\'s email:</p>
-							<input type="text" name="email" plaeholder="Email">
+							<input type="text" name="email" placeholder="Email">
 							
 							</div>
 						</form>
