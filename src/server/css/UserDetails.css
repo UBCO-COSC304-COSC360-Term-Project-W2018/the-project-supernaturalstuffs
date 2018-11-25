@@ -5,7 +5,7 @@ table{
 table, td, th {
 	border: white 1px solid;
 }
-td{
+td, th{
 	padding: .5em;
 }
 th p{
