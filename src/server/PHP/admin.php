@@ -17,11 +17,11 @@
 	<main>
 		<div id="box">
 			<div id="Users">
-				<form action="userInformation.php" method="get">
+				<form action="usersinformation.php" method="get">
 					<h2>Users</h2>
 					<div class="catagories">
 						<a href="customerList.php"><p>Customer List</p></a>
-						<input type="text" class="search" placeholder="Search...">
+						<input name="filter" type="text" class="search" placeholder="Search...">
 						<p>User Details</p>
 						<p>Enable</p>
 						<p>Disable</p>
