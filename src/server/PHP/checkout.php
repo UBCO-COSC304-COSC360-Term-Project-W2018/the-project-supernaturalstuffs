@@ -103,10 +103,10 @@
                 if(isset($_SESSION['next'])){
                   echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
                   echo "<script type='text/javascript'>document.getElementById('shipment').classList.add('hide')</script>";
-                }else{
-                  echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
-                  echo "<script type='text/javascript'>document.getElementById('shipment').classList.add('hide')</script>";
                   unset($_SESSION['next']);
+                }else{
+                  echo "<script type='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";
+                  echo "<script type='text/javascript'>document.getElementById('shipment').classList.remove('hide')</script>";
                 }
                  ?>
                 <div>
@@ -155,11 +155,16 @@
             </div>
             <div class="summary2">
               <?php
+                $delivery = "0.00";
+                if(isset($_SESSION['shipInfo']['delivery'])){
+                  $delivery = $_SESSION['shipInfo']['delivery'];
+                }
+                if(is)
                 $x='2000.00';
-                $tax=($x+$_SESSION['shipInfo']['delivery'])*'0.12';
-                $total=($x + $_SESSION['shipInfo']['delivery'] + $tax);
+                $tax=($x+$delivery)*'0.12';
+                $total=($x + $delivery + $tax);
                 echo("<p class='money'>$". $x ."</p>");
-                echo("<p class='money'>$". $_SESSION['shipInfo']['delivery']." </p>");
+                echo("<p class='money'>$". $delivery ." </p>");
                 echo("<p class='money'>$".$tax."</p>");
                 echo("<p class='total'>$".$total."</p>");
                ?>
