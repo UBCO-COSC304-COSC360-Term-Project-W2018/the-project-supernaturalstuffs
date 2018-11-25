@@ -43,7 +43,7 @@
 							<input type="text" name="lastname" placeholder="Last name">
 							<p>User\'s email:</p>
 							<input type="text" name="email" placeholder="Email">
-							
+							<input type="submit">
 							</div>
 						</form>
 					</div>
