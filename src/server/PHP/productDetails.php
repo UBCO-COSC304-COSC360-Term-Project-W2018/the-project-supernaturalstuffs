@@ -47,7 +47,7 @@
 						echo '</table>';
 						
 						//User's Reviews
-						$sql = 'SELECT * FROM Reviews WHERE pID=?';
+						$sql = "SELECT * FROM Reviews WHERE pID=?;";
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
