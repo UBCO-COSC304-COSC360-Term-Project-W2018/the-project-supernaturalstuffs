@@ -33,17 +33,16 @@
 						<form action="addUser.php" method="get">
 							<h2>Add User</h2>
 							<div class="catagories">
-							<!--User id autoincrements"-->
 							<p>User\'s username:</p>
-							<input type="text" name="username" placeholder="User id>
+							<input type="text" name="username" placeholder="User id">
 							<p>User\'s password:</p>
-							<input type="text" name="password" placeholder="User id>
+							<input type="text" name="password" placeholder="password">
 							<p>User\'s first name:</p>
-							<input type="text" name="firstname" placeholder="User id>				
+							<input type="text" name="firstname" placeholder="First name">				
 							<p>User\'s last name:</p>
-							<input type="text" name="lastname" placeholder="User id>
+							<input type="text" name="lastname" placeholder="Last name">
 							<p>User\'s email:</p>
-							<input type="text" name="email" plaeholder="User id>
+							<input type="text" name="email" plaeholder="Email"S>
 							
 							</div>
 						</form>
@@ -54,7 +53,7 @@
 		
 	</main>
 	<!--Footer include-->
-	<?php include '../../../src/server/include/footer.php'; ?>
+	<?php include '../../../src/seSrver/include/footer.php'; ?>
 
 
  </body>
