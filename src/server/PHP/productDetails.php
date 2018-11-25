@@ -35,7 +35,7 @@
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 			
 			echo('<div id="box">
-					<div id="Prodcucts">
+					<div id="Products">
 						<h2>Product</h2>
 						<div class="catagories">');
 						echo '<p>Product Details</p>';
