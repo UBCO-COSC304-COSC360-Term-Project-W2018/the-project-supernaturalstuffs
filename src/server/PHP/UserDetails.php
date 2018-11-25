@@ -46,7 +46,7 @@
 						//List all User Order history
 						$sql = 'SELECT * FROM Orders WHERE userID=?';
 						$statement = $pdo->prepare($sql);
-						$statement->execute(array($_GET['filter']);
+						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						echo "<p>User's Order History</p>";
 						
