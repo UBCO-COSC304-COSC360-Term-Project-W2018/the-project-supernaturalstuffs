@@ -36,10 +36,10 @@
 				</form>
 			</div>
 			<div id="Orders">
-				<form>
+				<form action="ordersInformation.php" method="get">
 					<h2>Orders</h2>
 					<div class="catagories">
-						<input type="text" class="search" placeholder="Search...">
+						<input name="filter" type="text" class="search" placeholder="Search...">
 						<a href="orderList.php"><p>Order History</p></a>
 						<p>Add Orders</p>
 					</div>

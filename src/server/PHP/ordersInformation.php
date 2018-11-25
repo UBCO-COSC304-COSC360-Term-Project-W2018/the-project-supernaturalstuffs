@@ -30,9 +30,9 @@
 			
 			//check if All or another selection
 			if(!(isset($_GET["filter"]))){
-				$sql = 'SELECT * FROM Product';
+				$sql = 'SELECT * FROM Orders';
 			}else{
-				$sql = 'SELECT * FROM Product WHERE pName LIKE pName = ? OR category LIKE category = ?';
+				$sql = 'SELECT * FROM Orders WHERE OrderID LIKE orderID= ? OR trackingNymber LIKE trackingNumber = ?';
 			}
 			
 			
@@ -41,9 +41,9 @@
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 		
 			echo '<table>';
-					echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th><th>Select</th></tr>';
+					echo '<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th><th>User ID</th><th>Store ID</th></tr>';
 			foreach ($rows as $row) {
-				echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="productDetails.php?filter=' . $row['pID'] . '">Select Product</a></td></tr>';
+				echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td><td><a href="orderDetails.php?filter=' . $row['orderID'] . '">Select Product</a></td></tr>';
 			}
 			echo '</table>';
 		?>

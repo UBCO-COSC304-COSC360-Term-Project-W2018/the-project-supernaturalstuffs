@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html>  
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
-	<link rel="stylesheet" type="text/css" href="../css/details.css">
+	<link rel="stylesheet" type="text/css" href="../css/UserDetails.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -27,26 +27,36 @@
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
 			
-			
-			//check if All or another selection
-			if(!(isset($_GET["filter"]))){
-				$sql = 'SELECT * FROM Product';
-			}else{
-				$sql = 'SELECT * FROM Product WHERE pName LIKE pName = ? OR category LIKE category = ?';
-			}
-			
-			
+			//List all customers
+			//CHECK: Figure out prepared statements
+			$sql = 'SELECT * FROM Orders WHERE orderID= ?';
 			$statement = $pdo->prepare($sql);
-			$statement->execute(array($_GET["filter"],$_GET["filter"]));
+			$statement->execute(array($_GET["filter"]));
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-		
-			echo '<table>';
-					echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th><th>Select</th></tr>';
-			foreach ($rows as $row) {
-				echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="productDetails.php?filter=' . $row['pID'] . '">Select Product</a></td></tr>';
-			}
-			echo '</table>';
+			
+			echo('<div id="box">
+					<div id="Orders">
+						<h2>Product</h2>
+						<div class="catagories">');
+						echo '<p>Order Details</p>';
+						//List Order details
+						echo '<table>';
+								echo '<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th><th>User ID</th><th>Store ID</th></th>';
+						foreach ($rows as $row) {
+							echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td></tr>';
+						}
+						echo '</table>';
+						
+						
+						//Edit order information
+						//Remove order
+								
+			echo(		'</div>
+					</div>
+				</div>;');
+				
 		?>
+		
 	</main>
 	<!--Footer include-->
 	<?php include '../../../src/server/include/footer.php'; ?>
