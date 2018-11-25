@@ -35,6 +35,7 @@
 						<h2>Users</h2>
 						<div class="catagories">');
 						echo '<p>User Details</p>';
+						//List users details
 						echo '<table>';
 								echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>';
 						foreach ($rows as $row) {
@@ -42,19 +43,22 @@
 						}
 						echo '</table>';
 						
-							//List all customers
+						//List all User Order history
 						$sql = 'SELECT * FROM Orders WHERE userID=?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_GET['filter']);
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						echo "<p>User's Order History</p>";
+						
 						echo '<table>';
-								echo '<tr><td>OrderID</td><td>Total Price</td><td>Tracking number</td><td>UserID</td><td>StoreID</td></tr>';
+							echo '<tr><td>OrderID</td><td>Total Price</td><td>Tracking number</td><td>UserID</td><td>StoreID</td></tr>';
 						foreach ($rows as $row) {
 							echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td></tr>';
 						}
 						echo '<tr rowspan="4"><td>Total Price: BLANK</td></tr>';
 						echo '</table>';
+						
+						//User's Reviews
 								
 			echo(		'</div>
 					</div>
