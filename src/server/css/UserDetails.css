@@ -1,10 +1,7 @@
-tr{
-	border: white 1px solid;
-	margin-top: 1em;
+table{
+	border-collapse: collapse;
 }
-td{
-	border-left: white 1px solid;
-	padding: 0.25em;
-	
+table, td {
+	border: white 1px solid;
 }
 	
