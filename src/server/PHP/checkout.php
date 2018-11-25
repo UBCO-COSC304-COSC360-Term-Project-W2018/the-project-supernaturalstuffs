@@ -102,8 +102,10 @@
                 <?php
                 if(isset($_SESSION['next'])){
                   echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
+                  echo "<script type='text/javascript'>document.getElementById('shipment').classList.add('hide')</script>";
                 }else{
-                  echo "<script type='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";
+                  echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
+                  echo "<script type='text/javascript'>document.getElementById('shipment').classList.add('hide')</script>";
                   unset($_SESSION['next']);
                 }
                  ?>
