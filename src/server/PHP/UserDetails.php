@@ -25,7 +25,7 @@
 			}
 			
 			//List all customers
-			$sql = 'SELECT * FROM Customer NATURAL JOIN User WHERE userID='. $_GET("filter") . ';
+			$sql = 'SELECT * FROM Customer NATURAL JOIN User WHERE userID="'. $_GET("filter") . '"';
 			$statement = $pdo->prepare($sql);
 			$statement->execute();
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
