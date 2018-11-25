@@ -32,7 +32,7 @@
 			if(!(isset($_GET["filter"]))){
 				$sql = 'SELECT * FROM Orders';
 			}else{
-				$sql = 'SELECT * FROM Orders WHERE OrderID LIKE orderID= ? OR trackingNymber LIKE trackingNumber = ?';
+				$sql = 'SELECT * FROM Orders WHERE OrderID LIKE orderID= ? OR trackingNumber LIKE trackingNumber = ?';
 			}
 			
 			
