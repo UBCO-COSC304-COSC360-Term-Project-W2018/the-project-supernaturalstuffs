@@ -152,7 +152,7 @@
                 echo("<p class='money'>$". $x ."</p>");
                 echo("<p class='money'>$". $_SESSION['shipInfo']['delivery']." </p>");
                 echo("<p class='money'>$".$tax."</p>")
-                echo("<p class='total'>$".$subtotal."</p>");
+                echo("<p class='total'>$".$total."</p>");
                ?>
             </div>
             <div class="centered">
