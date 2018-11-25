@@ -74,6 +74,7 @@
 						echo '</table>';
 						
 						//Edit user information and enable or disable user
+						//Remove comments, Remove user, edit user
 								
 			echo(		'</div>
 					</div>
