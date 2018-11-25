@@ -84,9 +84,9 @@
                 </div>
                 <div id="shipmentMethod">
                   <label>Select Delivery Method</label><br/>
-                  <input type="radio" name="delivery" value="standard ($0.00)" checked="checked">Standard<br/>
-                  <input type="radio" name="delivery" value="drone ($100.00)">Drone<br/>
-                  <input type="radio" name="delivery" value="Instantaneous ($250.00)">Instantaneous
+                  <input type="radio" name="delivery" value="0.00" checked="checked">Standard<br/>
+                  <input type="radio" name="delivery" value="100.00">Drone<br/>
+                  <input type="radio" name="delivery" value="250.00">Instantaneous
                 </div>
                 <div class="centered">
                   <input type="submit" value="Continue To Payment" class="button" />
