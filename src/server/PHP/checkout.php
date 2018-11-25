@@ -99,6 +99,14 @@
             <fieldset>
               <legend>Payment</legend>
               <div id='payment'>
+                <?php
+                if(isset($_SESSION['next'])){
+                  echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
+                }else{
+                  echo "<script type='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";
+                  unset($_SESSION['next']);
+                }
+                 ?>
                 <div>
                   <label>Payment Method:</label>
       						<select name="payMethod" id="payMethod">

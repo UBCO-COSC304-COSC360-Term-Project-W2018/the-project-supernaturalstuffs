@@ -137,6 +137,7 @@
       $_SESSION['shipInfo']['email'] = $email;
       $_SESSION['shipInfo']['delivery'] = $delivery;
 
+      $_SESSION['next'] = "next";
 
       $message = "shipping Information Cleared / saved to session";
       echo "<script type='text/javascript'>alert('$message');
