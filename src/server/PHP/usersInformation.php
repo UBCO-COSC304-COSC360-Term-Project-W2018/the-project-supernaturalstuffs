@@ -34,7 +34,7 @@
 			foreach ($rows as $row) {
 				echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
 			}
-			echo '<tr><td>Select User</td></tr>
+			echo '<tr><td rowspan="4">Select User</td></tr>';
 			echo '</table>';
 		?>
 	</main>
