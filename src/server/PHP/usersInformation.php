@@ -33,8 +33,8 @@
 					echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>';
 			foreach ($rows as $row) {
 				echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
+				echo '<tr><a href="UserDetails.php?filter=' . $row['userID'] . '"><td rowspan="4">Select User</td></a></tr>';
 			}
-			echo '<tr><td rowspan="4">Select User</td></tr>';
 			echo '</table>';
 		?>
 	</main>

@@ -25,34 +25,28 @@
 			}
 			
 			//List all customers
-			$sql = 'SELECT * FROM Customer NATURAL JOIN User';
+			$sql = 'SELECT * FROM Customer NATURAL JOIN User WHERE userID='. $_GET("filter") . ';
 			$statement = $pdo->prepare($sql);
 			$statement->execute();
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-			echo '<table>';
-					echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>';
-			foreach ($rows as $row) {
-				echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
-			}
-			echo '</table>';
-		?>
-		<div id="box">
-			<div id="Users">
-				<form action="userInformation.php" method="get">
-					<h2>Users</h2>
-					<div class="catagories">
-						<a href="UserDetails.php"><p>Customer List</p></a>
-						<input type="text" class="search" placeholder="Search...">
-						<p>User Details</p>
-						<p>Enable</p>
-						<p>Disable</p>
-						<p>Comments</p>
-						<p>Edit</p>
-						<p>Order History<p>
+			
+			echo('<div id="box">
+					<div id="Users">
+						<h2>Users</h2>
+						<div class="catagories">');
+							
+						echo '<table>';
+								echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>';
+						foreach ($rows as $row) {
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
+						}
+						echo '</table>';
+								
+			echo(		'</div>
 					</div>
-				</form>
-			</div>
-		</div>
+				</div>;');
+		?>
+		
 	</main>
 	<!--Footer include-->
 	<?php include '../../../src/server/include/footer.php'; ?>
