@@ -151,7 +151,7 @@
                 $total=($x + $_SESSION['shipInfo']['delivery'] + $tax);
                 echo("<p class='money'>$". $x ."</p>");
                 echo("<p class='money'>$". $_SESSION['shipInfo']['delivery']." </p>");
-                echo("<p class='money'>$".$tax."</p>")
+                echo("<p class='money'>$".$tax."</p>");
                 echo("<p class='total'>$".$total."</p>");
                ?>
             </div>
