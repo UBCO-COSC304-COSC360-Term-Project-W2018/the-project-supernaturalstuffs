@@ -34,16 +34,11 @@
 				$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["filter"] . '%" OR category LIKE "%' . $_GET["filter"] . '";';
 			}
 			
+			
 			$statement = $pdo->prepare($sql);
 			$statement->execute();
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-				
 		
-			//List customers based on search information by name, email, or post
-			$sql = 'SELECT * FROM Customer NATURAL JOIN User WHERE firstName LIKE "%' . $_GET["filter"] . '%" OR lastName LIKE "%' . $_GET["filter"] . '%" OR email LIKE "%' . $_GET["filter"] . '%";';
-			$statement = $pdo->prepare($sql);
-			$statement->execute();
-			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 			echo '<table>';
 					echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th></tr>';
 			foreach ($rows as $row) {
