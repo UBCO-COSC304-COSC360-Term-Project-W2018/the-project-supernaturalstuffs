@@ -145,10 +145,15 @@
               <p class="total">Total:</p>
             </div>
             <div class="summary2">
-              <p class="money">$2000.00 </p>
-              <p class="money"><?php echo("$" . $_SESSION['shipInfo']['delivery']); ?> </p>
-              <p class="money">$252.00</p>
-              <p class="total">$2352.00</p>
+              <?php
+                $x='2000';
+                $tax=($x+$_SESSION['shipInfo']['delivery'])*'0.12';
+                $total=($x + $_SESSION['shipInfo']['delivery'] + $tax);
+                echo("<p class='money'>$". $x ."</p>");
+                echo("<p class='money'>$". $_SESSION['shipInfo']['delivery']." </p>");
+                echo("<p class='money'>$".$tax."</p>")
+                echo("<p class='total'>$".$total."</p>");
+               ?>
             </div>
             <div class="centered">
               <input type="button" onclick="location.href='products.html'" value="Continue Shopping" class="button"/>
