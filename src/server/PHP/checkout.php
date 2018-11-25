@@ -101,17 +101,16 @@
               <?php
                 if (isset($_SESSION['pay'])){
                   echo "<div class='centered'>";
-                  echo "<input type='button' onclick='Location.href='checkoutOldPayment.php'' value='Use saved payment information' class='button'/>";
+                  echo "<input type='button' onclick='location.href='checkoutOldPayment.php'' value='Use saved payment information' class='button'/>";
                   echo "</div>";
                 }else{
-                  echo "<div class='centered'><input type='button' onclick='Location.href='checkoutOldPayment.php'' value='Use new payment information' class='button'/></div>";
+                  echo "<div class='centered'><input type='button' onclick='location.href='checkoutOldPayment.php'' value='Use new payment information' class='button'/></div>";
                 }
                 echo("<div id='payment'>");
                   if(isset($_SESSION['pay'])){
                     echo "<script typ='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
                   }else{
-                    echo "<script typ='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";
-                  }
+                    echo "<script typ='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";}
                  ?>
                 <div>
                   <label>Payment Method:</label>
