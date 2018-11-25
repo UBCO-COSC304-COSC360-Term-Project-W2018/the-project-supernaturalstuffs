@@ -26,10 +26,7 @@
       }else{
          header('Location: login.php');
       }
-
-      if(isset($_SESSION['payInfo']['cNum'])){
-        echo "<script type='text/javascript'>alert('" . $_SESSION['payInfo']['cNum'] . " working!')</script>";
-      }
+      //unset session payInfo after checkout
    ?>
     <main>
       <!-- page content -->
