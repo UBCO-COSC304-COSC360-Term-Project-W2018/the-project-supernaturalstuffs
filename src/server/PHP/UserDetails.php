@@ -66,11 +66,10 @@
 						echo "<p>User's Reviews</p>";
 						
 						echo '<table>';
-							echo '<tr><td>OrderID</td><td>Total Price</td><td>Tracking number</td><td>UserID</td><td>StoreID</td></tr>';
+							echo '<tr><td>UserID</td><td>ProductID/td><td>Comment/Review</td></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td></tr>';
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td></tr>';
 						}
-						echo '<tr rowspan="4"><td>Total Price: BLANK</td></tr>';
 						echo '</table>';
 								
 			echo(		'</div>
