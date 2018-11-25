@@ -4,4 +4,7 @@ table{
 table, td {
 	border: white 1px solid;
 }
+td{
+	padding: .5em;
+}
 	
