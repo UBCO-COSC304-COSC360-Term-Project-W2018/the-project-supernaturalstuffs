@@ -1,9 +1,10 @@
-table{
+tr{
 	margin-top: 1em;
 }
 td{
-	border: white 1px solid;
-	margin: 0.25em;
+	border-left: white 1px solid;
+	border-right: white 1px solid;
+	padding: 0.25em;
 	
 }
 	
