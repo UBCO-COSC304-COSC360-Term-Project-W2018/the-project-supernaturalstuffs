@@ -20,7 +20,6 @@
 				<form action="usersInformation.php" method="get">
 					<h2>Users</h2>
 					<div class="catagories">
-						<p>Search user by: name (first or last), id, or post</p>
 						<input name="filter" type="text" class="search" placeholder="Search...">
 						<p>Add User</p>
 						<a href="customerList.php"><p>Customer List</p></a>
@@ -42,7 +41,6 @@
 					<div class="catagories">
 						<input type="text" class="search" placeholder="Search...">
 						<a href="orderList.php"><p>Order History</p></a>
-						<p>Order Information</p>
 						<p>Add Orders</p>
 					</div>
 				</form>
