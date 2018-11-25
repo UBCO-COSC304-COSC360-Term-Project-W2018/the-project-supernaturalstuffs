@@ -1,4 +1,4 @@
-<!--add user-->
+<!--add-->
 <!DOCTYPE html>
 <html>  
   <head>
@@ -27,27 +27,9 @@
 			} catch (\PDOException $e) {
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
-			
-			echo('<div id="box">
-					<div id="Users">
-						<form action="add.php" method="post">
-							<h2>Add User</h2>
-							<div class="catagories">
-							<p>User\'s username:</p>
-							<input type="text" name="username" placeholder="Username">
-							<p>User\'s password:</p>
-							<input type="text" name="password" placeholder="password">
-							<p>User\'s first name:</p>
-							<input type="text" name="firstname" placeholder="First name">				
-							<p>User\'s last name:</p>
-							<input type="text" name="lastname" placeholder="Last name">
-							<p>User\'s email:</p>
-							<input type="text" name="email" placeholder="Email">
-							<input type="submit">
-							</div>
-						</form>
-					</div>
-				</div>;');
+			$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?)';
+			$statement = $pdo->prepare($sql);
+			$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']);
 				
 		?>
 		
