@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+		<link rel="stylesheet" type="text/css" href="../css/UserDetails.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
