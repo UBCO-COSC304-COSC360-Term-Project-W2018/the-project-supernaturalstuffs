@@ -43,7 +43,7 @@
 			echo '<table>';
 					echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th><th>Select</th></tr>';
 			foreach ($rows as $row) {
-				echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="UserDetails.php?filter=' . $row['pID'] . '">Select Product</a></td></tr>';
+				echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="productDetails.php?filter=' . $row['pID'] . '">Select Product</a></td></tr>';
 			}
 			echo '</table>';
 		?>
