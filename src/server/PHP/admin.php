@@ -20,14 +20,10 @@
 				<form action="usersInformation.php" method="get">
 					<h2>Users</h2>
 					<div class="catagories">
-						<a href="customerList.php"><p>Customer List</p></a>
+						<p>Search user by: name (first or last), id, or post</p>
 						<input name="filter" type="text" class="search" placeholder="Search...">
-						<p>User Details</p>
-						<p>Enable</p>
-						<p>Disable</p>
-						<p>Comments</p>
-						<p>Edit</p>
-						<p>Order History<p>
+						<p>Add User</p>
+						<a href="customerList.php"><p>Customer List</p></a>
 					</div>
 				</form>
 			</div>
@@ -35,15 +31,8 @@
 				<form>
 					<h2>Products</h2>
 					<div class="catagories">
-						<p>Adding</p>
-						<p>Product information</p>
-						<p>browse</p>
-						<hr>
-						<p>Edit<p>
 						<input type="text" class="search" placeholder="Search...">
-						<p>Product information</p>
-						<p>Delete</p>
-						<p>Save Changes</p>
+						<p>Add Products</p>
 					</div>
 				</form>
 			</div>
@@ -54,8 +43,7 @@
 						<input type="text" class="search" placeholder="Search...">
 						<a href="orderList.php"><p>Order History</p></a>
 						<p>Order Information</p>
-						<p>Delete</p>
-						<p>Save Changes</p>
+						<p>Add Orders</p>
 					</div>
 				</form>
 			</div>
