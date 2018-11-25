@@ -146,7 +146,7 @@
             </div>
             <div class="summary2">
               <p class="money">$2000.00 </p>
-              <p class="money">$100.00 </p>
+              <p class="money">$<?php $_SESSION['shipInfo']['delivery']; ?> </p>
               <p class="money">$252.00</p>
               <p class="total">$2352.00</p>
             </div>
