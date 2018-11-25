@@ -99,14 +99,13 @@
             <fieldset>
               <legend>Payment</legend>
               <?php
-                echo "<script type='text/javascript'>alert('" . $_SESSION['pay'] . " is pay value!')</script>";
                 if (isset($_SESSION['pay'])){
                   echo "<div class='centered'>";
                   echo "<input type='button' onclick='Location.href='checkoutOldPayment.php'' value='Use saved payment information' class='button'/>";
                   echo "</div>";
                 }else{
                   echo "<div class='centered'>";
-                  echo "<input type='button' onclick='Location.href='checkoutOldPayment.php'' value='Use new payment information' class='button'/>";
+                  echo "<div class='centered'><input type='button' onclick='Location.href='checkoutOldPayment.php'' value='Use new payment information' class='button'/></div>";
                   echo "</div>";
                 }
                ?>
