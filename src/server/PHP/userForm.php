@@ -42,7 +42,7 @@
 							<p>User\'s last name:</p>
 							<input type="text" name="lastname" placeholder="Last name">
 							<p>User\'s email:</p>
-							<input type="text" name="email" plaeholder="Email"S>
+							<input type="text" name="email" plaeholder="Email">
 							
 							</div>
 						</form>
@@ -53,7 +53,7 @@
 		
 	</main>
 	<!--Footer include-->
-	<?php include '../../../src/seSrver/include/footer.php'; ?>
+	<?php include '../../../src/server/include/footer.php'; ?>
 
 
  </body>
