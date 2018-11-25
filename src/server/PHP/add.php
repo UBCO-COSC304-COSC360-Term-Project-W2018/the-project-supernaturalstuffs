@@ -27,6 +27,7 @@
 			} catch (\PDOException $e) {
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
+			echo var_dump($_POST);
 			$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?)';
 			$statement = $pdo->prepare($sql);
 			$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
