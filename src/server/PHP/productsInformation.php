@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+	<link rel="stylesheet" type="text/css" href="../css/UserDetails.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -28,7 +29,7 @@
 			
 			
 			//check if All or another selection
-			if(!(isset($_GET["filter"])) || $_GET['filter']="All"){
+			if(!(isset($_GET["filter"]))){
 				$sql = 'SELECT * FROM Product';
 			}else{
 				$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["filter"] . '%" OR category LIKE "%' . $_GET["filter"] . '";';
