@@ -6,7 +6,7 @@
   </head>
   <body>
     <?php
-    include '../../../src/server/include/header.php'; 
+    session_start(); 
     //currently not in use but if i can get my button thing to work it will be
     //put this is payment in checkout
     /*
