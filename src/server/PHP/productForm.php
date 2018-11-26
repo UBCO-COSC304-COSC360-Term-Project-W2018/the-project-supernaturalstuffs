@@ -1,4 +1,4 @@
-<!--add user-->
+<!--add Product-->
 <!DOCTYPE html>
 <html>  
   <head>
@@ -29,20 +29,18 @@
 			}
 			
 			echo('<div id="box">
-					<div id="Users">
-						<form action="add.php?filter=User" method="post">
-							<h2>Add User</h2>
+					<div id="Products">
+						<form action="add.php?filter=Product" method="post">
+							<h2>Add Product</h2>
 							<div class="catagories">
-							<p>User\'s username:</p>
-							<input type="text" name="username" placeholder="Username">
-							<p>User\'s password:</p>
-							<input type="text" name="password" placeholder="password">
-							<p>User\'s first name:</p>
-							<input type="text" name="firstname" placeholder="First name">				
-							<p>User\'s last name:</p>
-							<input type="text" name="lastname" placeholder="Last name">
-							<p>User\'s email:</p>
-							<input type="text" name="email" placeholder="Email">
+							<p>Product\'s Name:</p>
+							<input type="text" name="pName" placeholder="Username">
+							<p>Product\'s Description:</p>
+							<input type="textbox" name="description" placeholder="password">
+							<p>Product\'s Price:</p>
+							<input type="text" name="price" placeholder="First name">				
+							<p>Product\'s Category:</p>
+							<input type="text" name="category" placeholder="Last name">
 							<input type="submit">
 							</div>
 						</form>

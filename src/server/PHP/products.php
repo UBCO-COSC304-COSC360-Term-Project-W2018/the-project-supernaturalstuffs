@@ -34,6 +34,7 @@
 							//check if All or another selection
 							if(!(isset($_GET["filter"]))){
 								$sql = 'SELECT * FROM Product';
+							
 							}else{
 								$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["filter"] . '%" OR category LIKE "%' . $_GET["filter"] . '";';
 							}
