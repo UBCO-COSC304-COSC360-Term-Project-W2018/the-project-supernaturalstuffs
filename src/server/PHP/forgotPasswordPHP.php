@@ -70,7 +70,7 @@
        $email = $custE;
        $subject = "Super(natural) Store - Reset Password";
 
-       mail($email,$subject,$msg, null,'-fwebmaster@example.com');
+       mail($email,$subject,$msg);
 
        $message = "Your password has been changed. Check Email for new password!";
        echo "<script type='text/javascript'>alert('$message');
