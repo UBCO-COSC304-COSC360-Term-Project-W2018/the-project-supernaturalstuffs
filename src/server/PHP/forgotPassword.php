@@ -25,7 +25,7 @@
     ?>
 
     <main>
-      <form class="Main" name="forgotPass" id="forgotPass" method="post" action="" onsubmit="return checkLogin()">
+      <form class="Main" name="forgotPass" id="forgotPass" method="post" action="forgotPasswordPHP.php">
         <fieldset>
           <legend>Reset Password</legend>
           <div>
