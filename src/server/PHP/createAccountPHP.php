@@ -146,7 +146,7 @@
       $statement->bindValue(':firstname', $custFN, PDO::PARAM_STR);
       $statement->bindValue(':lastname', $custLN, PDO::PARAM_STR);
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
-      $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);*/
+      $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
       $insert = $statement->execute();
 
       // get new users id
