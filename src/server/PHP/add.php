@@ -39,7 +39,7 @@
 				$sql = 'INSERT INTO Orders VALUES (DEFAULT, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['totalPrice'], $_POST['trackingNumber'], $_POST['userID'], $_POST['storeID']));
-			else{
+			}else{
 				echo '<p>Invalid source</p>';
 		?>
 		
