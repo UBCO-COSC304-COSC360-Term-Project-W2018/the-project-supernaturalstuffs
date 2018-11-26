@@ -12,17 +12,21 @@
             <li><a href="/index.php">Home</a></li>
             <li><a href="/src/server/PHP/contact-FAQ.php">Contact</a></li>
             <?php
-              $sql = "SELECT * FROM Admin WHERE email = :email" ;
-              $statement = $pdo->prepare($sql);
-              $statement->bindParam(':email',$custE, PDO::PARAM_STR);
-              $statement->execute();
-              $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-              $numRows = 0;
-              foreach ($rows as $row) {
-                $numRows = $numRows + 1;
-              }
-              if($numRows > 0){
-                echo "<li><a href='/src/server/PHP/admin.php'>Admin</a></li>";
+              $custE = null
+              if(!isset($_SESSION['email'])){
+                $custE = $_SESSION['email'];
+                $sql = "SELECT * FROM Admin WHERE email = :email" ;
+                $statement = $pdo->prepare($sql);
+                $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+                $statement->execute();
+                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $numRows = 0;
+                foreach ($rows as $row) {
+                  $numRows = $numRows + 1;
+                }
+                if($numRows > 0){
+                  echo "<li><a href='/src/server/PHP/admin.php'>Admin</a></li>";
+                }
               }
              ?>
         </ul>
