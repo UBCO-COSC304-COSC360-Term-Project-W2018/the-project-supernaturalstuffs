@@ -30,7 +30,7 @@
 			
 			echo('<div id="box">
 					<div id="Products">
-						<form action="add.php?filter='Product'" method="post">
+						<form action="add.php?filter=Product" method="post">
 							<h2>Add Product</h2>
 							<div class="catagories">
 							<p>Product\'s Name:</p>
