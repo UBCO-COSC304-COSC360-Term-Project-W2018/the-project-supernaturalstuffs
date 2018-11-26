@@ -31,7 +31,7 @@
 					<h2>Products</h2>
 					<div class="catagories">
 						<input name="filter" type="text" class="search" placeholder="Search...">
-						<p>Add Products</p>
+						<a href="productForm.php"><p>Add Products</p></a>
 					</div>
 				</form>
 			</div>
@@ -41,7 +41,7 @@
 					<div class="catagories">
 						<input name="filter" type="text" class="search" placeholder="Search...">
 						<a href="orderList.php"><p>Order History</p></a>
-						<p>Add Orders</p>
+						<a href="orderForm.php"><p>Add Orders</p></a>
 					</div>
 				</form>
 			</div>
