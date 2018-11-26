@@ -11,10 +11,10 @@
 
       include '../include/db_credentials.php';
 
-      /*$target_dir = "../uploads/";
+      $target_dir = "../uploads/";
       $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
       $uploadOk = 1;
-      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));*/
+      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
       if (isset($_SESSION['email'])){
   	     header('Location: /index.php');
@@ -41,13 +41,13 @@
         if (isset($_POST['password'])) {
             $custPW = $_POST['password'];
         }
-        /*//user photo
+        //user photo
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
             $uploadOk = 1;
         } else {
             $uploadOk = 0;
-        }*/
+        }
       }
       if($_SERVER["REQUEST_METHOD"] == "GET"){
         header('Location: createAccount.php');
@@ -76,7 +76,7 @@
         die();
       }
 
-      /*//image constraints
+      //image constraints
       // Check if file already exists
       if (file_exists($target_file)) {
           echo "Sorry, file already exists.";
@@ -103,7 +103,7 @@
           } else {
               echo "Sorry, there was an error uploading your file.";
           }
-      }*/
+      }
 
       //connect to database
       try {
@@ -125,7 +125,7 @@
         die();
       }
 
-      /*//image Stuff
+      //image Stuff
       $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
       /*$sql = "INSERT INTO userImages (userID, contentType, image) VALUES(?,?,?)";
       $stmt = mysqli_stmt_init($connection);
@@ -146,7 +146,7 @@
       $statement->bindValue(':firstname', $custFN, PDO::PARAM_STR);
       $statement->bindValue(':lastname', $custLN, PDO::PARAM_STR);
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
-      /*$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);*/
+      $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);*/
       $insert = $statement->execute();
 
       // get new users id
