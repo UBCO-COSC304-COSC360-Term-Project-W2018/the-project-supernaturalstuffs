@@ -8,9 +8,6 @@
     <?php include '../../../src/server/include/header.php'; ?>
   	<main>
     <?php
-      session_start();
-
-      include '../../../src/server/include/header.php';
       include '../include/db_credentials.php';
 
       //check if logged in

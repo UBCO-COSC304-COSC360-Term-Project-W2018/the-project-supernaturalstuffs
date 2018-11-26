@@ -6,6 +6,7 @@
   </head>
   <body>
     <?php
+    include '../../../src/server/include/header.php'; 
     //currently not in use but if i can get my button thing to work it will be
     //put this is payment in checkout
     /*
@@ -25,7 +26,6 @@
         }
       ?>
     */
-    session_start();
 
     if (isset($_SESSION['pay'])){
       unset($_SESSION['pay']);

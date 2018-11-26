@@ -6,7 +6,8 @@
   </head>
   <body>
     <?php
-    session_start();
+    include '../../../src/server/include/header.php';
+    
     if(isset($_SESSION['email'])){
       echo "<script type='text/javascript'>alert('Logging out " . $_SESSION['email'] . "!')</script>";
       session_unset();
