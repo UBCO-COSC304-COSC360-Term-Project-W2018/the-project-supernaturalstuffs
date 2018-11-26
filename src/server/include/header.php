@@ -12,7 +12,7 @@
             <li><a href="/index.php">Home</a></li>
             <li><a href="/src/server/PHP/contact-FAQ.php">Contact</a></li>
             <?php
-              include '../include/db_credentials.php';
+              include 'db_credentials.php';
               try {
                   $pdo = new PDO($dsn, $user, $pass, $options);
               } catch (\PDOException $e) {
