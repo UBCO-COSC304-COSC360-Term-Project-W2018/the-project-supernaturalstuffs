@@ -1,4 +1,4 @@
-<!--add-->
+<!--add Product-->
 <!DOCTYPE html>
 <html>  
   <head>
@@ -27,20 +27,26 @@
 			} catch (\PDOException $e) {
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
-			if($_POST['filter']=='User'){
-				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?)';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
-			}else if($_POST['filter']=='Product'){
-				$sql = 'INSERT INTO Product VALUES (DEFAULT, ?, ?, ?, ?)';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category']));
-			}else if$_POST['filter']=='Order')
-				$sql = 'INSERT INTO Orders VALUES (DEFAULT, ?, ?, ?, ?)';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_POST['totalPrice'], $_POST['trackingNumber'], $_POST['userID'], $_POST['storeID']));
-			else{
-				echo '<p>Invalid source</p>';
+			
+			echo('<div id="box">
+					<div id="Products">
+						<form action="add.php?filter='Product'" method="post">
+							<h2>Add Product</h2>
+							<div class="catagories">
+							<p>Product\'s Name:</p>
+							<input type="text" name="pName" placeholder="Username">
+							<p>Product\'s Description:</p>
+							<input type="textbox" name="description" placeholder="password">
+							<p>Product\'s Price:</p>
+							<input type="text" name="price" placeholder="First name">				
+							<p>Product\'s Category:</p>
+							<input type="text" name="category" placeholder="Last name">
+							<input type="submit">
+							</div>
+						</form>
+					</div>
+				</div>;');
+				
 		?>
 		
 	</main>
