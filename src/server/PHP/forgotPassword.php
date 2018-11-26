@@ -25,38 +25,21 @@
     ?>
 
     <main>
-      <!-- page content -->
-
-      <!--Login Form-->
-      <form class="Main" name="login" id="log" method="post" action="loginPHP.php" onsubmit="return checkLogin()">
+      <form class="Main" name="forgotPass" id="forgotPass" method="post" action="" onsubmit="return checkLogin()">
         <fieldset>
-          <legend>Login</legend>
+          <legend>Reset Password</legend>
           <div>
             <label>Email:</label>
             <input type="text" name="email" class="box" id="eInput"/>
           </div>
           <div class="centered">
-            <input type="button" onclick="location.href='forgotPassword.php'" value="Forgot Password?" class="button" id="forgotPass"/>
-          </div>
-          <div>
-            <label>Password:</label>
-            <input type="password" name="password" class="box" id="pInput"/>
-          </div>
-          <div class="centered">
-            <input type="checkbox" name="staySignedIn" value="yes">Keep me signed in.
-          </div>
-          <div class="centered">
-            <input type="submit" value="Login" class="button"/>
-          </div>
-          <div class="centered">
-            <input type="button" onclick="location.href='createAccount.php'" value="Create Account" class="button"/>
+            <input type="submit" value="Send Email" class="button"/>
           </div>
         </fieldset>
       </form>
     </main>
 
     <?php include '../../../src/server/include/footer.php' ?>
-
   </body>
 
   <foot>
