@@ -6,7 +6,7 @@
   </head>
   <body>
     <?php
-      include '../../../src/server/include/header.php';
+      session_start();
 
       include '../include/db_credentials.php';
 
