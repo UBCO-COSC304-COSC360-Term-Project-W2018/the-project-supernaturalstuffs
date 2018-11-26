@@ -111,15 +111,16 @@
       $insert = $statement->execute();
 
       //test features user
-      /*$sql5 = "SELECT userID,email,password FROM User" ;
+      $sql5 = "SELECT userID,email,password FROM User" ;
       $statement = $pdo->prepare($sql5);
       $statement->execute();
       $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows3 as $row3) {
         echo $row3['userID'] . " ";
         echo $row3['email'] . " ";
-        echo $row3['password'] . " ";
+        echo $row3['password'] . " <br>";
       }
+
 
       //test features customer
       $sql6 = "SELECT userID FROM Customer" ;
@@ -127,13 +128,13 @@
       $statement->execute();
       $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows3 as $row3) {
-        echo $row3['userID'] . " ";
-      }*/
+        echo $row3['userID'] . " <br>";
+      }
 
       //do me want them to login in now or automatically be logged in
-      $_SESSION['email'] = $custE;
+      /*$_SESSION['email'] = $custE;
       echo "<script type='text/javascript'>alert('Customer " . $custFN . " " . $custLN . " was added and is now logged in');
-      window.location.href='/index.php'</script>";
+      window.location.href='/index.php'</script>";*/
     ?>
   </body>
 </html>
