@@ -107,50 +107,31 @@
                   echo "<script type='text/javascript'>document.getElementById('shipment').classList.remove('hide')</script>";
                 }
 
-                if (isset($_SESSION['pay'])){
-                  echo "<div class='centered'>";
-                  echo "<input type='button' onclick='location.href='checkoutOldPayment.php'' value='Use saved payment information' class='button'/>";
-                  echo "</div>";
-                }else{
-                  echo "<div class='centered'>";
-                  echo "<input type='button' onclick='location.href='checkoutOldPayment.php'' value='Use new payment information' class='button'/>";
-                  echo "</div>";
-                }
-
-                echo("<div id='method'>");
-
-                  if(isset($_SESSION['pay'])){
-                    echo "<script type='text/javascript'>document.getElementById('method').classList.remove('hide')</script>";
-                  }else{
-                    echo "<script type='text/javascript'>document.getElementById('method').classList.add('hide')</script>";
-                  }
                    ?>
                   <div>
                     <label>Payment Method:</label>
         						<select name="payMethod" id="payMethod">
         						  <option value="Visa">Visa</option>
         						  <option value="Mastercard">Mastercard</option>
-        						  <option value="American Express">American Express</option>
-        						</select>
-                  </div>
-                  <div>
-                    <label>Name On Card:</label>
-                    <input type="text" name="cardName" class="box"/>
-                  </div>
-                  <div>
-                    <label>Card Number:</label>
-                    <input type="text" name="cardNumber" class="box"/>
-                  </div>
-                  <div>
-                    <label>Expiration Date:</label>
-                    <input type="month" name="exDate" class="box"/>
-                  </div>
-                  <div>
-                    <label>Security Code:</label>
-                    <input type="text" name="secCode" class="box"/>
-                  </div>
-                  <p class="notes">Format: XXX</p>
+        						  <option value="American Express">American Express</option>        						</select>
+                 </div>
+                <div>
+                  <label>Name On Card:</label>
+                  <input type="text" name="cardName" class="box"/>
                 </div>
+                <div>
+                  <label>Card Number:</label>
+                  <input type="text" name="cardNumber" class="box"/>
+                </div>
+                <div>
+                  <label>Expiration Date:</label>
+                  <input type="month" name="exDate" class="box"/>
+                </div>
+                <div>
+                  <label>Security Code:</label>
+                  <input type="text" name="secCode" class="box"/>
+                </div>
+                <p class="notes">Format: XXX</p>
                 <div class="centered">
                   <input type="submit" value="Confirm Checkout" class="button"/>
                 </div>
