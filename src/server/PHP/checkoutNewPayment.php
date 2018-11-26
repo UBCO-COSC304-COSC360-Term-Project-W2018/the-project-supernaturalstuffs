@@ -128,7 +128,7 @@
         $statement->execute();
       }
 
-      //payment to session
+    /*  //payment to session
       $sql6 = "SELECT * FROM PaymentMethod WHERE userID = :userID" ;
       $statement = $pdo->prepare($sql6);
       $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
@@ -140,7 +140,7 @@
       $_SESSION['payInfo']['name'] = $row3['nameOnCard'];
       $_SESSION['payInfo']['cNum'] = $row3['cardNumber'];
       $_SESSION['payInfo']['exDate'] = $row3['expirationDate'];
-      $_SESSION['payInfo']['csv'] = $row3['csv'];
+      $_SESSION['payInfo']['csv'] = $row3['csv'];*/
       $_SESSION['payInfo']['uID'] = $userID;
 
 
