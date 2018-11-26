@@ -27,6 +27,7 @@
 			} catch (\PDOException $e) {
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
+			//Check where the source came from
 			if($_POST['filter']=='User'){
 				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
