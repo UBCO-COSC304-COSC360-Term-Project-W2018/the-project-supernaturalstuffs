@@ -139,7 +139,9 @@
 
       $_SESSION['next'] = "next";
 
-      echo "window.location.href='checkout.php'</script>";
+      $message = "shipping Information Cleared / saved to session";
+      echo "<script type='text/javascript'>alert('$message');
+      window.location.href='checkout.php'</script>";
       die();
 
      ?>
