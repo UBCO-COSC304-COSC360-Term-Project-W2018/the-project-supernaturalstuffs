@@ -6,7 +6,7 @@
   </head>
   <body>
     <?php
-      include '../../../src/server/include/header.php'; 
+      include '../../../src/server/include/header.php';
 
       include '../include/db_credentials.php';
 
@@ -139,9 +139,7 @@
 
       $_SESSION['next'] = "next";
 
-      $message = "shipping Information Cleared / saved to session";
-      echo "<script type='text/javascript'>alert('$message');
-      window.location.href='checkout.php'</script>";
+      echo "window.location.href='checkout.php'</script>";
       die();
 
      ?>
