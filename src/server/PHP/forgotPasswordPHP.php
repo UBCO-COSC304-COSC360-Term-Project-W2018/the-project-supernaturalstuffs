@@ -58,6 +58,24 @@
        }
 
        //figure out how to end an email
+       $password = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnoprstuvwxyz", 5)), 0, 5
+       $msg = "Your new password is " . $password;
+
+       $sql = "UPDATE User SET password = :pass WHERE email = :email";
+       $statement = $pdo->prepare($sql);
+       $statement->bindValue(':pass', MD5($password), PDO::PARAM_STR);
+       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
+       $statement->execute();
+
+       $email = $custE;
+       $subject = "Super(natural) Store - Reset Password";
+
+       mail($email,$subject,$msg);
+
+       $message = "Your password has been changed. Check Email for new password!";
+       echo "<script type='text/javascript'>alert('$message');
+       window.location.href='login.php'</script>";
+       die();
 
     ?>
 
