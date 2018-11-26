@@ -51,9 +51,9 @@
          window.location.href='forgotPassword.php'</script>";
          die();
        }else if ($row == null){
-         $message = "Error: Incorrect Email";
+         $message = "Error: An account doesn't exist for this email";
          echo "<script type='text/javascript'>alert('$message');
-         window.location.href='forgotPassword.php'</script>";
+         window.location.href='createAccount.php'</script>";
          die();
        }
     ?>
