@@ -6,7 +6,7 @@
   </head>
   <body>
     <?php
-      include '../../../src/server/include/header.php'; 
+      include '../../../src/server/include/header.php';
 
       include '../include/db_credentials.php';
 
@@ -81,8 +81,7 @@
 
       $_SESSION['email'] = $custE;
       //change header-pass the user is logged in via session
-      echo "<script type='text/javascript'>alert('" . $custE . " is now logged in!');
-      window.location.href='/index.php'</script>";
+      echo "<script type='text/javascript'>window.location.href='/index.php'</script>";
     ?>
   </body>
 </html>

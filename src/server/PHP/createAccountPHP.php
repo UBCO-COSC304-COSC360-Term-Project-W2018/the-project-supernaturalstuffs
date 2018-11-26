@@ -7,9 +7,14 @@
 
   <body>
     <?php
-      include '../../../src/server/include/header.php'; 
+      include '../../../src/server/include/header.php';
 
       include '../include/db_credentials.php';
+
+      /*$target_dir = "uploads/";
+      $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+      $uploadOk = 1;
+      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));*/
 
       if (isset($_SESSION['email'])){
   	     header('Location: /index.php');
@@ -36,6 +41,13 @@
         if (isset($_POST['password'])) {
             $custPW = $_POST['password'];
         }
+        /*//user photo
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            $uploadOk = 1;
+        } else {
+            $uploadOk = 0;
+        }*/
       }
       if($_SERVER["REQUEST_METHOD"] == "GET"){
         header('Location: createAccount.php');
@@ -64,6 +76,35 @@
         die();
       }
 
+      /*//image constraints
+      // Check if file already exists
+      if (file_exists($target_file)) {
+          echo "Sorry, file already exists.";
+          $uploadOk = 0;
+      }
+      // Check file size
+      if ($_FILES["fileToUpload"]["size"] > 100000) {
+          echo "Sorry, your file is too large.";
+          $uploadOk = 0;
+      }
+      // Allow certain file formats
+      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "gif" ) {
+          echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+          $uploadOk = 0;
+      }
+
+      // Check if $uploadOk is set to 0 by an error
+      if ($uploadOk == 0) {
+          echo "Sorry, your file was not uploaded.";
+      // if everything is ok, try to upload file
+      } else {
+          if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+              echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+          } else {
+              echo "Sorry, there was an error uploading your file.";
+          }
+      }*/
+
       //connect to database
       try {
           $pdo = new PDO($dsn, $user, $pass, $options);
@@ -77,12 +118,24 @@
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows as $row) {}
-        if ($row['email'] == $custE){
-          $message = "Error: Email Address Already in Use";
-          echo "<script type='text/javascript'>alert('$message');
-          window.location.href='createAccount.php'</script>";
-          die();
-        }
+      if ($row['email'] == $custE){
+        $message = "Error: Email Address Already in Use";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='createAccount.php'</script>";
+        die();
+      }
+
+      /*//image Stuff
+      $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
+      $sql = "INSERT INTO userImages (userID, contentType, image) VALUES(?,?,?)";
+      $stmt = mysqli_stmt_init($connection);
+      mysqli_stmt_prepare($stmt, $sql);
+
+      $null = NULL;
+      mysqli_stmt_bind_param($stmt, "isb", $userID, $imageFileType, $null);
+      mysqli_stmt_send_long_data($stmt, 2 , $imagedata);
+      $result = mysqli_stmt_execute($stmt) or die(mysqli_stmt_error($stmt));
+      mysqli_stmt_close($stmt);  */
 
       //insert user into user
       $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email)";
@@ -133,8 +186,7 @@
 
       //do me want them to login in now or automatically be logged in
       $_SESSION['email'] = $custE;
-      echo "<script type='text/javascript'>alert('Customer " . $custFN . " " . $custLN . " was added and is now logged in');
-      window.location.href='/index.php'</script>";
+      echo "<script type='text/javascript'>window.location.href='/index.php'</script>";
     ?>
   </body>
 </html>
