@@ -1,5 +1,4 @@
 <header>
-  <?php session_start(); ?>
     <h1 id="title"><a href="/index.php"><img src="/src/client/images/logo.png">Super(natural) Store</a></h1>
     <div id="search-cart">
         <form action="/src/server/PHP/products.php" method="get">
@@ -12,7 +11,20 @@
         <ul>
             <li><a href="/index.php">Home</a></li>
             <li><a href="/src/server/PHP/contact-FAQ.php">Contact</a></li>
-            <li><a href="/src/server/PHP/accountDetails.php">Account</a></li>
+            <?php
+              $sql = "SELECT * FROM Admin WHERE email = :email" ;
+              $statement = $pdo->prepare($sql);
+              $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+              $statement->execute();
+              $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+              $numRows = 0;
+              foreach ($rows as $row) {
+                $numRows = $numRows + 1;
+              }
+              if($numRows > 0){
+                echo "<li><a href='/src/server/PHP/admin.php'>Admin</a></li>";
+              }
+             ?>
         </ul>
         <ul id="login-signup">
             <?php
@@ -24,8 +36,6 @@
                 echo "<li><a href='/src/server/PHP/accountDetails.php' class='login-signup'>Account</a></li>";
               }
             ?>
-            <li><a href="/src/server/PHP/login.php" class="login-signup">Login</a></li>
-            <li><a href="/src/server/PHP/createAccount.php" class="login-signup">Signup</a></li>
         </ul>
     </nav>
 </header>
