@@ -12,7 +12,7 @@
             <li><a href="/index.php">Home</a></li>
             <li><a href="/src/server/PHP/contact-FAQ.php">Contact</a></li>
             <?php
-              $custE = null
+              $custE = null;
               if(isset($_SESSION['email'])){
                 $custE = $_SESSION['email'];
                 //get user id
