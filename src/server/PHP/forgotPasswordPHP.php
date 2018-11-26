@@ -37,7 +37,7 @@
            throw new \PDOException($e->getMessage(), (int)$e->getCode());
        }
 
-       $sql = "SELECT email FROM User WHERE email = :email";
+       $sql = "SELECT email, password FROM User WHERE email = :email";
        $statement = $pdo->prepare($sql);
        $statement->bindParam(':email', $custE, PDO::PARAM_STR);
        $statement->execute();
@@ -56,6 +56,9 @@
          window.location.href='createAccount.php'</script>";
          die();
        }
+
+       //figure out how to end an email
+
     ?>
 
   <main>
