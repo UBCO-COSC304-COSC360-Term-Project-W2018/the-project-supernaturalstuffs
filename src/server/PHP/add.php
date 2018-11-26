@@ -32,17 +32,24 @@
 				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
+				echo '<p>Added Successfully</p>';
 			}else if($_GET['filter']=='Product'){
+				//Needs an image section
 				$sql = 'INSERT INTO Product VALUES (DEFAULT, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category']));
+				echo '<p>Added Successfully</p>';
 			}else if($_GET['filter']=='Order'){
+				//Needs more because if they are adding an order they are also 
+				//adding a shipment 
 				$sql = 'INSERT INTO Orders VALUES (DEFAULT, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['totalPrice'], $_POST['trackingNumber'], $_POST['userID'], $_POST['storeID']));
+				echo '<p>Added Successfully</p>';
 			}else{
 				echo '<p>Invalid source</p>';
 			}
+			
 		?>
 		
 	</main>
