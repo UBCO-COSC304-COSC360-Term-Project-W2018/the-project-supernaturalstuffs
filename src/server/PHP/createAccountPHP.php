@@ -11,7 +11,7 @@
 
       include '../include/db_credentials.php';
 
-      /*$target_dir = "uploads/";
+      /*$target_dir = "../uploads/";
       $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
       $uploadOk = 1;
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));*/
@@ -127,7 +127,7 @@
 
       /*//image Stuff
       $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
-      $sql = "INSERT INTO userImages (userID, contentType, image) VALUES(?,?,?)";
+      /*$sql = "INSERT INTO userImages (userID, contentType, image) VALUES(?,?,?)";
       $stmt = mysqli_stmt_init($connection);
       mysqli_stmt_prepare($stmt, $sql);
 
@@ -138,7 +138,7 @@
       mysqli_stmt_close($stmt);  */
 
       //insert user into user
-      $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email)";
+      $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email /*, :imagedata*/)";
       $custUN = "TEST";
       $statement = $pdo->prepare($sql2);
       $statement->bindValue(':username', $custUN, PDO::PARAM_STR);
@@ -146,6 +146,7 @@
       $statement->bindValue(':firstname', $custFN, PDO::PARAM_STR);
       $statement->bindValue(':lastname', $custLN, PDO::PARAM_STR);
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
+      /*$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);*/
       $insert = $statement->execute();
 
       // get new users id

@@ -2,7 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Order</title>
+    <link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/header-footer.css" />
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
   </head>
   <body>
     <?php include '../../../src/server/include/header.php'; ?>
