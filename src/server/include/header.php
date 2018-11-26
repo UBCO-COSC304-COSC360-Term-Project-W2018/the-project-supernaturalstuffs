@@ -13,11 +13,20 @@
             <li><a href="/src/server/PHP/contact-FAQ.php">Contact</a></li>
             <?php
               $custE = null
-              if(!isset($_SESSION['email'])){
+              if(isset($_SESSION['email'])){
                 $custE = $_SESSION['email'];
-                $sql = "SELECT * FROM Admin WHERE email = :email" ;
+                //get user id
+                $sql3 = "SELECT userID,email FROM User WHERE email = :email";
+                $statement = $pdo->prepare($sql3);
+                $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+                $statement->execute();
+                $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($rows2 as $row2) {}
+                $userID = $row2['userID'];
+                //check if user is admin
+                $sql = "SELECT * FROM Admin WHERE userID = :userID" ;
                 $statement = $pdo->prepare($sql);
-                $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+                $statement->bindParam(':userID',$userID, PDO::PARAM_STR);
                 $statement->execute();
                 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
                 $numRows = 0;
