@@ -32,7 +32,6 @@
 				<div id="pastOrder">
 
           <?php
-            session_start();
 
             include '../include/db_credentials.php';
 
