@@ -26,14 +26,15 @@
                 $custE = $_SESSION['email'];
 
                 //get user id
-                $sql3 = "SELECT userID,email FROM User WHERE email = :email";
+                $sql3 = "SELECT firstname,userID,email FROM User WHERE email = :email";
                 $statement = $pdo->prepare($sql3);
                 $statement->bindParam(':email', $custE, PDO::PARAM_STR);
                 $statement->execute();
                 $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($rows2 as $row2) {}
                 $userID = $row2['userID'];
-                
+                $firstName = $row2['firstname'];
+
                 //check if user is admin
                 $sql = "SELECT * FROM Admin WHERE userID = :userID" ;
                 $statement = $pdo->prepare($sql);
@@ -57,7 +58,7 @@
                 echo "<li><a href='/src/server/PHP/createAccount.php' class='login-signup'>Signup</a></li>";
               }else{
                 echo "<li><a href='/src/server/PHP/logout.php' class='login-signup'>Logout</a></li>";
-                echo "<li><a href='/src/server/PHP/accountDetails.php' class='login-signup'>Account</a></li>";
+                echo "<li><a href='/src/server/PHP/accountDetails.php' class='login-signup'>Hi ". $firstName ."</a></li>";
               }
             ?>
         </ul>
