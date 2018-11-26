@@ -35,7 +35,7 @@
 				$sql = 'INSERT INTO Product VALUES (DEFAULT, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category']));
-			}else if$_POST['filter']=='Order')
+			}else if($_POST['filter']=='Order')
 				$sql = 'INSERT INTO Orders VALUES (DEFAULT, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['totalPrice'], $_POST['trackingNumber'], $_POST['userID'], $_POST['storeID']));
