@@ -16,8 +16,6 @@
   <body>
    <!--Include header-->
 	<?php
-      session_start();
-
       include '../../../src/server/include/header.php';
 
       $custE = null;

@@ -12,7 +12,9 @@
             <li><a href="/index.php">Home</a></li>
             <li><a href="/src/server/PHP/contact-FAQ.php">Contact</a></li>
             <?php
+              session_start();
               include 'db_credentials.php';
+
               try {
                   $pdo = new PDO($dsn, $user, $pass, $options);
               } catch (\PDOException $e) {
@@ -22,6 +24,7 @@
               $custE = null;
               if(isset($_SESSION['email'])){
                 $custE = $_SESSION['email'];
+
                 //get user id
                 $sql3 = "SELECT userID,email FROM User WHERE email = :email";
                 $statement = $pdo->prepare($sql3);
@@ -30,6 +33,7 @@
                 $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($rows2 as $row2) {}
                 $userID = $row2['userID'];
+                
                 //check if user is admin
                 $sql = "SELECT * FROM Admin WHERE userID = :userID" ;
                 $statement = $pdo->prepare($sql);

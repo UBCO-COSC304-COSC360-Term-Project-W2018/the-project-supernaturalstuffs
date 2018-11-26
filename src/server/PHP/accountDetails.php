@@ -16,10 +16,7 @@
 
   <body>
     <!--Include header-->
-	<?php
-    session_start();
-    include '../../../src/server/include/header.php';
-  ?>
+	<?php include '../../../src/server/include/header.php'; ?>
     <!--Main content of page-->
     <main>
       <div id="flex-conatiner">
