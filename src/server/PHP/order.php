@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <?php
+      session_start();
+
+      include '../../../src/server/include/header.php';
+      include '../include/db_credentials.php';
+
+      //check if logged in
+      if (!isset($_SESSION['email'])){
+        $message = "You aren't logged in";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='/index.php'</script>";
+        die();
+      }
+
+      if (isset($_SESSION['productList'])) {
+        $cart = $_SESSION['productList'];
+      } else {
+        $cart = null;
+      }
+
+      if (isset($_SESSION['storeID'])) {
+        $storeID = $_SESSION['storeID'];
+      } else {
+        $storeID = null;
+      }
+
+      $totalPrice = 0;
+      if ($cart == null) {
+          $message = "You need to add items to your cart";
+          echo "<script type='text/javascript'>alert('$message');
+      	window.location.href='products.php'</script>";
+      	die();
+      } else {
+          foreach ($cart as $pID => $cartitem) {
+              $totalPrice = $totalPrice + $cartitem['quantity']*$cartitem['price'];
+          }
+      }
+
+       if(isset($_SESSION['payInfo']['uID'])){
+         $userID = $_SESSION['payInfo']['uID'];
+       }else{
+         $message = "Missing a piece/all of your payment info";
+         echo "<script type='text/javascript'>alert('$message');
+         window.location.href='/checkout.php'</script>";
+         die();
+       }
+
+       //get shipping info
+       if(isset($_SESSION['shipInfo']['fName']) && isset($_SESSION['shipInfo']['lName']) && isset($_SESSION['shipInfo']['country']) && isset($_SESSION['shipInfo']['province']) && isset($_SESSION['shipInfo']['town'])){
+         $shipFName = $_SESSION['shipInfo']['fName'];
+         $shipLName = $_SESSION['shipInfo']['lName'];
+         $shipCountry = $_SESSION['shipInfo']['country'];
+         $shipProvince = $_SESSION['shipInfo']['province'];
+         $shipTown = $_SESSION['shipInfo']['town'];
+       }else{
+         $message = "Missing a piece/all of your payment info";
+         echo "<script type='text/javascript'>alert('$message');
+         window.location.href='/index.php'</script>";
+         die();
+       }
+       if(isset($_SESSION['shipInfo']['street']) && isset($_SESSION['shipInfo']['postalCode']) && isset($_SESSION['shipInfo']['phoneNum']) && isset($_SESSION['shipInfo']['email']) && isset($_SESSION['shipInfo']['delivery'])){
+         $shipStreet = $_SESSION['shipInfo']['street'];
+         $shipPostalCode = $_SESSION['shipInfo']['postalCode'];
+         $shipPhoneNum = $_SESSION['shipInfo']['phoneNum'];
+         $shipEmail = $_SESSION['shipInfo']['email'];
+         $shipDelivery = $_SESSION['shipInfo']['delivery'];
+       }else{
+         $message = "Missing a piece/all of your payment info";
+         echo "<script type='text/javascript'>alert('$message');
+         window.location.href='/index.php'</script>";
+         die();
+       }
+
+       //get ship method
+       if($shipDelivery == "100.00" ){
+         $shipMethod = "Drone";
+       }elseif ($shipDelivery == "250.00") {
+         $shipMethod = "Instantaneous";
+       }else {
+         $shipMethod = "Standard";
+       }
+       //get current date
+       $shipDate = date("Y/m/d");
+
+      //connect to database
+       try {
+           $pdo = new PDO($dsn, $user, $pass, $options);
+       } catch (\PDOException $e) {
+           throw new \PDOException($e->getMessage(), (int)$e->getCode());
+       }
+
+       //insert shipping info and get tracking number
+       $sql = "INSERT INTO Shipment VALUES (DEFAULT ,:method ,:status ,:shipDate ,:firstName ,:lastName, :country ,:province ,:city ,:street ,:postalCode ,:email)";
+       $status = "Your item has been successifully delivered to this location";
+       $statement = $pdo->prepare($sql);
+       $statement->bindValue(':method', $shipMethod, PDO::PARAM_STR);
+       $statement->bindValue(':status', $status, PDO::PARAM_STR);
+       $statement->bindValue(':shipDate', $shipDate, PDO::PARAM_STR);
+       $statement->bindValue(':firstname', $shipFName, PDO::PARAM_STR);
+       $statement->bindValue(':lastname', $shipLName, PDO::PARAM_STR);
+       $statement->bindValue(':country', $shipCountry, PDO::PARAM_STR);
+       $statement->bindValue(':province', $shipProvince, PDO::PARAM_STR);
+       $statement->bindValue(':city', $shipTown, PDO::PARAM_STR);
+       $statement->bindValue(':street', $shipStreet, PDO::PARAM_STR);
+       $statement->bindValue(':postalCode', $shipPostalCode, PDO::PARAM_STR);
+       $statement->bindValue(':email', $shipEmail, PDO::PARAM_STR);
+       $insert = $statement->execute();
+
+       $stmt = $pdo->prepare("...");
+       $stmt->execute();
+       $trackingNumber = $pdo->lastInsertedId();
+
+       //get store id - store in session Please
+
+       //insert into order
+       $sql2 = "INSERT INTO Orders VALUES (DEFAULT ,:totalPrice ,:trackingNumber ,:userID ,:storeID)";
+       $statement = $pdo->prepare($sql2);
+       $statement->bindValue(':totalPrice', $totalPrice, PDO::PARAM_STR);
+       $statement->bindValue(':trackingNumber', $trackingNumber, PDO::PARAM_STR);
+       $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
+       $statement->bindValue(':storeID', $storeID, PDO::PARAM_STR);
+       $insert = $statement->execute();
+
+       $stmt = $pdo->prepare("...");
+       $stmt->execute();
+       $orderID = $pdo->lastInsertedId();
+
+       //for each product in session product list
+       $totalPrice = 0;
+       if ($cart != null) {
+         foreach ($cart as $pID => $cartitem) {
+           //put all the products InOrder
+           $sql2 = "INSERT INTO InOrder VALUES (:orderID ,:pID ,:quantity)";
+           $statement = $pdo->prepare($sql2);
+           $statement->bindValue(':orderID', $orderID, PDO::PARAM_STR);
+           $statement->bindValue(':pID', $cartitem['pID'], PDO::PARAM_STR);
+           $statement->bindValue(':quantity', $cartitem['quantity'], PDO::PARAM_STR);
+           $insert = $statement->execute();
+
+           //get current stock at store for that product
+           $sql = "SELECT quantity FROM Stock WHERE storeID = :storeID AND pID = :pID";
+           $statement = $pdo->prepare($sql);
+           $statement->bindParam(':storeID', $storeID, PDO::PARAM_STR);
+           $statement->bindParam(':storeID', $cartitem['pID'], PDO::PARAM_STR);
+           $statement->execute();
+           $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+           foreach ($rows as $row) {}
+
+           if ($row == null){
+             $message = "item not at this store sorry we messed up";
+             echo "<script type='text/javascript'>alert('$message');
+             window.location.href='login.php'</script>";
+             die();
+           }else{
+             $newQuantity = $row['quantity'] - $cartitem['quantity'];
+           }
+
+           //decrease the stock at the store
+           $sql2 = "UPDATE Stock SET quantity=:quantity WHERE storeID = :storeID AND pID = :pID";
+           $statement = $pdo->prepare($sql2);
+           $statement->bindValue(':quantity', $newQuantity, PDO::PARAM_INT);
+           $statement->bindValue(':storeID', $storeID, PDO::PARAM_STR);
+           $statement->bindValue(':pID', $cartitem['pID'], PDO::PARAM_STR);
+           $statement->execute();
+
+         }
+       }
+
+        //unset sessions
+        unset($_SESSION['shipInfo']['fName']);
+        unset($_SESSION['shipInfo']['lName']);
+        unset($_SESSION['shipInfo']['country']);
+        unset($_SESSION['shipInfo']['province']);
+        unset($_SESSION['shipInfo']['town']);
+        unset($_SESSION['shipInfo']['street']);
+        unset($_SESSION['shipInfo']['postalCode']);
+        unset($_SESSION['shipInfo']['phoneNum']);
+        unset($_SESSION['shipInfo']['email']);
+        unset($_SESSION['shipInfo']['delivery']);
+
+        unset( $_SESSION['storeID']);
+        unset($_SESSION['payInfo']['uID']);
+        unset($_SESSION['productList']);
+    ?>
+  </body>
+</html>

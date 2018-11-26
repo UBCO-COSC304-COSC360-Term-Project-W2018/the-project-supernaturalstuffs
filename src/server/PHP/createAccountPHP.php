@@ -95,7 +95,7 @@
       $statement->bindValue(':email', $custE, PDO::PARAM_STR);
       $insert = $statement->execute();
 
-      //get new users userID coming up as blank
+      // get new users id
       $sql3 = "SELECT userID,email FROM User WHERE email = :email";
       $statement = $pdo->prepare($sql3);
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
