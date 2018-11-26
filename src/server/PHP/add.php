@@ -28,15 +28,15 @@
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
 			//Check where the source came from
-			if($_POST['filter']=='User'){
+			if($_GET['filter']=='User'){
 				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
-			}else if($_POST['filter']=='Product'){
+			}else if($_GET['filter']=='Product'){
 				$sql = 'INSERT INTO Product VALUES (DEFAULT, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category']));
-			}else if($_POST['filter']=='Order'){
+			}else if($_GET['filter']=='Order'){
 				$sql = 'INSERT INTO Orders VALUES (DEFAULT, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['totalPrice'], $_POST['trackingNumber'], $_POST['userID'], $_POST['storeID']));
