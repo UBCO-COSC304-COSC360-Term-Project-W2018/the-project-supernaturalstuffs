@@ -5,6 +5,8 @@
     <title>Login</title>
   </head>
   <body>
+    <?php include '../../../src/server/include/header.php'; ?>
+  	<main>
     <?php
       session_start();
 
@@ -172,22 +174,55 @@
 
          }
        }
+       /** Print out order summary **/
+        echo('<h1>Your Order Summary</h1>');
+        echo("<table><tr><th>Product Id</th><th>Product Name</th><th>Quantity</th>");
+        echo("<th>Price</th><th>Subtotal</th></tr>");
 
-        //unset sessions
-        unset($_SESSION['shipInfo']['fName']);
-        unset($_SESSION['shipInfo']['lName']);
-        unset($_SESSION['shipInfo']['country']);
-        unset($_SESSION['shipInfo']['province']);
-        unset($_SESSION['shipInfo']['town']);
-        unset($_SESSION['shipInfo']['street']);
-        unset($_SESSION['shipInfo']['postalCode']);
-        unset($_SESSION['shipInfo']['phoneNum']);
-        unset($_SESSION['shipInfo']['email']);
-        unset($_SESSION['shipInfo']['delivery']);
+        $total =0;
+        foreach ($cart as $id => $prod) {
+        		echo("<tr><td>". $prod['pID'] . "</td>");
+        		echo("<td>" . $prod['pName'] . "</td>");
 
-        unset( $_SESSION['storeID']);
-        unset($_SESSION['payInfo']['uID']);
-        unset($_SESSION['productList']);
+        		echo("<td align=\"center\">". $prod['quantity'] . "</td>");
+        		$price = $prod['price'];
+
+        		echo("<td align=\"right\">".str_replace("USD","$",money_format('%i',$price))."</td>");
+        		echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
+        		echo("</tr>");
+        		$total = $total +$prod['quantity']*$price;
+        }
+        echo("<tr><td colspan=\"4\" align=\"right\"><b>Order Total</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
+        echo("</table>");
+        echo("<h1>Order completed. Will be shipped soon...</h1>");
+        echo("<h1>Your order reference number is: " . $orderID . '</h1>');
+        $sq4 = "SELECT firstName, lastName FROM User WHERE userID = :userID";
+        $statement = $pdo->prepare($sql4);
+        $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+        $statement->execute();
+        $rows4 = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows4 as $row4) {}
+        echo("<h1>Shipping to customer: " . $userID . ", Name: " . $row4['firstName'] . $row4['lastName'] . '</h1>');
+
+      //unset sessions
+      unset($_SESSION['shipInfo']['fName']);
+      unset($_SESSION['shipInfo']['lName']);
+      unset($_SESSION['shipInfo']['country']);
+      unset($_SESSION['shipInfo']['province']);
+      unset($_SESSION['shipInfo']['town']);
+      unset($_SESSION['shipInfo']['street']);
+      unset($_SESSION['shipInfo']['postalCode']);
+      unset($_SESSION['shipInfo']['phoneNum']);
+      unset($_SESSION['shipInfo']['email']);
+      unset($_SESSION['shipInfo']['delivery']);
+
+      unset( $_SESSION['storeID']);
+      unset($_SESSION['payInfo']['uID']);
+      unset($_SESSION['productList']);
     ?>
+
+    </main>
+    <!--Footer include-->
+    <?php include '../../../src/server/include/footer.php'; ?>
   </body>
 </html>
