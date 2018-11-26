@@ -16,7 +16,7 @@
         </ul>
         <ul id="login-signup">
             <?php
-              if(!isset($_SESSION('email'))){
+              if(!isset($_SESSION['email'])){
                 echo "<li><a href='/src/server/PHP/login.php' class='login-signup'>Login</a></li>";
                 echo "<li><a href='/src/server/PHP/createAccount.php' class='login-signup'>Signup</a></li>";
               }else{
