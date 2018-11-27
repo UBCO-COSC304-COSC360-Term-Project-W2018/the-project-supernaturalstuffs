@@ -14,9 +14,10 @@
       /*require '../include/PHPMailer/src/Exception.php';
       require '../include/PHPMailer/src/PHPMailer.php';
       require '../include/PHPMailer/src/SMTP.php';*/
-      require 'path/to/PHPMailer/src/Exception.php';
+      /*require 'path/to/PHPMailer/src/Exception.php';
       require 'path/to/PHPMailer/src/PHPMailer.php';
       require 'path/to/PHPMailer/src/SMTP.php';*/
+      require 'vendor/autoload.php';
 
       session_start();
 
