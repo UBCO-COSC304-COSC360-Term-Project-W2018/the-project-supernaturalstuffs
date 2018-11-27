@@ -35,7 +35,7 @@
 				$sql = 'SELECT * FROM Product WHERE pName LIKE "%?%" OR category LIKE "%?%"';
 			}
 			
-			$getInfo = $_GET["filter"];
+			$getInfo = ' . $_GET["filter"] . ';
 			$statement = $pdo->prepare($sql);
 			$statement->execute(array($getInfo, $getInfo));
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
