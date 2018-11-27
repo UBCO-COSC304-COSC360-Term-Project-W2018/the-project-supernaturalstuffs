@@ -11,9 +11,9 @@
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
 
-      require '../include/PHPMailer/src/Exception.php';
-      require '../include/PHPMailer/src/PHPMailer.php';
-      require '../include/PHPMailer/src/SMTP.php';
+      require '/src/server/include/PHPMailer/src/Exception.php';
+      require '/src/server/include/PHPMailer/src/PHPMailer.php';
+      require '/src/server/include/PHPMailer/src/SMTP.php';
 
       session_start();
 
