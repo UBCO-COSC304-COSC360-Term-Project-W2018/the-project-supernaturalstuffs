@@ -40,9 +40,9 @@
 						echo '<p>User Details</p>';
 						//List users details
 						echo '<table>';
-								echo '<tr><th>UserId</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th></th>';
+								echo '<tr><th>UserId</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td><td>Delete User</td></tr>';
 						}
 						echo '</table>';
 						
