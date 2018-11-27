@@ -52,7 +52,7 @@
 						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						echo "<p>User's Order History</p>";
-						
+						echo '<p>test</p>
 						echo '<table>';
 							echo '<tr><th>OrderID</th><th>Total Price</th><th>Tracking number</th><th>UserID</th><th>StoreID</th><th>Delete</th>></tr>';
 						foreach ($rows as $row) {
@@ -80,7 +80,7 @@
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-						echo "<p>User's Reviews</p>";
+						echo "<p>User's Comments</p>";
 						
 						echo '<table>';
 							echo '<tr><th>UserID</th><th>ProductID</th><th>Review</th><th>Delete</th></tr>';
