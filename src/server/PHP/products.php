@@ -43,9 +43,9 @@
 							$statement->execute();
 							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 							
-								echo '<div class="productBox">';
+								
 							foreach ($rows as $row) {
-							
+								echo '<div class="productBox">';
 								echo	'<a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>';
 								echo	'<p>' . $row["pName"] . '</p>';
 								echo	'<p>' . $row["description"] . '</p>';
