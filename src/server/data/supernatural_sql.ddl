@@ -48,8 +48,12 @@ CREATE TABLE User (
     firstName VARCHAR(20)   NOT NULL,
     lastName VARCHAR(20)   NOT NULL,
     email VARCHAR(40)   NOT NULL,
+<<<<<<< HEAD
     image blob,
     status boolean DEFAULT TRUE,
+=======
+	image blob,
+>>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
     PRIMARY KEY (userID)
 );
 
@@ -77,7 +81,11 @@ CREATE TABLE Product (
     description VARCHAR(500),
     price DECIMAL(9,2)   NOT NULL,
     category VARCHAR(20),
+<<<<<<< HEAD
     image blob,
+=======
+	image blob,
+>>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
     PRIMARY KEY (pID)
 );
 
@@ -151,11 +159,20 @@ CREATE TABLE Stock (
 );
 
 /*Create Store*/
+<<<<<<< HEAD
 INSERT INTO Store VALUES (DEFAULT,'Vancouver Super(natural) Store', '1015 Burrad Street', 'Vancouver', 'British Columbia', 'Canada');
 
 /*Create Users*/
 INSERT INTO User VALUES (DEFAULT, 'Admin', MD5('Password1'), 'Courtney', 'Gosselin', 'courtneygosselin@gmail.com',NULL,DEFAULT);
 INSERT INTO User VALUES (DEFAULT, 'Customer', MD5('Password1'), 'Bob', 'Builder', 'bobbuilder@hotmail.com',NULL,DEFAULT);
+=======
+INSERT INTO Store VALUES (DEFAULT,'Vancouver Super(natural) Store', '1015 Burrad Street', 'Vancouver', 'British Columbia', 'Canada'); 
+
+
+/*Create Users*/
+INSERT INTO User VALUES (DEFAULT, 'Admin', 'Password1', 'Courtney', 'Gosselin', 'courtneygosselin@gmail.com', NULL);
+INSERT INTO User VALUES (DEFAULT, 'Customer', 'Password1', 'Bob', 'Builder', 'bobbuilder@hotmail.com', NULL);
+>>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
 
 /*Create Admin*/
 INSERT INTO Admin VALUES (1,'Junior Dev');
@@ -166,6 +183,7 @@ INSERT INTO Customer VALUES (2);
 /*Add Products*/
 
 /*Add Vampires*/
+<<<<<<< HEAD
 INSERT INTO Product VALUES (DEFAULT, 'Average Male Vampire', 'Empty', 0.99, 'Vampire');
 INSERT INTO Product VALUES (DEFAULT, 'Average Female Vampire', 'Empty', 0.99, 'Vampire');
 INSERT INTO Product VALUES (DEFAULT, 'Premium Male Vampire', 'Empty', 50.99, 'Vampire');
@@ -176,105 +194,117 @@ INSERT INTO Product VALUES (DEFAULT, 'Stefan Salcatore', 'Empty', 200.00, 'Vampi
 INSERT INTO Product VALUES (DEFAULT, 'Gordan Walker', 'Empty', 500.00, 'Vampire');
 INSERT INTO Product VALUES (DEFAULT, 'Barnabus', 'Empty', 500.00, 'Vampire');
 INSERT INTO Product VALUES (DEFAULT, 'Darren Shan', 'Empty', 500.00, 'Vampire');
+=======
+INSERT INTO Product VALUES (DEFAULT, 'Average Male Vampire', 'Empty', 0.99, 'Vampire', NULl);
+INSERT INTO Product VALUES (DEFAULT, 'Average Female Vampire', 'Empty', 0.99, 'Vampire', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Premium Male Vampire', 'Empty', 50.99, 'Vampire', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Premium Female Vampire', 'Empty', 50.99, 'Vampire', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Dracula', 'Empty', 1000.00, 'Vampire', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Edward Collin', 'Empty', 0.50, 'Vampire', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Stefan Salcatore', 'Empty', 200.00, 'Vampire', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Gordan Walker', 'Empty', 500.00, 'Vampire', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Barnabus', 'Empty', 500.00, 'Vampire', NULL); 
+INSERT INTO Product VALUES (DEFAULT, 'Darren Shan', 'Empty', 500.00, 'Vampire', NULL); 
+>>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
 
 /*Add Shifters*/
-INSERT INTO Product VALUES (DEFAULT, 'Average Male Shifter', 'Empty', 0.99, 'Shifter');
-INSERT INTO Product VALUES (DEFAULT, 'Average Female Shifter', 'Empty', 0.99, 'Shifter');
-INSERT INTO Product VALUES (DEFAULT, 'Premium Male Shifter', 'Empty', 0.99, 'Shifter');
-INSERT INTO Product VALUES (DEFAULT, 'Premium female Shifter', 'Empty', 0.99, 'Shifter');
+INSERT INTO Product VALUES (DEFAULT, 'Average Male Shifter', 'Empty', 0.99, 'Shifter', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Average Female Shifter', 'Empty', 0.99, 'Shifter', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Premium Male Shifter', 'Empty', 0.99, 'Shifter', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Premium female Shifter', 'Empty', 0.99, 'Shifter', NULL);
 
 /*Add Ghosts*/
-INSERT INTO Product VALUES (DEFAULT, 'Average Male Ghost', 'Empty', 0.99, 'Ghost');
-INSERT INTO Product VALUES (DEFAULT, 'Average Female Ghost', 'Empty', 0.99, 'Ghost');
-INSERT INTO Product VALUES (DEFAULT, 'Premium Male Ghost', 'Empty', 0.99, 'Ghost');
-INSERT INTO Product VALUES (DEFAULT, 'Premium Female Ghost', 'Empty', 0.99, 'Ghost');
-INSERT INTO Product VALUES (DEFAULT, 'Casper', 'Empty', 5000.00, 'Ghost');
-INSERT INTO Product VALUES (DEFAULT, 'Beetle Juice', 'Empty', 500.99, 'Ghost');
-INSERT INTO Product VALUES (DEFAULT, 'Bloody Mary', 'Empty', 500.99, 'Ghost');
-INSERT INTO Product VALUES (DEFAULT, 'Slimer', 'Empty', 500.99, 'Ghost');
-INSERT INTO Product VALUES (DEFAULT, 'Women in White', 'Empty', 500.99, 'Ghost');
+INSERT INTO Product VALUES (DEFAULT, 'Average Male Ghost', 'Empty', 0.99, 'Ghost', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Average Female Ghost', 'Empty', 0.99, 'Ghost', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Premium Male Ghost', 'Empty', 0.99, 'Ghost', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Premium Female Ghost', 'Empty', 0.99, 'Ghost', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Casper', 'Empty', 5000.00, 'Ghost', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Beetle Juice', 'Empty', 500.99, 'Ghost', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Bloody Mary', 'Empty', 500.99, 'Ghost', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Slimer', 'Empty', 500.99, 'Ghost', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Women in White', 'Empty', 500.99, 'Ghost', NULL);
 
 /*Add Werewolves*/
-INSERT INTO Product VALUES (DEFAULT, 'Average Female Werewolf', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Average Male Werewolf', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Premium Female Werewolf', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Premium Male Werewolf', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Alpha Werewolf', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Garth Fitzgerald IV', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Scott McCall', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Derek Hale', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Dragluin', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Lucian Greymark', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Fenrir Greyback', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Remus Lupin', 'Empty', 500.99, 'Werewolf');
-INSERT INTO Product VALUES (DEFAULT, 'Grubbs Grady', 'Empty', 500.99, 'Werewolf');
+INSERT INTO Product VALUES (DEFAULT, 'Average Female Werewolf', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Average Male Werewolf', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Premium Female Werewolf', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Premium Male Werewolf', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Alpha Werewolf', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Garth Fitzgerald IV', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Scott McCall', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Derek Hale', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Dragluin', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Lucian Greymark', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Fenrir Greyback', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Remus Lupin', 'Empty', 500.99, 'Werewolf', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Grubbs Grady', 'Empty', 500.99, 'Werewolf', NULL);
 
 /*Angels*/
-INSERT INTO Product VALUES (DEFAULT, 'Lucifer', 'Empty', 500.99, 'Angel');
-INSERT INTO Product VALUES (DEFAULT, 'Micheal', 'Empty', 500.99, 'Angel');
-INSERT INTO Product VALUES (DEFAULT, 'Castiel', 'Empty', 500.99, 'Angel');
-INSERT INTO Product VALUES (DEFAULT, 'Raphael', 'Empty', 500.99, 'Angel');
-INSERT INTO Product VALUES (DEFAULT, 'Gabriel', 'Empty', 500.99, 'Angel');
-INSERT INTO Product VALUES (DEFAULT, 'Metatron', 'Empty', 500.99, 'Angel');
-INSERT INTO Product VALUES (DEFAULT, 'Naomi', 'Empty', 500.99, 'Angel');
-INSERT INTO Product VALUES (DEFAULT, 'Balthazar', 'Empty', 500.99, 'Angel');
+INSERT INTO Product VALUES (DEFAULT, 'Lucifer', 'Empty', 500.99, 'Angel', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Micheal', 'Empty', 500.99, 'Angel', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Castiel', 'Empty', 500.99, 'Angel', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Raphael', 'Empty', 500.99, 'Angel', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Gabriel', 'Empty', 500.99, 'Angel', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Metatron', 'Empty', 500.99, 'Angel', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Naomi', 'Empty', 500.99, 'Angel', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Balthazar', 'Empty', 500.99, 'Angel', NULL);
 
 /*Deity*/
-INSERT INTO Product VALUES (DEFAULT, 'Zeus', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'God', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Amara', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Isis', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Osiris', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Artemis', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Atropos', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Dionysius', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Kali', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Loki', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Odin', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Mercury', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Vesta', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Veritas', 'Empty', 500.99, 'Deity');
-INSERT INTO Product VALUES (DEFAULT, 'Eve', 'Empty', 500.99, 'Deity');
+INSERT INTO Product VALUES (DEFAULT, 'Zeus', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'God', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Amara', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Isis', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Osiris', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Artemis', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Atropos', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Dionysius', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Kali', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Loki', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Odin', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Mercury', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Vesta', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Veritas', 'Empty', 500.99, 'Deity', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Eve', 'Empty', 500.99, 'Deity', NULL);
 
 /*Gear*/
-INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber .45', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber .22', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber .380', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber 9mm', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber .50', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber 12GA', 'Empty', 500.99, 'Gear');
+INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber .45', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber .22', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber .380', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber 9mm', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber .50', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Silver Bullets Caliber 12GA', 'Empty', 500.99, 'Gear', NULL);
 
-INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Pope John Paul the second', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Martin Luther', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Average Male', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Average Female', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Pope Benedict XVI', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Jim Murphy', 'Empty', 500.99, 'Gear');
+INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Pope John Paul the second', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Martin Luther', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Average Male', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Average Female', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Pope Benedict XVI', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Holly Water Blessed by Jim Murphy', 'Empty', 500.99, 'Gear', NULL);
 
-INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber .45', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber .22', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Salt ullets Caliber .380', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber 9mm', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber .50', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber 12GA', 'Empty', 500.99, 'Gear');
+INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber .45', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber .22', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Salt ullets Caliber .380', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber 9mm', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber .50', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Salt Bullets Caliber 12GA', 'Empty', 500.99, 'Gear', NULL);
 
-INSERT INTO Product VALUES (DEFAULT, 'Wooden Stake', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Hot Garlic', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Blessed Rossary', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Angel Blade', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Angel Sword', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Hunter Journal', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Book of the Damned', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'The Colt', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'The First Blade', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Death Scythe', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Flame Thrower', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Demon-Killing knife', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Lambs Blood', 'Empty', 500.99, 'Gear');
+INSERT INTO Product VALUES (DEFAULT, 'Wooden Stake', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Hot Garlic', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Blessed Rossary', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Angel Blade', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Angel Sword', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Hunter Journal', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Book of the Damned', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'The Colt', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'The First Blade', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Death Scythe', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Flame Thrower', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Demon-Killing knife', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Lambs Blood', 'Empty', 500.99, 'Gear', NULL);
 
 /*famous*/
-INSERT INTO Product VALUES (DEFAULT, 'Horn of Gabreil', 'Empty', 500.99, 'Gear');
-INSERT INTO Product VALUES (DEFAULT, 'Hand of God', 'Empty', 500.99, 'Gear');
+INSERT INTO Product VALUES (DEFAULT, 'Horn of Gabreil', 'Empty', 500.99, 'Gear', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Hand of God', 'Empty', 500.99, 'Gear', NULL);
 
 /*Stock*/
 INSERT INTO Stock VALUES (0, 1, 10);
@@ -371,3 +401,7 @@ INSERT INTO Stock VALUES (89, 1, 10);
 INSERT INTO Stock VALUES (90, 1, 10);
 INSERT INTO Stock VALUES (91, 1, 10);
 INSERT INTO Stock VALUES (92, 1, 10);
+<<<<<<< HEAD
+=======
+
+>>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
