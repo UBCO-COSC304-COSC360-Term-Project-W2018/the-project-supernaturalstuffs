@@ -61,7 +61,7 @@
       $productList[$pID1] = array( "pID"=>$pID1, "pName"=>$name1, "price"=>$price1, "quantity"=>3 );
       $productList[$pID2] = array( "pID"=>$pID2, "pName"=>$name2, "price"=>$price2, "quantity"=>1 );
 
-      $total = $price1 + $price2;
+      $total = $price1*3 + $price2;
 
       $_SESSION['productList'] = $productList;
 
@@ -198,10 +198,10 @@
                   $delivery = $_SESSION['shipInfo']['delivery'];
                 }
                 $tax=($total+$delivery)*'0.12';
-                $total=($total + $delivery + $tax);
                 echo("<p class='money'>$". $total ."</p>");
                 echo("<p class='money'>$". $delivery ." </p>");
                 echo("<p class='money'>$".$tax."</p>");
+                $total=($total + $delivery + $tax);
                 echo("<p class='total'>$".$total."</p>");
                ?>
             </div>
