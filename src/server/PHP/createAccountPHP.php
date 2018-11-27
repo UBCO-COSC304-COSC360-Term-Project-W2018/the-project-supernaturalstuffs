@@ -88,7 +88,7 @@
           $uploadOk = 0;
       }
       // Allow certain file formats
-      if($imageFileType != "png") {
+      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "gif") {
           echo "Sorry, only PNG files are allowed.";
           $uploadOk = 0;
       }
@@ -97,13 +97,13 @@
       if ($uploadOk == 0) {
           echo "Sorry, your file was not uploaded.";
       // if everything is ok, try to upload file
-      } else {
+    } /*else {
           if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
               echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
           } else {
               echo "Sorry, there was an error uploading your file.";
           }
-      }
+      }*/
 
       //connect to database
       try {
@@ -127,18 +127,9 @@
 
       //image Stuff
       $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
-      /*$sql = "INSERT INTO userImages (userID, contentType, image) VALUES(?,?,?)";
-      $stmt = mysqli_stmt_init($connection);
-      mysqli_stmt_prepare($stmt, $sql);
-
-      $null = NULL;
-      mysqli_stmt_bind_param($stmt, "isb", $userID, $imageFileType, $null);
-      mysqli_stmt_send_long_data($stmt, 2 , $imagedata);
-      $result = mysqli_stmt_execute($stmt) or die(mysqli_stmt_error($stmt));
-      mysqli_stmt_close($stmt);  */
 
       //insert user into user
-      $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email , :imagedata)";
+      $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email , :imagedata, DEFAULT)";
       $custUN = "TEST";
       $statement = $pdo->prepare($sql2);
       $statement->bindValue(':username', $custUN, PDO::PARAM_STR);
@@ -163,27 +154,6 @@
       $statement = $pdo->prepare($sql4);
       $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
       $insert = $statement->execute();
-
-      /*//test features user
-      $sql5 = "SELECT userID,email,password FROM User" ;
-      $statement = $pdo->prepare($sql5);
-      $statement->execute();
-      $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows3 as $row3) {
-        echo $row3['userID'] . " ";
-        echo $row3['email'] . " ";
-        echo $row3['password'] . " <br>";
-      }
-
-
-      //test features customer
-      $sql6 = "SELECT userID FROM Customer" ;
-      $statement = $pdo->prepare($sql6);
-      $statement->execute();
-      $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows3 as $row3) {
-        echo $row3['userID'] . " <br>";
-      }*/
 
       //do me want them to login in now or automatically be logged in
       $_SESSION['email'] = $custE;

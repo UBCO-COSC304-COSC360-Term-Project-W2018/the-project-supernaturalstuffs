@@ -48,7 +48,7 @@ CREATE TABLE User (
     firstName VARCHAR(20)   NOT NULL,
     lastName VARCHAR(20)   NOT NULL,
     email VARCHAR(40)   NOT NULL,
-	image blob,
+    image blob,
     status boolean DEFAULT TRUE,
     PRIMARY KEY (userID)
 );
@@ -77,7 +77,7 @@ CREATE TABLE Product (
     description VARCHAR(500),
     price DECIMAL(9,2)   NOT NULL,
     category VARCHAR(20),
-	  image blob,
+    image blob,
     PRIMARY KEY (pID)
 );
 
@@ -153,10 +153,9 @@ CREATE TABLE Stock (
 /*Create Store*/
 INSERT INTO Store VALUES (DEFAULT,'Vancouver Super(natural) Store', '1015 Burrad Street', 'Vancouver', 'British Columbia', 'Canada');
 
-
 /*Create Users*/
-INSERT INTO User VALUES (DEFAULT, 'Admin', 'Password1', 'Courtney', 'Gosselin', 'courtneygosselin@gmail.com', NULL, DEFAULT);
-INSERT INTO User VALUES (DEFAULT, 'Customer', 'Password1', 'Bob', 'Builder', 'bobbuilder@hotmail.com', NULL, DEFAULT);
+INSERT INTO User VALUES (DEFAULT, 'Admin', MD5('Password1'), 'Courtney', 'Gosselin', 'courtneygosselin@gmail.com',NULL,DEFAULT);
+INSERT INTO User VALUES (DEFAULT, 'Customer', MD5('Password1'), 'Bob', 'Builder', 'bobbuilder@hotmail.com',NULL,DEFAULT);
 
 /*Create Admin*/
 INSERT INTO Admin VALUES (1,'Junior Dev');
@@ -167,7 +166,7 @@ INSERT INTO Customer VALUES (2);
 /*Add Products*/
 
 /*Add Vampires*/
-INSERT INTO Product VALUES (DEFAULT, 'Average Male Vampire', 'Empty', 0.99, 'Vampire', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Average Male Vampire', 'Empty', 0.99, 'Vampire', NULl);
 INSERT INTO Product VALUES (DEFAULT, 'Average Female Vampire', 'Empty', 0.99, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Premium Male Vampire', 'Empty', 50.99, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Premium Female Vampire', 'Empty', 50.99, 'Vampire', NULL);
