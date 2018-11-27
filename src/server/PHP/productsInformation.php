@@ -34,7 +34,7 @@
 			}else{
 				$sql = 'SELECT * FROM Product WHERE pName LIKE pName = ? OR category LIKE category = ?';
 			}
-			'
+			
 			
 			$statement = $pdo->prepare($sql);
 			$statement->execute(array("%' .$_GET["filter"] . '%","%' . $_GET["filter"] . '%"));
