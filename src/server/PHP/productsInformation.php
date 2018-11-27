@@ -31,20 +31,31 @@
 			//check if All or another selection
 			if(!(isset($_GET["filter"]))){
 				$sql = 'SELECT * FROM Product';
+				$statement = $pdo->prepare($sql);
+				$statement->execute();
+				$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+			
+				echo '<table>';
+						echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th><th>Select</th></tr>';
+				foreach ($rows as $row) {
+					echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="productDetails.php?filter=' . $row['pID'] . '">Select Product</a></td></tr>';
+				}
+				echo '</table>';
+				
 			}else{
 				$sql = 'SELECT * FROM Product WHERE pName LIKE "%?%" OR category LIKE "%?%"';
-			}
+				$statement = $pdo->prepare($sql);
+				$statement->execute(array($_GET["filter"], $_GET["filter"]));
+				$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+			
+				echo '<table>';
+						echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th><th>Select</th></tr>';
+				foreach ($rows as $row) {
+					echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="productDetails.php?filter=' . $row['pID'] . '">Select Product</a></td></tr>';
+				}
+				echo '</table>';
+				}
 
-			$statement = $pdo->prepare($sql);
-			$statement->execute(array($_GET["filter"], $_GET["filter"]));
-			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-		
-			echo '<table>';
-					echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th><th>Select</th></tr>';
-			foreach ($rows as $row) {
-				echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="productDetails.php?filter=' . $row['pID'] . '">Select Product</a></td></tr>';
-			}
-			echo '</table>';
 		?>
 	</main>
 	<!--Footer include-->
