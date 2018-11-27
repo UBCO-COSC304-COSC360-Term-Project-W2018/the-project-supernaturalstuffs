@@ -43,12 +43,12 @@
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
 			}else if($_GET['filter']='Comment'){
-				//DELETE Review
+				//DELETE Comment
 				$sql = 'DELETE FROM CommentsOn WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
 			}else if($_GET['filter']='Product'){
-				//DELETE Review
+				//DELETE Product
 				$sql = 'DELETE FROM Product WHERE pID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
