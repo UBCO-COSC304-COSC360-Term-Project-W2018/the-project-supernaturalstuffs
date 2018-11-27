@@ -153,37 +153,49 @@
 			  <h2>Wish List</h2>
 
 			  <div class="items">
-				<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-				<div class="productinfo">
-				  <p>Product name:</p>
-				  <p>Desciption:</p>
-				  <p>Price:</p>
-				  <p>Quantity:</p>
-				  <input class ="button" type="button" name="delete" value="Delete" />
-				</div>
+  				<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
+  				<div class="productinfo">
+  				  <p>Product name:</p>
+  				  <p>Desciption:</p>
+  				  <p>Price:</p>
+  				  <p>Quantity:</p>
+  				  <input class ="button" type="button" name="delete" value="Delete" />
+  				</div>
 			  </div>
 
 			  <div class="items">
-				<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-				<div class="productinfo">
-				  <p>Product name:</p>
-				  <p>Desciption:</p>
-				  <p>Price:</p>
-				  <p>Quantity:</p>
-				  <input class ="button" type="button" name="delete" value="Delete" />
-				</div>
+  				<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
+  				<div class="productinfo">
+  				  <p>Product name:</p>
+  				  <p>Desciption:</p>
+  				  <p>Price:</p>
+  				  <p>Quantity:</p>
+  				  <input class ="button" type="button" name="delete" value="Delete" />
+  				</div>
 			  </div>
 
 			  <div class="items">
-				<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-				<div class="productinfo">
-				  <p>Product name:</p>
-				  <p>Desciption:</p>
-				  <p>Price:</p>
-				  <p>Quantity:</p>
-				  <input class ="button" type="button" name="delete" value="Delete" />
-				</div>
+  				<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
+  				<div class="productinfo">
+  				  <p>Product name:</p>
+  				  <p>Desciption:</p>
+  				  <p>Price:</p>
+  				  <p>Quantity:</p>
+  				  <input class ="button" type="button" name="delete" value="Delete" />
+  				</div>
 			  </div>
+        <?php
+        $sql = "SELECT image FROM User where email = :email";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+        $statement->execute();
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $row) {}
+
+        $image = $row['image'];
+        echo '<img src = "data:image/'png';base64, '.base64_encode($image).'"/>';
+
+        ?>
 			</div>
 		</div>
       </div>
