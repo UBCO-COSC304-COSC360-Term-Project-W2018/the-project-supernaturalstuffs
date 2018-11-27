@@ -28,7 +28,7 @@
 							throw new \PDOException($e->getMessage(), (int)$e->getCode());
 						}
 						echo('<p id="sortButton">Sort by</p>
-							'<div id="box">');
+							<div id="box">');
 					
 						
 							//check if All or another selection
