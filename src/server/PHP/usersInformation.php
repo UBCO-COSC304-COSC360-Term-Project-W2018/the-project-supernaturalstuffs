@@ -28,9 +28,9 @@
 			}
 			
 			//List customers based on search information by name, email, or post
-			$sql = 'SELECT * FROM Customer NATURAL JOIN User WHERE firstName LIKE "%' . $_GET["filter"] . '%" OR lastName LIKE "%' . $_GET["filter"] . '%" OR email LIKE "%' . $_GET["filter"] . '%";';
+			$sql = 'SELECT * FROM Customer NATURAL JOIN User WHERE firstName LIKE ? OR lastName LIKE ? OR email LIKE ?';
 			$statement = $pdo->prepare($sql);
-			$statement->execute();
+			$statement->execute(array("%" . $_GET['filter'] . "%", "%" . $_GET['filter'] . "%", "%" . $_GET['filter'] . "%"));
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 			echo '<table>';
 					echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td><td>Select</td></tr>';
