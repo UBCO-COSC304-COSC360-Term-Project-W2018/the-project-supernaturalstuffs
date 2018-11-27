@@ -39,7 +39,7 @@ CREATE TABLE Shipment (
     postalCode CHAR(7)   NOT NULL,
     email VARCHAR(40)   NOT NULL,
     PRIMARY KEY (trackingNumber)
-);  
+);
 
 CREATE TABLE User (
     userID int   AUTO_INCREMENT,
@@ -49,6 +49,7 @@ CREATE TABLE User (
     lastName VARCHAR(20)   NOT NULL,
     email VARCHAR(40)   NOT NULL,
 	image blob,
+    status boolean DEFAULT TRUE,
     PRIMARY KEY (userID)
 );
 
@@ -68,7 +69,7 @@ CREATE TABLE PaymentMethod (
 CREATE TABLE Customer (
     userID int,
     PRIMARY KEY (userID)
-);     
+);
 
 CREATE TABLE Product (
     pID int   AUTO_INCREMENT,
@@ -76,7 +77,7 @@ CREATE TABLE Product (
     description VARCHAR(500),
     price DECIMAL(9,2)   NOT NULL,
     category VARCHAR(20),
-	image blob,
+	  image blob,
     PRIMARY KEY (pID)
 );
 
@@ -124,7 +125,7 @@ CREATE TABLE Admin (
     title VARCHAR(30)   NOT NULL,
     PRIMARY KEY (userID),
     FOREIGN KEY (userID) REFERENCES User
-    (userID)           
+    (userID)
 );
 
 CREATE TABLE CommentsOn (
@@ -146,16 +147,16 @@ CREATE TABLE Stock (
     FOREIGN KEY (pID) REFERENCES Product
     (pID),
     FOREIGN KEY (storeID) REFERENCES Store
-    (storeID) 
+    (storeID)
 );
 
 /*Create Store*/
-INSERT INTO Store VALUES (DEFAULT,'Vancouver Super(natural) Store', '1015 Burrad Street', 'Vancouver', 'British Columbia', 'Canada'); 
+INSERT INTO Store VALUES (DEFAULT,'Vancouver Super(natural) Store', '1015 Burrad Street', 'Vancouver', 'British Columbia', 'Canada');
 
 
 /*Create Users*/
-INSERT INTO User VALUES (DEFAULT, 'Admin', 'Password1', 'Courtney', 'Gosselin', 'courtneygosselin@gmail.com', NULL);
-INSERT INTO User VALUES (DEFAULT, 'Customer', 'Password1', 'Bob', 'Builder', 'bobbuilder@hotmail.com', NULL);
+INSERT INTO User VALUES (DEFAULT, 'Admin', 'Password1', 'Courtney', 'Gosselin', 'courtneygosselin@gmail.com', NULL, DEFAULT);
+INSERT INTO User VALUES (DEFAULT, 'Customer', 'Password1', 'Bob', 'Builder', 'bobbuilder@hotmail.com', NULL, DEFAULT);
 
 /*Create Admin*/
 INSERT INTO Admin VALUES (1,'Junior Dev');
@@ -166,7 +167,7 @@ INSERT INTO Customer VALUES (2);
 /*Add Products*/
 
 /*Add Vampires*/
-INSERT INTO Product VALUES (DEFAULT, 'Average Male Vampire', 'Empty', 0.99, 'Vampire', NULl);
+INSERT INTO Product VALUES (DEFAULT, 'Average Male Vampire', 'Empty', 0.99, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Average Female Vampire', 'Empty', 0.99, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Premium Male Vampire', 'Empty', 50.99, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Premium Female Vampire', 'Empty', 50.99, 'Vampire', NULL);
@@ -174,8 +175,8 @@ INSERT INTO Product VALUES (DEFAULT, 'Dracula', 'Empty', 1000.00, 'Vampire', NUL
 INSERT INTO Product VALUES (DEFAULT, 'Edward Collin', 'Empty', 0.50, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Stefan Salcatore', 'Empty', 200.00, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Gordan Walker', 'Empty', 500.00, 'Vampire', NULL);
-INSERT INTO Product VALUES (DEFAULT, 'Barnabus', 'Empty', 500.00, 'Vampire', NULL); 
-INSERT INTO Product VALUES (DEFAULT, 'Darren Shan', 'Empty', 500.00, 'Vampire', NULL); 
+INSERT INTO Product VALUES (DEFAULT, 'Barnabus', 'Empty', 500.00, 'Vampire', NULL);
+INSERT INTO Product VALUES (DEFAULT, 'Darren Shan', 'Empty', 500.00, 'Vampire', NULL);
 
 /*Add Shifters*/
 INSERT INTO Product VALUES (DEFAULT, 'Average Male Shifter', 'Empty', 0.99, 'Shifter', NULL);
@@ -277,6 +278,68 @@ INSERT INTO Product VALUES (DEFAULT, 'Horn of Gabreil', 'Empty', 500.99, 'Gear',
 INSERT INTO Product VALUES (DEFAULT, 'Hand of God', 'Empty', 500.99, 'Gear', NULL);
 
 /*Stock*/
+INSERT INTO Stock VALUES (0, 1, 10);
+INSERT INTO Stock VALUES (1, 1, 10);
+INSERT INTO Stock VALUES (2, 1, 10);
+INSERT INTO Stock VALUES (3, 1, 10);
+INSERT INTO Stock VALUES (4, 1, 10);
+INSERT INTO Stock VALUES (5, 1, 1);
+INSERT INTO Stock VALUES (6, 1, 1);
+INSERT INTO Stock VALUES (7, 1, 1);
+INSERT INTO Stock VALUES (8, 1, 1);
+INSERT INTO Stock VALUES (9, 1, 1);
+INSERT INTO Stock VALUES (10, 1, 1);
+INSERT INTO Stock VALUES (11, 1, 10);
+INSERT INTO Stock VALUES (12, 1, 10);
+INSERT INTO Stock VALUES (13, 1, 10);
+INSERT INTO Stock VALUES (14, 1, 10);
+INSERT INTO Stock VALUES (15, 1, 10);
+INSERT INTO Stock VALUES (16, 1, 10);
+INSERT INTO Stock VALUES (17, 1, 10);
+INSERT INTO Stock VALUES (18, 1, 10);
+INSERT INTO Stock VALUES (19, 1, 1);
+INSERT INTO Stock VALUES (20, 1, 1);
+INSERT INTO Stock VALUES (21, 1, 1);
+INSERT INTO Stock VALUES (22, 1, 1);
+INSERT INTO Stock VALUES (23, 1, 1);
+INSERT INTO Stock VALUES (24, 1, 10);
+INSERT INTO Stock VALUES (25, 1, 10);
+INSERT INTO Stock VALUES (26, 1, 10);
+INSERT INTO Stock VALUES (27, 1, 10);
+
+INSERT INTO Stock VALUES (28, 1, 1);
+INSERT INTO Stock VALUES (29, 1, 1);
+INSERT INTO Stock VALUES (30, 1, 1);
+INSERT INTO Stock VALUES (31, 1, 1);
+INSERT INTO Stock VALUES (32, 1, 1);
+INSERT INTO Stock VALUES (33, 1, 1);
+INSERT INTO Stock VALUES (34, 1, 1);
+INSERT INTO Stock VALUES (35, 1, 1);
+INSERT INTO Stock VALUES (36, 1, 1);
+INSERT INTO Stock VALUES (37, 1, 1);
+INSERT INTO Stock VALUES (38, 1, 1);
+INSERT INTO Stock VALUES (39, 1, 1);
+INSERT INTO Stock VALUES (40, 1, 1);
+INSERT INTO Stock VALUES (41, 1, 1);
+INSERT INTO Stock VALUES (42, 1, 1);
+INSERT INTO Stock VALUES (43, 1, 1);
+INSERT INTO Stock VALUES (44, 1, 1);
+INSERT INTO Stock VALUES (45, 1, 1);
+INSERT INTO Stock VALUES (46, 1, 1);
+INSERT INTO Stock VALUES (47, 1, 1);
+INSERT INTO Stock VALUES (48, 1, 1);
+INSERT INTO Stock VALUES (49, 1, 1);
+INSERT INTO Stock VALUES (50, 1, 1);
+INSERT INTO Stock VALUES (51, 1, 1);
+INSERT INTO Stock VALUES (52, 1, 1);
+INSERT INTO Stock VALUES (53, 1, 1);
+INSERT INTO Stock VALUES (54, 1, 1);
+INSERT INTO Stock VALUES (55, 1, 1);
+INSERT INTO Stock VALUES (56, 1, 1);
+INSERT INTO Stock VALUES (57, 1, 1);
+INSERT INTO Stock VALUES (58, 1, 1);
+INSERT INTO Stock VALUES (59, 1, 1);
+
 INSERT INTO Stock VALUES (60, 1, 10);
 INSERT INTO Stock VALUES (61, 1, 10);
 INSERT INTO Stock VALUES (62, 1, 10);
@@ -309,4 +372,3 @@ INSERT INTO Stock VALUES (89, 1, 10);
 INSERT INTO Stock VALUES (90, 1, 10);
 INSERT INTO Stock VALUES (91, 1, 10);
 INSERT INTO Stock VALUES (92, 1, 10);
-
