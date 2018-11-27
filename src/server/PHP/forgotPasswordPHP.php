@@ -8,6 +8,14 @@
   <body>
     <!--Include header-->
     <?php
+    <?php
+      use PHPMailer\PHPMailer\PHPMailer;
+      use PHPMailer\PHPMailer\Exception;
+
+      require '../include/PHPMailer/src/Exception.php';
+      require '../include/PHPMailer/src/PHPMailer.php';
+      require '../include/PHPMailer/src/SMTP.php';
+
       session_start();
 
       include '../include/db_credentials.php';
@@ -59,7 +67,6 @@
 
        //figure out how to end an email
        $password = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnoprstuvwxyz", 5)), 0, 5);
-       $msg = "Your new password is " . $password;
 
        $sql = "UPDATE User SET password = :pass WHERE email = :email";
        $statement = $pdo->prepare($sql);
@@ -67,10 +74,34 @@
        $statement->bindValue(':email', $custE, PDO::PARAM_STR);
        $statement->execute();
 
-       $email = $custE;
-       $subject = "Super(natural) Store - Reset Password";
 
-       mail($email,$subject,$msg);
+       $mail = new PHPMailer(true);                              // Passing true enables exceptions
+       try {
+           //Server settings
+           $mail->isSMTP();                                      // Set mailer to use SMTP
+           $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+           $mail->SMTPAuth = true;                               // Enable SMTP authentication
+           $mail->Username = 'supernaturalstore1234@gmail.com';                 // SMTP username
+           $mail->Password = 'Supernatural1';                           // SMTP password
+           $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, ssl also accepted
+           $mail->Port = 465;                                    // TCP port to connect to
+
+           //Recipients
+           $mail->setFrom('supernaturalstore1234@gmail.com', 'The Supernatural Store');
+           $mail->addAddress($custE);     // Add a recipient
+           $mail->addReplyTo('supernaturalstore1234@gmail.com', 'The Supernatual Store');
+
+           //Content
+           $mail->isHTML(true);                                  // Set email format to HTML
+           $mail->Subject = 'Super(natural) Store - Password Reset';
+           $mail->Body    = 'This is your new password ' .$password. '. <b>Login NOW @ https://supernaturalstore.worobetz.ca/src/server/PHP/login.php</b>';
+           $mail->AltBody = 'This is your new password ' .$password. '. Login NOW @ https://supernaturalstore.worobetz.ca/src/server/PHP/login.php';
+
+           $mail->send();
+           echo 'Message has been sent';
+       } catch (Exception $e) {
+           echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+       }
 
        $message = "Your password has been changed. Check Email for new password!";
        echo "<script type='text/javascript'>alert('$message');
