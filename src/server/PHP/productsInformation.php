@@ -54,7 +54,7 @@
 					echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="productDetails.php?filter=' . $row['pID'] . '">Select Product</a></td></tr>';
 				}
 				echo '</table>';
-				}
+				
 			}
 		?>
 	</main>

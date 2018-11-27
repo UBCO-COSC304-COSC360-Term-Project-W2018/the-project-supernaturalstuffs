@@ -47,6 +47,11 @@
 				$sql = 'DELETE FROM CommentsOn WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
+			}else if($_GET['filter']='Product'){
+				//DELETE Review
+				$sql = 'DELETE FROM Product WHERE pID = ?';
+				$statement = $pdo->prepare($sql);
+				$statement->execute(array($_GET['info']));
 			}else{
 				echo '<p>Wrong source</p>';
 

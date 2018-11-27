@@ -53,7 +53,7 @@
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						echo "<p>User's Order History</p>";
 						echo '<table>';
-							echo '<tr><th>OrderID</th><th>Total Price</th><th>Tracking number</th><th>UserID</th><th>StoreID</th><th>Delete</th>></tr>';
+							echo '<tr><th>OrderID</th><th>Total Price</th><th>Tracking number</th><th>UserID</th><th>StoreID</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
 							echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td><td><a href="delete.php?filter=Order&info=' . $row['orderID'] . '">Delete Order</a></td></tr>';
 						}
