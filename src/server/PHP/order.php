@@ -116,9 +116,8 @@
        $statement->bindValue(':email', $shipEmail, PDO::PARAM_STR);
        $insert = $statement->execute();
 
-       $stmt = $pdo->prepare("...");
-       $stmt->execute();
-       $trackingNumber = $pdo->lastInsertedId();
+       $stmt = $pdo->prepare("SELECT LAST_INSERTED_ID()");
+       $trackingNumber = $stmt->fetchColumn();
 
        //get store id - store in session Please
 
@@ -131,9 +130,8 @@
        $statement->bindValue(':storeID', $storeID, PDO::PARAM_STR);
        $insert = $statement->execute();
 
-       $stmt = $pdo->prepare("...");
-       $stmt->execute();
-       $orderID = $pdo->lastInsertedId();
+       $stmt = $pdo->prepare("SELECT LAST_INSERTED_ID()");
+       $orderID = $stmt->fetchColumn();
 
        //for each product in session product list
        $totalPrice = 0;
