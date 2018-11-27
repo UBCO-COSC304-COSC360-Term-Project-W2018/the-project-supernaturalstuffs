@@ -32,7 +32,7 @@
 			if(!(isset($_GET["filter"]))){
 				$sql = 'SELECT * FROM Product';
 			}else{
-				$sql = 'SELECT * FROM Product WHERE pName LIKE pName = "%?%" OR category LIKE category = "%?%"';
+				$sql = 'SELECT * FROM Product WHERE pName LIKE "%?%" OR category LIKE "%?%"';
 			}
 			
 			$getInfo = $_GET["filter"];
