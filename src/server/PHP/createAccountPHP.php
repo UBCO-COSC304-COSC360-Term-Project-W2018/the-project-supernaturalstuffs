@@ -83,7 +83,7 @@
           $uploadOk = 0;
       }
       // Check file size
-      if ($_FILES["fileToUpload"]["size"] > 100000) {
+      if ($_FILES["fileToUpload"]["size"] > 1000000) {
           echo "Sorry, your file is too large.";
           $uploadOk = 0;
       }
@@ -138,7 +138,7 @@
       mysqli_stmt_close($stmt);  */
 
       //insert user into user
-      $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email /*, :imagedata*/)";
+      $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email , :imagedata)";
       $custUN = "TEST";
       $statement = $pdo->prepare($sql2);
       $statement->bindValue(':username', $custUN, PDO::PARAM_STR);
