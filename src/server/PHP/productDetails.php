@@ -52,7 +52,7 @@
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-						echo "<p>User's Reviews of Product</p>";
+						echo "<p>Users's Reviews of Product</p>";
 						
 						echo '<table>';
 							echo '<tr><td>UserID</th><th>ProductID</th><th>Review</th><th>Delete</th></tr>';
