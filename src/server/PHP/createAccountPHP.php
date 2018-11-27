@@ -129,7 +129,7 @@
       $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
 
       //insert user into user
-      $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email , :imagedata)";
+      $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email , :imagedata, DEFAULT)";
       $custUN = "TEST";
       $statement = $pdo->prepare($sql2);
       $statement->bindValue(':username', $custUN, PDO::PARAM_STR);
