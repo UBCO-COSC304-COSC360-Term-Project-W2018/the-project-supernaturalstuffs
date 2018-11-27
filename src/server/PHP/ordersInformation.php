@@ -31,21 +31,31 @@
 			//check if All or another selection
 			if(!(isset($_GET["filter"]))){
 				$sql = 'SELECT * FROM Orders';
+				$statement = $pdo->prepare($sql);
+				$statement->execute();
+				$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+			
+				echo '<table>';
+						echo '<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th><th>User ID</th><th>Store ID</th></tr>';
+				foreach ($rows as $row) {
+					echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td><td><a href="orderDetails.php?filter=' . $row['orderID'] . '">Select Product</a></td></tr>';
+				}
+				echo '</table>';
 			}else{
-				$sql = 'SELECT * FROM Orders WHERE OrderID LIKE orderID= ? OR trackingNumber LIKE trackingNumber = ?';
-			}
+				$sql = 'SELECT * FROM Orders WHERE OrderID LIKE ? OR trackingNumber LIKE ?';
 			
 			
-			$statement = $pdo->prepare($sql);
-			$statement->execute(array($_GET["filter"],$_GET["filter"]));
-			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-		
-			echo '<table>';
-					echo '<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th><th>User ID</th><th>Store ID</th></tr>';
-			foreach ($rows as $row) {
-				echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td><td><a href="orderDetails.php?filter=' . $row['orderID'] . '">Select Product</a></td></tr>';
+				$statement = $pdo->prepare($sql);
+				$statement->execute(array("%" . $_GET['filter'] . "%","%" . $_GET['filter'] . "%"));
+				$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+			
+				echo '<table>';
+						echo '<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th><th>User ID</th><th>Store ID</th></tr>';
+				foreach ($rows as $row) {
+					echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td><td><a href="orderDetails.php?filter=' . $row['orderID'] . '">Select Product</a></td></tr>';
+				}
+				echo '</table>';
 			}
-			echo '</table>';
 		?>
 	</main>
 	<!--Footer include-->

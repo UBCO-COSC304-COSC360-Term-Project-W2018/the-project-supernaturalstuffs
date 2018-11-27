@@ -55,7 +55,7 @@
 				}
 				echo '</table>';
 				}
-
+			}
 		?>
 	</main>
 	<!--Footer include-->
