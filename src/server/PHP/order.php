@@ -116,8 +116,14 @@
        $statement->bindValue(':email', $shipEmail, PDO::PARAM_STR);
        $insert = $statement->execute();
 
-       $stmt = $pdo->prepare("SELECT LAST_INSERTED_ID()");
-       $trackingNumber = $stmt->fetchColumn();
+       //get tracking number
+       $sql = "SELECT trackingNumber FROM Shipment ORDER BY trackingNumber DESC LIMIT 1";
+       $statement = $pdo->prepare($sql);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       foreach ($rows as $row) {
+       }
+       $trackingNumber = $row['trackingNumber'];
 
        //get store id - store in session Please
 
@@ -130,8 +136,14 @@
        $statement->bindValue(':storeID', $storeID, PDO::PARAM_STR);
        $insert = $statement->execute();
 
-       $stmt = $pdo->prepare("SELECT LAST_INSERTED_ID()");
-       $orderID = $stmt->fetchColumn();
+       //get orderID
+       $sql = "SELECT orderID FROM Orders ORDER BY orderID DESC LIMIT 1";
+       $statement = $pdo->prepare($sql);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       foreach ($rows as $row) {
+       }
+       $orderID = $row['orderID'];
 
        //for each product in session product list
        $totalPrice = 0;
