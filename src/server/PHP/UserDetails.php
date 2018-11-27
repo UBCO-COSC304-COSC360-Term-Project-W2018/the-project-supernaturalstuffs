@@ -42,7 +42,7 @@
 						echo '<table>';
 								echo '<tr><th>UserId</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td><a href="delete.php?filter=User&info=' . $row['userID'] . '"><td>Delete User</td></a></tr>';
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td><td><a href="delete.php?filter=User&info=' . $row['userID'] . '">Delete User</a></td></tr>';
 						}
 						echo '</table>';
 						
