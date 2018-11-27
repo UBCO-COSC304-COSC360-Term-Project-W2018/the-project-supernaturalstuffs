@@ -32,14 +32,19 @@
 				$sql = 'DELETE FROM User WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']='Product'){
-				//DELETE Product
-				$sql = 'DELETE FROM Product WHERE pID = ?';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET['info']));
 			}else if($_GET['filter']='Order'){
 				//DELETE Order
 				$sql = 'DELETE FROM Orders WHERE orderID = ?';
+				$statement = $pdo->prepare($sql);
+				$statement->execute(array($_GET['info']));
+			}else if($_GET['filter']='Review'){
+				//DELETE Review
+				$sql = 'DELETE FROM Review WHERE userID = ?';
+				$statement = $pdo->prepare($sql);
+				$statement->execute(array($_GET['info']));
+			}else if($_GET['filter']='Comment'){
+				//DELETE Review
+				$sql = 'DELETE FROM CommentsOn WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
 			}else{
