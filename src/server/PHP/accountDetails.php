@@ -193,7 +193,8 @@
         foreach ($rows as $row) {}
 
         $image = $row['image'];
-        echo '<img src = "data:image/'png';base64, '.base64_encode($image).'"/>';
+        $type = "png";
+        echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
 
         ?>
 			</div>
