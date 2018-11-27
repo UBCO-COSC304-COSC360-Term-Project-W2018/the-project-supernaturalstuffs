@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <title>Order</title>
     <link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/header-footer.css" />
-    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+      <link rel="stylesheet" href="../css/reset.css" />
+      <link rel="stylesheet" href="../css/header-footer.css" />
+      <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+      <link rel="stylesheet" type="text/css" href="../css/accountDetails.css" />
+      <link rel="stylesheet" type="text/css" href="../css/form.css">
   </head>
   <body>
     <?php include '../../../src/server/include/header.php'; ?>
@@ -207,7 +209,7 @@
         echo("</table>");
         echo("<h1>Order completed. Will be shipped soon...</h1>");
         echo("<h1>Your order reference number is: " . $orderID . '</h1>');
-        $sq4 = "SELECT firstName, lastName FROM User WHERE userID = :userID";
+        $sql4 = "SELECT firstName, lastName FROM User WHERE userID = :userID";
         $statement = $pdo->prepare($sql4);
         $statement->bindParam(':email',$custE, PDO::PARAM_STR);
         $statement->execute();
