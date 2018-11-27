@@ -1,0 +1,41 @@
+#flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#container {
+  width: 60%;
+  margin-bottom: 2em;
+}
+
+#faq {
+  border: solid 2px #1E262C;
+  margin-top: 2em;
+  margin-right: 2em;
+  width: 100%;
+}
+
+#contact {
+  margin-top: 2em;
+  margin-left: 2em;
+  width: 30%;
+}
+
+.style {
+  border: solid 1px white;
+  background-color: #710627;
+  padding: 1em;
+  margin: 1em 0em;
+}
+
+h1 {
+  font-size: 200%;
+  border-bottom: solid 3px #710627;
+}
+h2 { font-size: 120%; }
+body {
+  font-family: Arial, Helvetica, "Times New Roman";
+  background-color: #1E262C;
+  color: white;
+}

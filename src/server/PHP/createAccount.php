@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Create Account</title>
+    <link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
@@ -11,30 +12,22 @@
   </head>
 
   <body>
-    <header>
-			<h1><a href="./src/client/html/home.html">Super(natural) Store</a></h1>
-			<div id="search-cart">
-				<input type="text" class="searchHome" placeholder="Search...">
-				<img src="../images/search.png" alt="search" id="search">
-				<a href="./cart.html"><img src="../images/cart.png" alt="shopping cart" id="cart"></a>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="../../../index.html">Home</a></li>
-					<li><a href="./contact-FAQ.html">Contact</a></li>
-					<li><a href="./accountDetails.html">Account</a></li>
-				</ul>
-				<ul id="login-signup">
-					<li><a href="./login.html" class="login-signup">Login</a></li>
-					<li><a href="./createAccount.html" class="login-signup">Signup</a></li>
-				</ul>
-			</nav>
-		</header>
+	<!--Include header-->
+  <?php
+    include '../../../src/server/include/header.php';
+
+    if (isset($_SESSION['email'])){
+      $message = "Already Logged In";
+      echo "<script type='text/javascript'>alert('$message');
+      window.location.href='/index.php'</script>";
+      die();
+    }
+  ?>
 
     <main>
       <!-- page content -->
       <!--createAccount Form-->
-      <form name="createAccount" id="create" method="post" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return preventDefault()">
+      <form class="Main" name="createAccount" id="create" method="post" action="createAccountPHP.php" onsubmit="return preventDefault()" enctype="multipart/form-data>
         <fieldset>
           <legend>Create Account</legend>
           <div>
@@ -62,37 +55,23 @@
             <label>Confirm Password:</label>
             <input type="password" name="cPassword" class="box"/>
           </div>
+          <div>
+            <label>Add a photo:</label>
+            <input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+          </div>
           <div class="centered">
             <input type="submit" value="Create Account" class="button"/>
           </div>
           <div class="centered">
-            <input type="button" onclick="location.href='login.html'" value="Already Have an Acount" class="button"/>
+            <input type="button" onclick="location.href='login.php'" value="Already Have an Acount" class="button"/>
           </div>
 
         </fieldset>
       </form>
     </main>
 
-    <footer>
-			<div id="topF">
-				<div id="detailFooter">
-					<p>Find a store</p>
-					<p>Sign up for emails</p>
-					<p>Contact</p>
-				</div>
-				<div class="socials">
-					<img src="../images/Facebook.png" alt="Facebook link">
-					<img src="../images/YouTube.png" alt="Youtube link">
-					<img src="../images/Instagram.png" alt="Instagram link">
-					<img src="../images/Twitter.png" alt="Twitter link">
-				</div>
-			</div>
-			<div id="bottom">
-				<p> &copy; 2017-2018, Super(natural) Store, inc. All Rights Reserved</p>
-				<p>Terms of Use</p>
-				<p>Privacy Policy</p>
-			</div>
-		</footer>
+    <?php include '../../../src/server/include/footer.php' ?>
+
   </body>
 
   <foot>
