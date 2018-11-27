@@ -106,8 +106,8 @@
        $statement->bindValue(':method', $shipMethod, PDO::PARAM_STR);
        $statement->bindValue(':status', $status, PDO::PARAM_STR);
        $statement->bindValue(':shipDate', $shipDate, PDO::PARAM_STR);
-       $statement->bindValue(':firstname', $shipFName, PDO::PARAM_STR);
-       $statement->bindValue(':lastname', $shipLName, PDO::PARAM_STR);
+       $statement->bindValue(':firstName', $shipFName, PDO::PARAM_STR);
+       $statement->bindValue(':lastName', $shipLName, PDO::PARAM_STR);
        $statement->bindValue(':country', $shipCountry, PDO::PARAM_STR);
        $statement->bindValue(':province', $shipProvince, PDO::PARAM_STR);
        $statement->bindValue(':city', $shipTown, PDO::PARAM_STR);
