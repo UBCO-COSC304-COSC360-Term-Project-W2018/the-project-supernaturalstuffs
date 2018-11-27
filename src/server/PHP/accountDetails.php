@@ -189,7 +189,8 @@
       </div>
 
       <?php
-      $sql = "SELECT image FROM User where email = :email";
+      //printing user image
+      /*$sql = "SELECT image FROM User where email = :email";
       $statement = $pdo->prepare($sql);
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
       $statement->execute();
@@ -199,7 +200,7 @@
       $image = $row['image'];
       $type = "png";
       echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
-
+      */
       ?>
     </main>
 
