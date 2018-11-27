@@ -184,22 +184,23 @@
   				  <input class ="button" type="button" name="delete" value="Delete" />
   				</div>
 			  </div>
-        <?php
-        $sql = "SELECT image FROM User where email = :email";
-        $statement = $pdo->prepare($sql);
-        $statement->bindParam(':email', $custE, PDO::PARAM_STR);
-        $statement->execute();
-        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $row) {}
-
-        $image = $row['image'];
-        $type = "png";
-        echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
-
-        ?>
 			</div>
 		</div>
       </div>
+
+      <?php
+      $sql = "SELECT image FROM User where email = :email";
+      $statement = $pdo->prepare($sql);
+      $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+      $statement->execute();
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows as $row) {}
+
+      $image = $row['image'];
+      $type = "png";
+      echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
+
+      ?>
     </main>
 
     <?php include '../../../src/server/include/footer.php' ?>
