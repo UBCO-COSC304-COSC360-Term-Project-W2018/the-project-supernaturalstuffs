@@ -27,17 +27,17 @@
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
 			
-			if($_GET['filter']=User){
+			if($_GET['filter']='User'){
 				//DELETE USER
 				$sql = 'DELETE FROM User WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']=Product){
+			}else if($_GET['filter']='Product'){
 				//DELETE Product
 				$sql = 'DELETE FROM Product WHERE pID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']=Order){
+			}else if($_GET['filter']='Order'){
 				//DELETE Order
 				$sql = 'DELETE FROM Orders WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
