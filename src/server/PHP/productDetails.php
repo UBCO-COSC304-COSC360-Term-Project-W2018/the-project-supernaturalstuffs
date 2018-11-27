@@ -55,7 +55,7 @@
 						echo "<p>User's Reviews of Product</p>";
 						
 						echo '<table>';
-							echo '<tr><td>UserID</th><th>ProductID</th><th>Review</th<th>Delete</th></tr>';
+							echo '<tr><td>UserID</th><th>ProductID</th><th>Review</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
 							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td><td><a href="delete.php?filter=Review&info=' . $row['userID'] . '">Delete Review</a></td><</tr>';
 						}
