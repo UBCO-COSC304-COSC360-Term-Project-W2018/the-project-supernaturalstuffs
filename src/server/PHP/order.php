@@ -192,7 +192,7 @@
         echo("<table><tr><th>Product Id</th><th>Product Name</th><th>Quantity</th>");
         echo("<th>Price</th><th>Subtotal</th></tr>");
 
-        $total =0;
+        $total = 0;
         foreach ($cart as $id => $prod) {
         		echo("<tr><td>". $prod['pID'] . "</td>");
         		echo("<td>" . $prod['pName'] . "</td>");
@@ -205,6 +205,9 @@
         		echo("</tr>");
         		$total = $total +$prod['quantity']*$price;
         }
+        echo("<tr><td colspan=\"4\" align=\"right\"><b>Product Total</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
+        $total = $total + $shipDelivery;
+        echo("<tr><td colspan=\"4\" align=\"right\"><b>Shipping Total</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$shipDelivery))."</td></tr>");
         echo("<tr><td colspan=\"4\" align=\"right\"><b>Order Total</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
         echo("</table>");
         echo("<h1>Order completed. Will be shipped soon...</h1>");
