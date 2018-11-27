@@ -31,7 +31,7 @@
       if (isset($_SESSION['storeID'])) {
         $storeID = $_SESSION['storeID'];
       } else {
-        $storeID = null;
+        $storeID = 1;
       }
 
       $totalPrice = 0;
