@@ -6,7 +6,7 @@
   </head>
   <body>
     <?php
-      session_start(); 
+      session_start();
 
       include '../include/db_credentials.php';
 
@@ -146,7 +146,7 @@
 
       $message = "Payment Information Cleared / saved to session";
       echo "<script type='text/javascript'>alert('$message');
-      window.location.href='checkout.php'</script>";
+      window.location.href='order.php'</script>";
       die();
 
      ?>
