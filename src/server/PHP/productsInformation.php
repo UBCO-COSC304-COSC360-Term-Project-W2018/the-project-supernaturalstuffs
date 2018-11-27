@@ -43,9 +43,9 @@
 				echo '</table>';
 				
 			}else{
-				$sql = 'SELECT * FROM Product WHERE pName LIKE "%?%" OR category LIKE "%?%"';
+				$sql = 'SELECT * FROM Product WHERE pName LIKE "?" OR category LIKE "?"';
 				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET["filter"], $_GET["filter"]));
+				$statement->execute(array('%'.$_GET["filter"].'%', '%'.$_GET["filter"].'%'));
 				$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 			
 				echo '<table>';
