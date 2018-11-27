@@ -71,12 +71,12 @@
 						echo '<table>';
 							echo '<tr><th>UserID</th><th>ProductID</th><th>Review</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td><td><a href="delete.php?filter=Review&info=' . $row['userID'] . '">Delete Review</a></td></tr>';
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['review'] . '</td><td><a href="delete.php?filter=Review&info=' . $row['userID'] . '">Delete Review</a></td></tr>';
 						}
 						echo '</table>';
 						
 						//User's Comments
-						$sql = 'SELECT * FROM commentsOn WHERE userID=?';
+						$sql = 'SELECT * FROM CommentsOn WHERE userID=?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -85,7 +85,7 @@
 						echo '<table>';
 							echo '<tr><th>UserID</th><th>ProductID</th><th>Review</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td><td><a href="delete.php?filter=Comment&info=' . $row['userID'] . '">Delete Review</a></td></tr>';
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td><td><a href="delete.php?filter=Comment&info=' . $row['userID'] . '">Delete Comment</a></td></tr>';
 						}
 						echo '</table>';
 						
