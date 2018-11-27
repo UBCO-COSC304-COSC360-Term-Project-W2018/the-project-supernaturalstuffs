@@ -211,7 +211,7 @@
         echo("<h1>Your order reference number is: " . $orderID . '</h1>');
         $sql4 = "SELECT firstName, lastName FROM User WHERE userID = :userID";
         $statement = $pdo->prepare($sql4);
-        $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+        $statement->bindParam(':userID',$userID, PDO::PARAM_STR);
         $statement->execute();
         $rows4 = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows4 as $row4) {}
