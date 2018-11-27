@@ -161,7 +161,7 @@
            $sql = "SELECT quantity FROM Stock WHERE storeID = :storeID AND pID = :pID";
            $statement = $pdo->prepare($sql);
            $statement->bindParam(':storeID', $storeID, PDO::PARAM_STR);
-           $statement->bindParam(':storeID', $cartitem['pID'], PDO::PARAM_STR);
+           $statement->bindParam(':pID', $cartitem['pID'], PDO::PARAM_STR);
            $statement->execute();
            $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
            foreach ($rows as $row) {}
