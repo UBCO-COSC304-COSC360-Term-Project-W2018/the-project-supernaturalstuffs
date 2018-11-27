@@ -48,16 +48,8 @@ CREATE TABLE User (
     firstName VARCHAR(20)   NOT NULL,
     lastName VARCHAR(20)   NOT NULL,
     email VARCHAR(40)   NOT NULL,
-<<<<<<< HEAD
     image blob,
     status boolean DEFAULT TRUE,
-=======
-	image blob,
-<<<<<<< HEAD
->>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
-=======
-    status boolean DEFAULT TRUE,
->>>>>>> cfb2641d1cfcc4abaa32730fa47ad5ed61cd1ed5
     PRIMARY KEY (userID)
 );
 
@@ -85,15 +77,7 @@ CREATE TABLE Product (
     description VARCHAR(500),
     price DECIMAL(9,2)   NOT NULL,
     category VARCHAR(20),
-<<<<<<< HEAD
-<<<<<<< HEAD
     image blob,
-=======
-	image blob,
->>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
-=======
-	  image blob,
->>>>>>> cfb2641d1cfcc4abaa32730fa47ad5ed61cd1ed5
     PRIMARY KEY (pID)
 );
 
@@ -167,29 +151,11 @@ CREATE TABLE Stock (
 );
 
 /*Create Store*/
-<<<<<<< HEAD
-<<<<<<< HEAD
 INSERT INTO Store VALUES (DEFAULT,'Vancouver Super(natural) Store', '1015 Burrad Street', 'Vancouver', 'British Columbia', 'Canada');
 
 /*Create Users*/
 INSERT INTO User VALUES (DEFAULT, 'Admin', MD5('Password1'), 'Courtney', 'Gosselin', 'courtneygosselin@gmail.com',NULL,DEFAULT);
 INSERT INTO User VALUES (DEFAULT, 'Customer', MD5('Password1'), 'Bob', 'Builder', 'bobbuilder@hotmail.com',NULL,DEFAULT);
-=======
-INSERT INTO Store VALUES (DEFAULT,'Vancouver Super(natural) Store', '1015 Burrad Street', 'Vancouver', 'British Columbia', 'Canada'); 
-
-
-/*Create Users*/
-INSERT INTO User VALUES (DEFAULT, 'Admin', 'Password1', 'Courtney', 'Gosselin', 'courtneygosselin@gmail.com', NULL);
-INSERT INTO User VALUES (DEFAULT, 'Customer', 'Password1', 'Bob', 'Builder', 'bobbuilder@hotmail.com', NULL);
->>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
-=======
-INSERT INTO Store VALUES (DEFAULT,'Vancouver Super(natural) Store', '1015 Burrad Street', 'Vancouver', 'British Columbia', 'Canada');
-
-
-/*Create Users*/
-INSERT INTO User VALUES (DEFAULT, 'Admin', 'Password1', 'Courtney', 'Gosselin', 'courtneygosselin@gmail.com', NULL, DEFAULT);
-INSERT INTO User VALUES (DEFAULT, 'Customer', 'Password1', 'Bob', 'Builder', 'bobbuilder@hotmail.com', NULL, DEFAULT);
->>>>>>> cfb2641d1cfcc4abaa32730fa47ad5ed61cd1ed5
 
 /*Create Admin*/
 INSERT INTO Admin VALUES (1,'Junior Dev');
@@ -200,23 +166,7 @@ INSERT INTO Customer VALUES (2);
 /*Add Products*/
 
 /*Add Vampires*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-INSERT INTO Product VALUES (DEFAULT, 'Average Male Vampire', 'Empty', 0.99, 'Vampire');
-INSERT INTO Product VALUES (DEFAULT, 'Average Female Vampire', 'Empty', 0.99, 'Vampire');
-INSERT INTO Product VALUES (DEFAULT, 'Premium Male Vampire', 'Empty', 50.99, 'Vampire');
-INSERT INTO Product VALUES (DEFAULT, 'Premium Female Vampire', 'Empty', 50.99, 'Vampire');
-INSERT INTO Product VALUES (DEFAULT, 'Dracula', 'Empty', 1000.00, 'Vampire');
-INSERT INTO Product VALUES (DEFAULT, 'Edward Collin', 'Empty', 0.50, 'Vampire');
-INSERT INTO Product VALUES (DEFAULT, 'Stefan Salcatore', 'Empty', 200.00, 'Vampire');
-INSERT INTO Product VALUES (DEFAULT, 'Gordan Walker', 'Empty', 500.00, 'Vampire');
-INSERT INTO Product VALUES (DEFAULT, 'Barnabus', 'Empty', 500.00, 'Vampire');
-INSERT INTO Product VALUES (DEFAULT, 'Darren Shan', 'Empty', 500.00, 'Vampire');
-=======
 INSERT INTO Product VALUES (DEFAULT, 'Average Male Vampire', 'Empty', 0.99, 'Vampire', NULl);
-=======
-INSERT INTO Product VALUES (DEFAULT, 'Average Male Vampire', 'Empty', 0.99, 'Vampire', NULL);
->>>>>>> cfb2641d1cfcc4abaa32730fa47ad5ed61cd1ed5
 INSERT INTO Product VALUES (DEFAULT, 'Average Female Vampire', 'Empty', 0.99, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Premium Male Vampire', 'Empty', 50.99, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Premium Female Vampire', 'Empty', 50.99, 'Vampire', NULL);
@@ -224,14 +174,8 @@ INSERT INTO Product VALUES (DEFAULT, 'Dracula', 'Empty', 1000.00, 'Vampire', NUL
 INSERT INTO Product VALUES (DEFAULT, 'Edward Collin', 'Empty', 0.50, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Stefan Salcatore', 'Empty', 200.00, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Gordan Walker', 'Empty', 500.00, 'Vampire', NULL);
-<<<<<<< HEAD
-INSERT INTO Product VALUES (DEFAULT, 'Barnabus', 'Empty', 500.00, 'Vampire', NULL); 
-INSERT INTO Product VALUES (DEFAULT, 'Darren Shan', 'Empty', 500.00, 'Vampire', NULL); 
->>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
-=======
 INSERT INTO Product VALUES (DEFAULT, 'Barnabus', 'Empty', 500.00, 'Vampire', NULL);
 INSERT INTO Product VALUES (DEFAULT, 'Darren Shan', 'Empty', 500.00, 'Vampire', NULL);
->>>>>>> cfb2641d1cfcc4abaa32730fa47ad5ed61cd1ed5
 
 /*Add Shifters*/
 INSERT INTO Product VALUES (DEFAULT, 'Average Male Shifter', 'Empty', 0.99, 'Shifter', NULL);
@@ -426,12 +370,4 @@ INSERT INTO Stock VALUES (88, 1, 10);
 INSERT INTO Stock VALUES (89, 1, 10);
 INSERT INTO Stock VALUES (90, 1, 10);
 INSERT INTO Stock VALUES (91, 1, 10);
-<<<<<<< HEAD
 INSERT INTO Stock VALUES (92, 1, 10);
-<<<<<<< HEAD
-=======
-
->>>>>>> d52793d50b438d0d3136512faba27af1dc23aac6
-=======
-INSERT INTO Stock VALUES (92, 1, 10);
->>>>>>> cfb2641d1cfcc4abaa32730fa47ad5ed61cd1ed5
