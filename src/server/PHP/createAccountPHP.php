@@ -88,7 +88,7 @@
           $uploadOk = 0;
       }
       // Allow certain file formats
-      if($imageFileType != "png") {
+      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "gif") {
           echo "Sorry, only PNG files are allowed.";
           $uploadOk = 0;
       }
