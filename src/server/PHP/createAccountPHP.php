@@ -130,7 +130,7 @@
 
       //insert user into user
       $sql2 = "INSERT INTO User VALUES (DEFAULT ,:username ,:password ,:firstname ,:lastname ,:email , :imagedata, DEFAULT)";
-      $custUN = "TEST";
+      $custUN = $custFN . $custLN;
       $statement = $pdo->prepare($sql2);
       $statement->bindValue(':username', $custUN, PDO::PARAM_STR);
       $statement->bindValue(':password', MD5($custPW), PDO::PARAM_STR);
