@@ -25,6 +25,46 @@
          header('Location: login.php');
       }
       //unset session payInfo after checkout
+
+      //create a dummy Cart
+      try {
+          $pdo = new PDO($dsn, $user, $pass, $options);
+      } catch (\PDOException $e) {
+          throw new \PDOException($e->getMessage(), (int)$e->getCode());
+      }
+
+      $pID1 = "1";
+
+      $sql = "SELECT * FROM Product WHERE pID = :pID";
+      $statement = $pdo->prepare($sql);
+      $statement->bindParam(':pID', $pID1, PDO::PARAM_STR);
+      $statement->execute();
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows as $row) {}
+
+      $name1 = $row['pName'];
+      $price1 = $row['price'];
+
+      $pID2 = "2";
+
+      $sql = "SELECT * FROM Product WHERE pID = :pID";
+      $statement = $pdo->prepare($sql);
+      $statement->bindParam(':pID', $pID2, PDO::PARAM_STR);
+      $statement->execute();
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows as $row) {}
+
+      $name2 = $row['pName'];
+      $price2 = $row['price'];
+
+
+      $productList[$pID1] = array( "pID"=>$pID1, "pName"=>$name1, "price"=>$price1, "quantity"=>3 );
+      $productList[$pID2] = array( "pID"=>$pID2, "pName"=>$name2, "price"=>$price2, "quantity"=>1 );
+
+      $total = $price1 + $price2;
+
+      $_SESSION['productList'] = $productList;
+
    ?>
     <main>
       <!-- page content -->
@@ -157,10 +197,9 @@
                 if(isset($_SESSION['shipInfo']['delivery'])){
                   $delivery = $_SESSION['shipInfo']['delivery'];
                 }
-                $x='2000.00';
-                $tax=($x+$delivery)*'0.12';
-                $total=($x + $delivery + $tax);
-                echo("<p class='money'>$". $x ."</p>");
+                $tax=($total+$delivery)*'0.12';
+                $total=($total + $delivery + $tax);
+                echo("<p class='money'>$". $total ."</p>");
                 echo("<p class='money'>$". $delivery ." </p>");
                 echo("<p class='money'>$".$tax."</p>");
                 echo("<p class='total'>$".$total."</p>");
