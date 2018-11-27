@@ -27,7 +27,7 @@
     <main>
       <!-- page content -->
       <!--createAccount Form-->
-      <form class="Main" name="createAccount" id="create" method="post" action="createAccountPHP.php" onsubmit="return preventDefault()">
+      <form class="Main" name="createAccount" id="create" method="post" action="createAccountPHP.php" onsubmit="return preventDefault()" enctype="multipart/form-data>
         <fieldset>
           <legend>Create Account</legend>
           <div>
