@@ -41,7 +41,7 @@
 						echo '<p>Product Details</p>';
 						//List Product details
 						echo '<table>';
-								echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th><th>Delete</th>/tr>';
+								echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
 							echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="delete.php?filter=Product&info=' . $row['pID'] . '">Delete Product</a></td></tr>';
 						}
