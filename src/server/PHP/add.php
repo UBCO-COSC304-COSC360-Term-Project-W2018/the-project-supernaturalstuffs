@@ -82,9 +82,9 @@
 				  $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
 				  $statement->execute();
 
-				  $message = "Photo added to ".$userID;
-				 /* echo "<script type='text/javascript'>alert('$message');
-				  window.location.href='addProductPicForm.php'</script>";*/
+				  $message = "User added to database ";
+				 /echo "<script type='text/javascript'>alert('$message');
+				  window.location.href='userForm.php'</script>";
 				  die();
 
 			
