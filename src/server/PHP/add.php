@@ -38,9 +38,15 @@
 				$uploadOk = 1;
 				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
+<<<<<<< HEAD
 
 				$userID = $_POST['email'];
 
+=======
+					  
+				$userID = $_POST['email'];
+						
+>>>>>>> 2e5c59c044d924ce058b6dd88dafe89b359bf812
 				//user photo
 				$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 				if($check !== false) {
