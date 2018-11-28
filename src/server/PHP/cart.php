@@ -19,14 +19,14 @@
       <div id="flex">
       <?php
         include '../include/db_credentials.php';
-/*
+
         try {
   				$pdo = new PDO($dsn, $user, $pass, $options);
   			} catch (\PDOException $e) {
   				throw new \PDOException($e->getMessage(), (int)$e->getCode());
   			}
 
-*/
+
           $productList = null;
           if (isset($_SESSION['productList'])){
           	$productList = $_SESSION['productList'];
@@ -48,7 +48,8 @@
 
           		echo("<p>".str_replace("USD","$",money_format('%i',$price))."</p>");
           		//echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
-          		echo("</tr>");
+          		echo("</div>");
+              echo("</div>");
           		$total = $total +$prod['quantity']*$price;
           	}
             echo("</div>");
