@@ -24,6 +24,10 @@
           <input type="text" name="pID" class="box"/>
         </div>
         <div>
+          <label>Product ID</label>
+          <input type="text" name="description" class="box"/>
+        </div>
+        <div>
           <label>Add a photo:</label>
           <input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
         </div>
