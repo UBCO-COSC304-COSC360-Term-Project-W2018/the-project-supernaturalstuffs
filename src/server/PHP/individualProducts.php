@@ -36,17 +36,17 @@
           </div>
 
           <?php
-          $id = $_GET['id'];
-          $name = $_GET['name'];
+          $id = $_GET['pID'];
+          $name = $_GET['pName'];
           $category = $_GET['category'];
           $price = $_GET['price'];
           $desc = $_GET['description'];
 
           echo '<div id ="box">';
           echo '<div class="productinfo">';
-          echo $id;
+          echo $pID;
           echo "<p>". $category . "</p>";
-          echo "<p>". $name . "</p>";
+          echo "<p>". $pName . "</p>";
           echo "<p>". $desc . "</p>";
           echo "<p>". $price . "</p>";
           echo '<input class ="button" type="button" name="add" value="Add to Cart" onclick="location.href="products.html""/>';
