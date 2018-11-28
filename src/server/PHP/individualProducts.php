@@ -36,8 +36,8 @@
           </div>
 
           <?php
-          $id = $_GET['pID'];
-          $name = $_GET['pName'];
+          $pID = $_GET['pID'];
+          $pName = $_GET['pName'];
           $category = $_GET['category'];
           $price = $_GET['price'];
           $desc = $_GET['description'];
