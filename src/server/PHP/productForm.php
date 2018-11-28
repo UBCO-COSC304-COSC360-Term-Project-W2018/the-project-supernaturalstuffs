@@ -40,7 +40,7 @@
 							<p>Product\'s Price:</p>
 							<input type="text" name="price" placeholder="Price">				
 							<p>Product\'s Category:</p>
-							<input type="text" name="category" placeholder="Category>
+							<input type="text" name="category" placeholder="Category">
 							<p>Add a photo:</p>
 							<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
 							<input type="submit" value="Add Product" class="button"/>
