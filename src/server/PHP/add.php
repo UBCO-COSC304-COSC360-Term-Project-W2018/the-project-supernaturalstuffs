@@ -1,6 +1,6 @@
 <!--add-->
 <!DOCTYPE html>
-<html>  
+<html>
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -17,9 +17,9 @@
 	<!--Include header-->
 	<?php include '../../../src/server/include/header.php'; ?>
 	<main>
-		<?php 
-			include '../include/db_credentials.php'; 
-			
+		<?php
+			include '../include/db_credentials.php';
+
 
 			//connect to database
 			try {
@@ -32,15 +32,15 @@
 				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?, NULL, DEFAULT)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
-			
+
 				$target_dir = "../uploads/";
 				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 				$uploadOk = 1;
 				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-					  
-				$userID = $_GET['email'];
-						
+
+				$userID = $_POST['email'];
+
 				//user photo
 				$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 				if($check !== false) {
@@ -48,7 +48,7 @@
 				} else {
 					$uploadOk = 0;
 				}
-					  
+
 
 				  //image constraints
 				  // Check if file already exists
@@ -87,7 +87,7 @@
 				  window.location.href='addProductPicForm.php'</script>";*/
 				  die();
 
-			
+
 			}else if($_GET['filter']=='Product'){
 				//Needs an image section
 				$sql = 'INSERT INTO Product VALUES (DEFAULT, ?, ?, ?, ?)';
@@ -95,8 +95,8 @@
 				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category']));
 				echo '<p>Added Successfully</p>';
 			}else if($_GET['filter']=='Order'){
-				//Needs more because if they are adding an order they are also 
-				//adding a shipment 
+				//Needs more because if they are adding an order they are also
+				//adding a shipment
 				$sql = 'INSERT INTO Orders VALUES (DEFAULT, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['totalPrice'], $_POST['trackingNumber'], $_POST['userID'], $_POST['storeID']));
@@ -104,9 +104,9 @@
 			}else{
 				echo '<p>Invalid source</p>';
 			}
-			
+
 		?>
-		
+
 	</main>
 	<!--Footer include-->
 	<?php include '../../../src/server/include/footer.php'; ?>
