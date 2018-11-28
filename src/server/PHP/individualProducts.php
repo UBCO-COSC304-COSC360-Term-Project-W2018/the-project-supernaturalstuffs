@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" href="../css/individualProducts.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/Product.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -29,7 +30,7 @@
             echo '</div>';
 
 
-          $pID = $_GET['pID'];
+          //$pID = $_GET['pID'];
           $pName = $_GET['pName'];
           $price = $_GET['price'];
           $desc = $_GET['description'];
