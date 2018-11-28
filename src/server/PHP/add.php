@@ -85,6 +85,7 @@
 
 
 			}else if($_GET['filter']=='Product'){
+				
 				$target_dir = "../uploads/";
 				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 				$uploadOk = 1;
@@ -134,6 +135,7 @@
 				$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
 				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category'], $imagedata));
 				echo '<p>Added Successfully</p>';
+				
 			}else if($_GET['filter']=='Order'){
 				//Needs more because if they are adding an order they are also
 				//adding a shipment
