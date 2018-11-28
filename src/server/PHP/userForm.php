@@ -50,7 +50,7 @@
 							</div>
 						</form>
 					</div>
-				</div>;');
+				</div>');
 				
 		?>
 			<form class="Main" name="createAccount" id="create" method="post" action="handlePhototoProduct.php" enctype="multipart/form-data">
