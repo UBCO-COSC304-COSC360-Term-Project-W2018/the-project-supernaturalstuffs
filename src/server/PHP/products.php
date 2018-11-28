@@ -46,12 +46,12 @@
 
 							foreach ($rows as $row) {
 								echo '<div class="productBox">';
-								echo	"<a href=\"individualProducts.php?id=".$row['pID']."&name=".$row['pName']."&price=".$row['price']."><img src=\"../images/ghostbusters-logo.png\" alt=\"productimage\"></a>";
+								echo	"<a href=\"individualProducts.php?pID=".$row['pID']."&pName=".$row['pName']."&price=".$row['price']."><img src=\"../images/ghostbusters-logo.png\" alt=\"productimage\"></a>";
 								echo	'<p>' . $row["pName"] . '</p>';
 								echo	'<p>' . $row["description"] . '</p>';
 								echo	'<p>' . $row["price"] . '</p>';
 
-								echo	'<a href=\'addToCart.php?id='.$row['pID'].'&name='.$row['pName'].'&price='.$row['price'].'\'><p class="addCart">Add to Cart</p></a>';
+								echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price'].'\'><p class="addCart">Add to Cart</p></a>';
 
 								echo '</div>';
 
