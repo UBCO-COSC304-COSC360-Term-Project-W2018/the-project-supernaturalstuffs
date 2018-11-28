@@ -1,34 +1,75 @@
-<?php                                                                                                                                                                                                      ······················// Import PHPMailer classes into the global namespace                                                                                                                                            ································// These must be at the top of your script, not inside a function                                                                                                                                ································use src\server\include\PHPMailer.php;                                                                                                                                                            ································use src\server\include\Exception.php;                                                                                                                                                            ································                                                                                                                                                                                                 ································$mail = new PHPMailer(true);                              // Passing true enables exceptions                                                                                                   ································try {                                                                                                                                                                                            ································    //Server settings                                                                                                                                                                            ································    $mail->isSMTP();                                      // Set mailer to use SMTP                                                                                                              ································    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers                                                                                                                     ································    $mail->SMTPAuth = true;                               // Enable SMTP authentication                                                                                                          ································    $mail->Username = 'supernaturalstore1234@gmail.com';                 // SMTP username                                                                                                        ································    $mail->Password = 'Supernatural1';                           // SMTP password                                                                                                                    ····························    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, ssl also accepted                                                                                                ··························    $mail->Port = 465;                                    // TCP port to connect to                                                                                                                    ··························                                                                                                                                                                                                        ·························    //Recipients                                                                                                                                                                                        ·························    $mail->setFrom('supernaturalstore1234@gmail.com', 'The Supernatural Store');                                                                                                                        ·························    $mail->addAddress($emailOfUser);     // Add a recipient                                                                                                                                             ·························    $mail->addReplyTo('supernaturalstore1234@gmail.com', 'The Supernatual Store');                                                                                                                      ·························                                                                                                                                                                                                        ·························    //Content                                                                                                                                                                                           ·························    $mail->isHTML(true);                                  // Set email format to HTML                                                                                                                   ·························    $mail->Subject = 'Here is the subject';                                                                                                                                                               ·······················    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';                                                                                                                                     ·······················    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';                                                                                                                          ·······················                                                                                                                                                                                                          ·······················    $mail->send();                                                                                                                                                                                        ·······················    echo 'Message has been sent';                                                                                                                                                                         ·······················} catch (Exception $e) {                                                                                                                                                                                  ·······················    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;                                                                                                                                   ·······················}                                                                 <?php
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
-use src\server\include\PHPMailer.php;
-use src\server\include\Exception.php;
+<?php
+/*
+//sending an image to the database
+  //This has to be in your form header
+      enctype="multipart/form-data"
 
-$mail = new PHPMailer(true);                              // Passing true enables exceptions
-try {
-    //Server settings
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'supernaturalstore1234@gmail.com';                 // SMTP username
-    $mail->Password = 'Supernatural1';                           // SMTP password
-    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, ssl also accepted
-    $mail->Port = 465;                                    // TCP port to connect to
+  //this is used for selecting a file
+  <div>
+    <label>Add a photo:</label>
+    <input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+  </div>
 
-    //Recipients
-    $mail->setFrom('supernaturalstore1234@gmail.com', 'The Supernatural Store');
-    $mail->addAddress($emailOfUser);     // Add a recipient
-    $mail->addReplyTo('supernaturalstore1234@gmail.com', 'The Supernatual Store');
+  //put this at the top of the page that handles ur form
+    $target_dir = "../uploads/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-    //Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+  //put this inside the method that checks if it is a post
+    //product photo
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        $uploadOk = 1;
+    } else {
+        $uploadOk = 0;
+    }
 
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-}
-?>
+  //this goes outside of the post and checks the size
+    //image constraints
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check file size
+    if ($_FILES["fileToUpload"]["size"] > 9000000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+    // Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "gif") {
+        echo "Sorry, only PNG files are allowed.";
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    }
+
+  //this goes about ur insert
+    //image Stuff
+    $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
+
+  //this goes in your INSERT
+  $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
+
+
+
+//to get an image from the SQL
+    /printing user image
+    /*$sql = "SELECT image FROM User where email = :email";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows as $row) {}
+
+    $image = $row['image'];
+    $type = "png";
+    echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
+
+*/
+ ?>
