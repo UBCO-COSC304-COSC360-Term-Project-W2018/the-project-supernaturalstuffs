@@ -182,9 +182,8 @@
 
       <?php
       //printing user image
-      /*$sql = "SELECT image FROM User where email = :email";
+      $sql = "SELECT image FROM products where pID = 53";
       $statement = $pdo->prepare($sql);
-      $statement->bindParam(':email', $custE, PDO::PARAM_STR);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows as $row) {}
@@ -192,7 +191,7 @@
       $image = $row['image'];
       $type = "png";
       echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
-      */
+      
       ?>
     </main>
 
