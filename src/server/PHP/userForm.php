@@ -1,6 +1,6 @@
 <!--add user-->
 <!DOCTYPE html>
-<html>  
+<html>
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -17,9 +17,9 @@
 	<!--Include header-->
 	<?php include '../../../src/server/include/header.php'; ?>
 	<main>
-		<?php 
-			include '../include/db_credentials.php'; 
-			
+		<?php
+			include '../include/db_credentials.php';
+
 
 			//connect to database
 			try {
@@ -27,10 +27,10 @@
 			} catch (\PDOException $e) {
 				throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
-			
+
 			echo('<div id="box">
 					<div id="Users">
-						<form action="add.php?filter=User" method="post">
+						<form action="add.php?filter=User" method="post" enctype="multipart/form-data">
 							<h2>Add User</h2>
 							<div class="catagories">
 							<p>User\'s username:</p>
@@ -38,12 +38,12 @@
 							<p>User\'s password:</p>
 							<input type="text" name="password" placeholder="password">
 							<p>User\'s first name:</p>
-							<input type="text" name="firstname" placeholder="First name">				
+							<input type="text" name="firstname" placeholder="First name">
 							<p>User\'s last name:</p>
 							<input type="text" name="lastname" placeholder="Last name">
 							<p>User\'s email:</p>
 							<input type="text" name="email" placeholder="Email">
-							
+
 							<p>Add a photo:</p>
 							<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
 							<input type="submit" value="Add User" class="button"/>
@@ -51,15 +51,15 @@
 						</form>
 					</div>
 				</div>');
-				
+
 		?>
 			<form class="Main" name="createAccount" id="create" method="post" action="handlePhototoProduct.php" enctype="multipart/form-data">
 			<fieldset>
-		
+
 
       </fieldset>
     </form>
-		
+
 	</main>
 	<!--Footer include-->
 	<?php include '../../../src/server/include/footer.php'; ?>
