@@ -14,6 +14,7 @@
     	$pID = $_GET['pID'];
     	$pName = $_GET['pName'];
     	$price = $_GET['price'];
+      $description = $_GET['description'];
     } else {
     	header('Location: products.php');
     }
@@ -22,7 +23,7 @@
     if (isset($productList[$pID])){
     	$productList[$pID]['quantity'] = $productList[$pID]['quantity'] + 1;
     } else {
-    	$productList[$pID] = array( "pID"=>$pID, "pName"=>$pName, "price"=>$price, "quantity"=>1 );
+    	$productList[$pID] = array( "pID"=>$pID, "pName"=>$pName, "price"=>$price, "description"=>$description,"quantity"=>1 );
     }
 
     $_SESSION['productList'] = $productList;
