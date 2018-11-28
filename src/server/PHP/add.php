@@ -29,9 +29,9 @@
 			}
 			//Check where the source came from
 			if($_GET['filter']=='User'){
-				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?)';
+				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?, NULL)';
 				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email'], NULL));
+				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
 			
 				$target_dir = "../uploads/";
 				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
