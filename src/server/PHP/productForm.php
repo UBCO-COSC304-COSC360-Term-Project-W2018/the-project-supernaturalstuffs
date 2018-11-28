@@ -43,8 +43,8 @@
 							<input type="text" name="category" placeholder="Last name">
 							<p>Add a photo:</p>
 							<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
-							<input type="submit" value="Add User" class="button"/>
-							<input type="submit">
+							<input type="submit" value="Add Product" class="button"/>
+							
 							</div>
 						</form>
 					</div>
