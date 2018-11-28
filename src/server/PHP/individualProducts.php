@@ -17,11 +17,10 @@
     <main>
           <?php
             echo '<div id = "container">';
-            echo '<div id ="productbox">';
-              $image = $_GET['img'];
-              $type = "png";
-            echo '<img class="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
-
+            echo '<div id = "productbox">';
+              //$image = $_GET['img'];
+              //$type = "png";
+            //echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>'
             echo '</div>';
             echo '<div id="reviews">';
             echo  '<h1>Reviews</h1>';
@@ -40,7 +39,7 @@
           echo "<p>". $pName . "</p>";
           echo "<p>". $desc . "</p>";
           echo "<p>". $price . "</p>";
-          echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
+          echo	'<a href="products.php"<p class="addCart">Add to Cart</p></a>';
           echo '</div>';
           echo '</div>';
           ?>
