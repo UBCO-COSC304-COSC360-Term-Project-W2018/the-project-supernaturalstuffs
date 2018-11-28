@@ -18,9 +18,7 @@
           <div id ="container">
             <div id ="productbox">
               <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-			           <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-			              <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-			             <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
+
             </div>
             <div id="reviews">
               <h1>Reviews</h1>
