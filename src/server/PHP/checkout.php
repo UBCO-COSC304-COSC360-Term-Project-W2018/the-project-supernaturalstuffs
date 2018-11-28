@@ -39,7 +39,7 @@
         $cart = null;
       }
 
-      $totalPrice = 0;
+      $total = 0;
       if ($cart == null) {
           $message = "You need to add items to your cart";
           echo "<script type='text/javascript'>alert('$message');
@@ -47,7 +47,7 @@
       	die();
       } else {
           foreach ($cart as $pID => $cartitem) {
-              $totalPrice = $totalPrice + $cartitem['quantity']*$cartitem['price'];
+              $total = $total + $cartitem['quantity']*$cartitem['price'];
           }
       }
 
@@ -171,7 +171,8 @@
         						<select name="payMethod" id="payMethod">
         						  <option value="Visa">Visa</option>
         						  <option value="Mastercard">Mastercard</option>
-        						  <option value="American Express">American Express</option>        						</select>
+        						  <option value="American Express">American Express</option>
+                    </select>
                  </div>
                 <div>
                   <label>Name On Card:</label>
