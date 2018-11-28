@@ -19,14 +19,14 @@
       <div id="flex">
       <?php
         include '../include/db_credentials.php';
-/*
+
         try {
   				$pdo = new PDO($dsn, $user, $pass, $options);
   			} catch (\PDOException $e) {
   				throw new \PDOException($e->getMessage(), (int)$e->getCode());
   			}
 
-*/
+
           $productList = null;
           if (isset($_SESSION['productList'])){
           	$productList = $_SESSION['productList'];
