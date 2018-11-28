@@ -62,7 +62,7 @@
             echo ("<h3 id=\"total\"> Total:".$total. "</h3>");
             echo ('<div>
               <a href="checkout.php" ><p class="button">Checkout</p></a>
-              <a href="products.php" ><p class="button">Continue Shooping</p></a>
+              <a href="products.php" ><p class="button">Continue Shoping</p></a>
 
             </div>');
             echo ('</div>');
