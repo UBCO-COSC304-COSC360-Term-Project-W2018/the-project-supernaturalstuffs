@@ -40,7 +40,7 @@
               echo('<div class="items"/>');
               echo('<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>');
               echo('<div class="productinfo">');
-          		echo("<p>". $prod['name'] . "</p>");
+          		echo("<p>". $prod['pName'] . "</p>");
           		echo("<p>" . $prod['description'] . "</p>");
 
           		echo("<p>". $prod['quantity'] . "</p>");
