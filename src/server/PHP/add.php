@@ -83,8 +83,8 @@
 				  $statement->execute();
 
 				  $message = "Photo added to ".$userID;
-				  echo "<script type='text/javascript'>alert('$message');
-				  window.location.href='addProductPicForm.php'</script>";
+				 /* echo "<script type='text/javascript'>alert('$message');
+				  window.location.href='addProductPicForm.php'</script>";*/
 				  die();
 
 			
