@@ -29,7 +29,7 @@
 			}
 			//Check where the source came from
 			if($_GET['filter']=='User'){
-				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?, NULL)';
+				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?, NULL, DEFAULT)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
 			
