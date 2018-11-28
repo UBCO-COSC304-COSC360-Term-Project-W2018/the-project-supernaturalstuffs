@@ -77,6 +77,8 @@ h2{
   margin-bottom: 1em;
 }
 #shoppingcart .items {
+  height: fit-content;
+  overflow-x: hidden;
   border-bottom: 2px dotted white;
   padding-top: 1em;
   padding-bottom: 1em;

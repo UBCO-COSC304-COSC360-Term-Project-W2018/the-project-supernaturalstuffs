@@ -246,7 +246,7 @@
                     echo "<p>Quantity: ".$cartitem['quantity']."</p>";
                     echo "<input class ='button' type='button' name='delete' value='Delete' />";
                   echo "</div>";
-                echo "/div";
+                echo "</div>";
               }
             }else{
               echo("<p>Your shopping cart is empty!</p>");
