@@ -33,7 +33,25 @@
           throw new \PDOException($e->getMessage(), (int)$e->getCode());
       }
 
-      $pID1 = "1";
+      if (isset($_SESSION['productList'])) {
+        $cart = $_SESSION['productList'];
+      } else {
+        $cart = null;
+      }
+
+      $totalPrice = 0;
+      if ($cart == null) {
+          $message = "You need to add items to your cart";
+          echo "<script type='text/javascript'>alert('$message');
+      	window.location.href='products.php'</script>";
+      	die();
+      } else {
+          foreach ($cart as $pID => $cartitem) {
+              $totalPrice = $totalPrice + $cartitem['quantity']*$cartitem['price'];
+          }
+      }
+
+      /*$pID1 = "1";
 
       $sql = "SELECT * FROM Product WHERE pID = :pID";
       $statement = $pdo->prepare($sql);
@@ -63,7 +81,7 @@
 
       $total = $price1*3 + $price2;
 
-      $_SESSION['productList'] = $productList;
+      $_SESSION['productList'] = $productList;*/
 
    ?>
     <main>

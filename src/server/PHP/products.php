@@ -30,8 +30,6 @@
 
 						echo('<p id="sortButton">Sort by</p>
 							<div id="box">');
-					
-						
 
 							//check if All or another selection
 							if(!(isset($_GET["filter"]))){
@@ -45,15 +43,16 @@
 							$statement->execute();
 							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+
 							foreach ($rows as $row) {
 								echo '<div class="productBox">';
 								echo	"<a href=\"individualProducts.php?id=".$row['id']."&name=".$row['pName']."&price=".$row['price']."><img src=\"../images/ghostbusters-logo.png\" alt=\"productimage\"></a>";
 								echo	'<p>' . $row["pName"] . '</p>';
 								echo	'<p>' . $row["description"] . '</p>';
 								echo	'<p>' . $row["price"] . '</p>';
-							  //echo	'<p class="addCart">Add to Cart</p>';
-                echo("<p class=\"addCart\"><a href=\"addcart.php?name=" . $rst['pName'] . "&price=" . $rst['price'] . "\">Add to Cart</a></p>");
-                echo '</div>';
+
+								echo	'<p class="addCart"><a href=\'addToCart.php?id='.$row['pID'].'&name='.$row['pName'].'&price='.$row['price'].'\'><a href=\'addcart.php?id='.$row['productId'].'&name='.$productName.'&price='.$row['price'].'\'>Add to Cart</a></p>';
+								echo '</div>';
 							}
 						echo '</div>';
 					?>
