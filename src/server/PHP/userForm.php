@@ -45,17 +45,17 @@
 							<input type="text" name="email" placeholder="Email">
 							<input type="submit">
 							</div>
+				
+							<div>
+								<label>Add a photo:</label>
+								<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+							</div>
+							<div class="centered">
+								<input type="submit" value="Update User" class="button"/>
+							</div>
 						</form>
 					</div>
-				</div>;
-				
-				<div>
-					<label>Add a photo:</label>
-					<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
-				</div>
-				<div class="centered">
-					<input type="submit" value="Update User" class="button"/>
-				</div>');
+				</div>;');
 				
 		?>
 			<form class="Main" name="createAccount" id="create" method="post" action="handlePhototoProduct.php" enctype="multipart/form-data">
