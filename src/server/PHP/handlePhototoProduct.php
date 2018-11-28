@@ -30,6 +30,11 @@
         if (isset($_POST['pID'])) {
             $pID = $_POST['pID'];
         }
+
+        $description = null;
+        if (isset($_POST['description'])) {
+            $description = $_POST['description'];
+        }
         //user photo
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
@@ -72,10 +77,11 @@
       //image Stuff
       $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
 
-      $sql = "UPDATE Product SET image = :imagedata WHERE pID = :pID";
+      $sql = "UPDATE Product SET image = :imagedata, description = :description WHERE pID = :pID";
       $statement = $pdo->prepare($sql);
       $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
       $statement->bindValue(':pID', $pID, PDO::PARAM_STR);
+      $statement->bindValue(':description', $description, PDO::PARAM_STR);
       $statement->execute();
 
       $message = "Photo added to ".$pID;
