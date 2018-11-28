@@ -29,7 +29,7 @@
           <input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
         </div>
         <div class="centered">
-          <input type="submit" value="Create Account" class="button"/>
+          <input type="submit" value="add image" class="button"/>
         </div>
 
       </fieldset>

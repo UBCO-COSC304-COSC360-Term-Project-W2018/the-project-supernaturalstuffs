@@ -72,7 +72,7 @@
       //image Stuff
       $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
 
-      $sql = "UPDATE Product SET image = :imagedate WHERE pID = :pID";
+      $sql = "UPDATE Product SET image = :imagedata WHERE pID = :pID";
       $statement = $pdo->prepare($sql);
       $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
       $statement->bindValue(':pID', $pID, PDO::PARAM_STR);
