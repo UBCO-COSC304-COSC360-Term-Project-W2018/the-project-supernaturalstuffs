@@ -17,61 +17,61 @@
     <!-- page content delete button -->
     <main>
       <div id="flex">
-        <div id="container">
-          <div id = "shoppingcart">
-            <h1>Shopping Cart</h1>
+      <?php
+        include '../include/db_credentials.php';
+/*
+        try {
+  				$pdo = new PDO($dsn, $user, $pass, $options);
+  			} catch (\PDOException $e) {
+  				throw new \PDOException($e->getMessage(), (int)$e->getCode());
+  			}
 
-            <div class="items"/>
-              <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-              <div class="productinfo">
-                <p>Product name</p>
-                <p>Desciption</p>
-                <p>Price</p>
-                <p>Quantity</p>
-                <input class ="button" type="button" name="delete" value="Delete" />
-              </div>
-            </div>
-
-            <div class="items"/>
-              <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-              <div class="productinfo">
-                <p>Product name</p>
-                <p>Desciption</p>
-                <p>Price</p>
-                <p>Quantity</p>
-                <input class ="button" type="button" name="delete" value="Delete" />
-              </div>
-            </div>
-
-            <div class="items"/>
-              <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-              <div class="productinfo">
-                <p>Product name</p>
-                <p>Desciption</p>
-                <p>Price</p>
-                <p>Quantity</p>
-                <input class ="button" type="button" name="delete" value="Delete" />
-              </div>
-            </div>
-
-          </div>
-        </div>
+*/
+          session_start();
+          $productList = null;
+          if (isset($_SESSION['productList'])){
+          	$productList = $_SESSION['productList'];
+            echo('<div id = "container">');
+            echo('<div id = "shoppingcart">');
+          	echo('<h1>Shopping Cart</h1>');
 
 
-        <div id ="summary">
-            <h1>Summary</h1>
-            <div id = "totals">
-              <p class="money">Subtotal: </p>
-              <p class="money">Delivery: </p>
-              <p class="money">Taxes: </p>
-              <h3 id="total">Total: </h3>
-              <div>
-                <input class ="button" type="button" name="continue" value="Continue Shopping" onclick="location.href='products.php'"/>
-                <input class ="button" type="button" name="checkout" value="Checkout" onclick="location.href='checkout.php'"/>
-              </div>
-            </div>
-        </div>
+          	$total =0;
+          	foreach ($productList as $name => $prod) {
+              echo('<div class="items"/>');
+              echo('<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>');
+              echo('<div class="productinfo">');
+          		echo("<p>". $prod['name'] . "</p>");
+          		echo("<p>" . $prod['description'] . "</p>");
 
+          		echo("<p>". $prod['quantity'] . "</p>");
+          		$price = $prod['price'];
+
+          		echo("<p>".str_replace("USD","$",money_format('%i',$price))."</p>");
+          		//echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
+          		echo("</tr>");
+          		$total = $total +$prod['quantity']*$price;
+          	}
+            echo("</div>");
+            echo("</div>");
+
+            echo ('<div id ="summary">');
+            echo ('<h1>Summary</h1>');
+            echo ('<div id ="totals">');
+            echo ("<h3 id=\"total\"> Total:".$total. "</h3>");
+            echo ('<div>
+              <input class ="button" type="button" name="continue" value="Continue Shopping" onclick="location.href="products.php"/>
+              <input class ="button" type="button" name="checkout" value="Checkout" onclick="location.href="checkout.php"/>
+            </div>');
+            echo ('</div>');
+            echo ('</div>');
+
+          } else{
+          	echo("<H1>Your shopping cart is empty!</H1>");
+            echo("<input class =\"button\" type=\"button\" name=\"continue\" value=\"Continue Shopping\" onclick=\"location.href=\"products.php\"/>");
+          }
+
+        ?>
       </div>
     </main>
     <!--Footer include-->

@@ -11,18 +11,13 @@
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
 
-      /*require '../include/PHPMailer/src/Exception.php';
-      require '../include/PHPMailer/src/PHPMailer.php';
-      require '../include/PHPMailer/src/SMTP.php';*/
-      /*require 'path/to/PHPMailer/src/Exception.php';
-      require 'path/to/PHPMailer/src/PHPMailer.php';
-      require 'path/to/PHPMailer/src/SMTP.php';*/
-      require 'vendor/autoload.php';
+      require '../include/Exception.php';
+      require '../include/SMTP.php';
+      require '../include/PHPMailer.php';
 
       session_start();
 
       include '../include/db_credentials.php';
-
       if (isset($_SESSION['email'])){
         $message = "Already Logged In";
         echo "<script type='text/javascript'>alert('$message');
@@ -53,19 +48,20 @@
        $statement->bindParam(':email', $custE, PDO::PARAM_STR);
        $statement->execute();
        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-       foreach ($rows as $row) {}
+       foreach ($rows as $row) {
 
-       //check to see if email exists
-       if ($custE == null){
-         $message = "Please enter an email";
-         echo "<script type='text/javascript'>alert('$message');
-         window.location.href='forgotPassword.php'</script>";
-         die();
-       }else if ($row == null){
-         $message = "Error: An account doesn't exist for this email";
-         echo "<script type='text/javascript'>alert('$message');
-         window.location.href='createAccount.php'</script>";
-         die();
+           //check to see if email exists
+           if ($custE == null){
+             $message = "Please enter an email";
+             echo "<script type='text/javascript'>alert('$message');
+             window.location.href='forgotPassword.php'</script>";
+             die();
+           }else if ($row == null){
+             $message = "Error: An account doesn't exist for this email";
+             echo "<script type='text/javascript'>alert('$message');
+             window.location.href='createAccount.php'</script>";
+             die();
+           }
        }
 
        //figure out how to end an email
@@ -86,8 +82,8 @@
            $mail->SMTPAuth = true;                               // Enable SMTP authentication
            $mail->Username = 'supernaturalstore1234@gmail.com';                 // SMTP username
            $mail->Password = 'Supernatural1';                           // SMTP password
-           $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, ssl also accepted
-           $mail->Port = 465;                                    // TCP port to connect to
+           $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, ssl also accepted
+           $mail->Port = 587;                                    // TCP port to connect to
 
            //Recipients
            $mail->setFrom('supernaturalstore1234@gmail.com', 'The Supernatural Store');
