@@ -34,6 +34,10 @@
 				$statement->execute(array($_GET['info']));
 			}else if($_GET['filter']='Order'){
 				//DELETE Order
+				$sql = 'DELETE FROM Shipment WHERE orderID = ?';
+				$statement = $pdo->prepare($sql);
+				$statement->execute(array($_GET['info']));
+				
 				$sql = 'DELETE FROM Orders WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
