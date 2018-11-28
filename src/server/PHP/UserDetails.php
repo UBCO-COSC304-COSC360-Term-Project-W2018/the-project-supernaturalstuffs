@@ -96,7 +96,7 @@
 				</div>;');
 				
 		?>
-		
+	
 	</main>
 	<!--Footer include-->
 	<?php include '../../../src/server/include/footer.php'; ?>

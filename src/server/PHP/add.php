@@ -32,7 +32,62 @@
 				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
-				echo '<p>Added Successfully</p>';
+			
+				$target_dir = "../uploads/";
+				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+				$uploadOk = 1;
+				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+					  
+				$userID = $_GET['email'];
+						
+				//user photo
+				$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+				if($check !== false) {
+					$uploadOk = 1;
+				} else {
+					$uploadOk = 0;
+				}
+					  
+
+				  //image constraints
+				  // Check if file already exists
+				  if (file_exists($target_file)) {
+					  echo "Sorry, file already exists.";
+					  $uploadOk = 0;
+				  }
+				  // Check file size
+				  if ($_FILES["fileToUpload"]["size"] > 9000000) {
+					  echo "Sorry, your file is too large.";
+					  $uploadOk = 0;
+				  }
+				  // Allow certain file formats
+				  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "gif") {
+					  echo "Sorry, only PNG files are allowed.";
+					  $uploadOk = 0;
+				  }
+
+				  // Check if $uploadOk is set to 0 by an error
+				  if ($uploadOk == 0) {
+					  echo "Sorry, your file was not uploaded.";
+				  // if everything is ok, try to upload file
+				  }
+
+				  //image Stuff
+				  $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
+
+				  $sql = "UPDATE User SET image = :imagedata WHERE userID = :userID";
+				  $statement = $pdo->prepare($sql);
+				  $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
+				  $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
+				  $statement->execute();
+
+				  $message = "Photo added to ".$userID;
+				  echo "<script type='text/javascript'>alert('$message');
+				  window.location.href='addProductPicForm.php'</script>";
+				  die();
+
+			
 			}else if($_GET['filter']=='Product'){
 				//Needs an image section
 				$sql = 'INSERT INTO Product VALUES (DEFAULT, ?, ?, ?, ?)';
