@@ -220,11 +220,11 @@
                   $delivery = $_SESSION['shipInfo']['delivery'];
                 }
                 $tax=($total+$delivery)*'0.12';
-                echo("<p class='money'>$". $total ."</p>");
-                echo("<p class='money'>$". $delivery ." </p>");
-                echo("<p class='money'>$".$tax."</p>");
+                echo("<p class='money'>$". str_replace("USD","$",money_format('%i',$total)) ."</p>");
+                echo("<p class='money'>$". str_replace("USD","$",money_format('%i',$delivery)) ." </p>");
+                echo("<p class='money'>$".str_replace("USD","$",money_format('%i',$tax))."</p>");
                 $total=($total + $delivery + $tax);
-                echo("<p class='total'>$".$total."</p>");
+                echo("<p class='total'>$".str_replace("USD","$",money_format('%i',$total))."</p>");
                ?>
             </div>
             <div class="centered">
@@ -234,38 +234,25 @@
 
           <div id = "shoppingcart">
             <h2>Shopping Cart</h2>
-            <div class="items">
-              <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-              <div class="productinfo">
-                <p>Product name:</p>
-                <p>Desciption:</p>
-                <p>Price:</p>
-                <p>Quantity:</p>
-                <input class ="button" type="button" name="delete" value="Delete" />
-              </div>
-            </div>
+            <?php
+            if (isset($_SESSION['productList'])){
+              foreach ($cart as $pID => $cartitem){
+                echo "<div class='items'>";
+                  echo "<img class='image' src='../images/ghostbusters-logo.png'alt='product image'/>";
+                  echo "<div class='productinfo'>";
+                    echo "<p>Product name: ".$cartitem['pName']."</p>";
+                    echo "<p>Desciption: ".$cartitem['description']."</p>";
+                    echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
+                    echo "<p>Quantity: ".$cartitem['Quantity']."</p>";
+                    echo "<input class ='button' type='button' name='delete' value='Delete' />";
+                  echo "</div>";
+                echo "/div";
+              }
+            }else{
+              echo("<p>Your shopping cart is empty!</p>");
+            }
+             ?>
 
-            <div class="items">
-              <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-              <div class="productinfo">
-                <p>Product name:</p>
-                <p>Desciption:</p>
-                <p>Price:</p>
-                <p>Quantity:</p>
-                <input class ="button" type="button" name="delete" value="Delete" />
-              </div>
-            </div>
-
-            <div class="items">
-              <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-              <div class="productinfo">
-                <p>Product name:</p>
-                <p>Desciption:</p>
-                <p>Price:</p>
-                <p>Quantity:</p>
-                <input class ="button" type="button" name="delete" value="Delete" />
-              </div>
-            </div>
           </div>
         </div>
 
