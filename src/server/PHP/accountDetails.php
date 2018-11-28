@@ -39,6 +39,12 @@
                header('Location: login.php');
              }
 
+             if (isset($_SESSION['productList'])) {
+               $cart = $_SESSION['productList'];
+             } else {
+               $cart = null;
+             }
+
              try {
                  $pdo = new PDO($dsn, $user, $pass, $options);
              } catch (\PDOException $e) {
