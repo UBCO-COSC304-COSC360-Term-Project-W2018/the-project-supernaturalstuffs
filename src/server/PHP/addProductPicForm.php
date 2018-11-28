@@ -24,7 +24,7 @@
           <input type="text" name="pID" class="box"/>
         </div>
         <div>
-          <label>Product ID</label>
+          <label>Description</label>
           <input type="text" name="description" class="box"/>
         </div>
         <div>
