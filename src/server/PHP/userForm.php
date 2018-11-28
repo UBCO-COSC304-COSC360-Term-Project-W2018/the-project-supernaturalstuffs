@@ -46,7 +46,7 @@
 							
 							<p>Add a photo:</p>
 							<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
-							<input type="submit" value="Update User" class="button"/>
+							<input type="submit" value="Add User" class="button"/>
 							</div>
 						</form>
 					</div>
