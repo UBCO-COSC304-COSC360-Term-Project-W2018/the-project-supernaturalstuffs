@@ -17,10 +17,10 @@
 			<!--Include ProductSidebar-->
 			<?php include '../../../src/server/include/productSidebar.php'; ?>
 			 <div id="contentRight">
-				<?php 
-						include '../include/db_credentials.php'; 
-						
-			
+				<?php
+						include '../include/db_credentials.php';
+
+
 						//connect to database
 						try {
 							$pdo = new PDO($dsn, $user, $pass, $options);
@@ -29,28 +29,29 @@
 						}
 						echo '<p id="sortButton">Sort by</p>';
 						echo '<div id="box">';
-					
-						
+
+
 							//check if All or another selection
 							if(!(isset($_GET["filter"]))){
 								$sql = 'SELECT * FROM Product';
-							
+
 							}else{
 								$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["filter"] . '%" OR category LIKE "%' . $_GET["filter"] . '";';
 							}
-							
+
 							$statement = $pdo->prepare($sql);
 							$statement->execute();
 							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-							
+
 							foreach ($rows as $row) {
 								echo '<div class="productBox">';
-								echo	'<a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>';
+								echo	"<a href=\"individualProducts.php?id=".$row['id']."&name=".$row['pName']."&price=".$row['price']."><img src=\"../images/ghostbusters-logo.png\" alt=\"productimage\"></a>";
 								echo	'<p>' . $row["pName"] . '</p>';
 								echo	'<p>' . $row["description"] . '</p>';
 								echo	'<p>' . $row["price"] . '</p>';
-								echo	'<p class="addCart">Add to Cart</p>';
-								echo '</div>';
+							  //echo	'<p class="addCart">Add to Cart</p>';
+                echo("<p class=\"addCart\"><a href=\"addcart.php?name=" . $rst['pName'] . "&price=" . $rst['price'] . "\">Add to Cart</a></p>");
+                echo '</div>';
 							}
 						echo '</div>';
 					?>
