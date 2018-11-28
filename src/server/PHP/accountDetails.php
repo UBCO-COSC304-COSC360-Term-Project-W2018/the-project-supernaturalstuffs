@@ -152,41 +152,27 @@
 			<div id = "shoppingcart">
 			  <h2>Wish List</h2>
 
-			  <div class="items">
-  				<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-  				<div class="productinfo">
-  				  <p>Product name:</p>
-  				  <p>Desciption:</p>
-  				  <p>Price:</p>
-  				  <p>Quantity:</p>
-  				  <input class ="button" type="button" name="delete" value="Delete" />
-  				</div>
-			  </div>
-
-			  <div class="items">
-  				<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-  				<div class="productinfo">
-  				  <p>Product name:</p>
-  				  <p>Desciption:</p>
-  				  <p>Price:</p>
-  				  <p>Quantity:</p>
-  				  <input class ="button" type="button" name="delete" value="Delete" />
-  				</div>
-			  </div>
-
-			  <div class="items">
-  				<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-  				<div class="productinfo">
-  				  <p>Product name:</p>
-  				  <p>Desciption:</p>
-  				  <p>Price:</p>
-  				  <p>Quantity:</p>
-  				  <input class ="button" type="button" name="delete" value="Delete" />
-  				</div>
-			  </div>
+        <?php
+        if (isset($_SESSION['productList'])){
+          foreach ($cart as $pID => $cartitem){
+            echo "<div class='items'>";
+              echo "<img class='image' src='../images/ghostbusters-logo.png'alt='product image'/>";
+              echo "<div class='productinfo'>";
+                echo "<p>Product name: ".$cartitem['pName']."</p>";
+                echo "<p>Desciption: ".$cartitem['description']."</p>";
+                echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
+                echo "<p>Quantity: ".$cartitem['quantity']."</p>";
+                echo "<input class ='button' type='button' name='delete' value='Delete' />";
+              echo "</div>";
+            echo "</div>";
+          }
+        }else{
+          echo("<p>Your Wish List is empty!</p>");
+        }
+         ?>
 			</div>
-		</div>
-      </div>
+		 </div>
+    </div>
 
       <?php
       //printing user image
