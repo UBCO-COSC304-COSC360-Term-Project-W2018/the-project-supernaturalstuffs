@@ -29,10 +29,7 @@
 			}
 			//Check where the source came from
 			if($_GET['filter']=='User'){
-				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?, NULL, DEFAULT)';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
-
+				
 				$target_dir = "../uploads/";
 				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 				$uploadOk = 1;
@@ -75,14 +72,13 @@
 
 				  //image Stuff
 				  $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
+				  
+				 $sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?, :imagedata , DEFAULT)';
+				$statement = $pdo->prepare($sql);
+				$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
+				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
 
-				  $sql = "UPDATE User SET image = :imagedata WHERE email = :userID";
-				  $statement = $pdo->prepare($sql);
-				  $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
-				  $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
-				  $statement->execute();
-
-				  $message = "User added to database ";
+				$message = "User added to database ";
 				 echo "<script type='text/javascript'>alert('$message');
 				  window.location.href='userForm.php'</script>";
 				  die();
