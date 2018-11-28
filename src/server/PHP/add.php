@@ -31,7 +31,7 @@
 			if($_GET['filter']=='User'){
 				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email']));
+				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email'], NULL));
 			
 				$target_dir = "../uploads/";
 				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
