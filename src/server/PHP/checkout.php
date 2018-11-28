@@ -37,6 +37,9 @@
         $cart = $_SESSION['productList'];
       } else {
         $cart = null;
+        $message = "cant checkout with an empty cart";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='products.php'</script>";
       }
 
       $total = 0;
