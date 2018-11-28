@@ -182,7 +182,7 @@
 
       <?php
       //printing user image
-      $sql = "SELECT image FROM products where pID = 53";
+      $sql = "SELECT image FROM Product where pID = 53";
       $statement = $pdo->prepare($sql);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -191,7 +191,7 @@
       $image = $row['image'];
       $type = "png";
       echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
-      
+
       ?>
     </main>
 
