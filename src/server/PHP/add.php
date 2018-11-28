@@ -76,7 +76,7 @@
 				  //image Stuff
 				  $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
 
-				  $sql = "UPDATE User SET image = :imagedata WHERE userID = :userID";
+				  $sql = "UPDATE User SET image = :imagedata WHERE email = :userID";
 				  $statement = $pdo->prepare($sql);
 				  $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
 				  $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
