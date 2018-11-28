@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-	<link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="../css/admin.css">
-	<link rel="stylesheet" type="text/css" href="../css/UserDetails.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
