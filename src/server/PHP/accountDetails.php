@@ -165,7 +165,6 @@
               echo "<img class='image' src='../images/ghostbusters-logo.png'alt='product image'/>";
               echo "<div class='productinfo'>";
                 echo "<p>Product name: ".$cartitem['pName']."</p>";
-                echo "<p>Desciption: ".$cartitem['description']."</p>";
                 echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
                 echo "<p>Quantity: ".$cartitem['quantity']."</p>";
                 echo "<input class ='button' type='button' name='delete' value='Delete' />";
