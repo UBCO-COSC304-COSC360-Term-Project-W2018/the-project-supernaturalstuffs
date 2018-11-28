@@ -45,6 +45,7 @@
 
           		echo("<p>". $prod['quantity'] . "</p>");
           		$price = $prod['price'];
+              echo '<input class ="button" type="button" name="remove" value="Remove" onclick="location.href="products.php"/>'
 
           		echo("<p>".str_replace("USD","$",money_format('%i',$price))."</p>");
           		//echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
@@ -60,8 +61,9 @@
             echo ('<div id ="totals">');
             echo ("<h3 id=\"total\"> Total:".$total. "</h3>");
             echo ('<div>
-              <input class ="button" type="button" name="continue" value="Continue Shopping" onclick="location.href="products.php"/>
-              <input class ="button" type="button" name="checkout" value="Checkout" onclick="location.href="checkout.php"/>
+              <a href="checkout.php" ><p class="button">Continue Shooping</p></a>
+              <a href="products.php" ><p class="button">Continue Shooping</p></a>
+
             </div>');
             echo ('</div>');
             echo ('</div>');
