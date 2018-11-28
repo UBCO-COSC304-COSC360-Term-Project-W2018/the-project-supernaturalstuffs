@@ -243,7 +243,7 @@
                     echo "<p>Product name: ".$cartitem['pName']."</p>";
                     echo "<p>Desciption: ".$cartitem['description']."</p>";
                     echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
-                    echo "<p>Quantity: ".$cartitem['Quantity']."</p>";
+                    echo "<p>Quantity: ".$cartitem['quantity']."</p>";
                     echo "<input class ='button' type='button' name='delete' value='Delete' />";
                   echo "</div>";
                 echo "/div";
