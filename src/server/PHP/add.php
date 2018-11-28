@@ -85,10 +85,54 @@
 
 
 			}else if($_GET['filter']=='Product'){
+				$target_dir = "../uploads/";
+				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+				$uploadOk = 1;
+				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+
+				$userID = $_POST['pName'];
+
+				//user photo
+				$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+				if($check !== false) {
+					$uploadOk = 1;
+				} else {
+					$uploadOk = 0;
+				}
+
+
+				  //image constraints
+				  // Check if file already exists
+				  if (file_exists($target_file)) {
+					  echo "Sorry, file already exists.";
+					  $uploadOk = 0;
+				  }
+				  // Check file size
+				  if ($_FILES["fileToUpload"]["size"] > 9000000) {
+					  echo "Sorry, your file is too large.";
+					  $uploadOk = 0;
+				  }
+				  // Allow certain file formats
+				  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "gif") {
+					  echo "Sorry, only PNG files are allowed.";
+					  $uploadOk = 0;
+				  }
+
+				  // Check if $uploadOk is set to 0 by an error
+				  if ($uploadOk == 0) {
+					  echo "Sorry, your file was not uploaded.";
+				  // if everything is ok, try to upload file
+				  }
+
+				  //image Stuff
+				  $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
+			
 				//Needs an image section
-				$sql = 'INSERT INTO Product VALUES (DEFAULT, ?, ?, ?, ?)';
+				$sql = 'INSERT INTO Product VALUES (DEFAULT, ?, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category']));
+				$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
+				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category'], $imagedata));
 				echo '<p>Added Successfully</p>';
 			}else if($_GET['filter']=='Order'){
 				//Needs more because if they are adding an order they are also
