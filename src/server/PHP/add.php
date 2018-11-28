@@ -83,7 +83,7 @@
 				  $statement->execute();
 
 				  $message = "User added to database ";
-				 /echo "<script type='text/javascript'>alert('$message');
+				 echo "<script type='text/javascript'>alert('$message');
 				  window.location.href='userForm.php'</script>";
 				  die();
 
