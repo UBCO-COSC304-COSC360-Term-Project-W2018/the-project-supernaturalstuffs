@@ -38,14 +38,11 @@
           <?php
           $pID = $_GET['pID'];
           $pName = $_GET['pName'];
-          $category = $_GET['category'];
           $price = $_GET['price'];
           $desc = $_GET['description'];
 
           echo '<div id ="box">';
           echo '<div class="productinfo">';
-          echo $pID;
-          echo "<p>". $category . "</p>";
           echo "<p>". $pName . "</p>";
           echo "<p>". $desc . "</p>";
           echo "<p>". $price . "</p>";
