@@ -39,7 +39,7 @@
 				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 					  
-				$userID = $_GET['email'];
+				$userID = $_POST['email'];
 						
 				//user photo
 				$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
