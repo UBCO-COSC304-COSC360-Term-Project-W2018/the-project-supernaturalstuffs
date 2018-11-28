@@ -43,15 +43,10 @@
 							<input type="text" name="lastname" placeholder="Last name">
 							<p>User\'s email:</p>
 							<input type="text" name="email" placeholder="Email">
-							<input type="submit">
-							</div>
-				
-							<div>
-								<label>Add a photo:</label>
-								<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
-							</div>
-							<div class="centered">
-								<input type="submit" value="Update User" class="button"/>
+							
+							<p>Add a photo:</p>
+							<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+							<input type="submit" value="Update User" class="button"/>
 							</div>
 						</form>
 					</div>
