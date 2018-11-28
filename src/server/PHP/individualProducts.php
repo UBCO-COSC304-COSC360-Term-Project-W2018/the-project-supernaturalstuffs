@@ -18,16 +18,16 @@
           <div id ="container">
             <div id ="productbox">
               <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-			           <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-			              <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-			             <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
+			  <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
+			  <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
+			  <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
             </div>
             <div id="reviews">
               <h1>Reviews</h1>
                 <img id="star" src="../images/star.png" alt="rating image"/>
                 <img id="star" src="../images/star.png" alt="rating image"/>
                 <img id="star" src="../images/star.png" alt="rating image"/>
-                <img id="star" src="../images/star.png" alt="rating image"/>
+                <img id="star" src="../images/star.png" alt="rating image"/>          
             </div>
             <div id="comments">
               <h1>Comments:</h1>
@@ -37,24 +37,18 @@
             </div>
           </div>
 
-          <?php
-          $id = $_GET['id'];
-          $name = $_GET['name'];
-          $category = $_GET['category'];
-          $price = $_GET['price'];
-          $desc = $_GET['description'];
+          <div id ="box">
+            <div class="productinfo">
+            <p>Category</p>
+            <p>Product name</p>
+            <p>Desciption</p>
+            <p>Price</p>
+            <p>Quantity</p>
+            <input class ="button" type="button" name="wish" value="Add to Wishlist" onclick="location.href='products.html'"/>
+            <input class ="button" type="button" name="add" value="Add to Cart" onclick="location.href='products.html'"/>
+            </div>
 
-          echo '<div id ="box">';
-          echo '<div class="productinfo">';
-          echo $id;
-          echo "<p>". $category . "</p>";
-          echo "<p>". $name . "</p>";
-          echo "<p>". $desc . "</p>";
-          echo "<p>". $price . "</p>";
-          echo '<input class ="button" type="button" name="add" value="Add to Cart" onclick="location.href="products.html""/>';
-          echo '</div>';
-          echo '</div>';
-          ?>
+          </div>
 
     </main>
 	<!--Footer include-->

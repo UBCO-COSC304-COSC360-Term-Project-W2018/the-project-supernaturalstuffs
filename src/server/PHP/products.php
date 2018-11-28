@@ -50,8 +50,12 @@
 								echo	'<p>' . $row["pName"] . '</p>';
 								echo	'<p>' . $row["description"] . '</p>';
 								echo	'<p>' . $row["price"] . '</p>';
+<<<<<<< HEAD
+								echo	'<p class="addCart"><a href=\'addToCart.php?id='.$row['pID'].'&name='.$row['pName'].'&price='.$row['price'].'\'>Add to Cart</a></p>';
+=======
 
 								echo	'<p class="addCart"><a href=\'addToCart.php?id='.$row['pID'].'&name='.$row['pName'].'&price='.$row['price'].'\'><a href=\'addcart.php?id='.$row['productId'].'&name='.$productName.'&price='.$row['price'].'\'>Add to Cart</a></p>';
+>>>>>>> c3311199238a278df874285531d8ee4a34cdd77a
 								echo '</div>';
 							}
 						echo '</div>';
