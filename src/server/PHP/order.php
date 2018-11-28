@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <title>Order</title>
     <link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/header-footer.css" />
-    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+      <link rel="stylesheet" href="../css/reset.css" />
+      <link rel="stylesheet" href="../css/header-footer.css" />
+      <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+      <link rel="stylesheet" type="text/css" href="../css/accountDetails.css" />
+      <link rel="stylesheet" type="text/css" href="../css/form.css">
   </head>
   <body>
     <?php include '../../../src/server/include/header.php'; ?>
@@ -31,7 +33,7 @@
       if (isset($_SESSION['storeID'])) {
         $storeID = $_SESSION['storeID'];
       } else {
-        $storeID = null;
+        $storeID = 1;
       }
 
       $totalPrice = 0;
@@ -106,8 +108,8 @@
        $statement->bindValue(':method', $shipMethod, PDO::PARAM_STR);
        $statement->bindValue(':status', $status, PDO::PARAM_STR);
        $statement->bindValue(':shipDate', $shipDate, PDO::PARAM_STR);
-       $statement->bindValue(':firstname', $shipFName, PDO::PARAM_STR);
-       $statement->bindValue(':lastname', $shipLName, PDO::PARAM_STR);
+       $statement->bindValue(':firstName', $shipFName, PDO::PARAM_STR);
+       $statement->bindValue(':lastName', $shipLName, PDO::PARAM_STR);
        $statement->bindValue(':country', $shipCountry, PDO::PARAM_STR);
        $statement->bindValue(':province', $shipProvince, PDO::PARAM_STR);
        $statement->bindValue(':city', $shipTown, PDO::PARAM_STR);
@@ -116,9 +118,14 @@
        $statement->bindValue(':email', $shipEmail, PDO::PARAM_STR);
        $insert = $statement->execute();
 
-       $stmt = $pdo->prepare("...");
-       $stmt->execute();
-       $trackingNumber = $pdo->lastInsertedId();
+       //get tracking number
+       $sql = "SELECT trackingNumber FROM Shipment ORDER BY trackingNumber DESC LIMIT 1";
+       $statement = $pdo->prepare($sql);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       foreach ($rows as $row) {
+       }
+       $trackingNumber = $row['trackingNumber'];
 
        //get store id - store in session Please
 
@@ -131,9 +138,14 @@
        $statement->bindValue(':storeID', $storeID, PDO::PARAM_STR);
        $insert = $statement->execute();
 
-       $stmt = $pdo->prepare("...");
-       $stmt->execute();
-       $orderID = $pdo->lastInsertedId();
+       //get orderID
+       $sql = "SELECT orderID FROM Orders ORDER BY orderID DESC LIMIT 1";
+       $statement = $pdo->prepare($sql);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       foreach ($rows as $row) {
+       }
+       $orderID = $row['orderID'];
 
        //for each product in session product list
        $totalPrice = 0;
@@ -151,7 +163,7 @@
            $sql = "SELECT quantity FROM Stock WHERE storeID = :storeID AND pID = :pID";
            $statement = $pdo->prepare($sql);
            $statement->bindParam(':storeID', $storeID, PDO::PARAM_STR);
-           $statement->bindParam(':storeID', $cartitem['pID'], PDO::PARAM_STR);
+           $statement->bindParam(':pID', $cartitem['pID'], PDO::PARAM_STR);
            $statement->execute();
            $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
            foreach ($rows as $row) {}
@@ -180,7 +192,7 @@
         echo("<table><tr><th>Product Id</th><th>Product Name</th><th>Quantity</th>");
         echo("<th>Price</th><th>Subtotal</th></tr>");
 
-        $total =0;
+        $total = 0;
         foreach ($cart as $id => $prod) {
         		echo("<tr><td>". $prod['pID'] . "</td>");
         		echo("<td>" . $prod['pName'] . "</td>");
@@ -193,13 +205,16 @@
         		echo("</tr>");
         		$total = $total +$prod['quantity']*$price;
         }
+        echo("<tr><td colspan=\"4\" align=\"right\"><b>Product Total</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
+        $total = $total + $shipDelivery;
+        echo("<tr><td colspan=\"4\" align=\"right\"><b>Shipping Total</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$shipDelivery))."</td></tr>");
         echo("<tr><td colspan=\"4\" align=\"right\"><b>Order Total</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
         echo("</table>");
         echo("<h1>Order completed. Will be shipped soon...</h1>");
         echo("<h1>Your order reference number is: " . $orderID . '</h1>');
-        $sq4 = "SELECT firstName, lastName FROM User WHERE userID = :userID";
+        $sql4 = "SELECT firstName, lastName FROM User WHERE userID = :userID";
         $statement = $pdo->prepare($sql4);
-        $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+        $statement->bindParam(':userID',$userID, PDO::PARAM_STR);
         $statement->execute();
         $rows4 = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows4 as $row4) {}

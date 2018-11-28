@@ -1,29 +1,29 @@
 <div id="product-sidebar">
 	<h3>Products</h3>
 	<div id="productSidebarOptions">
-		<h4><a href="/src/server/PHP/products.php">All</a></h4>
-		<p><a href="/src/server/PHP/products.php?filter=Vampire">Vampires</a></p>
-		<p><a href="/src/server/PHP/products.php?filter=Shifter">Shifters</p>
-		<p><a href="/src/server/PHP/products.php?filter=Ghost">Ghosts</p>
-		<p><a href="/src/server/PHP/products.php?filter=Werewolf">Werewolves</p>
-		<p><a href="/src/server/PHP/products.php?filter=Angel">Angels</p>
-		<p><a href="/src/server/PHP/products.php?filter=Deity">Deities</p>
-		<h4><a href="/src/server/PHP/products.phpfilter=Gear">Gear</h4>
-		<p><a href="/src/server/PHP/products.php?filter=Silver">Silver Bullets</p>
-		<p><a href="/src/server/PHP/products.php?filter=Holy">Holy Water</p>
-		<p><a href="/src/server/PHP/products.php?filter=Salt">Salt Bullets</p>
-		<p><a href="/src/server/PHP/products.php?filter=Wooden">Wooden Stake</p>
-		<p><a href="/src/server/PHP/products.php?filter=Garlic">Hot Garlic</p>
-		<p><a href="/src/server/PHP/products.php?filter=Rossary">Blessed Rossary</p>
-		<p><a href="/src/server/PHP/products.php?filter=Angel">Angel Blade</p>
-		<p><a href="/src/server/PHP/products.php?filter=Journal">Hunter Journal</p>
-		<p><a href="/src/server/PHP/products.php?filter=Book">Book of the Damned</p>
-		<p><a href="/src/server/PHP/products.php?filter=Colt">The Colt</p>
-		<p><a href="/src/server/PHP/products.php?filter=First">The First Blade</p>
-		<p><a href="/src/server/PHP/products.php?filter=Death">Death Scythe</p>
-		<p><a href="/src/server/PHP/products.php?filter=Demon-Killing">Demon-Killing Knife</p>
-		<p><a href="/src/server/PHP/products.php?filter=Lambs">Lambs Blood</p>
-		<p><a href="/src/server/PHP/products.php?filter=Gabriel">Horn of Gabriel</p>
-		<p><a href="/src/server/PHP/products.php?filter=Hand">Hand of God</p>
+		<a href="/src/server/PHP/products.php"><h4>All</h4></a>
+		<a href="/src/server/PHP/products.php?filter=Vampire"><p>Vampires</p></a>
+		<a href="/src/server/PHP/products.php?filter=Shifter"><p>Shifters</p></a>
+		<a href="/src/server/PHP/products.php?filter=Ghost"><p>Ghosts</p></a>
+		<a href="/src/server/PHP/products.php?filter=Werewolf"><p>Werewolves</p></a>
+		<a href="/src/server/PHP/products.php?filter=Angel"><p>Angels</p></a>
+		<a href="/src/server/PHP/products.php?filter=Deity"><p>Deities</p></a>
+		<a href="/src/server/PHP/products.phpfilter=Gear"><h4>Gear</h4></a>
+		<a href="/src/server/PHP/products.php?filter=Silver"><p>Silver Bullets</p></a>
+		<a href="/src/server/PHP/products.php?filter=Holy"><p>Holy Water</p></a>
+		<a href="/src/server/PHP/products.php?filter=Salt"><p>Salt Bullets</p></a>
+		<a href="/src/server/PHP/products.php?filter=Wooden"><p>Wooden Stake</p></a>
+		<a href="/src/server/PHP/products.php?filter=Garlic"><p>Hot Garlic</p></a>
+		<a href="/src/server/PHP/products.php?filter=Rossary"><p>Blessed Rossary</p></a>
+		<a href="/src/server/PHP/products.php?filter=Angel"><p>Angel Blade</p></a>
+		<a href="/src/server/PHP/products.php?filter=Journal"><p>Hunter Journal</p>
+		<a href="/src/server/PHP/products.php?filter=Book"><p>Book of the Damned</p></a>
+		<a href="/src/server/PHP/products.php?filter=Colt"><p>The Colt</p></a>
+		<a href="/src/server/PHP/products.php?filter=First"><p>The First Blade</p></a>
+		<a href="/src/server/PHP/products.php?filter=Death"><p>Death Scythe</p></a>
+		<a href="/src/server/PHP/products.php?filter=Demon-Killing"><p>Demon-Killing Knife</p></a>
+		<a href="/src/server/PHP/products.php?filter=Lambs"><p>Lambs Blood</p></a>
+		<a href="/src/server/PHP/products.php?filter=Hand"><p>Hand of God</p></a>
+		<a href="/src/server/PHP/products.php?filter=Gabriel"><p>Horn of Gabriel</p></a>
 	</div>
 </div>

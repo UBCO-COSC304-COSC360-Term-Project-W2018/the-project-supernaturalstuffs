@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
-	<link rel="stylesheet" type="text/css" href="../css/UserDetails.css">
+	<link rel="stylesheet" type="text/css" href="../css/details.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -41,9 +41,9 @@
 						echo '<p>Order Details</p>';
 						//List Order details
 						echo '<table>';
-								echo '<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th><th>User ID</th><th>Store ID</th></th>';
+								echo '<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th><th>User ID</th><th>Store ID</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td></tr>';
+							echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td><td><a href="delete.php?filter=Order&info=' . $row['orderID'] . '">Delete Review</a></td></tr>';
 						}
 						echo '</table>';
 						

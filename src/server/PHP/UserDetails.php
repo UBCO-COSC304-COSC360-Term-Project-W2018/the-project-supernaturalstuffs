@@ -40,9 +40,9 @@
 						echo '<p>User Details</p>';
 						//List users details
 						echo '<table>';
-								echo '<tr><th>UserId</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th></th>';
+								echo '<tr><th>UserId</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Status</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td></tr>';
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td><td>' . $row['status'] . '</td><td><a href="delete.php?filter=User&info=' . $row['userID'] . '">Delete User</a></td></tr>';
 						}
 						echo '</table>';
 						
@@ -52,11 +52,10 @@
 						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						echo "<p>User's Order History</p>";
-						
 						echo '<table>';
-							echo '<tr><th>OrderID</th><th>Total Price</th><th>Tracking number</th><th>UserID</th><th>StoreID</th></tr>';
+							echo '<tr><th>OrderID</th><th>Total Price</th><th>Tracking number</th><th>UserID</th><th>StoreID</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td></tr>';
+							echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td><td><a href="delete.php?filter=Order&info=' . $row['orderID'] . '">Delete Order</a></td></tr>';
 						}
 						echo '<tr rowspan="4"><td>Total Price: BLANK</td></tr>';
 						echo '</table>';
@@ -69,9 +68,23 @@
 						echo "<p>User's Reviews</p>";
 						
 						echo '<table>';
-							echo '<tr><td>UserID</td><td>ProductID</td><td>Comment/Review</td></tr>';
+							echo '<tr><th>UserID</th><th>ProductID</th><th>Review</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td></tr>';
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['review'] . '</td><td><a href="delete.php?filter=Review&info=' . $row['userID'] . '">Delete Review</a></td></tr>';
+						}
+						echo '</table>';
+						
+						//User's Comments
+						$sql = 'SELECT * FROM CommentsOn WHERE userID=?';
+						$statement = $pdo->prepare($sql);
+						$statement->execute(array($_GET['filter']));
+						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+						echo "<p>User's Comments</p>";
+						
+						echo '<table>';
+							echo '<tr><th>UserID</th><th>ProductID</th><th>Comment</th><th>Delete</th></tr>';
+						foreach ($rows as $row) {
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td><td><a href="delete.php?filter=Comment&info=' . $row['userID'] . '">Delete Comment</a></td></tr>';
 						}
 						echo '</table>';
 						

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
-	<link rel="stylesheet" type="text/css" href="../css/UserDetails.css">
+	<link rel="stylesheet" type="text/css" href="../css/details.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -41,23 +41,23 @@
 						echo '<p>Product Details</p>';
 						//List Product details
 						echo '<table>';
-								echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th></th>';
+								echo '<tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th><th>Category</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td></tr>';
+							echo	'<tr><td>' . $row['pID'] . '</td><td>' . $row['pName'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] . '</td><td>' . $row['category'] . '</td><td><a href="delete.php?filter=Product&info=' . $row['pID'] . '">Delete Product</a></td></tr>';
 						}
 						echo '</table>';
 						
-						//User's Reviews
+						//Products Reviews
 						$sql = "SELECT * FROM Reviews WHERE pID <= ?;";
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-						echo "<p>User's Reviews of Product</p>";
+						echo "<p>Users's Reviews of Product</p>";
 						
 						echo '<table>';
-							echo '<tr><td>UserID</td><td>ProductID</td><td>Comment/Review</td></tr>';
+							echo '<tr><td>UserID</th><th>ProductID</th><th>Review</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
-							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td></tr>';
+							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td><td><a href="delete.php?filter=Review&info=' . $row['userID'] . '">Delete Review</a></td></tr>';
 						}
 						echo '</table>';
 						
