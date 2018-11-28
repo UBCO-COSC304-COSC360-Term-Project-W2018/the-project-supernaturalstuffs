@@ -27,7 +27,6 @@
   			}
 
 */
-          session_start();
           $productList = null;
           if (isset($_SESSION['productList'])){
           	$productList = $_SESSION['productList'];
