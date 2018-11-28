@@ -51,8 +51,10 @@
 								echo	'<p>' . $row["description"] . '</p>';
 								echo	'<p>' . $row["price"] . '</p>';
 
-								echo	'<p class="addCart"><a href=\'addToCart.php?id='.$row['pID'].'&name='.$row['pName'].'&price='.$row['price'].'\'>Add to Cart</a></p>';
+								echo	'<a href=\'addToCart.php?id='.$row['pID'].'&name='.$row['pName'].'&price='.$row['price'].'\'><p class="addCart">Add to Cart</p></a>';
+
 								echo '</div>';
+
 							}
 						echo '</div>';
 					?>
