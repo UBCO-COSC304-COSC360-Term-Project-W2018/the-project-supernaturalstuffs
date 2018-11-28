@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../css/header-footer.css" />
     <link rel="stylesheet" href="../css/individualProducts.css" />
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="../css/Product.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
