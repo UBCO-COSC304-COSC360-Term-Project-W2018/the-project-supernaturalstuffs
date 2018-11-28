@@ -27,9 +27,9 @@
 						} catch (\PDOException $e) {
 							throw new \PDOException($e->getMessage(), (int)$e->getCode());
 						}
+
 						echo('<p id="sortButton">Sort by</p>
 							<div id="box">');
-
 
 							//check if All or another selection
 							if(!(isset($_GET["filter"]))){
@@ -46,11 +46,16 @@
 
 							foreach ($rows as $row) {
 								echo '<div class="productBox">';
-								echo	'<a href="individualProducts.php"><img src="../images/ghostbusters-logo.png" alt="productimage"></a>';
+								echo	"<a href=\"individualProducts.php?id=".$row['id']."&name=".$row['pName']."&price=".$row['price']."><img src=\"../images/ghostbusters-logo.png\" alt=\"productimage\"></a>";
 								echo	'<p>' . $row["pName"] . '</p>';
 								echo	'<p>' . $row["description"] . '</p>';
 								echo	'<p>' . $row["price"] . '</p>';
+<<<<<<< HEAD
 								echo	'<p class="addCart"><a href=\'addToCart.php?id='.$row['pID'].'&name='.$row['pName'].'&price='.$row['price'].'\'>Add to Cart</a></p>';
+=======
+
+								echo	'<p class="addCart"><a href=\'addToCart.php?id='.$row['pID'].'&name='.$row['pName'].'&price='.$row['price'].'\'><a href=\'addcart.php?id='.$row['productId'].'&name='.$productName.'&price='.$row['price'].'\'>Add to Cart</a></p>';
+>>>>>>> c3311199238a278df874285531d8ee4a34cdd77a
 								echo '</div>';
 							}
 						echo '</div>';
