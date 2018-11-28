@@ -218,7 +218,7 @@
         $statement->execute();
         $rows4 = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows4 as $row4) {}
-        echo("<h1>Shipping to customer: " . $userID . ", Name: " . $row4['firstName'] . $row4['lastName'] . '</h1>');
+        echo("<h1>Shipping to customer: " . $userID . ", Name: " . $row4['firstName'] ." ". $row4['lastName'] . '</h1>');
 
       //unset sessions
       unset($_SESSION['shipInfo']['fName']);
