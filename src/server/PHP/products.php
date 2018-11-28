@@ -59,7 +59,7 @@
                 $type = "png";
 
 								echo '<div class="productBox">';
-								echo	'<a href="individualProducts.php?pID='.$row['pID']."&pName=".$row['pName']."&price=".$row['price']."&description=".$row['description'].'"><img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
+								echo	'<a href="individualProducts.php?img='.$image.'pID='.$row['pID']."&pName=".$row['pName']."&price=".$row['price']."&description=".$row['description'].'"><img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
 								echo	'<p>' . $row["pName"] . '</p>';
 								echo	'<p>' . $row["description"] . '</p>';
 								echo	'<p>' . $row["price"] . '</p>';

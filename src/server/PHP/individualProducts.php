@@ -15,27 +15,21 @@
 	<!--Include header-->
 	<?php include '../../../src/server/include/header.php'; ?>
     <main>
-          <div id ="container">
-            <div id ="productbox">
-              <img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>
-
-            </div>
-            <div id="reviews">
-              <h1>Reviews</h1>
-                <img id="star" src="../images/star.png" alt="rating image"/>
-                <img id="star" src="../images/star.png" alt="rating image"/>
-                <img id="star" src="../images/star.png" alt="rating image"/>
-                <img id="star" src="../images/star.png" alt="rating image"/>
-            </div>
-            <div id="comments">
-              <h1>Comments:</h1>
-              <p>User1: comment1</p>
-              <p>User2: comment2</p>
-              <p>User3: comment3</p>
-            </div>
-          </div>
-
           <?php
+            echo '<div id = "container">'
+            echo '<div id ="productbox">'
+              $image = $_GET['img'];
+              $type = "png";
+            echo '<img class="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
+
+            echo '</div>';
+            echo '<div id="reviews">';
+            echo  '<h1>Reviews</h1>';
+                <img id="star" src="../images/star.png" alt="rating image"/>
+            echo '</div>';
+            echo '</div>';
+
+
           $pID = $_GET['pID'];
           $pName = $_GET['pName'];
           $price = $_GET['price'];
@@ -46,7 +40,7 @@
           echo "<p>". $pName . "</p>";
           echo "<p>". $desc . "</p>";
           echo "<p>". $price . "</p>";
-          echo '<input class ="button" type="button" name="add" value="Add to Cart" onclick="location.href="products.html""/>';
+          echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
           echo '</div>';
           echo '</div>';
           ?>
