@@ -90,7 +90,7 @@
 						
 						//Edit user information and enable or disable user
 						//Remove comments, Remove user, edit user
-						   <fieldset>
+						echo('   <fieldset>
 							  <legend>Create Account</legend>
 							  <div>
 									<label>First Name:</label>
@@ -128,7 +128,7 @@
 								<inp	ut type="button" onclick="location.href='login.php'" value="Already Have an Acount" class="button"/>
 							  </div>
 
-						</fieldset>
+						</fieldset>');
 								
 			echo(		'</div>
 					</div>
