@@ -57,7 +57,7 @@
 					if(isset($_POST['status'])&& !empty($_POST['status'])){
 						$sql = 'UPDATE User SET status = ? WHERE userID = ?';
 						$statement = $pdo->prepare($sql);
-						$statement->execute(array($_POST['email'], $_GET['userID']));
+						$statement->execute(array($_POST['status'], $_GET['userID']));
 					}
 					//UpdatePhoto
 					
