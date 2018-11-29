@@ -41,7 +41,7 @@
               echo('<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>');
               echo('<div class="productinfo">');
           		echo("<p>". $prod['pName'] . "</p>");
-          		echo("<p>" . $prod['description'] . "</p>");
+          		echo('<p id="desc">' . $prod['description'] . "</p>");
 
           		echo("<p>". $prod['quantity'] . "</p>");
           		$price = $prod['price'];
