@@ -201,15 +201,15 @@
         		echo("<td align=\"center\">". $prod['quantity'] . "</td>");
         		$price = $prod['price'];
 
-        		echo("<td align=\"right\">".str_replace("USD","$",money_format('%i',$price))."</td>");
-        		echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
+        		echo("<td align=\"right\">$".str_replace("USD","$",money_format('%i',$price))."</td>");
+        		echo("<td align=\"right\">$" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
         		echo("</tr>");
         		$total = $total +$prod['quantity']*$price;
         }
-        echo("<tr><td colspan=\"4\" align=\"right\"><b>Product Total:</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
+        echo("<tr><td colspan=\"4\" align=\"right\"><b>Product Total:</b></td><td align=\"right\">$".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
         $total = $total + $shipDelivery;
-        echo("<tr><td colspan=\"4\" align=\"right\"><b>Shipping Total:</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$shipDelivery))."</td></tr>");
-        echo("<tr><td colspan=\"4\" align=\"right\"><b>Order Total:</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
+        echo("<tr><td colspan=\"4\" align=\"right\"><b>Shipping Total:</b></td><td align=\"right\">$".str_replace("USD","$",money_format('%i',$shipDelivery))."</td></tr>");
+        echo("<tr><td colspan=\"4\" align=\"right\"><b>Order Total:</b></td><td align=\"right\">$".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
         echo("</table>");
         echo("<h4>Order completed. Will be shipped soon...</h4>");
         echo("<h4>Your order reference number is: " . $orderID . '</h4>');
