@@ -30,31 +30,31 @@
 			if($_GET['filter']='User'){
 				//Update User	
 					//Update First Name
-					if(isset($_POST['firstName'])){
+					if(isset($_POST['firstName']) && !empty($_POST['firstName'])){
 						$sql = 'UPDATE User SET firstName = ? WHERE userID = ?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_POST['firstName'], $_GET['userID']));
 					}
 					//Update Last Name
-					if(isset($_POST['lastName'])){
+					if(isset($_POST['lastName']) && !empty($_POST['lastName'])){
 						$sql = 'UPDATE User SET lastName = ? WHERE userID = ?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_POST['lastName'], $_GET['userID']));
 					}
 					//Update User Name
-					if(isset($_POST['userName'])){
+					if(isset($_POST['username']) && !empty($_POST['username'])){
 						$sql = 'UPDATE User SET username = ? WHERE userID = ?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_POST['username'], $_GET['userID']));
 					}
 					//Update Email
-					if(isset($_POST['email'])){
+					if(isset($_POST['email']) && !empty($_POST['email'])){
 						$sql = 'UPDATE User SET email = ? WHERE userID = ?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_POST['email'], $_GET['userID']));
 					}
 					//Update Status
-					if(isset($_POST['status'])){
+					if(isset($_POST['status'])&& !empty($_POST['status'])){
 						$sql = 'UPDATE User SET status = ? WHERE userID = ?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_POST['email'], $_GET['userID']));
