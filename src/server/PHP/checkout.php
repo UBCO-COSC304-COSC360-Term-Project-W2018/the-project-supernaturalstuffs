@@ -54,38 +54,6 @@
           }
       }
 
-      /*$pID1 = "1";
-
-      $sql = "SELECT * FROM Product WHERE pID = :pID";
-      $statement = $pdo->prepare($sql);
-      $statement->bindParam(':pID', $pID1, PDO::PARAM_STR);
-      $statement->execute();
-      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows as $row) {}
-
-      $name1 = $row['pName'];
-      $price1 = $row['price'];
-
-      $pID2 = "2";
-
-      $sql = "SELECT * FROM Product WHERE pID = :pID";
-      $statement = $pdo->prepare($sql);
-      $statement->bindParam(':pID', $pID2, PDO::PARAM_STR);
-      $statement->execute();
-      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows as $row) {}
-
-      $name2 = $row['pName'];
-      $price2 = $row['price'];
-
-
-      $productList[$pID1] = array( "pID"=>$pID1, "pName"=>$name1, "price"=>$price1, "quantity"=>3 );
-      $productList[$pID2] = array( "pID"=>$pID2, "pName"=>$name2, "price"=>$price2, "quantity"=>1 );
-
-      $total = $price1*3 + $price2;
-
-      $_SESSION['productList'] = $productList;*/
-
    ?>
     <main>
       <!-- page content -->
@@ -243,12 +211,11 @@
                     echo "<p>Product name: ".$cartitem['pName']."</p>";
                     echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
                     echo "<p>Quantity: ".$cartitem['quantity']."</p>";
-                    echo "<input class ='button' type='button' name='delete' value='Delete'/>";
-                    // onclick="href=?id='.$cartitem['pID'].'" made me mad
+                    echo "<input class ='button' type='button' name='delete' value='delete'/>";
+                    // onclick='href=?id=".$cartitem['pID']."' made me mad
                   echo "</div>";
                 echo "</div>";
-              }
-            if (!isset($_SESSION['productList'])){
+            }else{
               echo("<p>Your shopping cart is empty!</p>");
             }
 
