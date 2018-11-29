@@ -49,7 +49,7 @@
           		echo("<p>".str_replace("USD","$",money_format('%i',$prod['price']))."</p>");
           		//echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
               //echo '<input class ="button" type="button" name="remove" value="Remove" onclick="location.href="products.php"/>';
-              echo("<a href='?id=".$prod['pID']."'>Remove</a>");
+              echo("<a href='?pID=".$prod['pID']."'>>Remove</a>");
 
             	echo("</div>");
               echo("</div>");
@@ -57,6 +57,18 @@
           	}
             echo("</div>");
             echo("</div>");
+
+            //remove item
+            if(isset($_GET['pID'])){
+              removeItem($cart);
+            }
+
+            function removeItem($cart){
+              unset($cart[$_GET['pID']]);
+              $_SESSION['productList'] = $cart;
+              unset($_GET['pID']);
+              echo "<script type='text/javascript'>window.location.href='checkout.php'</script>";
+            }
 
             echo ('<div id ="summary">');
             echo ('<h1>Summary</h1>');
