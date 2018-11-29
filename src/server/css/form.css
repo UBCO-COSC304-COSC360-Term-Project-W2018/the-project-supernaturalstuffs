@@ -9,8 +9,14 @@ form.Main{
   border: 4px solid white;
   background-color: #710627;
 }
-#create{ margin:5em auto 5em auto;}
-#log{ margin:7em auto 7em auto;}
+#create{
+  max-width: 85%;
+  margin:5em auto 5em auto;
+}
+#log{
+  max-width: 85%;
+  margin:7em auto 7em auto;
+}
 
 legend {
   background-color: #521C25;
