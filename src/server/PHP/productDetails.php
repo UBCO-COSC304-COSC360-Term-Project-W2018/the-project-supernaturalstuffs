@@ -63,7 +63,7 @@
 						
 						//Edit prodcut information
 						//Remove comments, Remove product
-						echo(' <form class="Main" name="createAccount" id="create" method="post" action="update.php?filter=User&userID=' . $row['userID'] . '" enctype="multipart/form-data">
+						echo(' <form class="Main" name="createAccount" id="create" method="post" action="update.php?filter=User&pID=' . $row['pID'] . '" enctype="multipart/form-data">
 
 							<fieldset>
 								  <legend>Update Product<legend>
