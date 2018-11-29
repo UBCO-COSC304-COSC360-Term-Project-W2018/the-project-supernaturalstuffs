@@ -58,10 +58,10 @@
               echo	'<p>' . $rows["pName"] . '</p>';
               echo	'<p>' . $rows["price"] . '</p>';
               echo	'<p>' . $rows["description"] . '</p>';
-              echo	'<a href=\'addToCart.php?pID='.$pID.'&pName='.$pName.'&price='.$price."&description=".$desc.'\'><p class="addCart">Add to Cart</p></a>';
+              echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
               echo '</div>';
               echo '</div>';
-            }
+            //}
 
 /*
           $pID = $_GET['pID'];
