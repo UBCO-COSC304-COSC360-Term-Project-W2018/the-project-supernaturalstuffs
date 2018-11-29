@@ -221,10 +221,11 @@
                     echo "<p>Product name: ".$cartitem['pName']."</p>";
                     echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
                     echo "<p>Quantity: ".$cartitem['quantity']."</p>";
-                    echo "<form  name='updateForm' method='get' action='updateQuantity.php?pID=".$cartitem['pID']."' id='quantityForm'>";
+                    echo "<form  name='updateForm' method='get' action='updateQuantity.php' id='quantityForm'>";
                       echo "<input type='number' name='quantity' id='quantityInput'/>";
                       echo "<input class ='button' type='submit' name='update' value='Update' id='update'/>";
                       echo "<a href='?pID=".$cartitem['pID']."'><input class ='button' type='button' name='delete' value='Delete'/></a>";
+                      echo "<input type='hidden' value='".$cartitem['pID']."' name='pID'/>";
                     echo "</form>";
                   echo "</div>";
                 echo "</div>";
