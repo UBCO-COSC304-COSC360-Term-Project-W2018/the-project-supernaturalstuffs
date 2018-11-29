@@ -211,7 +211,7 @@
                     echo "<p>Product name: ".$cartitem['pName']."</p>";
                     echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
                     echo "<p>Quantity: ".$cartitem['quantity']."</p>";
-                    echo '<input class ="button" type="button" name="delete" value="delete" onclick="href=?id="' . $cartitem['pID'] . '">';
+                    echo "<a href='?pID=".$cartitem['pID']."'><input class ='button' type='button' name='delete' value='Delete'/></a>";
                   echo "</div>";
                 echo "</div>";
               }
@@ -228,7 +228,7 @@
             	unset($cart[$_GET['pID']]);
             	$_SESSION['productList'] = $cart;
               unset($_GET['pID']);
-            	header('Location: checkout.php');
+            	echo "<script type='text/javascript'>window.location.href='checkout.php'</script>";
             }
              ?>
 
