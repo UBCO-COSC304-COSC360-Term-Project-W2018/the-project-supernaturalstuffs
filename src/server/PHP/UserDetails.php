@@ -90,10 +90,49 @@
 						
 						//Edit user information and enable or disable user
 						//Remove comments, Remove user, edit user
+						   <fieldset>
+							  <legend>Create Account</legend>
+							  <div>
+									<label>First Name:</label>
+									<input type="text" name="fName" class="box"/>
+							  </div>
+							  <div>
+									<label>Last Name:</label>
+									<input type="text" name="lName" class="box"/>
+							  </div>
+							  <div>
+									<label>Email:</label>
+									<input type="text" name="email" class="box"/>
+							  </div>
+							  <div>
+									<label>Confirm Email:</label>
+									<input type="text" name="cEmail" class="box"/>
+							  </div>
+							  <div>
+									<label>Password:</label>
+									<input type="password" name="password" class="box"/>
+							  </div>
+								<p class="notes">Password must be 6 characters long and contain a number</p>
+								<div>
+								<label>Confirm Password:</label>
+								<input type="password" name="cPassword" class="box"/>
+							  </div>
+							  <div>
+									<label>Add a photo:</label>
+									<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+							  </div>
+							  <div class="centered">
+									<input type="submit" value="Create Account" class="button"/>
+							  </div>
+							  <div class="centered">
+								<inp	ut type="button" onclick="location.href='login.php'" value="Already Have an Acount" class="button"/>
+							  </div>
+
+						</fieldset>
 								
 			echo(		'</div>
 					</div>
-				</div>;');
+				</div>');
 				
 		?>
 	
