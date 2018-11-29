@@ -25,6 +25,7 @@
         	header('Location: cart.php');
         }
 
+        
         //check how much we have remain and dont change if selection is more
         //tell them the amount remaining and let them try again
 
