@@ -167,7 +167,7 @@
                 echo "<p>Product name: ".$cartitem['pName']."</p>";
                 echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
                 echo "<p>Quantity: ".$cartitem['quantity']."</p>";
-                echo "<input class ='button' type='button' name='delete' value='Delete' />";
+                echo "<input class ='button' type='button' name='delete' value='Delete' onclick='href=\"?pID=".$cartitem['pID']."\"'/>";
               echo "</div>";
             echo "</div>";
           }
@@ -180,6 +180,17 @@
     </div>
 
       <?php
+
+      if(isset($_GET['pID'])){
+        removeItem($cart);
+      }
+
+      function removeItem($cart){
+        unset($cart[$_GET['pID']]);
+        $_SESSION['productList'] = $cart;
+        unset($_GET['pID']);
+        header('Location: checkout.php');
+      }
       //printing user image
       /*$sql = "SELECT image FROM Product where pID = 53";
       $statement = $pdo->prepare($sql);
