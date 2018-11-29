@@ -63,6 +63,44 @@
 						
 						//Edit prodcut information
 						//Remove comments, Remove product
+						echo(' <form class="Main" name="createAccount" id="create" method="post" action="update.php?filter=User&userID=' . $row['userID'] . '" enctype="multipart/form-data">
+
+							<fieldset>
+								  <legend>Update Product<legend>
+								  <div>
+										<label>First Name:</label>
+										<input type="text" name="firstName" class="box"/>
+								  </div>
+								  <div>
+										<label>Last Name:</label>
+										<input type="text" name="lastName" class="box"/>
+								  </div>
+								   <div>
+										<label>Username:</label>
+										<input type="text" name="username" class="box"/>
+								  </div>
+								  <div>
+										<label>Email:</label>
+										<input type="text" name="email" class="box"/>
+								  </div>
+								  <div>
+										<label>Password:</label>
+										<input type="text" name="password" class="box"/>
+								  </div>
+									<p class="notes">Password must be 6 characters long and contain a number</p>
+								  <div>
+										<label>Add a photo:</label>
+										<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+								  </div>
+								  <div>
+									<label>Status of User 1 for true 0 for false:</label>
+									<input type="text" name="status" class="box"/>
+								  </div>
+								  <div class="centered">
+										<input type="submit" value="Update User" class="button"/>
+								  </div>
+							</fieldset>
+						</form>');
 								
 			echo(		'</div>
 					</div>
