@@ -13,7 +13,50 @@
 
   <body>
 	<!--Include header-->
-	<?php include '../../../src/server/include/header.php'; ?>
+	<?php
+  include '../../../src/server/include/header.php';
+
+  if (isset($_SESSION['email'])){
+     $userE = $_SESSION['email'];
+   }else{
+     header('Location: /index.php');
+   }
+
+   try {
+       $pdo = new PDO($dsn, $user, $pass, $options);
+   } catch (\PDOException $e) {
+       throw new \PDOException($e->getMessage(), (int)$e->getCode());
+   }
+
+   //get userID from session
+   $sql = "SELECT userID FROM User WHERE email = :email";
+   $statement = $pdo->prepare($sql);
+   $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+   $statement->execute();
+   $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+   foreach ($rows as $row) {}
+
+   $userID = $row['userID'];
+
+   //get userID from session
+   $sql = "SELECT userID FROM Admin WHERE userID = :userID";
+   $statement = $pdo->prepare($sql);
+   $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
+   $statement->execute();
+   $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+   $numAdmin = "0";
+   foreach ($rows as $row) {
+     $numAdmin = $numAdmin + "1";
+   }
+
+   if($numAdmin <= "0"){
+     $message = "Please login to a valid admin account or check with administration you still have your admin privileges";
+     echo "<script type='text/javascript'>alert('$message');
+     window.location.href='/index.php'</script>";
+     die();
+   }
+
+  ?>
 	<main>
 		<div id="box">
 			<div id="Users">
