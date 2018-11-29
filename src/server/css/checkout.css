@@ -114,3 +114,13 @@ h2{
   width: 40%;
   margin: 4em auto 4em 1.5em;
 }
+
+/*quantity*/
+#quantityInput{
+  color: black;
+  padding: .25em;
+  width:3em;
+}
+#update{
+  margin-right: 1em;
+}
