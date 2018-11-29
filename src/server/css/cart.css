@@ -57,7 +57,6 @@
   color: white;
   border: none;
   bottom: 0px;
-  text-decoration: none;
 }
 
 a:hover, a:visited, a:link, a:active
@@ -66,7 +65,7 @@ a:hover, a:visited, a:link, a:active
 }
 
 #desc {
-  font-size: 90%;
+  font-size: 70%;
 }
 h1 {
   font-size: 200%;
