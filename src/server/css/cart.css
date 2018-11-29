@@ -11,7 +11,8 @@
 #shoppingcart {
   padding: .5em;
   width: 100%;
-  max-height: 400px;
+  border:2px solid white;
+  max-height: 50em;
   margin-top:2em;
   margin-right: 2em;
   overflow: auto;

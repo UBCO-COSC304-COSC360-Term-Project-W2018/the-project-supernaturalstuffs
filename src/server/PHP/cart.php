@@ -31,9 +31,9 @@
           if (isset($_SESSION['productList'])){
           	$productList = $_SESSION['productList'];
             echo('<div id = "container">');
-            echo('<div id = "shoppingcart">');
-          	echo('<h1>Shopping Cart</h1>');
 
+          	echo('<h1>Shopping Cart</h1>');
+            echo('<div id = "shoppingcart">');
 
           	$total =0;
           	foreach ($productList as $name => $prod) {
