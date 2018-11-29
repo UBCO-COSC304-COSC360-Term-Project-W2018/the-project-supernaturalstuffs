@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
 	<link rel="stylesheet" type="text/css" href="../css/details.css">
-	   <link rel="stylesheet" type="text/css" href="../css/form.css">
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -91,8 +90,10 @@
 						
 						//Edit user information and enable or disable user
 						//Remove comments, Remove user, edit user
-						echo('   <fieldset>
-							  <legend>Create Account</legend>
+						echo(' <form class="Main" name="createAccount" id="create" method="post" action="createAccountPHP.php" onsubmit="return preventDefault()" enctype="multipart/form-data">
+          
+							<fieldset>
+							  <legend>Update User<legend>
 							  <div>
 									<label>First Name:</label>
 									<input type="text" name="fName" class="box"/>
@@ -125,7 +126,8 @@
 							  <div class="centered">
 									<input type="submit" value="Create Account" class="button"/>
 							  </div>
-						</fieldset>');
+						</fieldset>
+						</form>');
 								
 			echo(		'</div>
 					</div>
