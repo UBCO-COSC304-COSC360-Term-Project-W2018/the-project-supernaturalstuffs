@@ -13,8 +13,10 @@
 
   <body>
 	<!--Include header-->
-	<?php
-  include '../../../src/server/include/header.php';
+	<?php include '../../../src/server/include/header.php'; ?>
+
+  <?php
+  include '../include/db_credentials.php';
 
   if (isset($_SESSION['email'])){
      $userE = $_SESSION['email'];
