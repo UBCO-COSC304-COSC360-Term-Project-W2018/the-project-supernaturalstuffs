@@ -216,7 +216,7 @@
   							$type = "png";
 
                 echo "<div class='items'>";
-                  echo	'<a href="individualProducts.php?pID='.$cartitem['pID'].'"><img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
+                  echo	'<a href="individualProducts.php?pID='.$cartitem['pID'].'"><img class="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
                   echo "<div class='productinfo'>";
                     echo "<p>Product name: ".$cartitem['pName']."</p>";
                     echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
