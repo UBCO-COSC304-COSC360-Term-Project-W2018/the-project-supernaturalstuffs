@@ -85,7 +85,7 @@
       $statement = $pdo->prepare($sql3);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
-      $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+      $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows3 as $row3) {}
 
       if($row3['status'] == "0"){
