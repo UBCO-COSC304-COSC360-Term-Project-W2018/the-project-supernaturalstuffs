@@ -67,7 +67,7 @@
             echo ('<div id ="summary">');
             echo ('<h1>Summary</h1>');
             echo ('<div id ="totals">');
-            echo ("<h3 id=\"total\"> Total:".$total. "</h3>");
+            echo ("<p id=\"total\"> Total:".$total. "</p>");
             echo ('<div>
               <a href="checkout.php" ><p class="addCart">Checkout</p></a>
               <a href="products.php" ><p class="addCart">Continue Shopping</p></a>
