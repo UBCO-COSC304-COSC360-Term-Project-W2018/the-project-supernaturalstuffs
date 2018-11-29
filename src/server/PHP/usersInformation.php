@@ -33,9 +33,9 @@
 			$statement->execute(array("%" . $_GET['filter'] . "%", "%" . $_GET['filter'] . "%", "%" . $_GET['filter'] . "%"));
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 			echo '<table>';
-					echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td><td>Select</td></tr>';
+					echo '<tr><td>UserId</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td>Status</td><td>Select</td></tr>';
 			foreach ($rows as $row) {
-				echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td><td><a href="UserDetails.php?filter=' . $row['userID'] . '">Select User</a></td></tr>';
+				echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td><td>' . $row['status'] . '</td><td><a href="UserDetails.php?filter=' . $row['userID'] . '">Select User</a></td></tr>';
 			}
 			echo '</table>';
 		?>
