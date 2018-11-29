@@ -51,12 +51,14 @@
 
               echo '<div id="reviews">';
               echo '<h1>Reviews</h1>';
-              echo '<form class="review" method="post">';
-              echo '<p>Add a review: </p>';
+              echo '<form class="review" method="post" action="reviews.php">';
+              echo '<p>Write a review: </p>';
               echo '<p><textarea id = "text" name="comment" rows="4" cols="40"></textarea></p>';
-              echo '<button type ="submit" class="addCart">Submit</button>';
+              echo '<button type ="submit" class="addCart" >Submit</button>';
               echo '</form>';
               echo '</div>';
+
+
 
 
               echo '</div>';

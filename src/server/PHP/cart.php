@@ -35,8 +35,8 @@
           	echo('<h1 id="title">Shopping Cart</h1>');
             echo('<div id = "shoppingcart">');
 
-            //trying to get image 
-            if(!isset($_GET["pID"])){
+            //trying to get image
+            /*if(!isset($_GET["pID"])){
               echo "<script type='text/javascript'>window.location.href='products.php'</script>";
               die();
             }
@@ -47,7 +47,7 @@
             foreach ($rows as $row) {
               $image = $row['image'];
               $type = "png";
-            }
+            }*/
 
           	$total =0;
           	foreach ($productList as $name => $prod) {
