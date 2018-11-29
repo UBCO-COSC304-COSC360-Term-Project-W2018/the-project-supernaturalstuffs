@@ -88,7 +88,7 @@
 						$statement->execute(array($_POST['email'], $_GET['userID']));
 					}
 					//Update Status
-					if(isset($_POST['status'])&& !empty($_POST['status'])){
+					if(isset($_POST['status']) && !empty($_POST['status'])){
 						$sql = 'UPDATE User SET status = ? WHERE userID = ?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_POST['status'], $_GET['userID']));
