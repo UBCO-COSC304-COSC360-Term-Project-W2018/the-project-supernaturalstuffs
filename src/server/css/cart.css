@@ -57,6 +57,7 @@
   color: white;
   border: none;
   bottom: 0px;
+    text-decoration: none;
 }
 
 h1 {
@@ -71,9 +72,7 @@ h3 {
   padding: .25em;
 }
 
-a {
-  text-decoration: none;
-}
+
 p {
   font-size: 110%;
   padding: .25em;
