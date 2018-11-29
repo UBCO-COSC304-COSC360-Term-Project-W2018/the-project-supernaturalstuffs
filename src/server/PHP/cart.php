@@ -13,11 +13,12 @@
 
   <body>
 	<!--Include header-->
-	<?php include '../../../src/server/include/header.php'; ?>
+	<?php //include '../../../src/server/include/header.php'; ?>
     <!-- page content delete button -->
     <main>
       <div id="flex">
       <?php
+        include '../../../src/server/include/header.php';
         include '../include/db_credentials.php';
 
         try {
