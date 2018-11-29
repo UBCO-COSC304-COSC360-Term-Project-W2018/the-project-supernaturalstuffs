@@ -243,12 +243,22 @@
                     echo "<p>Product name: ".$cartitem['pName']."</p>";
                     echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
                     echo "<p>Quantity: ".$cartitem['quantity']."</p>";
-                    echo "<input class ='button' type='button' name='delete' value='Delete' />";
+                    echo "<input class ='button' type='button' name='delete' value='Delete' onclick='href='?id=".$prod['id']."''/>";
                   echo "</div>";
                 echo "</div>";
               }
             }else{
               echo("<p>Your shopping cart is empty!</p>");
+            }
+
+            if(isset($_GET['pID'])){
+            	removeItem($productList);
+            }
+
+            function removeItem($productList){
+            	unset($productList[$_GET['pID']]);
+            	$_SESSION['productList'] = $productList;
+            	header('Location: checkout.php');
             }
              ?>
 
