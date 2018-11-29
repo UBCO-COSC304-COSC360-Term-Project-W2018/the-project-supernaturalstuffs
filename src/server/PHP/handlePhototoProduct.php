@@ -19,10 +19,10 @@
 		<?php
 			include '../include/db_credentials.php';
 
-      $target_dir = "../uploads/";
+      /*$target_dir = "../uploads/";
       $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
       $uploadOk = 1;
-      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));*/
 
       if($_SERVER["REQUEST_METHOD"] == "POST"){
         /** Get pID **/
@@ -35,8 +35,14 @@
         if (isset($_POST['description'])) {
             $description = $_POST['description'];
         }
+
+        $quantity = null;
+        if (isset($_POST['quantity'])) {
+            $quantity = $_POST['quantity'];
+        }
+      }
         //user photo
-        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        /*$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
             $uploadOk = 1;
         } else {
@@ -65,7 +71,7 @@
       if ($uploadOk == 0) {
           echo "Sorry, your file was not uploaded.";
       // if everything is ok, try to upload file
-      }
+    }*/
 
 			//connect to database
 			try {
@@ -75,16 +81,23 @@
 			}
 
       //image Stuff
-      $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
+      //$imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
 
-      $sql = "UPDATE Product SET image = :imagedata, description = :description WHERE pID = :pID";
+      $sql = "UPDATE Product SET description = :description WHERE pID = :pID";
       $statement = $pdo->prepare($sql);
-      $statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
+      //$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
       $statement->bindValue(':pID', $pID, PDO::PARAM_STR);
       $statement->bindValue(':description', $description, PDO::PARAM_STR);
       $statement->execute();
 
-      $message = "Photo added to ".$pID;
+      $sql = "UPDATE Stock SET quantity = :quantity WHERE pID = :pID";
+      $statement = $pdo->prepare($sql);
+      //$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
+      $statement->bindValue(':pID', $pID, PDO::PARAM_STR);
+      $statement->bindValue(':quantity', $quantity, PDO::PARAM_INT);
+      $statement->execute();
+
+      $message = "Description and quantity changed for ".$pID;
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='addProductPicForm.php'</script>";
       die();

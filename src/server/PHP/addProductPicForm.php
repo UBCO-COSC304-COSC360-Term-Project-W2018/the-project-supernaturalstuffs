@@ -28,8 +28,8 @@
           <input type="text" name="description" class="box"/>
         </div>
         <div>
-          <label>Add a photo:</label>
-          <input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+          <label>Description</label>
+          <input type='number' name='quantity' id='quantityInput'/>
         </div>
         <div class="centered">
           <input type="submit" value="add image" class="button"/>
