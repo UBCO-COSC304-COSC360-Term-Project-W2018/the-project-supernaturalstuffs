@@ -60,13 +60,13 @@
 
                 $statement = $pdo->prepare($sql2);
   							$statement->execute();
-  							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($rows as $row) {
+  							$rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($rows2 as $row2) {
 
                   $sql = 'SELECT * FROM Product WHERE pID = :pID' ;
 
                   $statement = $pdo->prepare($sql);
-                  $statement->bindParam(':pID',$row['pID'], PDO::PARAM_INT);
+                  $statement->bindParam(':pID',$row2['pID'], PDO::PARAM_INT);
     							$statement->execute();
     							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -84,8 +84,8 @@
     								echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
 
     								echo '</div>';
+                  }
                 }
-
               }else{
 								$sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["filter"] . '%" OR category LIKE "%' . $_GET["filter"] . '";';
 
