@@ -190,7 +190,7 @@
         unset($cart[$_GET['pID']]);
         $_SESSION['productList'] = $cart;
         unset($_GET['pID']);
-        header('Location: checkout.php');
+        echo "<script type='text/javascript'>window.location.href='accountDetails.php'</script>";
       }
       //printing user image
       /*$sql = "SELECT image FROM Product where pID = 53";
