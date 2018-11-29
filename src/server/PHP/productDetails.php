@@ -88,7 +88,7 @@
 									<input type="text" name="status" class="box"/>
 								  </div>
 								  <div class="centered">
-										<input type="submit" value="Update User" class="button"/>
+										<input type="submit" value="Update Product" class="button"/>
 								  </div>
 							</fieldset>
 						</form>');
