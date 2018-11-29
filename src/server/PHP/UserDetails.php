@@ -136,6 +136,10 @@
 										<label>Last Name:</label>
 										<input type="text" name="lastName" class="box"/>
 								  </div>
+								   <div>
+										<label>Username:</label>
+										<input type="text" name="username" class="box"/>
+								  </div>
 								  <div>
 										<label>Email:</label>
 										<input type="text" name="email" class="box"/>
@@ -150,7 +154,7 @@
 										<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
 								  </div>
 								  <div>
-									<label>Status of User 1 for true 0 for false</label>
+									<label>Status of User 1 for true 0 for false:</label>
 									<input type="text" name="status" class="box"/>
 								  </div>
 								  <div class="centered">

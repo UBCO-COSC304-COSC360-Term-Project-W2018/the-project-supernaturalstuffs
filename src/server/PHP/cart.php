@@ -35,10 +35,22 @@
           	echo('<h1 id="title">Shopping Cart</h1>');
             echo('<div id = "shoppingcart">');
 
+            //trying to get image 
+            if(!isset($_GET["pID"])){
+              echo "<script type='text/javascript'>window.location.href='products.php'</script>";
+              die();
+            }
+            $sql = "SELECT * FROM Product WHERE pID =". $_GET["pID"];
+            $statement = $pdo->prepare($sql);
+            $statement->execute();
+            $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $row) {
+              $image = $row['image'];
+              $type = "png";
+            }
+
           	$total =0;
           	foreach ($productList as $name => $prod) {
-              $image = $prod['image'];
-              $type = "png";
               echo('<div class="items"/>');
               //echo('<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>');
               echo '<img class ="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
@@ -71,7 +83,7 @@
             echo ('<div id ="summary">');
             echo ('<h1>Summary</h1>');
             echo ('<div id ="totals">');
-            echo ("<p id=\"total\"> Total:".$total. "</p>");
+            echo ("<p id=\"total\"> Total: $".$total. "</p>");
             echo ('<div>
               <a href="checkout.php" ><p class="addCart">Checkout</p></a>
               <a href="products.php" ><p class="addCart">Continue Shopping</p></a>
