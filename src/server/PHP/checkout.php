@@ -205,8 +205,11 @@
             <?php
             if (isset($_SESSION['productList'])){
               foreach ($cart as $pID => $cartitem){
+                $image = $row['image'];
+								$type = "png";
+
                 echo "<div class='items'>";
-                  echo "<img class='image' src='../images/ghostbusters-logo.png'alt='product image'/>";
+                  echo	'<a href="individualProducts.php?pID='.$row['pID'].'"><img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
                   echo "<div class='productinfo'>";
                     echo "<p>Product name: ".$cartitem['pName']."</p>";
                     echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
