@@ -211,15 +211,15 @@
         echo("<tr><td colspan=\"4\" align=\"right\"><b>Shipping Total:</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$shipDelivery))."</td></tr>");
         echo("<tr><td colspan=\"4\" align=\"right\"><b>Order Total:</b></td><td align=\"right\">".str_replace("USD","$",money_format('%i',$total))."</td></tr>");
         echo("</table>");
-        echo("<h1>Order completed. Will be shipped soon...</h1>");
-        echo("<h1>Your order reference number is: " . $orderID . '</h1>');
+        echo("<h2>Order completed. Will be shipped soon...</h2>");
+        echo("<h2>Your order reference number is: " . $orderID . '</h2>');
         $sql4 = "SELECT firstName, lastName FROM User WHERE userID = :userID";
         $statement = $pdo->prepare($sql4);
         $statement->bindParam(':userID',$userID, PDO::PARAM_STR);
         $statement->execute();
         $rows4 = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows4 as $row4) {}
-        echo("<h1>Shipping to customer: " . $userID . ", Name: " . $row4['firstName'] ." ". $row4['lastName'] . '</h1>');
+        echo("<h2>Shipping to customer: " . $userID . ", Name: " . $row4['firstName'] ." ". $row4['lastName'] . '</h2>');
 
       //unset sessions
       unset($_SESSION['shipInfo']['fName']);

@@ -8,10 +8,15 @@ table{
 }
 table, th {
   font-size: 105%;
+  border:2px solid white;
+  padding-right: 1em;
 }
 table, td{
   padding: 1em;
 }
 table, td, .product{
   border: 2px solid white;
+}
+h2{
+  font-size: 120%;
 }
