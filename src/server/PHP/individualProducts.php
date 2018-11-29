@@ -29,7 +29,7 @@
             echo '</div>';
 
 
-          //$pID = $_GET['pID'];
+          $pID = $_GET['pID'];
           $pName = $_GET['pName'];
           $price = $_GET['price'];
           $desc = $_GET['description'];
@@ -39,7 +39,7 @@
           echo "<p>". $pName . "</p>";
           echo "<p>". $desc . "</p>";
           echo "<p>". $price . "</p>";
-          echo	'<a href="products.php"<p class="addCart">Add to Cart</p></a>';
+          echo	'<a href=\'addToCart.php?pID='.$pID.'&pName='.$pName.'&price='.$price."&description=".$desc.'\'><p class="addCart">Add to Cart</p></a>';
           echo '</div>';
           echo '</div>';
           ?>
