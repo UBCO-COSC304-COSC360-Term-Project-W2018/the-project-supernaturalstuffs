@@ -79,6 +79,22 @@
       	die();
       }
 
+      //make it so if disabled you cant Login
+
+      $sql3 = "SELECT status FROM User WHERE email = :email" ;
+      $statement = $pdo->prepare($sql3);
+      $statement->bindParam(':email',$custE, PDO::PARAM_STR);
+      $statement->execute();
+      $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows3 as $row3) {}
+
+      if($row3['status'] == "0"){
+        $message = "Your account has been disabled, please contact administration for more info!";
+        echo "<script type='text/javascript'>alert('$message');
+      	window.location.href='login.php'</script>";
+      	die();
+      }
+
       $_SESSION['email'] = $custE;
       //change header-pass the user is logged in via session
       echo "<script type='text/javascript'>window.location.href='/index.php'</script>";
