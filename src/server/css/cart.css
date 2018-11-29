@@ -59,6 +59,19 @@
   bottom: 0px;
 }
 
+.addCart{
+	background: white;
+	color: black;
+	padding: 0.5em;
+	margin-top: 0.5em;
+	border: solid black 1px;
+}
+.addCart:hover{
+	background: #521C25;
+	color: white;
+	border: white 1px solid;
+}
+
 .underline
 {
     text-decoration: none;

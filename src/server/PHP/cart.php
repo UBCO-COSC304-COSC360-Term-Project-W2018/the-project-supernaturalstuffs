@@ -63,8 +63,8 @@
             echo ('<div id ="totals">');
             echo ("<h3 id=\"total\"> Total:".$total. "</h3>");
             echo ('<div>
-              <a class = "underline" href="checkout.php" >Checkout</a>
-              <a class = "underline" href="products.php" >Continue Shoping</a>
+              <a class = "addCart" href="checkout.php" >Checkout</a>
+              <a class = "addCart" href="products.php" >Continue Shoping</a>
             </div>');
             echo ('</div>');
             echo ('</div>');
