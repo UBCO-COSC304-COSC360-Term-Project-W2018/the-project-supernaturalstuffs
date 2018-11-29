@@ -22,7 +22,7 @@
     // Update quantity if add same item to order again
     if (isset($productList[$pID])){
     	$productList[$pID]['quantity'] = $productList[$pID]['quantity'] + 1;
-      $productList[$pID]['price'] = $productList[$pID]['price'] + $price;
+      $productList[$pID]['price'] = $productList[$pID]['quantity'] * $price;
 
     } else {
     	$productList[$pID] = array( "pID"=>$pID, "pName"=>$pName, "price"=>$price, "description"=>$description,"quantity"=>1 );

@@ -49,6 +49,8 @@
           		echo("<p>".str_replace("USD","$",money_format('%i',$prod['price']))."</p>");
           		//echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
               echo '<input class ="button" type="button" name="remove" value="Remove" onclick="location.href="products.php"/>';
+              echo("<a class = \"button\" href='?id=".$prod['id']."'>Remove</a>");
+
             	echo("</div>");
               echo("</div>");
           		$total = $total +$prod['quantity']*$prod['price'];
