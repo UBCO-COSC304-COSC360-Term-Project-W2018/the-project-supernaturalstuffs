@@ -77,7 +77,7 @@
 
           } else{
           	echo("<H1>Your shopping cart is empty!</H1>");
-            echo '<a href="products.php" ><p class="addCart">Continue Shoping</p></a>';
+            echo '<a href="products.php" ><p class="addCart">Continue Shopping</p></a>';
           }
 
           if(isset($_GET['pid'])){

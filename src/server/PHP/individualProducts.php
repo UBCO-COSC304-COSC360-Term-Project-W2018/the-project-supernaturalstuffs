@@ -46,7 +46,7 @@
             }
 
               echo '<div id = "productbox">';
-              echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
+              echo '<img class ="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
               echo '</div>';
 
               echo '<div id="reviews">';
@@ -61,25 +61,10 @@
               echo	'<p>' . $name . '</p>';
               echo	'<p>' . $price . '</p>';
               echo	'<p>' . $desc . '</p>';
-              echo	'<a class = "addCart" href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
+              echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
               echo '</div>';
               echo '</div>';
 
-
-/*
-          $pID = $_GET['pID'];
-          $pName = $_GET['pName'];
-          $price = $_GET['price'];
-          $desc = $_GET['description'];
-
-          echo '<div id ="box">';
-          echo '<div class="productinfo">';
-          echo "<p>". $pName . "</p>";
-          echo "<p>". $desc . "</p>";
-          echo "<p>". $price . "</p>";
-          echo	'<a href=\'addToCart.php?pID='.$pID.'&pName='.$pName.'&price='.$price."&description=".$desc.'\'><p class="addCart">Add to Cart</p></a>';
-          echo '</div>';
-          echo '</div>';*/
           ?>
 
     </main>
