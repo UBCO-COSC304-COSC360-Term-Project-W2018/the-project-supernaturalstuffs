@@ -9,6 +9,7 @@
       <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
       <link rel="stylesheet" type="text/css" href="../css/accountDetails.css" />
       <link rel="stylesheet" type="text/css" href="../css/form.css">
+      <link rel="stylesheet" type="text/css" href="../css/orderSummary.css">
   </head>
   <body>
     <?php include '../../../src/server/include/header.php'; ?>
