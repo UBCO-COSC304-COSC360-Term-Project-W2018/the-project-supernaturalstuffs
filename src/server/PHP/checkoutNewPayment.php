@@ -143,10 +143,7 @@
       $_SESSION['payInfo']['csv'] = $row3['csv'];*/
       $_SESSION['payInfo']['uID'] = $userID;
 
-
-      $message = "Payment Information Cleared / saved to session";
-      echo "<script type='text/javascript'>alert('$message');
-      window.location.href='order.php'</script>";
+      echo "<script type='text/javascript'>window.location.href='order.php'</script>";
       die();
 
      ?>
