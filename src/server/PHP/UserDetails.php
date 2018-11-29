@@ -90,25 +90,21 @@
 						
 						//Edit user information and enable or disable user
 						//Remove comments, Remove user, edit user
-						echo(' <form class="Main" name="createAccount" id="create" method="post" action="update.php?filter=User" enctype="multipart/form-data">
+						echo(' <form class="Main" name="createAccount" id="create" method="post" action="update.php?filter=User&userID=' . $row['userID'] . '" enctype="multipart/form-data">
           
 								<fieldset>
 								  <legend>Update User<legend>
 								  <div>
 										<label>First Name:</label>
-										<input type="text" name="fName" class="box"/>
+										<input type="text" name="firstName" class="box"/>
 								  </div>
 								  <div>
 										<label>Last Name:</label>
-										<input type="text" name="lName" class="box"/>
+										<input type="text" name="lastName" class="box"/>
 								  </div>
 								  <div>
 										<label>Email:</label>
 										<input type="text" name="email" class="box"/>
-								  </div>
-								  <div>
-										<label>Confirm Email:</label>
-										<input type="text" name="cEmail" class="box"/>
 								  </div>
 								  <div>
 										<label>Password:</label>
