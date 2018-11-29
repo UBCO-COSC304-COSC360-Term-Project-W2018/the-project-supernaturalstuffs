@@ -76,7 +76,7 @@
               echo("<table>");
               echo("<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th></tr>");
               foreach ($rows as $row) {
-                echo("<tr><td>".$row['orderID']."</td><td>".$row['totalPrice']."</td><td>".$row['trackingNumber']."</td></tr>");
+                echo("<tr><td>".$row['orderID']."</td><td>$".$row['totalPrice']."</td><td>".$row['trackingNumber']."</td></tr>");
                 //add products here
               }
               echo("</table>");
