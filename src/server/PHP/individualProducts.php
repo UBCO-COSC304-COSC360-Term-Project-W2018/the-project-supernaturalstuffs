@@ -29,7 +29,7 @@
               $sql = 'SELECT * FROM Product';
 
             }else{
-              $sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["pID"] . '%" OR category LIKE "%' . $_GET["pID"] . '";';
+              $sql = 'SELECT * FROM Product WHERE pID LIKE "%' . $_GET["pID"] . '%"';
             }
 
             $statement = $pdo->prepare($sql);
