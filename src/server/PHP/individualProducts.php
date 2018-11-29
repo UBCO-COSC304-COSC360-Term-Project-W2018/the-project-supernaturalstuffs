@@ -38,34 +38,30 @@
 
 
             echo '<div id = "container">';
-            echo '<div id = "productbox">';
-              //$image = $_GET['img'];
-              //$type = "png";
-            //echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>'
-            echo '</div>';
-            echo '<div id="reviews">';
-            echo  '<h1>Reviews</h1>';
-                echo '<img id="star" src="../images/star.png" alt="rating image"/>';
-            echo '</div>';
-            echo '</div>';
-
-            foreach ($rows as $row) {
-              $image = $row['image'];
+            //foreach ($rows as $row) {
+              $image = $rows['image'];
               $type = "png";
+              echo '<div id = "productbox">';
+              echo '<img class="image" "src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
+              echo '</div>';
+            //}
+              echo '<div id="reviews">';
+              echo  '<h1>Reviews</h1>';
+                echo '<img id="star" src="../images/star.png" alt="rating image"/>';
+              echo '</div>';
 
+            echo '</div>';
+
+            //foreach ($rows as $row) {
               echo '<div id ="box">';
               echo '<div class="productinfo">';
-              echo	'<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
-              echo	'<p>' . $row["pName"] . '</p>';
-              echo	'<p>' . $row["price"] . '</p>';
-              echo	'<p>' . $row["description"] . '</p>';
+              echo	'<p>' . $rows["pName"] . '</p>';
+              echo	'<p>' . $rows["price"] . '</p>';
+              echo	'<p>' . $rows["description"] . '</p>';
               echo	'<a href=\'addToCart.php?pID='.$pID.'&pName='.$pName.'&price='.$price."&description=".$desc.'\'><p class="addCart">Add to Cart</p></a>';
               echo '</div>';
               echo '</div>';
-
             }
-
-
 
 /*
           $pID = $_GET['pID'];
