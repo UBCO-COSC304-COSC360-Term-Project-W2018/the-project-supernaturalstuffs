@@ -29,7 +29,7 @@
         </div>
         <div>
           <label>Description</label>
-          <input type='number' name='quantity' id='quantityInput'/>
+          <input type='number' name='quantity' id='quantityInput' class='box' style='color: black;'/>
         </div>
         <div class="centered">
           <input type="submit" value="add image" class="button"/>
