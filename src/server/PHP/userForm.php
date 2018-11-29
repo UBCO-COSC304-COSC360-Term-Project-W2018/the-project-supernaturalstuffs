@@ -17,17 +17,49 @@
 	<!--Include header-->
 	<?php include '../../../src/server/include/header.php'; ?>
 	<main>
-		<?php
-			include '../include/db_credentials.php';
+    <?php
+    include '../include/db_credentials.php';
 
+    if (isset($_SESSION['email'])){
+       $userE = $_SESSION['email'];
+     }else{
+       header('Location: /index.php');
+     }
 
-			//connect to database
-			try {
-				$pdo = new PDO($dsn, $user, $pass, $options);
-			} catch (\PDOException $e) {
-				throw new \PDOException($e->getMessage(), (int)$e->getCode());
-			}
+     try {
+         $pdo = new PDO($dsn, $user, $pass, $options);
+     } catch (\PDOException $e) {
+         throw new \PDOException($e->getMessage(), (int)$e->getCode());
+     }
 
+     //get userID from session
+     $sql = "SELECT userID FROM User WHERE email = :email";
+     $statement = $pdo->prepare($sql);
+     $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+     $statement->execute();
+     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+     foreach ($rows as $row) {}
+
+     $userID = $row['userID'];
+
+     //get userID from session
+     $sql = "SELECT userID FROM Admin WHERE userID = :userID";
+     $statement = $pdo->prepare($sql);
+     $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
+     $statement->execute();
+     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+     $numAdmin = "0";
+     foreach ($rows as $row) {
+       $numAdmin = $numAdmin + "1";
+     }
+
+     if($numAdmin <= "0"){
+       $message = "Please login to a valid admin account or check with administration you still have your admin privileges";
+       echo "<script type='text/javascript'>alert('$message');
+       window.location.href='/index.php'</script>";
+       die();
+     }
+  
 			echo('<div id="box">
 					<div id="Users">
 						<form action="add.php?filter=User" method="post" enctype="multipart/form-data">

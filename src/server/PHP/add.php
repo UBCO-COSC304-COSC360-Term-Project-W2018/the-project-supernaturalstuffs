@@ -18,18 +18,53 @@
 	<?php include '../../../src/server/include/header.php'; ?>
 	<main>
 		<?php
-			include '../include/db_credentials.php';
+      //lock out of admin
+      include '../include/db_credentials.php';
 
+      if (isset($_SESSION['email'])){
+         $userE = $_SESSION['email'];
+       }else{
+         header('Location: /index.php');
+       }
 
-			//connect to database
-			try {
-				$pdo = new PDO($dsn, $user, $pass, $options);
-			} catch (\PDOException $e) {
-				throw new \PDOException($e->getMessage(), (int)$e->getCode());
-			}
+       try {
+           $pdo = new PDO($dsn, $user, $pass, $options);
+       } catch (\PDOException $e) {
+           throw new \PDOException($e->getMessage(), (int)$e->getCode());
+       }
+
+       //get userID from session
+       $sql = "SELECT userID FROM User WHERE email = :email";
+       $statement = $pdo->prepare($sql);
+       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       foreach ($rows as $row) {}
+
+       $userID = $row['userID'];
+
+       //get userID from session
+       $sql = "SELECT userID FROM Admin WHERE userID = :userID";
+       $statement = $pdo->prepare($sql);
+       $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       $numAdmin = "0";
+       foreach ($rows as $row) {
+         $numAdmin = $numAdmin + "1";
+       }
+
+       if($numAdmin <= "0"){
+         $message = "Please login to a valid admin account or check with administration you still have your admin privileges";
+         echo "<script type='text/javascript'>alert('$message');
+         window.location.href='/index.php'</script>";
+         die();
+       }
+       //lock out of admin ends
+
 			//Check where the source came from
 			if($_GET['filter']=='User'){
-				
+
 				$target_dir = "../uploads/";
 				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 				$uploadOk = 1;
@@ -72,7 +107,7 @@
 
 				  //image Stuff
 				  $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
-				  
+
 				 $sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, DEFAULT)';
 				$statement = $pdo->prepare($sql);
 				$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
@@ -85,7 +120,7 @@
 
 
 			}else if($_GET['filter']=='Product'){
-				
+
 				$target_dir = "../uploads/";
 				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 				$uploadOk = 1;
@@ -128,14 +163,14 @@
 
 				  //image Stuff
 				  $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
-			
+
 				//Needs an image section
 				$sql = 'INSERT INTO Product VALUES (DEFAULT, ?, ?, ?, ?, ?)';
 				$statement = $pdo->prepare($sql);
 				$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
 				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category'], $imagedata));
 				echo '<p>Added Successfully</p>';
-				
+
 			}else if($_GET['filter']=='Order'){
 				//Needs more because if they are adding an order they are also
 				//adding a shipment

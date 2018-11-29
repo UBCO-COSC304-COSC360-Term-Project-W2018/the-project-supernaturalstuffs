@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>  
+<html>
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -16,23 +16,57 @@
 	<!--Include header-->
 	<?php include '../../../src/server/include/header.php'; ?>
 	<main>
-		<?php 
-			include '../include/db_credentials.php'; 
-			
+		<?php
+      //lock out of admin
+      include '../include/db_credentials.php';
 
-			//connect to database
-			try {
-				$pdo = new PDO($dsn, $user, $pass, $options);
-			} catch (\PDOException $e) {
-				throw new \PDOException($e->getMessage(), (int)$e->getCode());
-			}
-			
+      if (isset($_SESSION['email'])){
+         $userE = $_SESSION['email'];
+       }else{
+         header('Location: /index.php');
+       }
+
+       try {
+           $pdo = new PDO($dsn, $user, $pass, $options);
+       } catch (\PDOException $e) {
+           throw new \PDOException($e->getMessage(), (int)$e->getCode());
+       }
+
+       //get userID from session
+       $sql = "SELECT userID FROM User WHERE email = :email";
+       $statement = $pdo->prepare($sql);
+       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       foreach ($rows as $row) {}
+
+       $userID = $row['userID'];
+
+       //get userID from session
+       $sql = "SELECT userID FROM Admin WHERE userID = :userID";
+       $statement = $pdo->prepare($sql);
+       $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       $numAdmin = "0";
+       foreach ($rows as $row) {
+         $numAdmin = $numAdmin + "1";
+       }
+
+       if($numAdmin <= "0"){
+         $message = "Please login to a valid admin account or check with administration you still have your admin privileges";
+         echo "<script type='text/javascript'>alert('$message');
+         window.location.href='/index.php'</script>";
+         die();
+       }
+       //lock out of admin ends
+
 			//List all customers
 			$sql = 'SELECT * FROM Customer NATURAL JOIN User WHERE userID=?';
 			$statement = $pdo->prepare($sql);
 			$statement->execute(array($_GET['filter']));
 			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-			
+
 			echo('<div id="box">
 					<div id="Users">
 						<h2>User</h2>
@@ -45,7 +79,7 @@
 							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['username'] . '</td><td>' . $row['firstName'] . '</td><td>' . $row['lastName'] . '</td><td>' . $row['email'] . '</td><td>' . $row['status'] . '</td><td><a href="delete.php?filter=User&info=' . $row['userID'] . '">Delete User</a></td></tr>';
 						}
 						echo '</table>';
-						
+
 						//List all User Order history
 						$sql = 'SELECT * FROM Orders WHERE userID=?';
 						$statement = $pdo->prepare($sql);
@@ -59,39 +93,39 @@
 						}
 						echo '<tr rowspan="4"><td>Total Price: BLANK</td></tr>';
 						echo '</table>';
-						
+
 						//User's Reviews
 						$sql = 'SELECT * FROM Reviews WHERE userID=?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						echo "<p>User's Reviews</p>";
-						
+
 						echo '<table>';
 							echo '<tr><th>UserID</th><th>ProductID</th><th>Review</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
 							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['review'] . '</td><td><a href="delete.php?filter=Review&info=' . $row['userID'] . '">Delete Review</a></td></tr>';
 						}
 						echo '</table>';
-						
+
 						//User's Comments
 						$sql = 'SELECT * FROM CommentsOn WHERE userID=?';
 						$statement = $pdo->prepare($sql);
 						$statement->execute(array($_GET['filter']));
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						echo "<p>User's Comments</p>";
-						
+
 						echo '<table>';
 							echo '<tr><th>UserID</th><th>ProductID</th><th>Comment</th><th>Delete</th></tr>';
 						foreach ($rows as $row) {
 							echo	'<tr><td>' . $row['userID'] . '</td><td>' . $row['pID'] . '</td><td>' . $row['comment'] . '</td><td><a href="delete.php?filter=Comment&info=' . $row['userID'] . '">Delete Comment</a></td></tr>';
 						}
 						echo '</table>';
-						
+
 						//Edit user information and enable or disable user
 						//Remove comments, Remove user, edit user
 						echo(' <form class="Main" name="createAccount" id="create" method="post" action="update.php?filter=User&userID=' . $row['userID'] . '" enctype="multipart/form-data">
-          
+
 								<fieldset>
 								  <legend>Update User<legend>
 								  <div>
@@ -124,13 +158,13 @@
 								  </div>
 							</fieldset>
 						</form>');
-								
+
 			echo(		'</div>
 					</div>
 				</div>');
-				
+
 		?>
-	
+
 	</main>
 	<!--Footer include-->
 	<?php include '../../../src/server/include/footer.php'; ?>
