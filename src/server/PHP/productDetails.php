@@ -68,29 +68,20 @@
 							<fieldset>
 								  <legend>Update Product<legend>
 								  <div>
-										<label>First Name:</label>
-										<input type="text" name="firstName" class="box"/>
+										<label>Product Name:</label>
+										<input type="text" name="pName" class="box"/>
 								  </div>
 								  <div>
-										<label>Last Name:</label>
-										<input type="text" name="lastName" class="box"/>
+										<label>Description:</label>
+										<input type="text" name="description" class="box"/>
 								  </div>
 								   <div>
-										<label>Username:</label>
-										<input type="text" name="username" class="box"/>
+										<label>Price:</label>
+										<input type="text" name="price" class="box"/>
 								  </div>
 								  <div>
-										<label>Email:</label>
-										<input type="text" name="email" class="box"/>
-								  </div>
-								  <div>
-										<label>Password:</label>
-										<input type="text" name="password" class="box"/>
-								  </div>
-									<p class="notes">Password must be 6 characters long and contain a number</p>
-								  <div>
-										<label>Add a photo:</label>
-										<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+										<label>Category</label>
+										<input type="text" name="category" class="box"/>
 								  </div>
 								  <div>
 									<label>Status of User 1 for true 0 for false:</label>
