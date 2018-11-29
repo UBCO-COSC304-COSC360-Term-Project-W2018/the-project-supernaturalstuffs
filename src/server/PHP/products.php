@@ -42,26 +42,17 @@
 							$statement = $pdo->prepare($sql);
 							$statement->execute();
 							$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-              /*$sql = "SELECT image FROM Product where pID = 53";
-              $statement = $pdo->prepare($sql);
-              $statement->execute();
-              $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-              foreach ($rows as $row) {}
-
-              $image = $row['image'];
-              $type = "png";
-              echo '<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
-        */
+							
+ 
 
 							foreach ($rows as $row) {
-                $image = $row['image'];
-                $type = "png";
+								$image = $row['image'];
+								$type = "png";
 
 								echo '<div class="productBox">';
 								echo	'<a href="individualProducts.php?pID='.$row['pID']."&pName=".$row['pName']."&price=".$row['price']."&description=".$row['description'].'"><img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
 
-                echo	'<p>' . $row["pName"] . '</p>';
+								echo	'<p>' . $row["pName"] . '</p>';
 								echo	'<p>' . $row["description"] . '</p>';
 								echo	'<p>' . $row["price"] . '</p>';
 
