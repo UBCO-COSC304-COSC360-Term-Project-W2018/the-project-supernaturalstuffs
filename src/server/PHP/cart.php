@@ -49,7 +49,7 @@
           		echo("<p>".str_replace("USD","$",money_format('%i',$prod['price']))."</p>");
           		//echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
               //echo '<input class ="button" type="button" name="remove" value="Remove" onclick="location.href="products.php"/>';
-              echo("<a class = \"button\" href='?id=".$prod['id']."'>Remove</a>");
+              echo("<a class = \"button\" href='?id=".$prod['pID']."'>Remove</a>");
 
             	echo("</div>");
               echo("</div>");
@@ -73,6 +73,15 @@
           } else{
           	echo("<H1>Your shopping cart is empty!</H1>");
             echo '<a href="products.php" ><p class="addCart">Continue Shoping</p></a>';
+          }
+
+          if(isset($_GET['pID'])){
+          	removeItem($productList);
+          }
+          function removeItem($productList){
+          	unset($productList[$_GET['pID']]);
+          	$_SESSION['productList'] = $productList;
+          	header('Location: cart.php');
           }
 
         ?>
