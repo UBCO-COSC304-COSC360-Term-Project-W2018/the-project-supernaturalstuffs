@@ -226,7 +226,7 @@
             }
 
             function removeItem($cart){
-            	unset($cartt[$_GET['pID']]);
+            	unset($cart[$_GET['pID']]);
             	$_SESSION['productList'] = $cart;
               unset($_GET['pID']);
             	header('Location: checkout.php');
