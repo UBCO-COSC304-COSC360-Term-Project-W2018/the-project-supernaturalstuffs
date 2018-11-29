@@ -60,10 +60,10 @@
 
             //remove item
             if(isset($_GET['pid'])){
-              removeItem($cart);
+              removeItem($productList);
             }
 
-            function removeItem($cart){
+            function removeItem($productList){
               unset($cart[$_GET['pid']]);
               $_SESSION['productList'] = $cart;
               unset($_GET['pid']);
