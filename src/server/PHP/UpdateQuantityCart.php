@@ -34,7 +34,7 @@
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
 
-        $sql = "SELECT quantity FROM Product WHERE pID = :pID";
+        $sql = "SELECT quantity FROM Stock WHERE pID = :pID";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(':pID', $pID, PDO::PARAM_STR);
         $statement->execute();
