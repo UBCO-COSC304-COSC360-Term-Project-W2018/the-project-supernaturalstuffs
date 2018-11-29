@@ -25,17 +25,17 @@
 						}
 
 
-            if(!(isset($_GET["pID"]))){
-              $sql = 'SELECT * FROM Product';
+            if(!isset($_GET["pID"])){
+              $sql = "SELECT * FROM Product WHERE pID =". $_GET["pID"];
 
             }else{
-              $sql = 'SELECT * FROM Product WHERE pID LIKE "%' . $_GET["pID"] . '%"';
+              echo "<script type='text/javascript'>window.location.href='products.php'</script>";
+              die();
             }
 
             $statement = $pdo->prepare($sql);
             $statement->execute();
             $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 
             echo '<div id = "container">';
             foreach ($rows as $row) {
@@ -47,7 +47,7 @@
             }
 
               echo '<div id = "productbox">';
-              echo "<img class =\"image\" src = \"data:image/'.$type.';base64, '.base64_encode($image).'\"/>";
+              echo "<img class='image' src = 'data:image/".$type.";base64, ".base64_encode($image)."/>";
               echo '</div>';
 
               echo '<div id="reviews">';
