@@ -41,27 +41,30 @@
             foreach ($rows as $row) {
               $image = $row['image'];
               $type = "png";
+              $name = $row["pName"];
+              $price = $row["price"];
+              $desc = $row["description"];
+            }
+
               echo '<div id = "productbox">';
               echo '<img class="image" "src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
               echo '</div>';
-            
+
               echo '<div id="reviews">';
               echo  '<h1>Reviews</h1>';
                 echo '<img id="star" src="../images/star.png" alt="rating image"/>';
               echo '</div>';
 
             echo '</div>';
-
-
               echo '<div id ="box">';
               echo '<div class="productinfo">';
-              echo	'<p>' . $row["pName"] . '</p>';
-              echo	'<p>' . $row["price"] . '</p>';
-              echo	'<p>' . $row["description"] . '</p>';
+              echo	'<p>' . $name . '</p>';
+              echo	'<p>' . $price . '</p>';
+              echo	'<p>' . $desc . '</p>';
               echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
               echo '</div>';
               echo '</div>';
-            }
+
 
 /*
           $pID = $_GET['pID'];
