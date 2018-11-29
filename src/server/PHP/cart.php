@@ -37,8 +37,12 @@
 
           	$total =0;
           	foreach ($productList as $name => $prod) {
+              $image = $prod['image'];
+              $type = "png";
               echo('<div class="items"/>');
-              echo('<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>');
+              //echo('<img class="image" src="../images/ghostbusters-logo.png" alt="product image"/>');
+              echo '<img class ="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
+
               echo('<div class="productinfo">');
           		echo("<p>". $prod['pName'] . "</p>");
           		echo('<p id="desc">' . $prod['description'] . "</p>");
@@ -67,7 +71,7 @@
             echo ('<div id ="summary">');
             echo ('<h1>Summary</h1>');
             echo ('<div id ="totals">');
-            echo ("<h3 id=\"total\"> Total:".$total. "</h3>");
+            echo ("<p id=\"total\"> Total:".$total. "</p>");
             echo ('<div>
               <a href="checkout.php" ><p class="addCart">Checkout</p></a>
               <a href="products.php" ><p class="addCart">Continue Shopping</p></a>
