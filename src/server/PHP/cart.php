@@ -35,6 +35,22 @@
           	echo('<h1 id="title">Shopping Cart</h1>');
             echo('<div id = "shoppingcart">');
 
+<<<<<<< HEAD
+=======
+            //trying to get image
+            /*if(!isset($_GET["pID"])){
+              echo "<script type='text/javascript'>window.location.href='products.php'</script>";
+              die();
+            }
+            $sql = "SELECT * FROM Product WHERE pID =". $_GET["pID"];
+            $statement = $pdo->prepare($sql);
+            $statement->execute();
+            $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $row) {
+              $image = $row['image'];
+              $type = "png";
+            }*/
+>>>>>>> b8faa6b49cea82d12a8847912b66b0a10c663973
 
           	$total =0;
           	foreach ($productList as $name => $prod) {
