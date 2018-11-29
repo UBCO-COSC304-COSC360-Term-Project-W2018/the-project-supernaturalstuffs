@@ -9,9 +9,9 @@ table{
 table, th {
   font-size: 120%;
 }
-table, td, .product{
+table, td{
   padding: 1em;
 }
-table, td{
-  border-radius: 2px solid white;
+table, td, .product{
+  border: 2px solid white;
 }
