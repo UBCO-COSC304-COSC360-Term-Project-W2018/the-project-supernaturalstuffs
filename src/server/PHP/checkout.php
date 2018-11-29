@@ -243,15 +243,16 @@
                     echo "<p>Product name: ".$cartitem['pName']."</p>";
                     echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
                     echo "<p>Quantity: ".$cartitem['quantity']."</p>";
-                    echo ("<input class ='button' type='button' name='delete' value='Delete' onclick='href=?id='".$cartitem['pID']."'/>");
+                    echo "<input class ='button' type='button' name='delete' value='Delete'/>";
+                    // onclick="href=?id='.$cartitem['pID'].'" made me mad
                   echo "</div>";
                 echo "</div>";
               }
-            }else{
+            if (!isset($_SESSION['productList'])){
               echo("<p>Your shopping cart is empty!</p>");
             }
 
-            //remove item
+            /*//remove item
             if(isset($_GET['pID'])){
             	removeItem($productList);
             }
@@ -259,8 +260,9 @@
             function removeItem($productList){
             	unset($productList[$_GET['pID']]);
             	$_SESSION['productList'] = $productList;
+              unset($_GET['pID']);
             	header('Location: checkout.php');
-            }
+            }*/
              ?>
 
           </div>
