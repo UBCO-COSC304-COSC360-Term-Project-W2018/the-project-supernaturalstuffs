@@ -17,8 +17,8 @@
     if ($quantity > "0"){
     	$productList[$pID]['quantity'] = $quantity;
     } else {
-      unset($cart[$_GET['pID']]);
-      $_SESSION['productList'] = $cart;
+      unset($productList[$_GET['pID']]);
+      $_SESSION['productList'] = $productList;
       unset($_GET['pID']);
     }
     $_SESSION['productList'] = $productList;
