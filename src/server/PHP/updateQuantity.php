@@ -24,6 +24,10 @@
         } else {
         	header('Location: checkout.php');
         }
+
+        //check how much we have remain and dont change if selection is more
+        //tell them the amount remaining and let them try again
+        
         // Update quantity
         if ($quantity > "0"){
         	$productList[$pID]['quantity'] = $quantity;

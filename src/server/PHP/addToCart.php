@@ -17,6 +17,9 @@
     } else {
     	header('Location: products.php');
     }
+
+    //check to make sure we have it in stock if not return a message saying we dont
+
     // Update quantity if add same item to order again
     if (isset($productList[$pID])){
     	$productList[$pID]['quantity'] = $productList[$pID]['quantity'] + 1;
