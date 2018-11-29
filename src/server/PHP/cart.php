@@ -32,7 +32,7 @@
           	$productList = $_SESSION['productList'];
             echo('<div id = "container">');
 
-          	echo('<h1>Shopping Cart</h1>');
+          	echo('<h1 id="title">Shopping Cart</h1>');
             echo('<div id = "shoppingcart">');
 
           	$total =0;
