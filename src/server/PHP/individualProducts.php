@@ -47,7 +47,9 @@
             }
 
               echo '<div id = "productbox">';
-              echo '<img class="image" "src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
+              //echo '<img class="image" "src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
+              echo '<img class="image" "src = "'.$image. '.png"/>';
+
               echo '</div>';
 
               echo '<div id="reviews">';
