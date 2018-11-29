@@ -205,8 +205,8 @@
             <?php
             if (isset($_SESSION['productList'])){
               foreach ($cart as $pID => $cartitem){
-
-                $sql = "SELECT image FROM Product where pID = $cartitem['pID'];
+                $pID =$cartitem['pID'];
+                $sql = "SELECT image FROM Product where pID = $pID";
                 $statement = $pdo->prepare($sql);
                 $statement->execute();
                 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
