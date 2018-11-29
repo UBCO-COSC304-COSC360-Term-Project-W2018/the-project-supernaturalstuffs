@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
 	<link rel="stylesheet" type="text/css" href="../css/details.css">
+	<link rel="stylesheet" type="text/css" href="../css/form.css">
+	<script type="text/javascript" src="../script/createAccount.js"></script>
 		<!--<script src="script.js"></script>-->
   </head>
 
