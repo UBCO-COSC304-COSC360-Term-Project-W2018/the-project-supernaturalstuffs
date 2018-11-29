@@ -38,8 +38,8 @@
 
 
             echo '<div id = "container">';
-            for ($rows as $row) {
-              $image = $rows['image'];
+            foreach ($rows as $row) {
+              $image = $row['image'];
               $type = "png";
               echo '<div id = "productbox">';
               echo '<img class="image" "src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
@@ -52,13 +52,13 @@
 
             echo '</div>';
 
-            for ($rows as $row) {
+            foreach ($rows as $row) {
               echo '<div id ="box">';
               echo '<div class="productinfo">';
-              echo	'<p>' . $rows["pName"] . '</p>';
-              echo	'<p>' . $rows["price"] . '</p>';
-              echo	'<p>' . $rows["description"] . '</p>';
-              echo	'<a href=\'addToCart.php?pID='.$rows['pID'].'&pName='.$rows['pName'].'&price='.$rows['price']."&description=".$rows['description'].'\'><p class="addCart">Add to Cart</p></a>';
+              echo	'<p>' . $row["pName"] . '</p>';
+              echo	'<p>' . $row["price"] . '</p>';
+              echo	'<p>' . $row["description"] . '</p>';
+              echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
               echo '</div>';
               echo '</div>';
             }

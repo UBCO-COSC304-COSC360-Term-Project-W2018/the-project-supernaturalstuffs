@@ -57,6 +57,11 @@
   color: white;
   border: none;
   bottom: 0px;
+  text-decoration: none;
+}
+
+a:hover, a:visited, a:link, a:active
+{
     text-decoration: none;
 }
 
