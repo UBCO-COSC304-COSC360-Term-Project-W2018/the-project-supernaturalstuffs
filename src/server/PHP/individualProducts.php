@@ -25,7 +25,7 @@
 						}
 
 
-            if(!isset($_GET["pID"])){
+            if(isset($_GET["pID"])){
               $sql = "SELECT * FROM Product WHERE pID =". $_GET["pID"];
 
             }else{
