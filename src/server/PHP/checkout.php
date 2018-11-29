@@ -259,6 +259,7 @@
             function removeItem($productList){
             	unset($productList[$_GET['pID']]);
             	$_SESSION['productList'] = $productList;
+              unset($_GET['pID']));
             	header('Location: checkout.php');
             }
              ?>
