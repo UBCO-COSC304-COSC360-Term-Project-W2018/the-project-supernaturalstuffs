@@ -52,8 +52,7 @@
               echo "<form  name='updateForm' method='get' action='updateQuantityCart.php' id='quantityForm'>";
                 echo "<input type='number' name='quantity' id='quantityInput'/>";
                 echo "<input class ='button' type='submit' name='update' value='Update' id='update'/>";
-                echo "<a href='?pID=".$cartitem['pID']."'><input class ='button' type='button' name='delete' value='Delete'/></a>";
-                echo "<input type='hidden' value='".$cartitem['pID']."' name='pID'/>";
+                echo "<input type='hidden' value='".$prod['pID']."' name='pID'/>";
               echo "</form>";
               echo("<a href='?pid=".$prod['pID']."'><p class=\"addCart\">Remove</p></a>");
 
