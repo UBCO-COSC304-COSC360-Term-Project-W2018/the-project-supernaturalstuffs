@@ -83,10 +83,6 @@
 										<label>Category</label>
 										<input type="text" name="category" class="box"/>
 								  </div>
-								  <div>
-									<label>Status of User 1 for true 0 for false:</label>
-									<input type="text" name="status" class="box"/>
-								  </div>
 								  <div class="centered">
 										<input type="submit" value="Update Product" class="button"/>
 								  </div>
