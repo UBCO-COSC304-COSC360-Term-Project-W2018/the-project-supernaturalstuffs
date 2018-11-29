@@ -111,6 +111,10 @@
 							}
 
 						echo '</div>';
+
+            if(!isset($_GET["top"])){
+              unset($_GET["top"]);
+            }
 					?>
 			</div>
 		</main>

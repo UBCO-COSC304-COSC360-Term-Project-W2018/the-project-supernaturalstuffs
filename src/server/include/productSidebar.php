@@ -2,6 +2,7 @@
 	<h3>Products</h3>
 	<div id="productSidebarOptions">
 		<a href="/src/server/PHP/products.php"><h4>All</h4></a>
+		<a href="/src/server/PHP/products.php?top=true"><p>Top 5 Products</p></a>
 		<a href="/src/server/PHP/products.php?filter=Vampire"><p>Vampires</p></a>
 		<a href="/src/server/PHP/products.php?filter=Shifter"><p>Shifters</p></a>
 		<a href="/src/server/PHP/products.php?filter=Ghost"><p>Ghosts</p></a>
