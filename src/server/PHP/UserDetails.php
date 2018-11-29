@@ -9,8 +9,6 @@
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
 	<link rel="stylesheet" type="text/css" href="../css/details.css">
-	<link rel="stylesheet" type="text/css" href="../css/form.css">
-	<script type="text/javascript" src="../script/createAccount.js"></script>
 		<!--<script src="script.js"></script>-->
   </head>
 
@@ -92,43 +90,39 @@
 						
 						//Edit user information and enable or disable user
 						//Remove comments, Remove user, edit user
-						echo(' <form class="Main" name="createAccount" id="create" method="post" action="createAccountPHP.php" onsubmit="return preventDefault()" enctype="multipart/form-data">
+						echo(' <form class="Main" name="createAccount" id="create" method="post" action="update.php?filter=User" enctype="multipart/form-data">
           
-							<fieldset>
-							  <legend>Update User<legend>
-							  <div>
-									<label>First Name:</label>
-									<input type="text" name="fName" class="box"/>
-							  </div>
-							  <div>
-									<label>Last Name:</label>
-									<input type="text" name="lName" class="box"/>
-							  </div>
-							  <div>
-									<label>Email:</label>
-									<input type="text" name="email" class="box"/>
-							  </div>
-							  <div>
-									<label>Confirm Email:</label>
-									<input type="text" name="cEmail" class="box"/>
-							  </div>
-							  <div>
-									<label>Password:</label>
-									<input type="password" name="password" class="box"/>
-							  </div>
-								<p class="notes">Password must be 6 characters long and contain a number</p>
-								<div>
-								<label>Confirm Password:</label>
-								<input type="password" name="cPassword" class="box"/>
-							  </div>
-							  <div>
-									<label>Add a photo:</label>
-									<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
-							  </div>
-							  <div class="centered">
-									<input type="submit" value="Create Account" class="button"/>
-							  </div>
-						</fieldset>
+								<fieldset>
+								  <legend>Update User<legend>
+								  <div>
+										<label>First Name:</label>
+										<input type="text" name="fName" class="box"/>
+								  </div>
+								  <div>
+										<label>Last Name:</label>
+										<input type="text" name="lName" class="box"/>
+								  </div>
+								  <div>
+										<label>Email:</label>
+										<input type="text" name="email" class="box"/>
+								  </div>
+								  <div>
+										<label>Confirm Email:</label>
+										<input type="text" name="cEmail" class="box"/>
+								  </div>
+								  <div>
+										<label>Password:</label>
+										<input type="text" name="password" class="box"/>
+								  </div>
+									<p class="notes">Password must be 6 characters long and contain a number</p>
+								  <div>
+										<label>Add a photo:</label>
+										<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+								  </div>
+								  <div class="centered">
+										<input type="submit" value="Update User" class="button"/>
+								  </div>
+							</fieldset>
 						</form>');
 								
 			echo(		'</div>
