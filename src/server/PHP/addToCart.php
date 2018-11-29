@@ -40,7 +40,7 @@
     }*/
 
     //once lina finishes cart go show cart for now popup
-    echo "<script type='text/javascript'>window.location.href='showcart.php'</script>";
+    echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
     die();
     //header('Location: showcart.php');
 ?>
