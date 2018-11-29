@@ -80,7 +80,7 @@
 										<input type="text" name="price" class="box"/>
 								  </div>
 								  <div>
-										<label>Category</label>
+										<label>Category:</label>
 										<input type="text" name="category" class="box"/>
 								  </div>
 								  <div class="centered">

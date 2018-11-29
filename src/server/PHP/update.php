@@ -115,10 +115,31 @@
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
 			}else if($_GET['filter']='Product'){
-				//DELETE Product
-				$sql = 'DELETE FROM Product WHERE pID = ?';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET['info']));
+				//Update Product
+					//Update Product Name
+					if(isset($_POST['pName']) && !empty($_POST['pName'])){
+						$sql = 'UPDATE User SET pName = ? WHERE pID = ?';
+						$statement = $pdo->prepare($sql);
+						$statement->execute(array($_POST['pName'], $_GET['pID']));
+					}
+					//Update Description
+					if(isset($_POST['description']) && !empty($_POST['description'])){
+						$sql = 'UPDATE User SET description = ? WHERE pID = ?';
+						$statement = $pdo->prepare($sql);
+						$statement->execute(array($_POST['description'], $_GET['pID']));
+					}
+					//Update Price
+					if(isset($_POST['price']) && !empty($_POST['price'])){
+						$sql = 'UPDATE User SET price = ? WHERE pID = ?';
+						$statement = $pdo->prepare($sql);
+						$statement->execute(array($_POST['price'], $_GET['pID']));
+					}
+					//Update Category
+					if(isset($_POST['category']) && !empty($_POST['category'])){
+						$sql = 'UPDATE User SET category = ? WHERE pID = ?';
+						$statement = $pdo->prepare($sql);
+						$statement->execute(array($_POST['category'], $_GET['pID']));
+					}
 			}else{
 				echo '<p>Wrong source</p>';
 
