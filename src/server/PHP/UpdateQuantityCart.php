@@ -22,12 +22,12 @@
         	$pID = $_GET['pID'];
         	$quantity = $_GET['quantity'];
         } else {
-        	header('Location: checkout.php');
+        	header('Location: cart.php');
         }
 
         //check how much we have remain and dont change if selection is more
         //tell them the amount remaining and let them try again
-        
+
         // Update quantity
         if ($quantity > "0"){
         	$productList[$pID]['quantity'] = $quantity;
@@ -38,7 +38,7 @@
         }
         $_SESSION['productList'] = $productList;
 
-        echo "<script type='text/javascript'>window.location.href='checkout.php'</script>";
+        echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
         die();
         //header('Location: showcart.php');
     ?>

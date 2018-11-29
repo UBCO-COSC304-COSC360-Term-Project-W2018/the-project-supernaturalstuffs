@@ -49,6 +49,12 @@
           		echo("<p>".str_replace("USD","$",money_format('%i',$prod['price']))."</p>");
           		//echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
               //echo '<input class ="button" type="button" name="remove" value="Remove" onclick="location.href="products.php"/>';
+              echo "<form  name='updateForm' method='get' action='updateQuantityCart.php' id='quantityForm'>";
+                echo "<input type='number' name='quantity' id='quantityInput'/>";
+                echo "<input class ='button' type='submit' name='update' value='Update' id='update'/>";
+                echo "<a href='?pID=".$cartitem['pID']."'><input class ='button' type='button' name='delete' value='Delete'/></a>";
+                echo "<input type='hidden' value='".$cartitem['pID']."' name='pID'/>";
+              echo "</form>";
               echo("<a href='?pid=".$prod['pID']."'><p class=\"addCart\">Remove</p></a>");
 
             	echo("</div>");
