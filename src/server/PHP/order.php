@@ -189,7 +189,7 @@
          }
        }
        /** Print out order summary **/
-        echo('<h1>Your Order Summary</h1>');
+        echo('<h1 id="sum">Your Order Summary</h1>');
         echo("<table><tr><th>Product Id</th><th>Product Name</th><th>Quantity</th>");
         echo("<th>Price</th><th>Subtotal</th></tr>");
 
