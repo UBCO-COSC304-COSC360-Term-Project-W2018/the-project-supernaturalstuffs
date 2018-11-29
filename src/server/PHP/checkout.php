@@ -222,7 +222,9 @@
                     echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
                     echo "<p>Quantity: ".$cartitem['quantity']."</p>";
                     echo "<a href='?pID=".$cartitem['pID']."'><input class ='button' type='button' name='delete' value='Delete'/></a>";
-                    echo "<a href='?pID=".$cartitem['pID']."'><input class ='button' type='button' name='delete' value='Delete'/></a>";
+                    echo "  ";
+                    echo "<input type='number' name='quantity' class='box'/>"
+                    echo "<input class ='button' type='button' name='update' value='Update'/>";
                   echo "</div>";
                 echo "</div>";
               }
