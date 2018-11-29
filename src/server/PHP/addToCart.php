@@ -7,7 +7,6 @@
     } else{ 	// No products currently in list.  Create a list.
     	$productList = array();
     }
-
     // Add new product selected
     // Get product information
     if(isset($_GET['pID']) && isset($_GET['pName']) && isset($_GET['price'])){
@@ -18,18 +17,14 @@
     } else {
     	header('Location: products.php');
     }
-
     // Update quantity if add same item to order again
     if (isset($productList[$pID])){
     	$productList[$pID]['quantity'] = $productList[$pID]['quantity'] + 1;
         /*$productList[$pID]['price'] = $productList[$pID]['quantity'] * $price;*/
-
     } else {
     	$productList[$pID] = array( "pID"=>$pID, "pName"=>$pName, "price"=>$price, "description"=>$description,"quantity"=>1 );
     }
-
     $_SESSION['productList'] = $productList;
-
     /*if(isset($_GET['pID'])){
       removeItem($productList);
     }
@@ -38,7 +33,6 @@
       $_SESSION['productList'] = $productList;
       header('Location: cart.php');
     }*/
-
     //once lina finishes cart go show cart for now popup
     echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
     die();

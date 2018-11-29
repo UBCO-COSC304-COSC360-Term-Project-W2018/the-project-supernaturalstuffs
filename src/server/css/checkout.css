@@ -63,7 +63,7 @@ h2{
 /*shopping cart*/
 
 #shoppingcart {
-  overflow-x: visible;
+  overflow-x: hidden;
   overflow-y: auto;
   margin: 1.5em auto 1.5em auto;
   padding-bottom: :0.5em;
