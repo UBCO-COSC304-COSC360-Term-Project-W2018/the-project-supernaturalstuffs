@@ -136,6 +136,10 @@
 										<label>Last Name:</label>
 										<input type="text" name="lastName" class="box"/>
 								  </div>
+								   <div>
+										<label>Username:</label>
+										<input type="text" name="username" class="box"/>
+								  </div>
 								  <div>
 										<label>Email:</label>
 										<input type="text" name="email" class="box"/>
