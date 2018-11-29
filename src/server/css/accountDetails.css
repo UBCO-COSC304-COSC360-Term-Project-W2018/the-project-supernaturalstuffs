@@ -73,7 +73,7 @@ h2 {
 
   /*Password*/
   #accountDetails div{
-    margin: 1em auto 1em .25em;
+    margin: 1em auto 1em auto;
   }
   #changePass p{
     margin-left: 1em;
@@ -105,6 +105,14 @@ h2 {
   }
 
   /*past orders*/
+  #pastOrder{
+    border: 2px solid white;
+    max-height: 7em;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+  }
 
   #pastOrder p{
     display: block;
@@ -117,6 +125,13 @@ h2 {
     border:4px solid white;
     padding:5%;
     text-align: center;
+  }
+  #pastOrder td{
+    padding-right: 1em;
+    text-align: center;
+  }
+  #pastOrder th{
+    padding-right: 1em;
   }
 
   #signout{
