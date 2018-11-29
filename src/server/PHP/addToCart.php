@@ -22,6 +22,8 @@
     // Update quantity if add same item to order again
     if (isset($productList[$pID])){
     	$productList[$pID]['quantity'] = $productList[$pID]['quantity'] + 1;
+      $productList[$pID]['price'] = $productList[$pID]['price'] + $price;
+
     } else {
     	$productList[$pID] = array( "pID"=>$pID, "pName"=>$pName, "price"=>$price, "description"=>$description,"quantity"=>1 );
     }
@@ -29,7 +31,7 @@
     $_SESSION['productList'] = $productList;
 
     //once lina finishes cart go show cart for now popup
-    $message = "item added to cart, have fun at products";
+    $message = "Item added to cart, have fun at products";
     echo "<script type='text/javascript'>alert('$message');
     window.location.href='products.php'</script>";
     die();
