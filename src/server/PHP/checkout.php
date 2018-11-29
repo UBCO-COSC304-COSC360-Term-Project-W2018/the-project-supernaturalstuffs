@@ -223,7 +223,7 @@
                     echo "<p>Quantity: ".$cartitem['quantity']."</p>";
                     echo "<a href='?pID=".$cartitem['pID']."'><input class ='button' type='button' name='delete' value='Delete'/></a>";
                     echo "  ";
-                    echo "<input type='number' name='quantity' class='box'/>";
+                    echo "<input type='number' name='quantity'/>";
                     echo "<input class ='button' type='button' name='update' value='Update'/>";
                   echo "</div>";
                 echo "</div>";
