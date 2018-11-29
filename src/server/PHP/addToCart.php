@@ -1,6 +1,9 @@
 <?php
     // Get the current list of products
     session_start();
+
+    include '../include/db_credentials.php';
+
     $productList = null;
     if (isset($_SESSION['productList'])){
     	$productList = $_SESSION['productList'];
@@ -18,13 +21,38 @@
     	header('Location: products.php');
     }
 
+    try {
+        $pdo = new PDO($dsn, $user, $pass, $options);
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
+
+    $sql = "SELECT quantity FROM Stock WHERE pID = :pID";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':pID', $pID, PDO::PARAM_STR);
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows as $row) {}
+
+    $stock = $row['quantity'];
+
     //check to make sure we have it in stock if not return a message saying we dont
 
     // Update quantity if add same item to order again
-    if (isset($productList[$pID])){
+    if ( isset($productList[$pID]) && $stock >= ($productList[$pID]['quantity'] + 1) ){
     	$productList[$pID]['quantity'] = $productList[$pID]['quantity'] + 1;
         /*$productList[$pID]['price'] = $productList[$pID]['quantity'] * $price;*/
-    } else {
+    } else if(isset($productList[$pID]) && $stock < ($productList[$pID]['quantity'] + 1) ){
+      $message = "We are greatly sorry for the inconvience, we only have " .$stock. " remaining and you asked for ".($productList[$pID]['quantity'] + 1);
+      echo "<script type='text/javascript'>alert('$message');
+      window.location.href='products.php'</script>";
+      die();
+    } else if($stock <= "0"){
+      $message = "We are greatly sorry for the inconvience, this item is out of stock";
+      echo "<script type='text/javascript'>alert('$message');
+      window.location.href='products.php'</script>";
+      die();
+    }else {
     	$productList[$pID] = array( "pID"=>$pID, "pName"=>$pName, "price"=>$price, "description"=>$description,"quantity"=>1 );
     }
     $_SESSION['productList'] = $productList;
