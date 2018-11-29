@@ -28,7 +28,7 @@
           <input type="text" name="description" class="box"/>
         </div>
         <div>
-          <label>Description</label>
+          <label>Quantity</label>
           <input type='number' name='quantity' id='quantityInput' class='box' style='color: black;'/>
         </div>
         <div class="centered">
