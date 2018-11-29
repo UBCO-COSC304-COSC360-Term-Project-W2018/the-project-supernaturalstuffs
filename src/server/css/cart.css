@@ -24,8 +24,8 @@
 }
 
 .image {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   float: left;
   margin-right: 1em;
 }
@@ -72,10 +72,6 @@
 	border: white 1px solid;
 }
 
-.underline
-{
-    text-decoration: none;
-}
 
 #desc {
   font-size: 70%;
