@@ -205,8 +205,15 @@
             <?php
             if (isset($_SESSION['productList'])){
               foreach ($cart as $pID => $cartitem){
-                $image = $cartitem['image'];
-								$type = "png";
+
+                $sql = "SELECT image FROM Product where pID = $cartitem['pID']";
+                $statement = $pdo->prepare($sql);
+                $statement->execute();
+                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($rows as $row) {}
+
+                $image = $row['image'];
+  							$type = "png";
 
                 echo "<div class='items'>";
                   echo	'<a href="individualProducts.php?pID='.$cartitem['pID'].'"><img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
