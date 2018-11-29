@@ -189,8 +189,8 @@
        }
        /** Print out order summary **/
         echo('<h1>Your Order Summary</h1>');
-        echo("<table><tr><th>Product Id</th><th>Product Name</th><th>Quantity</th>");
-        echo("<th>Price</th><th>Subtotal</th></tr>");
+        echo("<table><th><td>Product Id</td><td>Product Name</td><td>Quantity</td>");
+        echo("<td>Price</td><td>Subtotal</td></th>");
 
         $total = 0;
         foreach ($cart as $id => $prod) {
