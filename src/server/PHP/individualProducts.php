@@ -38,13 +38,13 @@
 
 
             echo '<div id = "container">';
-            //foreach ($rows as $row) {
+            for ($rows as $row) {
               $image = $rows['image'];
               $type = "png";
               echo '<div id = "productbox">';
               echo '<img class="image" "src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
               echo '</div>';
-            //}
+            }
               echo '<div id="reviews">';
               echo  '<h1>Reviews</h1>';
                 echo '<img id="star" src="../images/star.png" alt="rating image"/>';
@@ -52,7 +52,7 @@
 
             echo '</div>';
 
-            //foreach ($rows as $row) {
+            for ($rows as $row) {
               echo '<div id ="box">';
               echo '<div class="productinfo">';
               echo	'<p>' . $rows["pName"] . '</p>';
@@ -61,7 +61,7 @@
               echo	'<a href=\'addToCart.php?pID='.$rows['pID'].'&pName='.$rows['pName'].'&price='.$rows['price']."&description=".$rows['description'].'\'><p class="addCart">Add to Cart</p></a>';
               echo '</div>';
               echo '</div>';
-            //}
+            }
 
 /*
           $pID = $_GET['pID'];
