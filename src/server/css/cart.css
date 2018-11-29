@@ -6,8 +6,6 @@
 
 #container {
   width: 60%;
-  margin-bottom: 4em;
-  overflow: auto;
   max-height: 50em;
 }
 #shoppingcart {
@@ -15,6 +13,9 @@
   width: 100%;
   margin-top:0em;
   margin-right: 2em;
+  max-height: 50em;
+  overflow: auto;
+
 }
 .items {
   background-color: #710627;
