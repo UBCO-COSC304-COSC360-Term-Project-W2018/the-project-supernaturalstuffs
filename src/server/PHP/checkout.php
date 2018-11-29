@@ -222,12 +222,12 @@
 
             //remove item
             if(isset($_GET['pID'])){
-            	removeItem($productList);
+            	removeItem($cart);
             }
 
-            function removeItem($productList){
-            	unset($productList[$_GET['pID']]);
-            	$_SESSION['productList'] = $productList;
+            function removeItem($cart){
+            	unset($cartt[$_GET['pID']]);
+            	$_SESSION['productList'] = $cart;
               unset($_GET['pID']);
             	header('Location: checkout.php');
             }
