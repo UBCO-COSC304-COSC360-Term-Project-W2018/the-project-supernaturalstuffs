@@ -19,7 +19,8 @@
   background-color: #710627;
   margin-top: 1em;
   padding: 1em;
-  height: 200px;
+  max-height: 400px;
+  overflow: auto;
   border: solid 1px white;
 }
 
