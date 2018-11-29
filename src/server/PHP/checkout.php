@@ -215,6 +215,7 @@
                     // onclick='href=?id=".$cartitem['pID']."' made me mad
                   echo "</div>";
                 echo "</div>";
+              }
             }else{
               echo("<p>Your shopping cart is empty!</p>");
             }
