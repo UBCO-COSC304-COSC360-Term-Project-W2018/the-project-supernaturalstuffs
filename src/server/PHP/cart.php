@@ -48,7 +48,7 @@
 
           		echo("<p>".str_replace("USD","$",money_format('%i',$prod['price']))."</p>");
           		//echo("<td align=\"right\">" . str_replace("USD","$",money_format('%i',$prod['quantity']*$price)) . "</td></tr>");
-              echo '<input class ="button" type="button" name="remove" value="Remove" onclick="location.href="products.php"/>';
+              //echo '<input class ="button" type="button" name="remove" value="Remove" onclick="location.href="products.php"/>';
               echo("<a class = \"button\" href='?id=".$prod['id']."'>Remove</a>");
 
             	echo("</div>");
@@ -72,7 +72,7 @@
 
           } else{
           	echo("<H1>Your shopping cart is empty!</H1>");
-            echo("<input class =\"button\" type=\"button\" name=\"continue\" value=\"Continue Shopping\" onclick=\"location.href=\"products.php\"/>");
+            echo '<a href="products.php" ><p class="addCart">Continue Shoping</p></a>'
           }
 
         ?>
