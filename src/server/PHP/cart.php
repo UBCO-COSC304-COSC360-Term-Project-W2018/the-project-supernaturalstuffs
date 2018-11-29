@@ -51,7 +51,7 @@
               //echo '<input class ="button" type="button" name="remove" value="Remove" onclick="location.href="products.php"/>';
               echo "<form  name='updateForm' method='get' action='UpdateQuantityCart.php' id='quantityForm'>";
                 echo "<input type='number' name='quantity' id='quantityInput'/>";
-                echo "<input class ='button' type='submit' name='update' value='Update' id='update'/>";
+                echo "<input class ='addCart' type='submit' name='update' value='Update' id='update'/>";
                 echo "<input type='hidden' value='".$prod['pID']."' name='pID'/>";
               echo "</form>";
               echo("<a href='?pid=".$prod['pID']."'><p class=\"addCart\">Remove</p></a>");

@@ -34,6 +34,10 @@ body {
   margin: 2em;
 }
 
+#text {
+  color: black;
+}
+
 .image {
   height: 10em;
   padding: 1em;

@@ -73,6 +73,9 @@
 	border: white 1px solid;
 }
 
+#quantityInput {
+  color: black;
+}
 
 #desc {
   font-size: 70%;
