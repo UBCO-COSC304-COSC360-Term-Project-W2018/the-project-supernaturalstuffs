@@ -195,7 +195,7 @@
 
         $total = 0;
         foreach ($cart as $id => $prod) {
-        		echo("<tr class='product'><td>". $prod['pID'] . "</td>");
+        		echo("<tr class='product'><td align=\"center\">". $prod['pID'] . "</td>");
         		echo("<td>" . $prod['pName'] . "</td>");
 
         		echo("<td align=\"center\">". $prod['quantity'] . "</td>");
