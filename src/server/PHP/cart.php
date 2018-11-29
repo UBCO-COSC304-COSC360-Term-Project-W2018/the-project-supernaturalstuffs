@@ -58,17 +58,6 @@
             echo("</div>");
             echo("</div>");
 
-            //remove item
-            if(isset($_GET['pid'])){
-              removeItem($productList);
-            }
-
-            function removeItem($productList){
-              unset($cart[$_GET['pid']]);
-              $_SESSION['productList'] = $cart;
-              unset($_GET['pid']);
-              echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
-            }
 
             echo ('<div id ="summary">');
             echo ('<h1>Summary</h1>');
@@ -86,7 +75,16 @@
             echo '<a href="products.php" ><p class="addCart">Continue Shoping</p></a>';
           }
 
+          if(isset($_GET['pid'])){
+            removeItem($productList);
+          }
 
+          function removeItem($productList){
+            unset($productList[$_GET['pid']]);
+            $_SESSION['productList'] = $productList;
+            unset($_GET['pid']);
+            echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
+          }
 
         ?>
       </div>
