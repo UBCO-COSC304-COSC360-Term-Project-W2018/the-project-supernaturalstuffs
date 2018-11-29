@@ -75,6 +75,15 @@
             echo '<a href="products.php" ><p class="addCart">Continue Shoping</p></a>';
           }
 
+          if(isset($_GET['pID'])){
+          	removeItem($productList);
+          }
+          function removeItem($productList){
+          	unset($productList[$_GET['pID']]);
+          	$_SESSION['productList'] = $productList;
+          	header('Location: cart.php');
+          }
+
         ?>
       </div>
     </main>
