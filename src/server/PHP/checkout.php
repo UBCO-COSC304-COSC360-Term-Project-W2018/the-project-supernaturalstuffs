@@ -252,7 +252,7 @@
               echo("<p>Your shopping cart is empty!</p>");
             }
 
-            //remove item
+            /*//remove item
             if(isset($_GET['pID'])){
             	removeItem($productList);
             }
@@ -262,7 +262,7 @@
             	$_SESSION['productList'] = $productList;
               unset($_GET['pID']);
             	header('Location: checkout.php');
-            }
+            }*/
              ?>
 
           </div>
