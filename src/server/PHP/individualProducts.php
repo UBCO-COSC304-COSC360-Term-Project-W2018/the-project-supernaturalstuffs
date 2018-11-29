@@ -51,11 +51,12 @@
               echo '</div>';
 
               echo '<div id="reviews">';
+
               echo  '<h1>Reviews</h1>';
                 echo '<img id="star" src="../images/star.png" alt="rating image"/>';
               echo '</div>';
 
-            echo '</div>';
+              echo '</div>';
               echo '<div id ="box">';
               echo '<div class="productinfo">';
               echo	'<p>' . $name . '</p>';

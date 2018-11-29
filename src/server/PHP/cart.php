@@ -63,9 +63,8 @@
             echo ('<div id ="totals">');
             echo ("<h3 id=\"total\"> Total:".$total. "</h3>");
             echo ('<div>
-              <a href="checkout.php" >Checkout</a>
-              <a href="products.php" >Continue Shoping</a>
-
+              <a class = "underline" href="checkout.php" >Checkout</a>
+              <a class = "underline" href="products.php" >Continue Shoping</a>
             </div>');
             echo ('</div>');
             echo ('</div>');
@@ -75,14 +74,7 @@
             echo '<a href="products.php" ><p class="addCart">Continue Shoping</p></a>';
           }
 
-          if(isset($_GET['pID'])){
-          	removeItem($productList);
-          }
-          function removeItem($productList){
-          	unset($productList[$_GET['pID']]);
-          	$_SESSION['productList'] = $productList;
-          	header('Location: cart.php');
-          }
+
 
         ?>
       </div>
