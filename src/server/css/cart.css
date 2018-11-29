@@ -2,6 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  overflow: auto;
+  max-height: 50em;
 }
 
 #container {
@@ -14,7 +16,6 @@
   max-height: 50em;
   margin-top:0em;
   margin-right: 2em;
-  overflow: auto;
 }
 .items {
   background-color: #710627;
