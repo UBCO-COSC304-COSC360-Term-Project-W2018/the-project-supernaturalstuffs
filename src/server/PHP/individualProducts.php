@@ -13,9 +13,30 @@
 
   <body>
 	<!--Include header-->
-	<?php include '../../../src/server/include/header.php'; ?>
     <main>
           <?php
+            include '../../../src/server/include/header.php';
+
+            //connect to database
+						try {
+							$pdo = new PDO($dsn, $user, $pass, $options);
+						} catch (\PDOException $e) {
+							throw new \PDOException($e->getMessage(), (int)$e->getCode());
+						}
+
+
+            if(!(isset($_GET["pID"]))){
+              $sql = 'SELECT * FROM Product';
+
+            }else{
+              $sql = 'SELECT * FROM Product WHERE pName LIKE "%' . $_GET["pID"] . '%" OR category LIKE "%' . $_GET["pID"] . '";';
+            }
+
+            $statement = $pdo->prepare($sql);
+            $statement->execute();
+            $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
             echo '<div id = "container">';
             echo '<div id = "productbox">';
               //$image = $_GET['img'];
@@ -28,7 +49,25 @@
             echo '</div>';
             echo '</div>';
 
+            foreach ($rows as $row) {
+              $image = $row['image'];
+              $type = "png";
 
+              echo '<div id ="box">';
+              echo '<div class="productinfo">';
+              echo	'<img src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
+              echo	'<p>' . $row["pName"] . '</p>';
+              echo	'<p>' . $row["price"] . '</p>';
+              echo	'<p>' . $row["description"] . '</p>';
+              echo	'<a href=\'addToCart.php?pID='.$pID.'&pName='.$pName.'&price='.$price."&description=".$desc.'\'><p class="addCart">Add to Cart</p></a>';
+              echo '</div>';
+              echo '</div>';
+
+            }
+
+
+
+/*
           $pID = $_GET['pID'];
           $pName = $_GET['pName'];
           $price = $_GET['price'];
@@ -41,7 +80,7 @@
           echo "<p>". $price . "</p>";
           echo	'<a href=\'addToCart.php?pID='.$pID.'&pName='.$pName.'&price='.$price."&description=".$desc.'\'><p class="addCart">Add to Cart</p></a>';
           echo '</div>';
-          echo '</div>';
+          echo '</div>';*/
           ?>
 
     </main>

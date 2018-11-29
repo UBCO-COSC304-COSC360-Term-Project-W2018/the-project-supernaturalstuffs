@@ -72,7 +72,7 @@
 
           } else{
           	echo("<H1>Your shopping cart is empty!</H1>");
-            echo("<input class =\"button\" type=\"button\" name=\"continue\" value=\"Continue Shopping\" onclick=\"location.href=\"products.php\"/>");
+            echo '<a href="products.php" ><p class="button">Continue Shoping</p></a>'
           }
 
         ?>
