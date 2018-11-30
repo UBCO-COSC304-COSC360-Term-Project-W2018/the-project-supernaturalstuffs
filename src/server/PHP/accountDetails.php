@@ -178,13 +178,29 @@
                 echo "<p>Product name: ".$cartitem['pName']."</p>";
                 echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
                 echo "<p>Quantity: ".$cartitem['quantity']."</p>";
-                echo "<a href='?pID=".$cartitem['pID']."'><input class ='button' type='button' name='delete' value='Delete'/></a>";
-                //onclick='href=\"?pID=".$cartitem['pID']."\"'
+                echo "<form  name='updateForm' method='get' action='updateQuantityCheckout.php' id='quantityForm'>";
+                  echo "<input type='number' name='quantity' id='quantityInput'/>";
+                  echo "<input class ='button' type='submit' name='update' value='Update' id='update'/>";
+                  echo "<a href='?pID=".$cartitem['pID']."'><input class ='button' type='button' name='delete' value='Delete'/></a>";
+                  echo "<input type='hidden' value='".$cartitem['pID']."' name='pID'/>";
+                echo "</form>";
               echo "</div>";
             echo "</div>";
           }
         }else{
-          echo("<p>Your Shopping Cart is empty!</p>");
+          echo("<p>Your shopping cart is empty!</p>");
+        }
+
+        //remove item
+        if(isset($_GET['pID'])){
+          removeItem($cart);
+        }
+
+        function removeItem($cart){
+          unset($cart[$_GET['pID']]);
+          $_SESSION['productList'] = $cart;
+          unset($_GET['pID']);
+          echo "<script type='text/javascript'>window.location.href='checkout.php'</script>";
         }
          ?>
 			</div>
