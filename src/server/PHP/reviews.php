@@ -13,7 +13,7 @@ if(isset($_SESSION['email'])) {
 
     $userID = $row['userID'];
 
-    $sql2 = "INSERT INTO Reviews(comment) VALUES ('" . $_POST['comment'] . '","
+    $sql2 = "INSERT INTO CommentsOn(comment) VALUES ('" . $_POST['comment'] . '","
                          . $id . ","
                          . $userID . ")";
     $statement = $pdo->prepare($sql2);
