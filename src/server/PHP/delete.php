@@ -81,7 +81,7 @@
         $trackingNumber = $row['trackingNumber'];
 
         //increase quantity of product again
-        $sql = 'SELECT pID, quantity FROM Inorder WHERE orderID = :orderID';
+        $sql = 'SELECT pID, quantity FROM InOrder WHERE orderID = :orderID';
         $statement = $pdo->prepare($sql);
         $statement->bindValue(':orderID', $_GET['info'], PDO::PARAM_INT);
         $statement->execute();
