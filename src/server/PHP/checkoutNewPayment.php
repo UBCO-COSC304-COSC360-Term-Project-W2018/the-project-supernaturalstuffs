@@ -128,19 +128,6 @@
         $statement->execute();
       }
 
-    /*  //payment to session
-      $sql6 = "SELECT * FROM PaymentMethod WHERE userID = :userID" ;
-      $statement = $pdo->prepare($sql6);
-      $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
-      $statement->execute();
-      $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows3 as $row3) {}
-
-      $_SESSION['payInfo']['method'] = $row3['method'];
-      $_SESSION['payInfo']['name'] = $row3['nameOnCard'];
-      $_SESSION['payInfo']['cNum'] = $row3['cardNumber'];
-      $_SESSION['payInfo']['exDate'] = $row3['expirationDate'];
-      $_SESSION['payInfo']['csv'] = $row3['csv'];*/
       $_SESSION['payInfo']['uID'] = $userID;
 
       echo "<script type='text/javascript'>window.location.href='order.php'</script>";

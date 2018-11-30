@@ -6,38 +6,34 @@
   </head>
   <body>
     <?php
-    session_start(); 
-    //currently not in use but if i can get my button thing to work it will be
-    //put this is payment in checkout
-    /*
-      <?php
-        if (isset($_SESSION['pay'])){
-        echo "<div class='centered'>";
-        echo "<input type='button' onclick='location.href='checkoutOldPayment.php'' value='Use saved payment information' class='button'/>";
-        echo "</div>";
-        }else{
-        echo "<div class='centered'><input type='button' onclick='location.href='checkoutOldPayment.php'' value='Use new payment information' class='button'/></div>";
-        }
-        echo("<div id='payment'>");
-        if(isset($_SESSION['pay'])){
-        echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
-        }else{
-        echo "<script type='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";
-        }
-      ?>
-    */
+    session_start();
 
-    if (isset($_SESSION['pay'])){
-      unset($_SESSION['pay']);
-      echo "<script type='text/javascript'>alert('pay is not set!')</script>";
-      header('Location: checkout.php');
-    }else{
-      $_SESSION['pay'] = "yes";
-      echo "<script type='text/javascript'>alert('" . $_SESSION['pay'] . " is now set!')</script>";
-      header('Location: checkout.php');
+    include '../include/db_credentials.php';
+
+    try {
+        $pdo = new PDO($dsn, $user, $pass, $options);
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
 
-    //make sure to unset after i use it check to see if set if set then undo
+    //get userID from session
+    $sql = "SELECT userID FROM User WHERE email = :email";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':email', $userE, PDO::PARAM_STR);
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows as $row) {}
+
+    $userID = $row['userID'];
+
+    $_SESSION['payInfo']['uID'] = $userID;
+
+    echo "<script type='text/javascript'>window.location.href='order.php'</script>";
+    die();
+
+
+
+
     ?>
   </body>
 </html>
