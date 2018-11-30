@@ -61,11 +61,11 @@ main{
 	border: white 1px solid;
 	width: fit-content;
 }
-#sortType p{
+#sortType{
 	background: #710627;
 	position: absolute;
-	left: 5em;
-	top: 13em;
+	left: 14em;
+	top: 12em;
 	display: inline;
 	border: white 1px solid;
 }
