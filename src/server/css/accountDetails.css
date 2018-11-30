@@ -147,3 +147,13 @@ h2 {
   #signout a{
     text-decoration: none;
   }
+
+  /*quantity*/
+  #quantityInput{
+    color: black;
+    padding: .25em;
+    width:3em;
+  }
+  #update{
+    margin-right: 1em;
+  }
