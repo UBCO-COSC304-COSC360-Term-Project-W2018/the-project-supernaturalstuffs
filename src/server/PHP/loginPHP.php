@@ -129,14 +129,14 @@
           $statement->execute();
           $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
           foreach ($rows3 as $row3) {
-            $productList[$pID] = array( "pID"=>$pID, "pName"=>$row['pName'], "price"=>$row['price'], "description"=>$row['description'],"quantity"=>$quantity );
+            $productList[$pID] = array( "pID"=>$pID, "pName"=>$row3['pName'], "price"=>$row3['price'], "description"=>$row3['description'],"quantity"=>$quantity );
           }
 
         }
       }
 
       //delete items from database Cart
-      $sql = 'DELETE FROM cart WHERE userID = :userID';
+      $sql = 'DELETE FROM Cart WHERE userID = :userID';
       $statement = $pdo->prepare($sql);
       $statement->bindParam(':userID',$userID, PDO::PARAM_INT);
       $statement->execute();
