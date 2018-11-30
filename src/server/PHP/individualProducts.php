@@ -69,7 +69,7 @@
                 foreach ($rows2 as $row2) {
                   $name = $row2['username'];
                 }
-                echo '<p>' . $name . $row2['comment'] . '</p>';
+                echo '<p>' . $name . ": ". $row2['comment'] . '</p>';
               }
               echo '<form class="review" method="post" action="reviews.php?id='.$pID.'">';
               echo '<div>';
