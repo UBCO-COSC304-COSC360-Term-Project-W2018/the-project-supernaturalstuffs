@@ -59,7 +59,7 @@
               $statement->execute();
               $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
               foreach ($rows as $row) {
-                echo '<p>' . $row['comment'] . '</p>';
+                echo '<p>' $row['userID'] . $row['comment'] . '</p>';
               }
               echo '<form class="review" method="post" action="reviews.php?id='.$pID.'">';
               echo '<div>';
