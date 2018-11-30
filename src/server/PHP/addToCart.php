@@ -1,6 +1,7 @@
 <?php
     // Get the current list of products
     session_start();
+    include '../../../src/server/include/header.php'; 
 
     include '../include/db_credentials.php';
 
