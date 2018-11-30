@@ -13,7 +13,7 @@ if(isset($_SESSION['email'])) {
 
     $userID = $row['userID'];
 
-    $sql2 = "INSERT INTO CommentsOn(comment) VALUES ('" . $_POST['comment'] . '","
+    $sql2 = "INSERT INTO CommentsOn(comment) VALUES ('" . $_POST['comment'] . "',"
                          . $id . ","
                          . $userID . ")";
     $statement = $pdo->prepare($sql2);
@@ -23,7 +23,7 @@ if(isset($_SESSION['email'])) {
 
 } else {
     $message = "You must be signed in to write a review";
-    echo "<script type='text/javascript'>alert('$message')";
+    echo "<script type='text/javascript'>alert('$message');
     window.location.href='/individualProducts.php?pID='.$id.'</script>";
 }
 
