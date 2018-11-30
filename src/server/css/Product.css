@@ -64,8 +64,8 @@ main{
 #sortType p{
 	background: #710627;
 	position: absolute;
-	right: 5em;
-	top: 10em;
+	right: 15em;
+	top: 15em;
 	display: inline;
 	border: white 1px solid;
 }
