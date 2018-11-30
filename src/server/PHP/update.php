@@ -61,7 +61,7 @@
        }
        //lock out of admin ends
 
-			if($_GET['filter']='User'){
+			if($_GET['filter']=='User'){
 				//Update User
 					//Update First Name
 					if(isset($_POST['firstName']) && !empty($_POST['firstName'])){
@@ -95,7 +95,7 @@
 					}
 					//UpdatePhoto
 
-			}else if($_GET['filter']='Order'){
+			}else if($_GET['filter']=='Order'){
 				//DELETE Order
 				$sql = 'DELETE FROM Shipment WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
@@ -114,7 +114,7 @@
 				$sql = 'DELETE FROM CommentsOn WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']='Product'){
+			}else if($_GET['filter']=='Product'){
 				//Update Product
 					//Update Product Name
 					if(isset($_POST['pName']) && !empty($_POST['pName'])){
