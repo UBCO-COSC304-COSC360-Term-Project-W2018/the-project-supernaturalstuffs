@@ -65,9 +65,9 @@
                 $sql = 'SELECT username FROM User WHERE userID = '.$uID.'';
                 $statement = $pdo->prepare($sql);
                 $statement->execute();
-                $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($rows2 as $row2) {
-                  $name = $row2['username'];
+                $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($rows3 as $row3) {
+                  $name = $row3['username'];
                 }
                 echo '<p>' . $name . ": ". $row2['comment'] . '</p>';
               }
