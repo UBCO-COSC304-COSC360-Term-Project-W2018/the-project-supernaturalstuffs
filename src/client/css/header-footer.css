@@ -57,7 +57,10 @@ input.searchHome{
 	width: 2em;
 }
 #inCart{
-	padding: 1em;
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
     border-radius: 50%;
     background-color: white;
     color: #521C25;
