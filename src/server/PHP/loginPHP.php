@@ -135,6 +135,9 @@
         }
       }
 
+      //set session Cart
+      $_SESSION['productList']=$productList;
+
       //delete items from database Cart
       $sql = 'DELETE FROM Cart WHERE userID = :userID';
       $statement = $pdo->prepare($sql);
