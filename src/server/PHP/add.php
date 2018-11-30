@@ -169,7 +169,11 @@
 				$statement = $pdo->prepare($sql);
 				$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
 				$statement->execute(array($_POST['pName'], $_POST['description'], $_POST['price'], $_POST['category'], $imagedata));
-				echo '<p>Added Successfully</p>';
+
+        $message = "Product added successfully";
+				echo "<script type='text/javascript'>alert('$message');
+			  window.location.href='productForm.php'</script>";
+		    die();
 
 			}else if($_GET['filter']=='Order'){
 				//Needs more because if they are adding an order they are also
