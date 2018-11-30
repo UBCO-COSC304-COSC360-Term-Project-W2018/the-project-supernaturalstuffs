@@ -95,7 +95,10 @@
 
 			}
 
-      header("Location: {$_SERVER['HTTP_REFERER']}");
+      $message = "Deleted";
+      echo "<script type='text/javascript'>alert('$message');
+      window.location.href='productsInformation.php'</script>";
+      die();
 
 
 		?>
