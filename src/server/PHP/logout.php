@@ -7,6 +7,8 @@
   <body>
     <?php
     session_start();
+    include '../include/db_credentials.php';
+
     $userE = null;
     if(isset($_SESSION['email'])){
       $userE = $_SESSION['email'];
@@ -18,7 +20,7 @@
       } catch (\PDOException $e) {
           throw new \PDOException($e->getMessage(), (int)$e->getCode());
       }
-      
+
       //get userID from Email
       $sql3 = "SELECT userID FROM User WHERE email = :email";
       $statement = $pdo->prepare($sql3);
