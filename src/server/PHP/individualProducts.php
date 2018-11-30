@@ -54,12 +54,12 @@
 
               echo '<div id="reviews">';
               echo '<h1>Reviews</h1>';
-              $sql = 'SELECT * FROM CommentsOn';
+              $sql = 'SELECT * FROM CommentsOn WHERE pID = '.$pID.'';
               $statement = $pdo->prepare($sql);
               $statement->execute();
-              $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-              foreach ($rows as $row) {
-                echo '<p>' . $row['userID'] . $row['comment'] . '</p>';
+              $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+              foreach ($rows2 as $row2) {
+                echo '<p>' . $row2['userID'] . $row2['comment'] . '</p>';
               }
               echo '<form class="review" method="post" action="reviews.php?id='.$pID.'">';
               echo '<div>';
