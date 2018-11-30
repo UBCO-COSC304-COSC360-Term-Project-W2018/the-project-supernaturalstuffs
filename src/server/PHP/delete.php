@@ -68,7 +68,7 @@
 				$statement->execute(array($_GET['info']));
         $message = "Deleted";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='usersInformation.php'</script>";
+        window.location.href='admin.php'</script>";
         die();
 			}else if($_GET['filter']=='Order'){
         //get tracking number
