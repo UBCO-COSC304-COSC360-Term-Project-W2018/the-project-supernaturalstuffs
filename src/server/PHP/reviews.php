@@ -36,8 +36,13 @@ if(isset($_SESSION['email'])) {
 
 } else {
     $message = "You must be signed in to write a review";
+<<<<<<< HEAD
     echo "<script type='text/javascript'>alert('$message');
     window.location.href='/individualProducts.php?pID=".$id."/script>";
+=======
+    echo "<script type='text/javascript'>alert('$message')";
+    window.location.href='/individualProducts.php?pID='.$id.'</script>";
+>>>>>>> 8f62c4a26555776c2a5439de72a67b5d3f7933a1
 }
 
 ?>
