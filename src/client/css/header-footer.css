@@ -57,9 +57,11 @@ input.searchHome{
 	width: 2em;
 }
 #inCart{
+	height: 60px;
+    width: 60px;
     border-radius: 50%;
-    background-color: #521C25;
-    color: white;
+    background-color: white;
+    color: #521C25;
 
 }
 header nav{
