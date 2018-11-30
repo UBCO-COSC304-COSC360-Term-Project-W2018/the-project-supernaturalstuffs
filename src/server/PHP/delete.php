@@ -75,12 +75,12 @@
 				$sql = 'DELETE FROM Orders WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']==='Review'){
+			}else if($_GET['filter']=='Review'){
 				//DELETE Review
 				$sql = 'DELETE FROM Review WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']='Comment'){
+			}else if($_GET['filter']=='Comment'){
 				//DELETE Comment
 				$sql = 'DELETE FROM CommentsOn WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
