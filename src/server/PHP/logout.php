@@ -13,6 +13,12 @@
       echo "<script type='text/javascript'>alert('Logging out " . $_SESSION['email'] . "!')</script>";
 
 
+      try {
+          $pdo = new PDO($dsn, $user, $pass, $options);
+      } catch (\PDOException $e) {
+          throw new \PDOException($e->getMessage(), (int)$e->getCode());
+      }
+      
       //get userID from Email
       $sql3 = "SELECT userID FROM User WHERE email = :email";
       $statement = $pdo->prepare($sql3);
