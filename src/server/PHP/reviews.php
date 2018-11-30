@@ -7,7 +7,8 @@ if(isset($_SESSION['email'])) {
 
 } else {
     $message = "You must be signed in to write a review";
-    echo "<script type='text/javascript'>alert('$message')</script>";
+    echo "<script type='text/javascript'>alert('$message');
+    window.location.href='/products.php'</script>";
 }
 
 ?>
