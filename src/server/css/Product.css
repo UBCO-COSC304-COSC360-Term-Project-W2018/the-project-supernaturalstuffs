@@ -62,10 +62,10 @@ main{
 	width: fit-content;
 }
 #sortType{
-	background: #710627;
+	background-color: #710627;
 	position: absolute;
-	left: 14em;
-	top: 12em;
+	left: 14.5em;
+	top: 13em;
 	display: inline;
 	border: white 1px solid;
 }
