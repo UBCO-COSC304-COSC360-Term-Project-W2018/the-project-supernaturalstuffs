@@ -82,9 +82,9 @@
 				$statement->execute(array($_GET['info']));
 			}else if($_GET['filter']=='Comment'){
 				//DELETE Comment
-				$sql = 'DELETE FROM CommentsOn WHERE userID = ?';
+				$sql = 'DELETE FROM CommentsOn WHERE userID = ? AND pid = ?';
 				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET['info']));
+				$statement->execute(array($_GET['info'], $_GET['info2']));
 			}else if($_GET['filter']=='Product'){
 				//DELETE Product
 				$sql = 'DELETE FROM Product WHERE pID = ?';
