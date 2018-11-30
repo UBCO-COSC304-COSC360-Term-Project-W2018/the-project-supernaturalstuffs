@@ -122,7 +122,6 @@ h2 {
     height:auto;
     max-height: 3em;
     overflow-y: auto;
-    border:4px solid white;
     padding:5%;
     text-align: center;
   }
