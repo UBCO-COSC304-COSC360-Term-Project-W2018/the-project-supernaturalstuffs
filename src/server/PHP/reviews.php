@@ -4,6 +4,8 @@ if(isset($_SESSION['email'])) {
     $custE = $_SESSION['email'];
     $id = $_GET['id'];
 
+    include '../include/db_credentials.php';
+    
     try {
         $pdo = new PDO($dsn, $user, $pass, $options);
     } catch (\PDOException $e) {
