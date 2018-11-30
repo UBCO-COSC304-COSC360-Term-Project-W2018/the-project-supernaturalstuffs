@@ -59,7 +59,6 @@
 
     //set number of items in cart
 
-    echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
-    die();
+    header("Location: {$_SERVER['HTTP_REFERER']}");
     //header('Location: showcart.php');
 ?>
