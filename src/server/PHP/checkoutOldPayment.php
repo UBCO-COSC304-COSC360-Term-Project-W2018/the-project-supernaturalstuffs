@@ -75,7 +75,7 @@
     if($numRows <= 0){
       $message = "You dont have a payment method saved";
       echo "<script type='text/javascript'>alert('$message');
-      window.location.href='/checkout.php'</script>";
+      window.location.href='checkout.php'</script>";
       die();
     }
 
