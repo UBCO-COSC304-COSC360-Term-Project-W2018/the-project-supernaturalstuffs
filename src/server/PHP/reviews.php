@@ -41,6 +41,7 @@ if(isset($_SESSION['email'])) {
     echo '<script type="text/javascript">alert("$message");
     window.location.href="individualProducts.php?pID="' . $id . '"</script>';
 
+
 }
 
 ?>
