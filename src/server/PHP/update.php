@@ -95,25 +95,6 @@
 					}
 					//UpdatePhoto
 
-			}else if($_GET['filter']=='Order'){
-				//DELETE Order
-				$sql = 'DELETE FROM Shipment WHERE orderID = ?';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET['info']));
-
-				$sql = 'DELETE FROM Orders WHERE orderID = ?';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']='Review'){
-				//DELETE Review
-				$sql = 'DELETE FROM Review WHERE userID = ?';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']='Comment'){
-				//DELETE Comment
-				$sql = 'DELETE FROM CommentsOn WHERE userID = ?';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET['info']));
 			}else if($_GET['filter']=='Product'){
 				//Update Product
 					//Update Product Name
