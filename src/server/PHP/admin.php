@@ -86,7 +86,6 @@
 					<div class="catagories">
 						<input name="filter" type="text" class="search" placeholder="Search...">
 						<a href="orderList.php"><p>Order History</p></a>
-						<a href="orderForm.php"><p>Add Orders</p></a>
 					</div>
 				</form>
 			</div>
