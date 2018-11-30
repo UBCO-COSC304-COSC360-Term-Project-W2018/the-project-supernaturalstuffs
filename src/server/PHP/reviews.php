@@ -30,7 +30,7 @@ if(isset($_SESSION['email'])) {
 
     $userID = $row['userID'];
 
-    $sql2 = "INSERT INTO CommentsOn VALUES (".$userID.", ".$id.", ".$comment." )";
+    $sql2 = "INSERT INTO CommentsOn VALUES (' . $userID . ', ' . $id . ', ' . $comment . ')";
     $statement = $pdo->prepare($sql2);
     $insert->$statement->execute();
 
