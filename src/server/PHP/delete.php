@@ -81,6 +81,31 @@
         $trackingNumber = $row['trackingNumber'];
 
         //increase quantity of product again
+        $sql = 'SELECT pID, quantity FROM Inorder WHERE orderID = :orderID';
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(':orderID', $_GET['info'], PDO::PARAM_INT);
+        $statement->execute();
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $row) {
+          $storeID = "1";
+          //increase quantity
+          $sql = 'SELECT quantity FROM Stock WHERE pID = :pID AND storeID = :storeID';
+          $statement = $pdo->prepare($sql);
+          $statement->bindValue(':pID', $row['pID'], PDO::PARAM_INT);
+          $statement->bindValue(':storeID', $storeID, PDO::PARAM_INT);
+          $statement->execute();
+          $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+          foreach ($rows2 as $row2){}
+
+          $quantity = $rows2['quantity'] +$row['quantity'];
+
+          $sql2 = "UPDATE Stock SET quantity=:quantity WHERE pID = :pID AND storeID = :storeID";
+          $statement = $pdo->prepare($sql2);
+          $statement->bindValue(':quantity', , PDO::PARAM_INT);
+          $statement->bindValue(':pID', $row['pID'], PDO::PARAM_INT);
+          $statement->bindValue(':storeID', $storeID, PDO::PARAM_INT);
+          $statement->execute();
+        }
 
       	//DELETE Order
         $sql = 'DELETE FROM InOrder WHERE orderID = ?';
@@ -94,6 +119,11 @@
         $sql = 'DELETE FROM Shipment WHERE trackingNumber = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($trackingNumber));
+
+        $message = "Deleted";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='ordersInformation.php'</script>";
+        die();
 
 			}else if($_GET['filter']=='Review'){
 				//DELETE Review
