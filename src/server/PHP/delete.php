@@ -101,7 +101,7 @@
 
           $sql2 = "UPDATE Stock SET quantity=:quantity WHERE pID = :pID AND storeID = :storeID";
           $statement = $pdo->prepare($sql2);
-          $statement->bindValue(':quantity', , PDO::PARAM_INT);
+          $statement->bindValue(':quantity', $quantity , PDO::PARAM_INT);
           $statement->bindValue(':pID', $row['pID'], PDO::PARAM_INT);
           $statement->bindValue(':storeID', $storeID, PDO::PARAM_INT);
           $statement->execute();
