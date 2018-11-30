@@ -42,7 +42,7 @@
 			$statement2->execute();
 			$rows2 = $statement2->fetchAll(PDO::FETCH_ASSOC);
 			foreach($rows2 as $row) {
-				echo '<tr><td rowspan="4">Total Revenue: ' . $row['SUM(totalPrice)'] . '</td></tr>';
+				echo '<tr><td colspan="5">Total Revenue: ' . $row['SUM(totalPrice)'] . '</td></tr>';
 			}
 			echo '</table>';
 		?>
