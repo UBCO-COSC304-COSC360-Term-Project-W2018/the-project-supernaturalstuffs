@@ -130,7 +130,6 @@
                 if(isset($_SESSION['next'])){
                   echo "<script type='text/javascript'>document.getElementById('payment').classList.remove('hide')</script>";
                   echo "<script type='text/javascript'>document.getElementById('shipment').classList.add('hide')</script>";
-                  unset($_SESSION['next']);
                 }else{
                   echo "<script type='text/javascript'>document.getElementById('payment').classList.add('hide')</script>";
                   echo "<script type='text/javascript'>document.getElementById('shipment').classList.remove('hide')</script>";
