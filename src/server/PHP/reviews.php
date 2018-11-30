@@ -26,7 +26,10 @@ if(isset($_SESSION['email'])) {
 
     $userID = $row['userID'];
 
-    $sql2 = "INSERT INTO CommentsOn VALUES ( :userID, :pID, :comment )";
+    $message = $id;
+    echo "<script type='text/javascript'>alert('$message');</script>";
+
+    $sql2 = "INSERT INTO CommentsOn VALUES (:userID, :pID, :comment )";
     $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
     $statement->bindValue(':pID', $id, PDO::PARAM_INT);
     $statement->bindValue(':email', $_POST['comment'], PDO::PARAM_STR);
