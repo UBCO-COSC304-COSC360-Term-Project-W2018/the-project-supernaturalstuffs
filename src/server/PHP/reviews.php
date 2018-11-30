@@ -34,12 +34,12 @@ if(isset($_SESSION['email'])) {
     $statement = $pdo->prepare($sql2);
     $statement->execute(array($userID, $id, $comment));
 
-    echo "<script type='text/javascript'>window.location.href='individualProducts.php?pID='".$id."'/script>";
+    echo "<script type='text/javascript'>window.location.href='individualProducts.php?pID='".$id."'</script>";
 } else {
     $message = "You must be signed in to write a review";
 
     echo "<script type='text/javascript'>alert('$message');
-    window.location.href='individualProducts.php?pID='".$id."'/script>";
+    window.location.href='individualProducts.php?pID='".$id."'</script>";
 
 }
 
