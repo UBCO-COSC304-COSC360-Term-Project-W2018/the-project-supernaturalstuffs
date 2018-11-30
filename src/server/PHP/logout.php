@@ -36,13 +36,15 @@
         $cart=$_SESSION['productList'];
         foreach ($cart as $pID => $cartitem){
           $pID = $cartitem['pID'];
+          $quantity = $cartitem['quantity'];
 
           //insert user into user
-          $sql2 = "INSERT INTO Cart VALUES (:userID ,:pID)";
+          $sql2 = "INSERT INTO Cart VALUES (:userID ,:pID, :quantity)";
           $custUN = $custFN . $custLN;
           $statement = $pdo->prepare($sql2);
           $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
           $statement->bindValue(':pID', $pID, PDO::PARAM_INT);
+          $statement->bindValue(':quantity', $quantity, PDO::PARAM_INT);
           $insert = $statement->execute();
 
         }

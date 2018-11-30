@@ -81,12 +81,14 @@
 
       //make it so if disabled you cant Login
 
-      $sql3 = "SELECT status FROM User WHERE email = :email" ;
+      $sql3 = "SELECT userID, status FROM User WHERE email = :email" ;
       $statement = $pdo->prepare($sql3);
       $statement->bindParam(':email',$custE, PDO::PARAM_STR);
       $statement->execute();
       $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows3 as $row3) {}
+
+      $userID = $row3['userID'];
 
       if($row3['status'] == "0"){
         $message = "Your account has been disabled, please contact administration for more info!";
@@ -94,6 +96,45 @@
       	window.location.href='login.php'</script>";
       	die();
       }
+
+
+      //restore cart to session cart and delete
+      $productList = array();
+      //check if cart is stored for user
+      $sql2 = "SELECT userID FROM Cart WHERE userID = :userID" ;
+      $statement = $pdo->prepare($sql2);
+      $statement->bindParam(':userID',$userID, PDO::PARAM_INT);
+      $statement->execute();
+      $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+      $numRows = "0";
+      foreach ($rows2 as $row2) {
+        $numRows = $numRows + 1;
+      }
+
+      if($numRows > "0"){
+        //get product id and repopulate session cart
+        $sql = "SELECT pID, quantity FROM Cart WHERE userID = :userID" ;
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(':userID',$userID, PDO::PARAM_INT);
+        $statement->execute();
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $row) {
+
+          $quantity = $row['quantity'];
+          $pID = $row['pID'];
+          //get product info where pID
+          $sql3 = "SELECT * FROM Product WHERE pID = :pID" ;
+          $statement = $pdo->prepare($sql3);
+          $statement->bindParam(':pID',$pID, PDO::PARAM_INT);
+          $statement->execute();
+          $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+          foreach ($rows3 as $row3) {
+            $productList[$pID] = array( "pID"=>$pID, "pName"=>$row['pName'], "price"=>$row['price'], "description"=>$row['description'],"quantity"=>$quantity );
+          }
+
+        }
+      }
+
 
       $_SESSION['email'] = $custE;
       //change header-pass the user is logged in via session
