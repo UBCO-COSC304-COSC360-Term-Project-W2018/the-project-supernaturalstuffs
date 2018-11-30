@@ -75,7 +75,7 @@
 
               echo '<div id ="box">';
               echo '<div class="productinfo">';
-              echo	'<p>' . $name . '</p>';
+              echo	'<h1>' . $name . '</h1>';
               echo	'<p>' . $price . '</p>';
               echo	'<p>' . $desc . '</p>';
               echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
