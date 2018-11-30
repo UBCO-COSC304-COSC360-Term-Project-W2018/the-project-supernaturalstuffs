@@ -80,7 +80,7 @@
         foreach ($rows as $row) {}
         $trackingNumber = $row['trackingNumber'];
 				//DELETE Order
-				$sql = 'DELETE FROM Shipment WHERE orderID = ?';
+				$sql = 'DELETE FROM Shipment WHERE trackingNumber = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($trackingNumber));
 
