@@ -38,6 +38,7 @@
 
             echo '<div id = "container">';
             foreach ($rows as $row) {
+              $pID = $row['pID'];
               $image = $row['image'];
               $type = "png";
               $name = $row["pName"];
@@ -49,7 +50,7 @@
               echo '<img class ="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
               echo '</div>';
 
-              
+
 
               echo '<div id="reviews">';
               echo '<h1>Reviews</h1>';
@@ -60,9 +61,9 @@
               foreach ($rows as $row) {
                 echo '<p>' . $row['comment'] . '</p>';
               }
-              echo '<form class="review" method="post" action="reviews.php">';
-              echo '<p>Write a review: </p>';
-              echo '<p><textarea id = "text" name="comment" rows="4" cols="40"></textarea></p>';
+              echo '<form class="review" method="post" action="reviews.php?id='.$pID.'>';
+              echo '<label>Write a review: </label>';
+              echo '<input type="text" name="comment"/>';
               echo '<button type ="submit" class="addCart" >Submit</button>';
               echo '</form>';
               echo '</div>';
