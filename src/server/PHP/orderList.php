@@ -37,11 +37,11 @@
 			foreach ($rows as $row) {
 				echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td></tr>';
 			}
-			$sql = 'SELECT SUM(price) FROM Orders';
-			$statement = $pdo->prepare($sql);
-			$statement->execute();
-			$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-			foreach($rows as $row) {
+			$sql2 = 'SELECT SUM(totalPrice) FROM Orders';
+			$statement2 = $pdo->prepare($sql2);
+			$statement2->execute();
+			$rows2 = $statement2->fetchAll(PDO::FETCH_ASSOC);
+			foreach($rows2 as $row) {
 				echo '<tr rowspan="4"><td>Total Price: ' . $row['SUM(price)'] . '</td></tr>';
 			}
 			echo '</table>';
