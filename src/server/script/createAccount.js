@@ -65,6 +65,10 @@ function preventDefault(){
     }
 
     //make sure image inputted
-     document.getElementById("fileToUpload").required = true;
+    var fileToUpload = document.getElementById("fileToUpload");
+    if(fileToUpload.files.length === 0 && fileToUpload.value != ""){
+      alert("Pleae insert a picture!");
+      return false;
+    }
 
 }
