@@ -80,12 +80,6 @@
     }
 
 
-    $method = $row['payMethod'];
-    $name = $row['cardName'];
-    $cNum = $row['cardNumber'];
-    $expDate = $row['exDate'];
-    $csv = $row['secCode'];
-
     $_SESSION['payInfo']['uID'] = $userID;
 
     echo "<script type='text/javascript'>window.location.href='order.php'</script>";
