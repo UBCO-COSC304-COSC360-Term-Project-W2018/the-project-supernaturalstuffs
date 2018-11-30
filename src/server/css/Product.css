@@ -2,6 +2,7 @@
 *{
 	background: #1E262C;
 	color: white;
+	text-decoration: none;
 }
 main{
 	display: flex;
