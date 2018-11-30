@@ -66,6 +66,8 @@ main{
 	position: abosolute;
 	right: 10em;
 	top: 5em;
+	display: inline;
+	border: white 1px solid;
 }
 #box{
 	display: flex;
