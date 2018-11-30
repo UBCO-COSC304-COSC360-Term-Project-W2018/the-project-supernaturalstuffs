@@ -31,6 +31,7 @@
 						echo('<p id="sortButton">Sort by</p>
 							 <div id="sortType">
 								 <p>Price High-Low</p>
+								 <br>
 								 <p>Price Low-High</p>
 							 </div>
 							 <div id="box">');
