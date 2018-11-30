@@ -38,9 +38,8 @@
       <div class="style">
 		  <p>Products and Orders: 250-555-5555</p>
 		  <p>Company phone: 250-555-5555</p>
-		  <p>Store Locations</p>
-		  <p>address</p>
-		  <p>address</p>
+		  <p>Store Location</p>
+		  <p>Vancouver 1015 Burrad St. </p>
       </div>
 		</div>
 		<!-- page content -->
