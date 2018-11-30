@@ -29,9 +29,7 @@ if(isset($_SESSION['email'])) {
     foreach ($rows as $row) {}
 
     $userID = $row['userID'];
-	echo $userID . " ";
-	echo $id;
-	echo $comment;
+
     $sql2 = "INSERT INTO CommentsOn VALUES (?, ?, ?)";
     $statement = $pdo->prepare($sql2);
     $statement->execute(array($userID, $id, $comment));
@@ -44,4 +42,3 @@ if(isset($_SESSION['email'])) {
 
 ?>
 
-//reviews table - userID, pID, comment
