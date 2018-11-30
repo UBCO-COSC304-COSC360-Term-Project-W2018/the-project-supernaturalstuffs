@@ -58,9 +58,6 @@
               echo '</form>';
               echo '</div>';
 
-
-
-
               echo '</div>';
               echo '<div id ="box">';
               echo '<div class="productinfo">';
