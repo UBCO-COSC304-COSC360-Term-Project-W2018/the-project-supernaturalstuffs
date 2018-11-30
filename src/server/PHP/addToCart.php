@@ -63,7 +63,11 @@
       $numRows = $numRows + 1;
     }
 
-    echo '<script type="text/javascript">document.getElementById("inCart").innerHTML = "'.$numRows.'";</script>';
+    $message = $numRows;
+    echo "<script type='text/javascript'>alert('$message')</script>";
+    die();
+
+    echo '<script type="text/javascript">document.getElementById("inCart").innerHTML = "'.$numRows.'"</script>';
 
     echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
     die();
