@@ -57,7 +57,7 @@
           </div>
           <div>
             <label>Add a photo:</label>
-            <input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+            <input type="file" name="fileToUpload"  id="fileToUpload" class="box" required="required"/>
           </div>
           <div class="centered">
             <input type="submit" value="Create Account" class="button"/>
