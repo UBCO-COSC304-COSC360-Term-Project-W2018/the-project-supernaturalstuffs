@@ -233,6 +233,7 @@
       unset($_SESSION['shipInfo']['email']);
       unset($_SESSION['shipInfo']['delivery']);
 
+      unset($_SESSION['next']);
       unset( $_SESSION['storeID']);
       unset($_SESSION['payInfo']['uID']);
       unset($_SESSION['productList']);
