@@ -4,8 +4,13 @@ if(isset($_SESSION['email'])) {
     $custE = $_SESSION['email'];
     $id = $_GET['id'];
 
+    if(!isset($_POST['comment'])) {
+      $message = "Please write a comment!";
+      echo "<script type='text/javascript'>alert('$message');
+      window.location.href='/individualProducts.php?pID='.$id.'</script>";
+    };
     include '../include/db_credentials.php';
-    
+
     try {
         $pdo = new PDO($dsn, $user, $pass, $options);
     } catch (\PDOException $e) {
