@@ -191,17 +191,6 @@
           echo("<p>Your shopping cart is empty!</p>");
         }
 
-        //remove item
-        if(isset($_GET['pID'])){
-          removeItem($cart);
-        }
-
-        function removeItem($cart){
-          unset($cart[$_GET['pID']]);
-          $_SESSION['productList'] = $cart;
-          unset($_GET['pID']);
-          echo "<script type='text/javascript'>window.location.href='checkout.php'</script>";
-        }
          ?>
 			</div>
 		 </div>
