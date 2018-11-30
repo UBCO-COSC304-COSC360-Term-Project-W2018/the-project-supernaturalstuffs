@@ -66,7 +66,7 @@
               echo '<label>Write a review: </label>';
               echo '<input type="text" name="comment"/>';
               echo '</div>';
-              echo '<button type ="submit" class="addCart" >Submit</button>';
+              echo '<input type ="submit" value="Submit" class="addCart">';
               echo '</form>';
               echo '</div>';
 
