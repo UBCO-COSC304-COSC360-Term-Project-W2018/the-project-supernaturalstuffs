@@ -64,7 +64,10 @@ input.searchHome{
     border-radius: 50%;
     background-color: white;
     color: #521C25;
-	font-size: 50%;
+	font-size: 60%;
+	position: absolute;
+	left: 30px;
+	top: 20px;
 
 }
 header nav{
