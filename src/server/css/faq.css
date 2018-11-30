@@ -28,6 +28,9 @@
   padding: 1em;
   margin: 1em 0em;
 }
+p {
+  padding: .5em;
+}
 
 h1 {
   font-size: 200%;
