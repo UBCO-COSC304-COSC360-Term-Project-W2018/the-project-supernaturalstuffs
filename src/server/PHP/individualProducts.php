@@ -54,7 +54,7 @@
 
               echo '<div id="reviews">';
               echo '<h1>Reviews</h1>';
-              $sql = 'SELECT * FROM Reviews';
+              $sql = 'SELECT * FROM CommentsOn';
               $statement = $pdo->prepare($sql);
               $statement->execute();
               $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
