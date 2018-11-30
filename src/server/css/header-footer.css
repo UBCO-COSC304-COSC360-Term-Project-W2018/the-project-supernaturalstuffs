@@ -57,9 +57,17 @@ input.searchHome{
 	width: 2em;
 }
 #inCart{
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
     border-radius: 50%;
     background-color: white;
-    color: black;
+    color: #521C25;
+	font-size: 60%;
+	position: absolute;
+	left: 50px;
+	top: 1px;
 
 }
 header nav{
