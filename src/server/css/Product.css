@@ -63,7 +63,7 @@ main{
 }
 #sortType p{
 	background: #710627;
-	position: abosolute;
+	position: absolute;
 	right: 10em;
 	top: 5em;
 	display: inline;
