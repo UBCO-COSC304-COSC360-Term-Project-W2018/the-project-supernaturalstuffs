@@ -58,8 +58,18 @@
               $statement = $pdo->prepare($sql);
               $statement->execute();
               $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+
               foreach ($rows2 as $row2) {
-                echo '<p>' . $row2['userID'] . $row2['comment'] . '</p>';
+                $uID = $row2['userID'];
+
+                $sql = 'SELECT username FROM User WHERE userID = '.$uID.'';
+                $statement = $pdo->prepare($sql);
+                $statement->execute();
+                $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($rows2 as $row2) {
+                  $name = $row2['username'];
+                }
+                echo '<p>' . $name . $row2['comment'] . '</p>';
               }
               echo '<form class="review" method="post" action="reviews.php?id='.$pID.'">';
               echo '<div>';
