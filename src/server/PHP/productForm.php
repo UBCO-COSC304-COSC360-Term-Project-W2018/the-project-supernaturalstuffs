@@ -68,15 +68,15 @@
 							<h2>Add Product</h2>
 							<div class="catagories">
 							<p>Product\'s Name:</p>
-							<input type="text" name="pName" placeholder="Product Name" required="true">
+							<input type="text" name="pName" placeholder="Product Name" required="required">
 							<p>Product\'s Description:</p>
-							<input type="textbox" name="description" placeholder="Description" required="true">
+							<input type="textbox" name="description" placeholder="Description" required="required">
 							<p>Product\'s Price:</p>
-							<input type="text" name="price" placeholder="Price" required="true">
+							<input type="text" name="price" placeholder="Price" required="required">
 							<p>Product\'s Category:</p>
-							<input type="text" name="category" placeholder="Category" required="true">
+							<input type="text" name="category" placeholder="Category" required="required">
 							<p>Add a photo:</p>
-							<input type="file" name="fileToUpload"  id="fileToUpload" class="box" required="true"/>
+							<input type="file" name="fileToUpload"  id="fileToUpload" class="box" required="required"/>
 							<input type="submit" value="Add Product" class="button"/>
 
 							</div>
