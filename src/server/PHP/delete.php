@@ -74,9 +74,9 @@
         //get tracking number
         $sql = 'SELECT trackingNumber FROM Orders WHERE orderID = :orderID';
         $statement = $pdo->prepare($sql);
-        $statement->bindValue(':orderID', $_GET['info'], PDO::PARAM_STR);
+        $statement->bindValue(':orderID', $_GET['info'], PDO::PARAM_INT);
         $statement->execute();
-        $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $row) {}
         $trackingNumber = $row['trackingNumber'];
 				//DELETE Order
@@ -87,6 +87,8 @@
 				$sql = 'DELETE FROM Orders WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
+
+        //increase quantity of product again
 			}else if($_GET['filter']=='Review'){
 				//DELETE Review
 				$sql = 'DELETE FROM Review WHERE userID = ?';
