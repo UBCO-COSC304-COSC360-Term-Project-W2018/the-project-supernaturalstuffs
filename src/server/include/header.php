@@ -15,6 +15,11 @@
               session_start();
               include 'db_credentials.php';
 
+              $productList = null;
+              if (isset($_SESSION['productList'])){
+              	$productList = $_SESSION['productList'];
+              }
+              
               $numRows = 0;
               foreach($productList as $pID => $cartitem){
                 $numRows = $numRows + 1;
