@@ -41,7 +41,7 @@ body {
 #textbox {
   background-color: white;
   color: black;
-  width: 30em;
+  width: 30.1em;
   height: 2em;
 }
 
@@ -90,6 +90,10 @@ body {
 	background: #521C25;
 	color: white;
 	border: white 1px solid;
+}
+
+#margin {
+  padding: 0.5em;
 }
 
 .button {
