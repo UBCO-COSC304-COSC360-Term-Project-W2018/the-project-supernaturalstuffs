@@ -59,10 +59,11 @@
 
     //set number of items in cart
     $numRows = 0;
-    foreach($productList as $item){
+    foreach($productList as $pID => $cartitem){
       $numRows = $numRows + 1;
     }
-    echo "<script type='text/javascript'>document.getElementById('inCart').innerHTML = '".$numRows."';</script>";
+
+    echo '<script type="text/javascript">document.getElementById("inCart").innerHTML = "'.$numRows.'";</script>';
 
     echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
     die();
