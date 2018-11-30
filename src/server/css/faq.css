@@ -36,7 +36,9 @@ h1 {
   font-size: 200%;
   border-bottom: solid 3px #710627;
 }
-h2 { font-size: 120%; }
+h2 { font-size: 120%;
+  padding: .5em;
+}
 body {
   font-family: Arial, Helvetica, "Times New Roman";
   background-color: #1E262C;
