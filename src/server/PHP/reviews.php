@@ -1,8 +1,8 @@
 <?php
 session_start();
+$id = $_GET['id'];
 if(isset($_SESSION['email'])) {
     $custE = $_SESSION['email'];
-    $id = $_GET['id'];
 
     $comment = null;
     if(!isset($_POST['comment'])) {
