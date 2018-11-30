@@ -50,6 +50,8 @@ body {
   padding: 1em;
   background: #710627;
   border: white solid 1px;
+  max-width: 30em;
+
 }
 
 #star {
