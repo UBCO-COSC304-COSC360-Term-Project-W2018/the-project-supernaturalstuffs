@@ -63,4 +63,7 @@ function preventDefault(){
       cPassword.value = "";
       return false;
     }
+
+    //make sure image inputted
+    document.getElementById(fileToUpload).required;
 }
