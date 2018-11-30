@@ -127,13 +127,16 @@
           $statement = $pdo->prepare($sql3);
           $statement->bindParam(':pID',$pID, PDO::PARAM_INT);
           $statement->execute();
-          $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+          $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
           foreach ($rows3 as $row3) {
             $productList[$pID] = array( "pID"=>$pID, "pName"=>$row3['pName'], "price"=>$row3['price'], "description"=>$row3['description'],"quantity"=>$quantity );
           }
 
         }
       }
+
+      //set session Cart
+      $_SESSION['productList']=$productList;
 
       //delete items from database Cart
       $sql = 'DELETE FROM Cart WHERE userID = :userID';
