@@ -56,15 +56,14 @@
     	$productList[$pID] = array( "pID"=>$pID, "pName"=>$pName, "price"=>$price, "description"=>$description,"quantity"=>1 );
     }
     $_SESSION['productList'] = $productList;
-    /*if(isset($_GET['pID'])){
-      removeItem($productList);
+
+    //set number of items in cart
+    $numRows = 0;
+    foreach($productList as $item){
+      $numRows = $numRows + 1;
     }
-    function removeItem($productList){
-      unset($productList[$_GET['pID']]);
-      $_SESSION['productList'] = $productList;
-      header('Location: cart.php');
-    }*/
-    //once lina finishes cart go show cart for now popup
+    echo "<script type='text/javascript'>document.getElementById('inCart').innerHTML = ".$numRows."</script>";
+
     echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
     die();
     //header('Location: showcart.php');

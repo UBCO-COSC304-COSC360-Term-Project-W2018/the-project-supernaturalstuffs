@@ -102,6 +102,11 @@
           function removeItem($productList){
             unset($productList[$_GET['pid']]);
             $_SESSION['productList'] = $productList;
+            $numRows = 0;
+            foreach($productList as $item){
+              $numRows = $numRows + 1;
+            }
+            echo "<script type='text/javascript'>document.getElementById('inCart').innerHTML = ".$numRows."</script>";
             unset($_GET['pid']);
             echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
           }
