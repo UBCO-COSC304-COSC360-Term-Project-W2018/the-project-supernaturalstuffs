@@ -30,9 +30,27 @@ if(isset($_SESSION['email'])) {
 
     $userID = $row['userID'];
 
-    $sql2 = "INSERT INTO CommentsOn VALUES (?, ?, ?)";
-    $statement = $pdo->prepare($sql2);
-    $statement->execute(array($userID, $id, $comment));
+    //make sure they havent commented before
+    $sql = "SELECT userID FROM CommentsOn WHERE userID = :userID AND pID = :pID";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
+    $statement->bindParam(':pID', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $numRows = 0;
+    foreach ($rows as $row) {
+      $numRows = $numRows + "1";
+    }
+
+    if($numRows > "0"){
+      $sql2 = "INSERT INTO CommentsOn VALUES (?, ?, ?)";
+      $statement = $pdo->prepare($sql2);
+      $statement->execute(array($userID, $id, $comment));
+    }else{
+      $message = "To Keep comments diverse you can only comment on a product once. Sorry!";
+      echo "<script type='text/javascript'>alert('$message');
+      window.location.href='/individualProducts.php?pID=' . $id . ''</script>";
+    }
 
     echo '<script type="text/javascript">window.location.href="individualProducts.php?pID="'.$id.'"</script>';
 } else {
