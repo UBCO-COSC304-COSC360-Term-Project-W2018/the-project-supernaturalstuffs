@@ -32,7 +32,7 @@
           	$productList = $_SESSION['productList'];
             echo('<div id = "container">');
 
-          	echo('<h1 id="title">Shopping Cart</h1>');
+          	echo('<h2 id="title">Shopping Cart</h2>');
             echo('<div id = "shoppingcart">');
 
 
@@ -80,7 +80,7 @@
 
 
             echo ('<div id ="summary">');
-            echo ('<h1>Summary</h1>');
+            echo ('<h2>Summary</h2>');
             echo ('<div id ="totals">');
             echo ("<p id=\"total\"> Total: $".$total. "</p>");
             echo ('<div>
@@ -91,7 +91,7 @@
             echo ('</div>');
 
           } else{
-          	echo("<H1>Your shopping cart is empty!</H1>");
+          	echo("<H2>Your shopping cart is empty!</H2>");
             echo '<a href="products.php" ><p class="addCart">Continue Shopping</p></a>';
           }
 
