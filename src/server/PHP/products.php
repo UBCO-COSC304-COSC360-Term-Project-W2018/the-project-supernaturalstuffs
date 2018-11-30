@@ -94,7 +94,7 @@
                 }
               }else{
 
-                if($_GET["filter"] = "DESC"{
+                if($_GET["filter"] = "DESC"){
                   $sql = "SELECT * FROM Product ORDER BY price DESC";
   							}else if($_GET["filter"] = "ASC"){
                   $sql = "SELECT * FROM Product ORDER BY price ASC";
