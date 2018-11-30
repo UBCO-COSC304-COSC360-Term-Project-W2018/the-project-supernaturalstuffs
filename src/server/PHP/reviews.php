@@ -37,15 +37,8 @@ if(isset($_SESSION['email'])) {
     echo '<script type="text/javascript">window.location.href="individualProducts.php?pID="'.$id.'"</script>';
 } else {
     $message = "You must be signed in to write a review";
-<<<<<<< HEAD
     echo "<script type='text/javascript'>alert('$message');
     window.location.href=/individualProducts.php?pID=' . $id . '</script>'";
-=======
-
-    echo '<script type="text/javascript">alert("$message");
-    window.location.href="individualProducts.php?pID="' . $id . '"</script>';
-
->>>>>>> 4cfd3229e75ec6f4e451df3e00e73b41c4caa0a3
 
 }
 
