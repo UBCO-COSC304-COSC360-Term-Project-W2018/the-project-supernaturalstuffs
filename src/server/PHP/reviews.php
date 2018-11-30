@@ -43,5 +43,3 @@ if(isset($_SESSION['email'])) {
 }
 
 ?>
-
-//reviews table - userID, pID, comment
