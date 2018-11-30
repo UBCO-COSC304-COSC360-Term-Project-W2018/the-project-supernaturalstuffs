@@ -165,6 +165,11 @@
                 <div class="centered">
                   <input type="submit" value="Confirm Checkout" class="button"/>
                 </div>
+                <form name="savedPayForm" method="post" action="checkoutOldPayment.php" id="savedPayForm">
+                  <div class="centered">
+                    <input type="submit" value="Checkout With Saved Payment" class="button"/>
+                  </div>
+                </form>
               </div>
             </fieldset>
         </form>
