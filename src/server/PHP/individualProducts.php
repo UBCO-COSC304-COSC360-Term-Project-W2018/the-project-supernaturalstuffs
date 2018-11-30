@@ -62,8 +62,10 @@
                 echo '<p>' . $row['comment'] . '</p>';
               }
               echo '<form class="review" method="post" action="reviews.php?id='.$pID.'>';
+              echo '<div>';
               echo '<label>Write a review: </label>';
               echo '<input type="text" name="comment"/>';
+              echo '</div>';
               echo '<button type ="submit" class="addCart" >Submit</button>';
               echo '</form>';
               echo '</div>';
