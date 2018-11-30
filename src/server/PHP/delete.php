@@ -80,13 +80,13 @@
         foreach ($rows as $row) {}
         $trackingNumber = $row['trackingNumber'];
 				//DELETE Order
-				$sql = 'DELETE FROM Orders WHERE orderID = ?';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET['info']));
-
         $sql = 'DELETE FROM Shipment WHERE trackingNumber = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($trackingNumber));
+        
+				$sql = 'DELETE FROM Orders WHERE orderID = ?';
+				$statement = $pdo->prepare($sql);
+				$statement->execute(array($_GET['info']));
 
         //increase quantity of product again
 			}else if($_GET['filter']=='Review'){
