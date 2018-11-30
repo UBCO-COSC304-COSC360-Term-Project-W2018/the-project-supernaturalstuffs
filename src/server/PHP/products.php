@@ -94,9 +94,9 @@
                 }
               }else{
 
-                if($_GET['filter'] = 'DESC'{
+                if($_GET["filter"] = "DESC"{
                   $sql = "SELECT * FROM Product ORDER BY price DESC";
-  							}else if($_GET['filter'] = 'ASC'){
+  							}else if($_GET["filter"] = "ASC"){
                   $sql = "SELECT * FROM Product ORDER BY price ASC";
   							}else{
                   $sql = "SELECT * FROM Product WHERE pName LIKE '%" . $_GET["filter"] . "%' OR category LIKE '%" . $_GET["filter"] . "%'";
