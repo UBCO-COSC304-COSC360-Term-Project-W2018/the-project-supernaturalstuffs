@@ -42,7 +42,7 @@ if(isset($_SESSION['email'])) {
       $numRows = $numRows + "1";
     }
 
-    if($numRows > "0"){
+    if($numRows <= "0"){
       $sql2 = "INSERT INTO CommentsOn VALUES (?, ?, ?)";
       $statement = $pdo->prepare($sql2);
       $statement->execute(array($userID, $id, $comment));
