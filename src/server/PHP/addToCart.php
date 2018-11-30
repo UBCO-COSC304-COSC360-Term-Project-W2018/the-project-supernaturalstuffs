@@ -1,7 +1,6 @@
 <?php
     // Get the current list of products
     session_start();
-    include '../../../src/server/include/header.php'; 
 
     include '../include/db_credentials.php';
 
@@ -59,12 +58,6 @@
     $_SESSION['productList'] = $productList;
 
     //set number of items in cart
-    $numRows = 0;
-    foreach($productList as $pID => $cartitem){
-      $numRows = $numRows + 1;
-    }
-
-    echo '<script type="text/javascript">document.getElementById("inCart").textContent = "'.$numRows.'"</script>';
 
     echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
     die();

@@ -103,11 +103,6 @@
             unset($productList[$_GET['pid']]);
             $_SESSION['productList'] = $productList;
             $numRows = 0;
-            foreach($productList as $pID => $cartitem){
-              $numRows = $numRows + 1;
-            }
-
-            echo '<script type="text/javascript">document.getElementById("inCart").textContent = "'.$numRows.'"</script>';
             unset($_GET['pid']);
             echo "<script type='text/javascript'>window.location.href='cart.php'</script>";
           }

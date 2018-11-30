@@ -244,13 +244,6 @@
             function removeItem($cart){
             	unset($cart[$_GET['pID']]);
             	$_SESSION['productList'] = $cart;
-              $numRows = 0;
-              $numRows = 0;
-              foreach($productList as $pID => $cartitem){
-                $numRows = $numRows + 1;
-              }
-
-              echo '<script type="text/javascript">document.getElementById("inCart").textContent = "'.$numRows.'"</script>';
               unset($_GET['pID']);
             	echo "<script type='text/javascript'>window.location.href='checkout.php'</script>";
             }

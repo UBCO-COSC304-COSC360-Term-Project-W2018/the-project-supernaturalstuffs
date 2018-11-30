@@ -15,6 +15,13 @@
               session_start();
               include 'db_credentials.php';
 
+              $numRows = 0;
+              foreach($productList as $pID => $cartitem){
+                $numRows = $numRows + 1;
+              }
+
+              echo '<script type="text/javascript">document.getElementById("inCart").innerHTML = "'.$numRows.'"</script>';
+
               try {
               $pdo = new PDO($dsn, $user, $pass /*,$options*/);
               } catch (\PDOException $e) {
