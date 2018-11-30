@@ -95,10 +95,16 @@
           $statement->bindValue(':storeID', $storeID, PDO::PARAM_INT);
           $statement->execute();
           $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
-          foreach ($rows2 as $row2){}
-
-          $quantity = $rows2['quantity'] +$row['quantity'];
-
+          $numRows = "0";
+          foreach ($rows2 as $row2){
+            $numRows = $numRows + "1";
+          }
+          if($numRows > "0"){
+            $quantity = $rows2['quantity'] + $row['quantity'];
+          }else{
+            $quantity = $row['quantity'];
+          }
+          
           $sql2 = "UPDATE Stock SET quantity=:quantity WHERE pID = :pID AND storeID = :storeID";
           $statement = $pdo->prepare($sql2);
           $statement->bindValue(':quantity', $quantity , PDO::PARAM_INT);
