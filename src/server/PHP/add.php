@@ -182,6 +182,7 @@
 				echo '<p>Invalid source</p>';
 			}
 
+      header("Location: {$_SERVER['HTTP_REFERER']}");
 		?>
 
 	</main>
