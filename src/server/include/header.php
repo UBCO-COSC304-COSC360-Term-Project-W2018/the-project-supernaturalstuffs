@@ -15,15 +15,15 @@
               session_start();
               include 'db_credentials.php';
 
+              $numRows = 0;
               $productList = null;
               if (isset($_SESSION['productList'])){
               	$productList = $_SESSION['productList'];
+                foreach($productList as $pID => $cartitem){
+                  $numRows = $numRows + 1;
+                }
               }
               
-              $numRows = 0;
-              foreach($productList as $pID => $cartitem){
-                $numRows = $numRows + 1;
-              }
 
               echo '<script type="text/javascript">document.getElementById("inCart").innerHTML = "'.$numRows.'"</script>';
 
