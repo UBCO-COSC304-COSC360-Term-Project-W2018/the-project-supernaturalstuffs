@@ -166,7 +166,7 @@
                   <input type="submit" value="Confirm Checkout" class="button"/>
                 </div>
                 <div class="centered">
-                  <a href='checkoutOldPayment'><input type="button" value="Checkout With Saved Payment" class="button"/></a>
+                  <a href='checkoutOldPayment.php'><input type="button" value="Checkout With Saved Payment" class="button"/></a>
                 </div>
               </div>
             </fieldset>
