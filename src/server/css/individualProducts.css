@@ -83,7 +83,7 @@ body {
 	background: white;
 	color: black;
 	padding: 0.5em;
-	margin-top: 0.5em;
+	margin: 0.5em;
 	border: solid black 1px;
 }
 .addCart:hover{
