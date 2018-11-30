@@ -29,14 +29,10 @@ if(isset($_SESSION['email'])) {
     foreach ($rows as $row) {}
 
     $userID = $row['userID'];
-	  try {
-        $pdo = new PDO($dsn, $user, $pass, $options);
-    } catch (\PDOException $e) {
-        throw new \PDOException($e->getMessage(), (int)$e->getCode());
-    }
+	
     $sql2 = "INSERT INTO CommentsOn VALUES (' . $userID . ', ' . $id . ', ' . $comment . ')";
     $statement = $pdo->prepare($sql2);
-    $insert->$statement->execute();
+    $statement->execute();
 
 } else {
     $message = "You must be signed in to write a review";
