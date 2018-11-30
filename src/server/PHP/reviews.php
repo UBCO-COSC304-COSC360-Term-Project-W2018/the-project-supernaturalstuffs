@@ -17,6 +17,9 @@ if(isset($_SESSION['email'])) {
         throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
 
+    $message = $custE;
+    echo "<script type='text/javascript'>alert('$message');</script>";
+
     $sql = "SELECT userID FROM User WHERE email = :email";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':email', $custE, PDO::PARAM_STR);
@@ -25,6 +28,9 @@ if(isset($_SESSION['email'])) {
     foreach ($rows as $row) {}
 
     $userID = $row['userID'];
+
+    $message = $userID;
+    echo "<script type='text/javascript'>alert('$message');</script>";
 
     $sql2 = "INSERT INTO CommentsOn VALUES (:userID, :pID, :comment )";
     $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
