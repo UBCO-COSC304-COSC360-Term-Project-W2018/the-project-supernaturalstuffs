@@ -39,7 +39,10 @@ body {
 }
 
 #textbox {
-  background-color: black;
+  background-color: white;
+  color: black;
+  width: 5em;
+  height: 5em;
 }
 
 .image {
