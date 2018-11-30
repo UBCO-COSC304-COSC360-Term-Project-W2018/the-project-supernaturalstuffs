@@ -61,12 +61,12 @@
        }
        //lock out of admin ends
 
-			if($_GET['filter']='User'){
+			if($_GET['filter']=='User'){
 				//DELETE USER
 				$sql = 'DELETE FROM User WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']='Order'){
+			}else if($_GET['filter']=='Order'){
 				//DELETE Order
 				$sql = 'DELETE FROM Shipment WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
@@ -75,7 +75,7 @@
 				$sql = 'DELETE FROM Orders WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']='Review'){
+			}else if($_GET['filter']==='Review'){
 				//DELETE Review
 				$sql = 'DELETE FROM Review WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
@@ -85,7 +85,7 @@
 				$sql = 'DELETE FROM CommentsOn WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
-			}else if($_GET['filter']='Product'){
+			}else if($_GET['filter']=='Product'){
 				//DELETE Product
 				$sql = 'DELETE FROM Product WHERE pID = ?';
 				$statement = $pdo->prepare($sql);
