@@ -29,7 +29,11 @@
 						}
 
 						echo('<p id="sortButton">Sort by</p>
-							<div id="box">');
+							 <div id="sortType">
+								 <p>Price High-Low</p>
+								 <p>Price Low-High</p>
+							 </div>
+							 <div id="box">');
 
 							//check if All or another selection
 							if(!(isset($_GET["filter"])) && !(isset($_GET["top"]))){
