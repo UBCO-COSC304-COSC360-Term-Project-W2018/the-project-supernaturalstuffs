@@ -79,16 +79,22 @@
         $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $row) {}
         $trackingNumber = $row['trackingNumber'];
-				//DELETE Order
+
+        //increase quantity of product again
+
+      	//DELETE Order
+        $sql = 'DELETE FROM InOrder WHERE orderID = ?';
+				$statement = $pdo->prepare($sql);
+				$statement->execute(array($_GET['info']));
+
         $sql = 'DELETE FROM Shipment WHERE trackingNumber = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($trackingNumber));
-        
+
 				$sql = 'DELETE FROM Orders WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
 
-        //increase quantity of product again
 			}else if($_GET['filter']=='Review'){
 				//DELETE Review
 				$sql = 'DELETE FROM Review WHERE userID = ?';
