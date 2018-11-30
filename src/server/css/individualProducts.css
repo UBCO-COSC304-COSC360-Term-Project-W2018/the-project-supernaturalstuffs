@@ -38,6 +38,10 @@ body {
   color: black;
 }
 
+#textbox {
+  background-color: black;
+}
+
 .image {
   height: 10em;
   padding: 1em;
