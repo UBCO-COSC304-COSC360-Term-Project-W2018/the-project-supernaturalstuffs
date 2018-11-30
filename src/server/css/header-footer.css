@@ -56,15 +56,8 @@ input.searchHome{
 	height: 2em;
 	width: 2em;
 }
-#inCart.p{
-	display: block;
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-
-    -moz-border-radius: 50%;
+#inCart{
     border-radius: 50%;
-
     background-color: white;
     color: #521C25;
     text-align: center;
