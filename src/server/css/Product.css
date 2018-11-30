@@ -61,7 +61,7 @@ main{
 	border: white 1px solid;
 	width: fit-content;
 }
-#sortType p{
+#sortType > p{
 	background: #710627;
 	position: abosolute;
 	right: 10em;
