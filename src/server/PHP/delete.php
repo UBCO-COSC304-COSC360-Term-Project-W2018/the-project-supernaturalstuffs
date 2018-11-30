@@ -66,11 +66,23 @@
 				$sql = 'DELETE FROM User WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
+        $message = "Deleted";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='usersInformation.php'</script>";
+        die();
 			}else if($_GET['filter']=='Order'){
+        //get tracking number
+        $sql = 'SELECT trackingNumber FROM Orders WHERE orderID = :orderID';
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(':orderID', $_GET['info'], PDO::PARAM_STR);
+        $statement->execute();
+        $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $row) {}
+        $trackingNumber = $row['trackingNumber'];
 				//DELETE Order
 				$sql = 'DELETE FROM Shipment WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
-				$statement->execute(array($_GET['info']));
+				$statement->execute(array($trackingNumber));
 
 				$sql = 'DELETE FROM Orders WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
@@ -90,15 +102,15 @@
 				$sql = 'DELETE FROM Product WHERE pID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
+        $message = "Deleted";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='productsInformation.php'</script>";
+        die();
 			}else{
 				echo '<p>Wrong source</p>';
 
 			}
 
-      $message = "Deleted";
-      echo "<script type='text/javascript'>alert('$message');
-      window.location.href='productsInformation.php'</script>";
-      die();
 
 
 		?>
