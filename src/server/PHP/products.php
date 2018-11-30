@@ -94,13 +94,13 @@
                 }
               }else{
 
-                if($_GET['filter']=='Desc'{
+                /*if($_GET['filter']=='Desc'{
                   $sql = "SELECT * FROM Product ORDER BY price DESC";
   							}else if($_GET['filter']=='ASC'){
                   $sql = "SELECT * FROM Product ORDER BY price ASC";
-  							}else{
+  							}else{*/
                   $sql = "SELECT * FROM Product WHERE pName LIKE '%" . $_GET["filter"] . "%' OR category LIKE '%" . $_GET["filter"] . "%'";
-                }
+                //}
 
                 $statement = $pdo->prepare($sql);
   							$statement->execute();
