@@ -29,7 +29,9 @@ if(isset($_SESSION['email'])) {
     foreach ($rows as $row) {}
 
     $userID = $row['userID'];
-	
+	echo $userID;
+	echo $id;
+	echo $comment;
     $sql2 = "INSERT INTO CommentsOn VALUES (' . $userID . ', ' . $id . ', ' . $comment . ')";
     $statement = $pdo->prepare($sql2);
     $statement->execute();
