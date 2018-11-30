@@ -59,9 +59,8 @@ input.searchHome{
 #inCart{
     border-radius: 50%;
     background-color: white;
-    color: #521C25;
-    text-align: center;
-    font-size: 2em;
+    color: black;
+
 }
 header nav{
 	border-top: white solid 1px;
