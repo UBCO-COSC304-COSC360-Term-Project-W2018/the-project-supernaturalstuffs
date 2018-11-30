@@ -61,14 +61,15 @@
               foreach ($rows as $row) {
                 echo '<p>' . $row['comment'] . '</p>';
               }
-              echo '<form class="review" method="post" action="reviews.php?id="'.$pID.'">';
+              echo '<form class="review" method="post" action="reviews.php?id='.$pID.'>';
               echo '<div>';
-              echo '<label>Write a review: </label>';
+              echo '<p><label>Write a review: </label></p>';
               echo '<input type="text" id="textbox" name="comment"/>';
               echo '</div>';
               echo '<input type ="submit" value="Submit" class="addCart">';
               echo '</form>';
               echo '</div>';
+
 
               echo '</div>';
 
