@@ -56,8 +56,8 @@ input.searchHome{
 	height: 2em;
 	width: 2em;
 }
-#inCart{
- border: 1px white solid;
+#inCart.p{
+	border: 1px white solid;
 }
 header nav{
 	border-top: white solid 1px;
