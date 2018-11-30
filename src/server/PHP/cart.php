@@ -39,7 +39,14 @@
           	$total =0;
           	foreach ($productList as $name => $prod) {
 
-              $image = $prod['image'];
+              $pID =$prod['pID'];
+              $sql = "SELECT image FROM Product where pID = $pID";
+              $statement = $pdo->prepare($sql);
+              $statement->execute();
+              $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+              foreach ($rows as $row) {}
+
+              $image = $row['image'];
               $type = "png";
 
               echo('<div class="items"/>');
