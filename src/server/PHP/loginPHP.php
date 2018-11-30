@@ -135,6 +135,12 @@
         }
       }
 
+      //delete items from database Cart
+      $sql = 'DELETE FROM cart WHERE userID = :userID';
+      $statement = $pdo->prepare($sql);
+      $statement->bindParam(':userID',$userID, PDO::PARAM_INT);
+      $statement->execute();
+
 
       $_SESSION['email'] = $custE;
       //change header-pass the user is logged in via session
