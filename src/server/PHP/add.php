@@ -178,11 +178,11 @@
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_POST['totalPrice'], $_POST['trackingNumber'], $_POST['userID'], $_POST['storeID']));
 				echo '<p>Added Successfully</p>';
+        header("Location: {$_SERVER['HTTP_REFERER']}");
 			}else{
 				echo '<p>Invalid source</p>';
 			}
 
-      header("Location: {$_SERVER['HTTP_REFERER']}");
 		?>
 
 	</main>
