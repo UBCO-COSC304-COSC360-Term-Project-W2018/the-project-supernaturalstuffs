@@ -46,17 +46,17 @@ if(isset($_SESSION['email'])) {
       $sql2 = "INSERT INTO CommentsOn VALUES (?, ?, ?)";
       $statement = $pdo->prepare($sql2);
       $statement->execute(array($userID, $id, $comment));
+      echo '<script type="text/javascript">window.location.href="individualProducts.php?pID='.$id.'"</script>';
     }else{
       $message = "To Keep comments diverse you can only comment on a product once. Sorry!";
       echo "<script type='text/javascript'>alert('$message');
-      window.location.href='/individualProducts.php?pID=' . $id . ''</script>";
+      window.location.href='individualProducts.php?pID=" . $id . "'</script>";
     }
 
-    echo '<script type="text/javascript">window.location.href="individualProducts.php?pID="'.$id.'"</script>';
 } else {
     $message = "You must be signed in to write a review";
     echo "<script type='text/javascript'>alert('$message');
-    window.location.href='/individualProducts.php?pID=' . $id . ''</script>";
+    window.location.href='individualProducts.php?pID=" . $id . "'</script>";
 
 }
 
