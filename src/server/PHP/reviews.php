@@ -26,9 +26,10 @@ if(isset($_SESSION['email'])) {
 
     $userID = $row['userID'];
 
-    $sql2 = "INSERT INTO CommentsOn(comment) VALUES ('" . $_POST['comment'] . "',"
-                         . $id . ","
-                         . $userID . ")";
+    $sql2 = "INSERT INTO CommentsOn VALUES (userID = :userID, pID = :pID, comment = :comment )";
+    $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
+    $statement->bindValue(':pid', $id, PDO::PARAM_INT);
+    $statement->bindValue(':email', $_POST['comment'], PDO::PARAM_STR);
     $statement = $pdo->prepare($sql2);
     $insert->$statement->execute();
 
