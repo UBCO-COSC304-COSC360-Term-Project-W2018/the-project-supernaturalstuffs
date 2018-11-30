@@ -248,7 +248,7 @@
               foreach($productList as $item){
                 $numRows = $numRows + 1;
               }
-              echo "<script type='text/javascript'>document.getElementById('inCart').innerHTML = ".$numRows."</script>";
+              echo "<script type='text/javascript'>document.getElementById('inCart').innerHTML = '".$numRows."';</script>";
               unset($_GET['pID']);
             	echo "<script type='text/javascript'>window.location.href='checkout.php'</script>";
             }
