@@ -59,25 +59,25 @@
        window.location.href='/index.php'</script>";
        die();
      }
-  
+
 			echo('<div id="box">
 					<div id="Users">
 						<form action="add.php?filter=User" method="post" enctype="multipart/form-data">
 							<h2>Add User</h2>
 							<div class="catagories">
 							<p>User\'s username:</p>
-							<input type="text" name="username" placeholder="Username">
+							<input type="text" name="username" placeholder="Username" required="required">
 							<p>User\'s password:</p>
-							<input type="text" name="password" placeholder="password">
+							<input type="text" name="password" placeholder="password" required="required">
 							<p>User\'s first name:</p>
-							<input type="text" name="firstname" placeholder="First name">
+							<input type="text" name="firstname" placeholder="First name" required="required">
 							<p>User\'s last name:</p>
-							<input type="text" name="lastname" placeholder="Last name">
+							<input type="text" name="lastname" placeholder="Last name" required="required">
 							<p>User\'s email:</p>
-							<input type="text" name="email" placeholder="Email">
+							<input type="text" name="email" placeholder="Email" required="required">
 
 							<p>Add a photo:</p>
-							<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+							<input type="file" name="fileToUpload"  id="fileToUpload" class="box" required="required"/>
 							<input type="submit" value="Add User" class="button"/>
 							</div>
 						</form>
