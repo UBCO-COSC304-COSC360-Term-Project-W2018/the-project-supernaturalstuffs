@@ -28,13 +28,14 @@
 							throw new \PDOException($e->getMessage(), (int)$e->getCode());
 						}
 
-						echo('<p id="sortButton">Sort by</p>
-							 <div id="sortType">
-								 <p>Price High-Low</p>
-								 <br>
-								 <p>Price Low-High</p>
-							 </div>
-							 <div id="box">');
+						echo('<div class="dropdown">
+								<p id="sortButton">Sort by</p>
+								 <div class="dropdown-content">
+									 <a href="products.php?filter=DESC">Price High-Low</a>
+									 <a href="products.php?filter=ASC"> Low-High</a>
+								 </div>
+								</div>
+								 <div id="box">');
 
 							//check if All or another selection
 							if(!(isset($_GET["filter"])) && !(isset($_GET["top"]))){
