@@ -4,10 +4,13 @@ if(isset($_SESSION['email'])) {
     $custE = $_SESSION['email'];
     $id = $_GET['id'];
 
+    $comment = null;
     if(!isset($_POST['comment'])) {
       $message = "Please write a comment!";
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='/individualProducts.php?pID='.$id.'</script>";
+    }else{
+      $comment = $_POST['comment'];
     }
 
     include '../include/db_credentials.php';
@@ -27,7 +30,7 @@ if(isset($_SESSION['email'])) {
 
     $userID = $row['userID'];
 
-    $sql2 = "INSERT INTO CommentsOn VALUES (".$userID.", ".$id.", "$_POST['comment']" )";
+    $sql2 = "INSERT INTO CommentsOn VALUES (".$userID.", ".$id.", "$comment" )";
     $statement = $pdo->prepare($sql2);
     $insert->$statement->execute();
 
