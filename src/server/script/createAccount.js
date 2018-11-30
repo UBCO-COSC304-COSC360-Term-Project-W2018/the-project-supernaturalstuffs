@@ -65,5 +65,9 @@ function preventDefault(){
     }
 
     //make sure image inputted
-    document.getElementById(fileToUpload).required;
+    var fileToUpload = document.getElementById("fileToUpload").value.length;
+    if(fileToUpload <= 0){
+      alert("Please upload a file!");
+      return false;
+    }
 }
