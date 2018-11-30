@@ -87,13 +87,13 @@
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
 
-        $sql = 'DELETE FROM Shipment WHERE trackingNumber = ?';
-				$statement = $pdo->prepare($sql);
-				$statement->execute(array($trackingNumber));
-
 				$sql = 'DELETE FROM Orders WHERE orderID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
+
+        $sql = 'DELETE FROM Shipment WHERE trackingNumber = ?';
+				$statement = $pdo->prepare($sql);
+				$statement->execute(array($trackingNumber));
 
 			}else if($_GET['filter']=='Review'){
 				//DELETE Review
