@@ -156,13 +156,24 @@
 
 		<div id="flexItem2">
 			<div id = "shoppingcart">
-			  <h2>Wish List</h2>
+			  <h2>Shopping Cart</h2>
 
         <?php
+
         if (isset($_SESSION['productList'])){
           foreach ($cart as $pID => $cartitem){
+            $pID =$cartitem['pID'];
+            $sql = "SELECT image FROM Product where pID = $pID";
+            $statement = $pdo->prepare($sql);
+            $statement->execute();
+            $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $row) {}
+
+            $image = $row['image'];
+            $type = "png";
+
             echo "<div class='items'>";
-              echo "<img class='image' src='../images/ghostbusters-logo.png'alt='product image'/>";
+              echo	'<a href="individualProducts.php?pID='.$cartitem['pID'].'"><img class="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
               echo "<div class='productinfo'>";
                 echo "<p>Product name: ".$cartitem['pName']."</p>";
                 echo "<p>Price: ".str_replace("USD","$",money_format('%i',$cartitem['price']))."</p>";
@@ -173,7 +184,7 @@
             echo "</div>";
           }
         }else{
-          echo("<p>Your Wish List is empty!</p>");
+          echo("<p>Your Shopping Cart is empty!</p>");
         }
          ?>
 			</div>

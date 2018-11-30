@@ -20,16 +20,12 @@
 			<div id = "faq">
 			  <h1>FAQ</h1>
         <div class="style">
-			  <h2>Question 1</h2>
-			  <p>answer</p>
-			  <h2>Question 2</h2>
-			  <p>answer</p>
-			  <h2>Question 3</h2>
-			  <p>answer</p>
-			  <h2>Question 4</h2>
-			  <p>answer</p>
-			  <h2>Question 5</h2>
-			  <p>answer</p>
+			  <h2>How can I cancel an order?</h2>
+			  <p>If you'd like to cancel an order you can contact us with the Products and Orders phone number. Cancellations must be made before the item has shipped.</p>
+        <h2>How long will it take for my order to arrive?</h2>
+			  <p>Orders should arrive within 5 to 10 business days depending on location.</p>
+        <h2>Can I return a product?</h2>
+			  <p>Returns can be made on all gear for a full refund by calling our Products and Orders number. All supernatural creatures are final sale, buyer bewarned.</p>
       </div>
 			</div>
 		  </div>
