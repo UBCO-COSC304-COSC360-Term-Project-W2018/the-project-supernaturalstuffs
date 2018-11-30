@@ -49,8 +49,17 @@
               echo '<img class ="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
               echo '</div>';
 
+              
+
               echo '<div id="reviews">';
               echo '<h1>Reviews</h1>';
+              $sql = 'SELECT * FROM Reviews';
+              $statement = $pdo->prepare($sql);
+              $statement->execute();
+              $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+              foreach ($rows as $row) {
+                echo '<p>' . $row['comment'] . '</p>';
+              }
               echo '<form class="review" method="post" action="reviews.php">';
               echo '<p>Write a review: </p>';
               echo '<p><textarea id = "text" name="comment" rows="4" cols="40"></textarea></p>';

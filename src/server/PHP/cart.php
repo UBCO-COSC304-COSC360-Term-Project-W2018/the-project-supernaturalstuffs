@@ -90,7 +90,7 @@
             echo ('</div>');
             echo ('</div>');
 
-          } else{
+          } else {
           	echo("<H2>Your shopping cart is empty!</H2>");
             echo '<a href="products.php" ><p class="addCart">Continue Shopping</p></a>';
           }
