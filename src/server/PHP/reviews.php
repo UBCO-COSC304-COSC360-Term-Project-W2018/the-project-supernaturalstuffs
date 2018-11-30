@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['email'])) {
     $custE = $_SESSION['email'];
-    $id = $_POST["pID"];
+    $id = $_GET['id'];
 
     try {
         $pdo = new PDO($dsn, $user, $pass, $options);
