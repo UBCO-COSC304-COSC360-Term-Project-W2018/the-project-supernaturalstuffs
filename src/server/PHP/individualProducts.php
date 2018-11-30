@@ -61,7 +61,7 @@
               foreach ($rows as $row) {
                 echo '<p>' . $row['comment'] . '</p>';
               }
-              echo '<form class="review" method="post" action="reviews.php?id='.$pID.'>';
+              echo '<form class="review" method="post" action="reviews.php?id="'.$pID.'">';
               echo '<div>';
               echo '<label>Write a review: </label>';
               echo '<input type="text" id="textbox" name="comment"/>';
