@@ -50,8 +50,6 @@
               echo '<img class ="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/>';
               echo '</div>';
 
-
-
               echo '<div id="reviews">';
               echo '<h1>Reviews</h1>';
               $sql = 'SELECT * FROM CommentsOn WHERE pID = '.$pID.'';
@@ -86,7 +84,7 @@
               echo '<div id ="box">';
               echo '<div class="productinfo">';
               echo	'<h1>' . $name . '</h1>';
-              echo	'<p>' . $price . '</p>';
+              echo	'<p>$' . $price . '</p>';
               echo	'<p>' . $desc . '</p>';
               echo	'<a href=\'addToCart.php?pID='.$row['pID'].'&pName='.$row['pName'].'&price='.$row['price']."&description=".$row['description'].'\'><p class="addCart">Add to Cart</p></a>';
               echo '</div>';
