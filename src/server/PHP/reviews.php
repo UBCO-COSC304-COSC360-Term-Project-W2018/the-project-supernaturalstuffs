@@ -8,7 +8,8 @@ if(isset($_SESSION['email'])) {
       $message = "Please write a comment!";
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='/individualProducts.php?pID='.$id.'</script>";
-    };
+    }
+
     include '../include/db_credentials.php';
 
     try {
@@ -26,11 +27,7 @@ if(isset($_SESSION['email'])) {
 
     $userID = $row['userID'];
 
-    $message = $id;
-    echo "<script type='text/javascript'>alert('$message');</script>";
-
-    $sql2 = "INSERT INTO CommentsOn VALUES (:userID, :pID, :comment )";
-    $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
+    $sql2 = "INSERT INTO CommentsOn VALUES (".$userID.", :pID, :comment )";
     $statement->bindValue(':pID', $id, PDO::PARAM_INT);
     $statement->bindValue(':email', $_POST['comment'], PDO::PARAM_STR);
     $statement = $pdo->prepare($sql2);
