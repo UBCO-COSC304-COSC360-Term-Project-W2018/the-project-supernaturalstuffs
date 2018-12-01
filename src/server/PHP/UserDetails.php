@@ -130,28 +130,34 @@
 								  <legend>Update User<legend>
 								  <div>
 										<label>First Name:</label>
-										<input type="text" name="firstName" class="box"/>
+										<input type="text" name="firstName" class="box" style="background-color: white;
+                  	color: black;"/>
 								  </div>
 								  <div>
 										<label>Last Name:</label>
-										<input type="text" name="lastName" class="box"/>
+										<input type="text" name="lastName" class="box" style="background-color: white;
+                  	color: black;"/>
 								  </div>
 								   <div>
 										<label>Username:</label>
-										<input type="text" name="username" class="box"/>
+										<input type="text" name="username" class="box" style="background-color: white;
+                  	color: black;"/>
 								  </div>
 								  <div>
 										<label>Email:</label>
-										<input type="text" name="email" class="box"/>
+										<input type="text" name="email" class="box" style="background-color: white;
+                  	color: black;"/>
 								  </div>
 								  <div>
 										<label>Password:</label>
-										<input type="text" name="password" class="box"/>
+										<input type="text" name="password" class="box" style="background-color: white;
+                  	color: black;"/>
 								  </div>
 									<p class="notes">Password must be 6 characters long and contain a number</p>
 								  <div>
 										<label>Add a photo:</label>
-										<input type="file" name="fileToUpload"  id="fileToUpload" class="box"/>
+										<input type="file" name="fileToUpload"  id="fileToUpload" class="box" style="background-color: white;
+                  	color: black;"/>
 								  </div>
 								  <div>
 									<label>Status of User 1 for enable false for disable:</label>
