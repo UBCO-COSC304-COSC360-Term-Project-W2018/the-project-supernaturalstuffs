@@ -21,6 +21,35 @@ if(isset($_SESSION['email'])) {
         throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
 
+    //lock out admins so they cant comment
+    $sql = "SELECT userID FROM User WHERE email = :email";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows as $row) {}
+
+    $userID = $row['userID'];
+
+    //get userID from session
+    $sql = "SELECT userID FROM Admin WHERE userID = :userID";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $numAdmin = "0";
+    foreach ($rows as $row) {
+      $numAdmin = $numAdmin + "1";
+    }
+
+    if($numAdmin > "0"){
+      $message = "Sorry admins can't comment on products. Sign into your account with less priviledges";
+      echo "<script type='text/javascript'>alert('$message');
+      window.location.href='/index.php'</script>";
+      die();
+    }
+
+    //comment stuff
     $sql = "SELECT userID FROM User WHERE email = :email";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':email', $custE, PDO::PARAM_STR);
