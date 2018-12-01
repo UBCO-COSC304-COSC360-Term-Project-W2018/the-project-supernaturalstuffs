@@ -97,19 +97,23 @@
 								  <legend>Update Product<legend>
 								  <div>
 										<label>Product Name:</label>
-										<input type="text" name="pName" class="box"/>
+										<input type="text" name="pName" class="box" style="background-color: white;
+                  	color: black; border: 1px solid black;/>
 								  </div>
 								  <div>
 										<label>Description:</label>
-										<input type="text" name="description" class="box"/>
+										<input type="text" name="description" class="box" style="background-color: white;
+                  	color: black; border: 1px solid black;/>
 								  </div>
 								   <div>
 										<label>Price:</label>
-										<input type="text" name="price" class="box"/>
+										<input type="text" name="price" class="box" style="background-color: white;
+                  	color: black; border: 1px solid black;/>
 								  </div>
 								  <div>
 										<label>Category:</label>
-										<input type="text" name="category" class="box"/>
+										<input type="text" name="category" class="box" style="background-color: white;
+                  	color: black; border: 1px solid black;/>
 								  </div>
 								  <div>
 										<label>Add a photo:</label>
