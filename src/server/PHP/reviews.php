@@ -44,7 +44,7 @@ if(isset($_SESSION['email'])) {
     }
 
     if($numAdmin > "0"){
-      $message = "Please login to a valid admin account or check with administration you still have your admin privileges";
+      $message = "administration can not comment on products. Please sign into an account with less priviledges!";
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='/index.php'</script>";
       die();
