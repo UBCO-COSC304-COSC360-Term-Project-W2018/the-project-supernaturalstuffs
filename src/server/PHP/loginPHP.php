@@ -99,7 +99,12 @@
 
 
       //restore cart to session cart and delete
-      $productList = array();
+      $productList = null;
+      if (isset($_SESSION['productList'])){
+        $productList = $_SESSION['productList'];
+      } else{ 	// No products currently in list.  Create a list.
+        $productList = array();
+      }
       //check if cart is stored for user
       $sql2 = "SELECT userID FROM Cart WHERE userID = :userID" ;
       $statement = $pdo->prepare($sql2);
