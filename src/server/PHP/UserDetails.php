@@ -131,33 +131,32 @@
 								  <div>
 										<label>First Name:</label>
 										<input type="text" name="firstName" class="box" style="background-color: white;
-                  	color: black;"/>
+                  	color: black; border: 2px solid black;"/>
 								  </div>
 								  <div>
 										<label>Last Name:</label>
 										<input type="text" name="lastName" class="box" style="background-color: white;
-                  	color: black;"/>
+                  	color: black; border: 2px solid black;"/>
 								  </div>
 								   <div>
 										<label>Username:</label>
 										<input type="text" name="username" class="box" style="background-color: white;
-                  	color: black;"/>
+                  	color: black; border: 2px solid black;"/>
 								  </div>
 								  <div>
 										<label>Email:</label>
 										<input type="text" name="email" class="box" style="background-color: white;
-                  	color: black;"/>
+                  	color: black; border: 2px solid black;"/>
 								  </div>
 								  <div>
 										<label>Password:</label>
 										<input type="text" name="password" class="box" style="background-color: white;
-                  	color: black;"/>
+                  	color: black; border: 2px solid black;"/>
 								  </div>
 									<p class="notes">Password must be 6 characters long and contain a number</p>
 								  <div>
 										<label>Add a photo:</label>
-										<input type="file" name="fileToUpload"  id="fileToUpload" class="box" style="background-color: white;
-                  	color: black; border: 1px solid black;"/>
+										<input type="file" name="fileToUpload"  id="fileToUpload" class="box" />
 								  </div>
 								  <div>
 									<label>Status of User 1 for enable false for disable:</label>
