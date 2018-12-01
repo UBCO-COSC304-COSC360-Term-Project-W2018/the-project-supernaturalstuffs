@@ -21,21 +21,21 @@
 			  <h1>FAQ</h1>
         <div class="style">
 			  <h2>How can I cancel an order?</h2>
-			  <p>If you'd like to cancel an order you can contact us with the Products and Orders phone number. Cancellations must be made before the item has shipped.</p>
+			  <p class="faq">If you'd like to cancel an order you can contact us with the Products and Orders phone number. Cancellations must be made before the item has shipped.</p>
         <h2>How long will it take for my order to arrive?</h2>
-			  <p>Orders should arrive within 5 to 10 business days depending on location.</p>
+			  <p class="faq">Orders should arrive within 5 to 10 business days depending on location.</p>
         <h2>Can I return a product?</h2>
-			  <p>Returns can be made on all gear for a full refund by calling our Products and Orders number. All supernatural creatures are final sale, buyer bewarned.</p>
+			  <p class="faq">Returns can be made on all gear for a full refund by calling our Products and Orders number. All supernatural creatures are final sale, buyer bewarned.</p>
       </div>
 			</div>
 		  </div>
 		<div id = "contact">
 		  <h1>Contact Us</h1>
       <div class="style">
-		  <p>Products and Orders: 250-555-5555</p>
-		  <p>Company phone: 250-555-5555</p>
-		  <p>Store Location</p>
-		  <p>Vancouver 1015 Burrad St. </p>
+		  <p class="faq">Products and Orders: 250-555-5555</p>
+		  <p class="faq">Company phone: 250-555-5555</p>
+		  <p class="faq">Store Location</p>
+		  <p class="faq">Vancouver 1015 Burrad St. </p>
       </div>
 		</div>
 		<!-- page content -->
