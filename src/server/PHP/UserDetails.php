@@ -157,7 +157,7 @@
 								  <div>
 										<label>Add a photo:</label>
 										<input type="file" name="fileToUpload"  id="fileToUpload" class="box" style="background-color: white;
-                  	color: black;"/>
+                  	color: black; border: 1px solid black;"/>
 								  </div>
 								  <div>
 									<label>Status of User 1 for enable false for disable:</label>
