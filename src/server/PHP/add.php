@@ -108,9 +108,8 @@
 				  //image Stuff
 				  $imagedata = file_get_contents($_FILES['fileToUpload']['tmp_name']);
 
-				 $sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?, :imagedata, DEFAULT)';
+				$sql = 'INSERT INTO User VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, DEFAULT)';
 				$statement = $pdo->prepare($sql);
-				$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
 				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email'],  $imagedata));
 
         // get new users id
