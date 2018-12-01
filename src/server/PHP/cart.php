@@ -91,8 +91,10 @@
             echo ('</div>');
 
           } else {
+            echo("<div id='nothing'>");
           	echo("<H2>Your shopping cart is empty!</H2>");
             echo '<a href="products.php" ><p class="addCart">Continue Shopping</p></a>';
+            echo("</div>");
           }
 
           if(isset($_GET['pid'])){
