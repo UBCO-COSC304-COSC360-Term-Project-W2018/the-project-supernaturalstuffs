@@ -60,5 +60,5 @@
     //set number of items in cart
 
     header("Location: {$_SERVER['HTTP_REFERER']}");
-    //header('Location: showcart.php');
+
 ?>

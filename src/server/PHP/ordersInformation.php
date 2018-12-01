@@ -59,6 +59,34 @@
          window.location.href='/index.php'</script>";
          die();
        }
+
+       //get userID from session
+       $sql = "SELECT userID FROM User WHERE email = :email";
+       $statement = $pdo->prepare($sql);
+       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       foreach ($rows as $row) {}
+
+       $userID = $row['userID'];
+
+       //get userID from session
+       $sql = "SELECT userID FROM Admin WHERE userID = :userID";
+       $statement = $pdo->prepare($sql);
+       $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
+       $statement->execute();
+       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+       $numAdmin = "0";
+       foreach ($rows as $row) {
+         $numAdmin = $numAdmin + "1";
+       }
+
+       if($numAdmin <= "0"){
+         $message = "Please login to a valid admin account or check with administration you still have your admin privileges";
+         echo "<script type='text/javascript'>alert('$message');
+         window.location.href='/index.php'</script>";
+         die();
+       }
        //lock out of admin ends
 
 
@@ -72,7 +100,7 @@
 				echo '<table>';
 						echo '<tr><th>Order ID</th><th>Total Price</th><th>Tracking Number</th><th>User ID</th><th>Store ID</th></tr>';
 				foreach ($rows as $row) {
-					echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td><td><a href="orderDetails.php?filter=' . $row['orderID'] . '">Select Product</a></td></tr>';
+					echo	'<tr><td>' . $row['orderID'] . '</td><td>' . $row['totalPrice'] . '</td><td>' . $row['trackingNumber'] . '</td><td>' . $row['userID'] . '</td><td>' . $row['storeID'] . '</td><td><a href="orderDetails.php?filter=' . $row['orderID'] . '">Select Order</a></td></tr>';
 				}
 				echo '</table>';
 			}else{

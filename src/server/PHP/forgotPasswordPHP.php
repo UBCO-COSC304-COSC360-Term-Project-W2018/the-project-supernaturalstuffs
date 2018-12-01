@@ -65,7 +65,7 @@
        }
 
        //figure out how to end an email
-       $password = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnoprstuvwxyz", 5)), 0, 5);
+       $password = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnoprstuvwxyz", 6)), 0, 6);
 
        $sql = "UPDATE User SET password = :pass WHERE email = :email";
        $statement = $pdo->prepare($sql);

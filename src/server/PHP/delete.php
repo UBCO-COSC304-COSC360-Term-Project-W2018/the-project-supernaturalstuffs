@@ -136,11 +136,18 @@
 				$sql = 'DELETE FROM Review WHERE userID = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info']));
+        $message = "Deleted";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='admin.php'</script>";
 			}else if($_GET['filter']=='Comment'){
 				//DELETE Comment
 				$sql = 'DELETE FROM CommentsOn WHERE userID = ? AND pid = ?';
 				$statement = $pdo->prepare($sql);
 				$statement->execute(array($_GET['info'], $_GET['info2']));
+        $message = "Deleted";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='admin.php'</script>";
+        die();
 			}else if($_GET['filter']=='Product'){
 				//DELETE Product
 				$sql = 'DELETE FROM Product WHERE pID = ?';

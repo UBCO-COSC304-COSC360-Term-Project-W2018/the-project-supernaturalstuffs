@@ -6,7 +6,7 @@
   </head>
   <body>
     <?php
-      include '../../../src/server/include/header.php'; 
+      include '../../../src/server/include/header.php';
 
       include '../include/db_credentials.php';
 
@@ -128,15 +128,6 @@
         $statement->execute();
       }
 
-      /*//payment test
-      $sql6 = "SELECT cardNumber FROM PaymentMethod" ;
-      $statement = $pdo->prepare($sql6);
-      $statement->execute();
-      $rows3 = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows3 as $row3) {
-        $x = $row3['cardNumber'];
-        echo "<script type='text/javascript'>alert('$x')</script>";
-      }*/
 
       $message = "Payment Information Updated";
       echo "<script type='text/javascript'>alert('$message');

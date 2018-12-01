@@ -40,7 +40,7 @@
 
    $userID = $row['userID'];
 
-   //get userID from session
+   //make sure they are admin
    $sql = "SELECT userID FROM Admin WHERE userID = :userID";
    $statement = $pdo->prepare($sql);
    $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
