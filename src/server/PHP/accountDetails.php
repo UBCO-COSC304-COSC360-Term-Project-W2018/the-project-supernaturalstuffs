@@ -187,8 +187,6 @@
               echo "</div>";
             echo "</div>";
           }
-        }else{
-          echo("<p>Your shopping cart is empty!</p>");
         }
 
          ?>
