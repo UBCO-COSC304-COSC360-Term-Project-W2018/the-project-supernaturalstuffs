@@ -21,7 +21,8 @@ if(isset($_SESSION['email'])) {
         throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
 
-    //lock out admins so they cant comment
+
+    //comment stuff
     $sql = "SELECT userID FROM User WHERE email = :email";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':email', $custE, PDO::PARAM_STR);
@@ -31,7 +32,7 @@ if(isset($_SESSION['email'])) {
 
     $userID = $row['userID'];
 
-    //get userID from session
+    //make sure they are admin
     $sql = "SELECT userID FROM Admin WHERE userID = :userID";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':userID', $userID, PDO::PARAM_STR);
@@ -43,21 +44,11 @@ if(isset($_SESSION['email'])) {
     }
 
     if($numAdmin > "0"){
-      $message = "Sorry admins can't comment on products. Sign into your account with less priviledges";
+      $message = "Please login to a valid admin account or check with administration you still have your admin privileges";
       echo "<script type='text/javascript'>alert('$message');
       window.location.href='/index.php'</script>";
       die();
     }
-
-    //comment stuff
-    $sql = "SELECT userID FROM User WHERE email = :email";
-    $statement = $pdo->prepare($sql);
-    $statement->bindParam(':email', $custE, PDO::PARAM_STR);
-    $statement->execute();
-    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($rows as $row) {}
-
-    $userID = $row['userID'];
 
     //make sure they havent commented before
     $sql = "SELECT userID FROM CommentsOn WHERE userID = :userID AND pID = :pID";
