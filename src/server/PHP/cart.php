@@ -55,7 +55,7 @@
               echo	'<a href="individualProducts.php?pID='.$prod['pID'].'"><img class="image" src = "data:image/'.$type.';base64, '.base64_encode($image).'"/></a>';
 
               echo('<div class="productinfo">');
-          		echo("<p>". $prod['pName'] . "</p>");
+          		echo("<p class='ppp'>". $prod['pName'] . "</p>");
           		echo('<p id="desc">' . $prod['description'] . "</p>");
 
           		echo("<p>". $prod['quantity'] . "</p>");
@@ -82,7 +82,7 @@
             echo ('<div id ="summary">');
             echo ('<h2>Summary</h2>');
             echo ('<div id ="totals">');
-            echo ("<p id=\"total\"> Total: $".$total. "</p>");
+            echo ("<p id=\"total\" class='ppp'> Total: $".$total. "</p>");
             echo ('<div>
               <a href="checkout.php" ><p class="addCart">Checkout</p></a>
               <a href="products.php" ><p class="addCart">Continue Shopping</p></a>
