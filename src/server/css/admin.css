@@ -50,11 +50,11 @@ body{
 	border: white 1px solid;
 	width: fit-content;
 	background: #710627;
-	
+
 }
 #Orders *{
 	background: #710627;
-	
+
 }
 #Orders h2{
 	background: #521C25;
@@ -71,4 +71,8 @@ body{
 }
 .catagories{
 	padding: 1em;
+}
+.bow{
+	background-color: white;
+	color: black;
 }
