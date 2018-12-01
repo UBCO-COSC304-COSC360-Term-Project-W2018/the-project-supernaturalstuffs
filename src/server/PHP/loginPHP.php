@@ -44,7 +44,10 @@
       $statement->bindParam(':email', $custE, PDO::PARAM_STR);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($rows as $row) {}
+      $numRows = "0";
+      foreach ($rows as $row) {
+        $numRows = $numRows + 1;
+      }
 
       //check to see if email exists
       if ($custE == null){
@@ -52,7 +55,7 @@
         echo "<script type='text/javascript'>alert('$message');
         window.location.href='login.php'</script>";
         die();
-      }else if ($row == null){
+      }else if ($numRows <= "0"){
         $message = "Error: Incorrect Email";
         echo "<script type='text/javascript'>alert('$message');
         window.location.href='login.php'</script>";
