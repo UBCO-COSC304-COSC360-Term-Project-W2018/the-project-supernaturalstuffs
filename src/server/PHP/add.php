@@ -113,6 +113,21 @@
 				$statement->bindValue(':imagedata', $imagedata, PDO::PARAM_STR);
 				$statement->execute(array($_POST['username'], MD5($_POST['password']), $_POST['firstname'], $_POST['lastname'], $_POST['email'],  $imagedata));
 
+        // get new users id
+        $sql3 = "SELECT userID,email FROM User WHERE email = :email";
+        $statement = $pdo->prepare($sql3);
+        $statement->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
+        $statement->execute();
+        $rows2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows2 as $row2) {}
+        $userID = $row2['userID'];
+
+        //make them a Customer
+        $sql4 = "INSERT INTO Customer VALUES (:userID)";
+        $statement = $pdo->prepare($sql4);
+        $statement->bindValue(':userID', $userID, PDO::PARAM_INT);
+        $insert = $statement->execute();
+
 				$message = "User added to database ";
 				 echo "<script type='text/javascript'>alert('$message');
 				  window.location.href='userForm.php'</script>";
